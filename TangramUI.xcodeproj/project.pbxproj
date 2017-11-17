@@ -19,6 +19,11 @@
 		BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E551FBEEF160051F702 /* FooterReusableView.swift */; };
 		BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E571FBEEF8C0051F702 /* HeaderReusableView.swift */; };
 		BEDE1E5A1FBEF0E40051F702 /* ServiceLeftPicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E591FBEF0E40051F702 /* ServiceLeftPicCell.swift */; };
+		BEDE1E5C1FBF0EE40051F702 /* ServiceNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E5B1FBF0EE40051F702 /* ServiceNormalCell.swift */; };
+		BEDE1E5F1FBF0FFD0051F702 /* ServiceOnePicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E5E1FBF0FFD0051F702 /* ServiceOnePicCell.swift */; };
+		BEDE1E611FBF141D0051F702 /* ServicePicTwoTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E601FBF141D0051F702 /* ServicePicTwoTitleCell.swift */; };
+		BEDE1E631FBF15250051F702 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E621FBF15250051F702 /* BaseController.swift */; };
+		BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E641FBF155B0051F702 /* ServiceLayoutController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,11 @@
 		BEDE1E551FBEEF160051F702 /* FooterReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterReusableView.swift; sourceTree = "<group>"; };
 		BEDE1E571FBEEF8C0051F702 /* HeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
 		BEDE1E591FBEF0E40051F702 /* ServiceLeftPicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLeftPicCell.swift; sourceTree = "<group>"; };
+		BEDE1E5B1FBF0EE40051F702 /* ServiceNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceNormalCell.swift; sourceTree = "<group>"; };
+		BEDE1E5E1FBF0FFD0051F702 /* ServiceOnePicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOnePicCell.swift; sourceTree = "<group>"; };
+		BEDE1E601FBF141D0051F702 /* ServicePicTwoTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePicTwoTitleCell.swift; sourceTree = "<group>"; };
+		BEDE1E621FBF15250051F702 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		BEDE1E641FBF155B0051F702 /* ServiceLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayoutController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +127,7 @@
 				BE0D8A021FBED81800CA8114 /* LaunchScreen.storyboard */,
 				BE0D8A051FBED81800CA8114 /* Info.plist */,
 				BE0D8A2A1FBEDCB400CA8114 /* Bridging.h */,
+				BEDE1E621FBF15250051F702 /* BaseController.swift */,
 			);
 			path = TangramUI;
 			sourceTree = "<group>";
@@ -142,10 +153,11 @@
 		BE0D8A271FBEDC7800CA8114 /* ServiceLayout */ = {
 			isa = PBXGroup;
 			children = (
+				BEDE1E5D1FBF0EE60051F702 /* Cells */,
 				BE0D8A281FBEDCA600CA8114 /* ServiceLayout.swift */,
 				BEDE1E551FBEEF160051F702 /* FooterReusableView.swift */,
 				BEDE1E571FBEEF8C0051F702 /* HeaderReusableView.swift */,
-				BEDE1E591FBEF0E40051F702 /* ServiceLeftPicCell.swift */,
+				BEDE1E641FBF155B0051F702 /* ServiceLayoutController.swift */,
 			);
 			path = ServiceLayout;
 			sourceTree = "<group>";
@@ -156,6 +168,17 @@
 				BEDE1E531FBEEE930051F702 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BEDE1E5D1FBF0EE60051F702 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BEDE1E591FBEF0E40051F702 /* ServiceLeftPicCell.swift */,
+				BEDE1E5B1FBF0EE40051F702 /* ServiceNormalCell.swift */,
+				BEDE1E5E1FBF0FFD0051F702 /* ServiceOnePicCell.swift */,
+				BEDE1E601FBF141D0051F702 /* ServicePicTwoTitleCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,10 +317,15 @@
 			files = (
 				BE0D8A291FBEDCA600CA8114 /* ServiceLayout.swift in Sources */,
 				BE0D89FC1FBED81800CA8114 /* ViewController.swift in Sources */,
+				BEDE1E611FBF141D0051F702 /* ServicePicTwoTitleCell.swift in Sources */,
+				BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */,
 				BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */,
 				BE0D89FA1FBED81800CA8114 /* AppDelegate.swift in Sources */,
+				BEDE1E5C1FBF0EE40051F702 /* ServiceNormalCell.swift in Sources */,
+				BEDE1E5F1FBF0FFD0051F702 /* ServiceOnePicCell.swift in Sources */,
 				BEDE1E541FBEEE930051F702 /* UIColor+Extension.swift in Sources */,
 				BEDE1E5A1FBEF0E40051F702 /* ServiceLeftPicCell.swift in Sources */,
+				BEDE1E631FBF15250051F702 /* BaseController.swift in Sources */,
 				BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

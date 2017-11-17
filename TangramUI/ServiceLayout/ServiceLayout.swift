@@ -8,10 +8,17 @@
 
 let SCREEN_WIDTH = UIScreen.main.bounds.width
 
-protocol ServiceLayoutDelegate: class {}
+protocol ServiceLayoutDelegate: class {
+
+    func heightOfSectionHeader(for indexPath: IndexPath) -> CGFloat
+
+    func heightOfSectionFooter(for indexPath: IndexPath) -> CGFloat
+}
 
 extension ServiceLayoutDelegate {
+
     func heightOfSectionHeader(for indexPath: IndexPath) -> CGFloat { return 0 }
+
     func heightOfSectionFooter(for indexPath: IndexPath) -> CGFloat { return 0 }
 }
 
@@ -88,7 +95,7 @@ class ServiceLayout: UICollectionViewLayout {
         case 2:
             layoutAttributesForPatentLayout(with: layoutAttributes, at: indexPath)
         case 3:
-            [self layoutAttributesForCaseLayout:layoutAttributes indexPath:indexPath]
+            layoutAttributesForCaseLayout(with: layoutAttributes, at: indexPath)
         default:
             break
         }
