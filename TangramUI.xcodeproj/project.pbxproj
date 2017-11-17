@@ -14,6 +14,11 @@
 		BE0D8A041FBED81800CA8114 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0D8A021FBED81800CA8114 /* LaunchScreen.storyboard */; };
 		BE0D8A0F1FBED81800CA8114 /* TangramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D8A0E1FBED81800CA8114 /* TangramUITests.swift */; };
 		BE0D8A1A1FBED81800CA8114 /* TangramUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D8A191FBED81800CA8114 /* TangramUIUITests.swift */; };
+		BE0D8A291FBEDCA600CA8114 /* ServiceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D8A281FBEDCA600CA8114 /* ServiceLayout.swift */; };
+		BEDE1E541FBEEE930051F702 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E531FBEEE930051F702 /* UIColor+Extension.swift */; };
+		BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E551FBEEF160051F702 /* FooterReusableView.swift */; };
+		BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E571FBEEF8C0051F702 /* HeaderReusableView.swift */; };
+		BEDE1E5A1FBEF0E40051F702 /* ServiceLeftPicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E591FBEF0E40051F702 /* ServiceLeftPicCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,12 @@
 		BE0D8A151FBED81800CA8114 /* TangramUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TangramUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0D8A191FBED81800CA8114 /* TangramUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TangramUIUITests.swift; sourceTree = "<group>"; };
 		BE0D8A1B1FBED81800CA8114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE0D8A281FBEDCA600CA8114 /* ServiceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayout.swift; sourceTree = "<group>"; };
+		BE0D8A2A1FBEDCB400CA8114 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+		BEDE1E531FBEEE930051F702 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		BEDE1E551FBEEF160051F702 /* FooterReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterReusableView.swift; sourceTree = "<group>"; };
+		BEDE1E571FBEEF8C0051F702 /* HeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
+		BEDE1E591FBEF0E40051F702 /* ServiceLeftPicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLeftPicCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +108,15 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				BEDE1E521FBEEDF10051F702 /* Extensions */,
+				BE0D8A271FBEDC7800CA8114 /* ServiceLayout */,
 				BE0D89F91FBED81800CA8114 /* AppDelegate.swift */,
 				BE0D89FB1FBED81800CA8114 /* ViewController.swift */,
 				BE0D89FD1FBED81800CA8114 /* Main.storyboard */,
 				BE0D8A001FBED81800CA8114 /* Assets.xcassets */,
 				BE0D8A021FBED81800CA8114 /* LaunchScreen.storyboard */,
 				BE0D8A051FBED81800CA8114 /* Info.plist */,
+				BE0D8A2A1FBEDCB400CA8114 /* Bridging.h */,
 			);
 			path = TangramUI;
 			sourceTree = "<group>";
@@ -123,6 +137,25 @@
 				BE0D8A1B1FBED81800CA8114 /* Info.plist */,
 			);
 			path = TangramUIUITests;
+			sourceTree = "<group>";
+		};
+		BE0D8A271FBEDC7800CA8114 /* ServiceLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BE0D8A281FBEDCA600CA8114 /* ServiceLayout.swift */,
+				BEDE1E551FBEEF160051F702 /* FooterReusableView.swift */,
+				BEDE1E571FBEEF8C0051F702 /* HeaderReusableView.swift */,
+				BEDE1E591FBEF0E40051F702 /* ServiceLeftPicCell.swift */,
+			);
+			path = ServiceLayout;
+			sourceTree = "<group>";
+		};
+		BEDE1E521FBEEDF10051F702 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BEDE1E531FBEEE930051F702 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +292,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE0D8A291FBEDCA600CA8114 /* ServiceLayout.swift in Sources */,
 				BE0D89FC1FBED81800CA8114 /* ViewController.swift in Sources */,
+				BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */,
 				BE0D89FA1FBED81800CA8114 /* AppDelegate.swift in Sources */,
+				BEDE1E541FBEEE930051F702 /* UIColor+Extension.swift in Sources */,
+				BEDE1E5A1FBEF0E40051F702 /* ServiceLeftPicCell.swift in Sources */,
+				BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +469,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boju.TangramUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = TangramUI/Bridging.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -445,6 +484,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boju.TangramUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = TangramUI/Bridging.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

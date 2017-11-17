@@ -6,8 +6,6 @@
 //  Copyright © 2017年 黄伯驹. All rights reserved.
 //
 
-import UIKit
-
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
