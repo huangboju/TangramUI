@@ -6,8 +6,6 @@
 //  Copyright © 2017年 黄伯驹. All rights reserved.
 //
 
-import UIKit
-
 class ServiceLayoutController: BaseController {
     
     private let cells: [(UICollectionViewCell.Type, String)] = [
@@ -35,9 +33,7 @@ class ServiceLayoutController: BaseController {
         return collectionView
     }()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func initSubviews() {
         view.addSubview(collectionView)
     }
 }
@@ -81,7 +77,7 @@ extension ServiceLayoutController: UICollectionViewDataSource {
             fatalError("检查section")
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionElementKindSectionHeader {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(HeaderReusableView.classForCoder())", for: indexPath)
@@ -94,7 +90,9 @@ extension ServiceLayoutController: UICollectionViewDataSource {
 }
 
 extension ServiceLayoutController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        print(indexPath)
+    }
 }
 
 extension ServiceLayoutController: ServiceLayoutDelegate {

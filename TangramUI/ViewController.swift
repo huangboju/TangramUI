@@ -17,7 +17,9 @@ class ViewController: UIViewController {
     
     lazy var data: [[UIViewController.Type]] = [
         [
-            ServiceLayoutController.self
+            ServiceLayoutController.self,
+            ReverseLayoutController.self,
+            ReorderableTripletLayoutController.self
         ]
     ]
     

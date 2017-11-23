@@ -11,5 +11,9 @@ class BaseController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.white
+        
+        initSubviews()
     }
+    
+    func initSubviews() {}
 }

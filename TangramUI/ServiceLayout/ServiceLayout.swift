@@ -87,7 +87,7 @@ class ServiceLayout: UICollectionViewLayout {
 
         let layoutAttributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
 
-        switch (indexPath.section) {
+        switch indexPath.section {
         case 0:
             layoutAttributesForServiceLayout(with: layoutAttributes, at: indexPath)
         case 1:
