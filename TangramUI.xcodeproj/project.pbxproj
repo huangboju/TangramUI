@@ -49,6 +49,15 @@
 		BEDE1E611FBF141D0051F702 /* ServicePicTwoTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E601FBF141D0051F702 /* ServicePicTwoTitleCell.swift */; };
 		BEDE1E631FBF15250051F702 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E621FBF15250051F702 /* BaseController.swift */; };
 		BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E641FBF155B0051F702 /* ServiceLayoutController.swift */; };
+		BEF73ACD1FCAB5B000A37524 /* CustomLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73ACC1FCAB5B000A37524 /* CustomLayoutAttributes.swift */; };
+		BEF73ACF1FCAB60A00A37524 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73ACE1FCAB60A00A37524 /* CustomLayout.swift */; };
+		BEF73AD11FCAB64E00A37524 /* CustomLayoutSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73AD01FCAB64E00A37524 /* CustomLayoutSettings.swift */; };
+		BEF73AD31FCAB6EB00A37524 /* JungleCupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73AD21FCAB6EB00A37524 /* JungleCupController.swift */; };
+		BEF73AD51FCAB79000A37524 /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73AD41FCAB79000A37524 /* MockDataManager.swift */; };
+		BEF73AD71FCADA9900A37524 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73AD61FCADA9900A37524 /* PlayerCell.swift */; };
+		BEF73AD91FCAE0D700A37524 /* SectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73AD81FCAE0D700A37524 /* SectionFooterView.swift */; };
+		BEF73ADB1FCAE18900A37524 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73ADA1FCAE18900A37524 /* MenuView.swift */; };
+		BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73ADC1FCAE24700A37524 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +127,15 @@
 		BEDE1E601FBF141D0051F702 /* ServicePicTwoTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePicTwoTitleCell.swift; sourceTree = "<group>"; };
 		BEDE1E621FBF15250051F702 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		BEDE1E641FBF155B0051F702 /* ServiceLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayoutController.swift; sourceTree = "<group>"; };
+		BEF73ACC1FCAB5B000A37524 /* CustomLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutAttributes.swift; sourceTree = "<group>"; };
+		BEF73ACE1FCAB60A00A37524 /* CustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
+		BEF73AD01FCAB64E00A37524 /* CustomLayoutSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLayoutSettings.swift; sourceTree = "<group>"; };
+		BEF73AD21FCAB6EB00A37524 /* JungleCupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JungleCupController.swift; sourceTree = "<group>"; };
+		BEF73AD41FCAB79000A37524 /* MockDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
+		BEF73AD61FCADA9900A37524 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		BEF73AD81FCAE0D700A37524 /* SectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionFooterView.swift; sourceTree = "<group>"; };
+		BEF73ADA1FCAE18900A37524 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		BEF73ADC1FCAE24700A37524 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +186,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				BEF73ACB1FCAB59E00A37524 /* JungleCup */,
 				BE95F50B1FC66CB70033D83B /* photos */,
 				BE7FAF931FC2792E00788A5A /* ReorderableTripletLayout */,
 				BEDE1E521FBEEDF10051F702 /* Extensions */,
@@ -278,6 +297,22 @@
 				BEDE1E601FBF141D0051F702 /* ServicePicTwoTitleCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		BEF73ACB1FCAB59E00A37524 /* JungleCup */ = {
+			isa = PBXGroup;
+			children = (
+				BEF73AD41FCAB79000A37524 /* MockDataManager.swift */,
+				BEF73ACE1FCAB60A00A37524 /* CustomLayout.swift */,
+				BEF73AD01FCAB64E00A37524 /* CustomLayoutSettings.swift */,
+				BEF73ACC1FCAB5B000A37524 /* CustomLayoutAttributes.swift */,
+				BEF73AD21FCAB6EB00A37524 /* JungleCupController.swift */,
+				BEF73AD61FCADA9900A37524 /* PlayerCell.swift */,
+				BEF73AD81FCAE0D700A37524 /* SectionFooterView.swift */,
+				BEF73ADA1FCAE18900A37524 /* MenuView.swift */,
+				BEF73ADC1FCAE24700A37524 /* HeaderView.swift */,
+			);
+			path = JungleCup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,20 +472,29 @@
 				BE95F5351FC66CFC0033D83B /* ReorderableTripletLayoutController.swift in Sources */,
 				BE0D8A291FBEDCA600CA8114 /* ServiceLayout.swift in Sources */,
 				BE0D89FC1FBED81800CA8114 /* ViewController.swift in Sources */,
+				BEF73AD11FCAB64E00A37524 /* CustomLayoutSettings.swift in Sources */,
 				BE7FAF971FC2873100788A5A /* ReorderableTripletLayout.swift in Sources */,
+				BEF73AD71FCADA9900A37524 /* PlayerCell.swift in Sources */,
+				BEF73AD51FCAB79000A37524 /* MockDataManager.swift in Sources */,
+				BEF73AD31FCAB6EB00A37524 /* JungleCupController.swift in Sources */,
 				BEDE1E611FBF141D0051F702 /* ServicePicTwoTitleCell.swift in Sources */,
 				BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */,
+				BEF73ADB1FCAE18900A37524 /* MenuView.swift in Sources */,
 				BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */,
 				BE0D89FA1FBED81800CA8114 /* AppDelegate.swift in Sources */,
+				BEF73ACF1FCAB60A00A37524 /* CustomLayout.swift in Sources */,
 				BEDE1E5C1FBF0EE40051F702 /* ServiceNormalCell.swift in Sources */,
 				BEDE1E5F1FBF0FFD0051F702 /* ServiceOnePicCell.swift in Sources */,
 				BEDE1E541FBEEE930051F702 /* UIColor+Extension.swift in Sources */,
+				BEF73ACD1FCAB5B000A37524 /* CustomLayoutAttributes.swift in Sources */,
+				BEF73AD91FCAE0D700A37524 /* SectionFooterView.swift in Sources */,
 				BEC2AECC1FC0681F00FB98C2 /* ReverseLayoutController.swift in Sources */,
 				BEC2AECE1FC068B500FB98C2 /* ReverseLayout.swift in Sources */,
 				BEDE1E5A1FBEF0E40051F702 /* ServiceLeftPicCell.swift in Sources */,
 				BEDE1E631FBF15250051F702 /* BaseController.swift in Sources */,
 				BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */,
 				BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */,
+				BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

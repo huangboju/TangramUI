@@ -19,7 +19,8 @@ class ViewController: UIViewController {
         [
             ServiceLayoutController.self,
             ReverseLayoutController.self,
-            ReorderableTripletLayoutController.self
+            ReorderableTripletLayoutController.self,
+            JungleCupCollectionViewController.self
         ]
     ]
     
