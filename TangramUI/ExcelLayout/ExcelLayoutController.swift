@@ -72,8 +72,7 @@ class ExcelLayoutCell: UICollectionViewCell {
         textLabel.textAlignment = .center
         return textLabel
     }()
-    
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
