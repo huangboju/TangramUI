@@ -40,6 +40,8 @@
 		BE95F5351FC66CFC0033D83B /* ReorderableTripletLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE95F5341FC66CFC0033D83B /* ReorderableTripletLayoutController.swift */; };
 		BEC2AECC1FC0681F00FB98C2 /* ReverseLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC2AECB1FC0681F00FB98C2 /* ReverseLayoutController.swift */; };
 		BEC2AECE1FC068B500FB98C2 /* ReverseLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC2AECD1FC068B500FB98C2 /* ReverseLayout.swift */; };
+		BEDA5DA01FCBE3DD00777CBC /* ExcelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA5D9F1FCBE3DD00777CBC /* ExcelLayout.swift */; };
+		BEDA5DA21FCBE45F00777CBC /* ExcelLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA5DA11FCBE45F00777CBC /* ExcelLayoutController.swift */; };
 		BEDE1E541FBEEE930051F702 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E531FBEEE930051F702 /* UIColor+Extension.swift */; };
 		BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E551FBEEF160051F702 /* FooterReusableView.swift */; };
 		BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E571FBEEF8C0051F702 /* HeaderReusableView.swift */; };
@@ -118,6 +120,8 @@
 		BE95F5341FC66CFC0033D83B /* ReorderableTripletLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderableTripletLayoutController.swift; sourceTree = "<group>"; };
 		BEC2AECB1FC0681F00FB98C2 /* ReverseLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseLayoutController.swift; sourceTree = "<group>"; };
 		BEC2AECD1FC068B500FB98C2 /* ReverseLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseLayout.swift; sourceTree = "<group>"; };
+		BEDA5D9F1FCBE3DD00777CBC /* ExcelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelLayout.swift; sourceTree = "<group>"; };
+		BEDA5DA11FCBE45F00777CBC /* ExcelLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelLayoutController.swift; sourceTree = "<group>"; };
 		BEDE1E531FBEEE930051F702 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BEDE1E551FBEEF160051F702 /* FooterReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterReusableView.swift; sourceTree = "<group>"; };
 		BEDE1E571FBEEF8C0051F702 /* HeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				BEDA5D9E1FCBE3C700777CBC /* ExcelLayout */,
 				BEF73ACB1FCAB59E00A37524 /* JungleCup */,
 				BE95F50B1FC66CB70033D83B /* photos */,
 				BE7FAF931FC2792E00788A5A /* ReorderableTripletLayout */,
@@ -278,6 +283,15 @@
 				BEC2AECD1FC068B500FB98C2 /* ReverseLayout.swift */,
 			);
 			path = ReverseCollectionView;
+			sourceTree = "<group>";
+		};
+		BEDA5D9E1FCBE3C700777CBC /* ExcelLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BEDA5D9F1FCBE3DD00777CBC /* ExcelLayout.swift */,
+				BEDA5DA11FCBE45F00777CBC /* ExcelLayoutController.swift */,
+			);
+			path = ExcelLayout;
 			sourceTree = "<group>";
 		};
 		BEDE1E521FBEEDF10051F702 /* Extensions */ = {
@@ -470,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE95F5351FC66CFC0033D83B /* ReorderableTripletLayoutController.swift in Sources */,
+				BEDA5DA21FCBE45F00777CBC /* ExcelLayoutController.swift in Sources */,
 				BE0D8A291FBEDCA600CA8114 /* ServiceLayout.swift in Sources */,
 				BE0D89FC1FBED81800CA8114 /* ViewController.swift in Sources */,
 				BEF73AD11FCAB64E00A37524 /* CustomLayoutSettings.swift in Sources */,
@@ -495,6 +510,7 @@
 				BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */,
 				BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */,
 				BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */,
+				BEDA5DA01FCBE3DD00777CBC /* ExcelLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,8 @@
 //  Copyright © 2017年 黄伯驹. All rights reserved.
 //
 
+/// https://github.com/joshqn/JungleCup
+
 class JungleCupCollectionViewController: BaseController {
     
     private let teams: [Team] = [Owls(), Giraffes(), Parrots(), Tigers()]
@@ -66,7 +68,7 @@ class JungleCupCollectionViewController: BaseController {
         customLayout.settings.sectionsFooterSize = CGSize(width: collectionView.frame.width, height: 50)
         customLayout.settings.isHeaderStretchy = true
         customLayout.settings.isAlphaOnHeaderActive = true
-        customLayout.settings.headerOverlayMaxAlphaValue = CGFloat(0.6)
+        customLayout.settings.headerOverlayMaxAlphaValue = 0.6
         customLayout.settings.isMenuSticky = true
         customLayout.settings.isSectionHeadersSticky = true
         customLayout.settings.isParallaxOnCellsEnabled = true

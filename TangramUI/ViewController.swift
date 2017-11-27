@@ -20,7 +20,8 @@ class ViewController: UIViewController {
             ServiceLayoutController.self,
             ReverseLayoutController.self,
             ReorderableTripletLayoutController.self,
-            JungleCupCollectionViewController.self
+            JungleCupCollectionViewController.self,
+            ExcelLayoutController.self
         ]
     ]
     
