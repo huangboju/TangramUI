@@ -87,11 +87,11 @@ extension GridLayoutController: GridLayoutDelegate {
         return CGFloat((section + 1) * 10)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, referenceLengthForHeaderInSection section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, referenceLengthForHeaderIn section: Int) -> CGFloat {
         return CGFloat((section + 1) * 20)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, referenceLengthForFooterInSection section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, referenceLengthForFooterIn section: Int) -> CGFloat {
         return CGFloat((section + 1) * 20)
     }
 

@@ -6,7 +6,9 @@
 //  Copyright © 2017年 黄伯驹. All rights reserved.
 //
 
-public protocol GridLayoutDelegate: class {
+
+@objc
+public protocol GridLayoutDelegate: NSObjectProtocol {
     /**
      Asks the delegate for the margins to apply to content in the specified section.
      
@@ -18,7 +20,7 @@ public protocol GridLayoutDelegate: class {
      
      @discussion The return value of this method is applied to it's desired section in the same way as UICollectionViewFlowLayout uses it (applies it to section items only, not headers and footers).
      */
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
+    @objc optional func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
 
     /**
      Asks the delegate for the amount of spacing between lines that the given section should have.
@@ -29,7 +31,7 @@ public protocol GridLayoutDelegate: class {
      
      @return The line spacing the layout should use between lines of cells in the section at the given index.
      */
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, lineSpacingForSectionAt section: Int) -> CGFloat
+    @objc optional func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, lineSpacingForSectionAt section: Int) -> CGFloat
 
     /**
      Asks the delegate for the amount of spacing between cells on the sanme line that the given section should have.
@@ -40,7 +42,7 @@ public protocol GridLayoutDelegate: class {
      
      @return The inter-item spacing the layout should use between cells on the same line in the section at the given index
      */
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, interitemSpacingForSectionAt section: Int) -> CGFloat
+    @objc optional func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, interitemSpacingForSectionAt section: Int) -> CGFloat
 
     /**
      Asks the delegate for the number of columns the given section should have.
@@ -51,7 +53,7 @@ public protocol GridLayoutDelegate: class {
      
      @return The number of columns the layout should use for the section at the given index.
      */
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, numberItemsPerLineForSectionAt section: Int) -> Int
+    @objc optional func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, numberItemsPerLineForSectionAt section: Int) -> Int
 
     /**
      Asks the delegate for the aspect ratio that items in the given section should have
@@ -62,7 +64,7 @@ public protocol GridLayoutDelegate: class {
      
      @return The aspect ratio the layout should use for items in the section at the given index.
      */
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, aspectRatioForItemsInSectionAt section: Int) -> CGFloat
+    @objc optional func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, aspectRatioForItemsInSectionAt section: Int) -> CGFloat
     
     /**
      Asks the delegate for the length of the header in the given section.
@@ -73,7 +75,7 @@ public protocol GridLayoutDelegate: class {
      
      @return The length of the header for the section at the given index. A length of 0 prevents the header from being created.
      */
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, referenceLengthForHeaderIn section: Int) -> CGFloat
+    @objc optional func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, referenceLengthForHeaderIn section: Int) -> CGFloat
     
     /**
      Asks the delegate for the length of the footer in the given section.
@@ -84,39 +86,8 @@ public protocol GridLayoutDelegate: class {
      
      @return The length of the footer for the section at the given index. A length of 0 prevents the header from being created.
      */
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, referenceLengthForFooterIn section: Int) -> CGFloat
+    @objc optional func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, referenceLengthForFooterIn section: Int) -> CGFloat
 }
-
-extension GridLayoutDelegate {
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .zero
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, lineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, interitemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, numberItemsPerLineForSectionAt section: Int) -> Int {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, aspectRatioForItemsInSectionAt section: Int) -> CGFloat {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, referenceLengthForHeaderIn section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, referenceLengthForFooterIn section: Int) -> CGFloat {
-        return 0
-    }
-}
-
 
 class GridLayout: UICollectionViewLayout {
 
@@ -396,7 +367,7 @@ class GridLayout: UICollectionViewLayout {
 
     private func numberOfItemsPerLine(for section: Int) -> Int {
         if let delegate = collectionView?.delegate as? GridLayoutDelegate {
-            return delegate.collectionView(collectionView!, layout: self, numberItemsPerLineForSectionAt: section)
+            return delegate.collectionView?(collectionView!, layout: self, numberItemsPerLineForSectionAt: section) ?? numberOfItemsPerLine
         } else {
             return numberOfItemsPerLine
         }
@@ -404,7 +375,7 @@ class GridLayout: UICollectionViewLayout {
     
     private func lineSpacing(for section: Int) -> CGFloat {
         if let delegate = collectionView?.delegate as? GridLayoutDelegate {
-            return delegate.collectionView(collectionView!, layout: self, lineSpacingForSectionAt: section)
+            return delegate.collectionView?(collectionView!, layout: self, lineSpacingForSectionAt: section) ?? lineSpacing
         } else {
             return lineSpacing
         }
@@ -412,7 +383,7 @@ class GridLayout: UICollectionViewLayout {
 
     private func sectionInset(for section: Int) -> UIEdgeInsets {
         if let delegate = collectionView?.delegate as? GridLayoutDelegate {
-            return delegate.collectionView(collectionView!, layout: self, insetForSectionAt: section)
+            return delegate.collectionView?(collectionView!, layout: self, insetForSectionAt: section) ?? sectionInset
         } else {
             return sectionInset
         }
@@ -435,7 +406,7 @@ class GridLayout: UICollectionViewLayout {
 
     private func headerLength(for section: Int) -> CGFloat {
         if let delegate = collectionView?.delegate as? GridLayoutDelegate {
-            return delegate.collectionView(collectionView!, layout: self, referenceLengthForHeaderIn: section)
+            return delegate.collectionView?(collectionView!, layout: self, referenceLengthForHeaderIn: section) ?? headerReferenceLength
         } else {
             return headerReferenceLength
         }
@@ -443,7 +414,7 @@ class GridLayout: UICollectionViewLayout {
 
     private func footerLength(for section: Int) -> CGFloat {
         if let delegate = collectionView?.delegate as? GridLayoutDelegate {
-            return delegate.collectionView(collectionView!, layout: self, referenceLengthForFooterIn: section)
+            return delegate.collectionView?(collectionView!, layout: self, referenceLengthForFooterIn: section) ?? footerReferenceLength
         } else {
             return footerReferenceLength
         }
@@ -473,7 +444,7 @@ class GridLayout: UICollectionViewLayout {
     
     private func interitemSpacing(for section: Int) -> CGFloat {
         if let delegate = collectionView?.delegate as? GridLayoutDelegate {
-            return delegate.collectionView(collectionView!, layout: self, interitemSpacingForSectionAt: section)
+            return delegate.collectionView?(collectionView!, layout: self, interitemSpacingForSectionAt: section) ?? interitemSpacing
         } else {
             return interitemSpacing
         }
@@ -481,7 +452,7 @@ class GridLayout: UICollectionViewLayout {
     
     private func aspectRatio(for section: Int) -> CGFloat {
         if let delegate = collectionView?.delegate as? GridLayoutDelegate {
-            return delegate.collectionView(collectionView!, layout: self, aspectRatioForItemsInSectionAt: section)
+            return delegate.collectionView?(collectionView!, layout: self, aspectRatioForItemsInSectionAt: section) ?? aspectRatio
         } else {
             return aspectRatio
         }
