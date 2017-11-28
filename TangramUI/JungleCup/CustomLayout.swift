@@ -266,11 +266,11 @@ extension CustomLayout {
             let menuOffset = settings.isMenuSticky ? menuSize.height : 0
             attributes.transform =  CGAffineTransform(
                 translationX: 0,
-                y: min(upperLimit, max(0, contentOffset.y - attributes.initialOrigin.y + menuOffset)))
+                y: min(upperLimit, max(0, contentOffset.y - attributes.initialOrigin.y + menuOffset))
+            )
             
-        } else if type == .header,
-            settings.isHeaderStretchy {
-            
+        } else if type == .header, settings.isHeaderStretchy {
+
             let updatedHeight = min(
                 collectionView.frame.height,
                 max(headerSize.height, headerSize.height - contentOffset.y))
