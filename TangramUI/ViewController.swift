@@ -21,7 +21,9 @@ class ViewController: UIViewController {
             ReverseLayoutController.self,
             ReorderableTripletLayoutController.self,
             JungleCupCollectionViewController.self,
-            ExcelLayoutController.self
+            ExcelLayoutController.self,
+            StretchyHeaderLayoutController.self,
+            GridLayoutController.self
         ]
     ]
     

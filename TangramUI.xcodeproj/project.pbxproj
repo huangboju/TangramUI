@@ -42,6 +42,11 @@
 		BEC2AECE1FC068B500FB98C2 /* ReverseLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC2AECD1FC068B500FB98C2 /* ReverseLayout.swift */; };
 		BEDA5DA01FCBE3DD00777CBC /* ExcelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA5D9F1FCBE3DD00777CBC /* ExcelLayout.swift */; };
 		BEDA5DA21FCBE45F00777CBC /* ExcelLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA5DA11FCBE45F00777CBC /* ExcelLayoutController.swift */; };
+		BEDA5DA61FCD059D00777CBC /* StretchyHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA5DA51FCD059D00777CBC /* StretchyHeaderLayout.swift */; };
+		BEDA5DA81FCD07D000777CBC /* StretchyHeaderLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA5DA71FCD07D000777CBC /* StretchyHeaderLayoutController.swift */; };
+		BEDA5DAB1FCD278700777CBC /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA5DAA1FCD278700777CBC /* GridLayout.swift */; };
+		BEDA5DAD1FCD4CE300777CBC /* GridLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA5DAC1FCD4CE300777CBC /* GridLayoutController.swift */; };
+		BEDA5DAF1FCD4D8E00777CBC /* GridLayoutHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA5DAE1FCD4D8E00777CBC /* GridLayoutHeaderFooterView.swift */; };
 		BEDE1E541FBEEE930051F702 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E531FBEEE930051F702 /* UIColor+Extension.swift */; };
 		BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E551FBEEF160051F702 /* FooterReusableView.swift */; };
 		BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E571FBEEF8C0051F702 /* HeaderReusableView.swift */; };
@@ -122,6 +127,11 @@
 		BEC2AECD1FC068B500FB98C2 /* ReverseLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseLayout.swift; sourceTree = "<group>"; };
 		BEDA5D9F1FCBE3DD00777CBC /* ExcelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelLayout.swift; sourceTree = "<group>"; };
 		BEDA5DA11FCBE45F00777CBC /* ExcelLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelLayoutController.swift; sourceTree = "<group>"; };
+		BEDA5DA51FCD059D00777CBC /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
+		BEDA5DA71FCD07D000777CBC /* StretchyHeaderLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayoutController.swift; sourceTree = "<group>"; };
+		BEDA5DAA1FCD278700777CBC /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		BEDA5DAC1FCD4CE300777CBC /* GridLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutController.swift; sourceTree = "<group>"; };
+		BEDA5DAE1FCD4D8E00777CBC /* GridLayoutHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutHeaderFooterView.swift; sourceTree = "<group>"; };
 		BEDE1E531FBEEE930051F702 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BEDE1E551FBEEF160051F702 /* FooterReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterReusableView.swift; sourceTree = "<group>"; };
 		BEDE1E571FBEEF8C0051F702 /* HeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
@@ -190,6 +200,8 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				BEDA5DA91FCD277900777CBC /* GridLayout */,
+				BEDA5DA41FCD058A00777CBC /* StretchyHeaderLayout */,
 				BEDA5D9E1FCBE3C700777CBC /* ExcelLayout */,
 				BEF73ACB1FCAB59E00A37524 /* JungleCup */,
 				BE95F50B1FC66CB70033D83B /* photos */,
@@ -292,6 +304,25 @@
 				BEDA5DA11FCBE45F00777CBC /* ExcelLayoutController.swift */,
 			);
 			path = ExcelLayout;
+			sourceTree = "<group>";
+		};
+		BEDA5DA41FCD058A00777CBC /* StretchyHeaderLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BEDA5DA51FCD059D00777CBC /* StretchyHeaderLayout.swift */,
+				BEDA5DA71FCD07D000777CBC /* StretchyHeaderLayoutController.swift */,
+			);
+			path = StretchyHeaderLayout;
+			sourceTree = "<group>";
+		};
+		BEDA5DA91FCD277900777CBC /* GridLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BEDA5DAA1FCD278700777CBC /* GridLayout.swift */,
+				BEDA5DAC1FCD4CE300777CBC /* GridLayoutController.swift */,
+				BEDA5DAE1FCD4D8E00777CBC /* GridLayoutHeaderFooterView.swift */,
+			);
+			path = GridLayout;
 			sourceTree = "<group>";
 		};
 		BEDE1E521FBEEDF10051F702 /* Extensions */ = {
@@ -489,6 +520,7 @@
 				BE0D89FC1FBED81800CA8114 /* ViewController.swift in Sources */,
 				BEF73AD11FCAB64E00A37524 /* CustomLayoutSettings.swift in Sources */,
 				BE7FAF971FC2873100788A5A /* ReorderableTripletLayout.swift in Sources */,
+				BEDA5DAF1FCD4D8E00777CBC /* GridLayoutHeaderFooterView.swift in Sources */,
 				BEF73AD71FCADA9900A37524 /* PlayerCell.swift in Sources */,
 				BEF73AD51FCAB79000A37524 /* MockDataManager.swift in Sources */,
 				BEF73AD31FCAB6EB00A37524 /* JungleCupController.swift in Sources */,
@@ -502,14 +534,18 @@
 				BEDE1E5F1FBF0FFD0051F702 /* ServiceOnePicCell.swift in Sources */,
 				BEDE1E541FBEEE930051F702 /* UIColor+Extension.swift in Sources */,
 				BEF73ACD1FCAB5B000A37524 /* CustomLayoutAttributes.swift in Sources */,
+				BEDA5DA61FCD059D00777CBC /* StretchyHeaderLayout.swift in Sources */,
 				BEF73AD91FCAE0D700A37524 /* SectionFooterView.swift in Sources */,
 				BEC2AECC1FC0681F00FB98C2 /* ReverseLayoutController.swift in Sources */,
+				BEDA5DAB1FCD278700777CBC /* GridLayout.swift in Sources */,
 				BEC2AECE1FC068B500FB98C2 /* ReverseLayout.swift in Sources */,
 				BEDE1E5A1FBEF0E40051F702 /* ServiceLeftPicCell.swift in Sources */,
 				BEDE1E631FBF15250051F702 /* BaseController.swift in Sources */,
 				BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */,
 				BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */,
 				BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */,
+				BEDA5DAD1FCD4CE300777CBC /* GridLayoutController.swift in Sources */,
+				BEDA5DA81FCD07D000777CBC /* StretchyHeaderLayoutController.swift in Sources */,
 				BEDA5DA01FCBE3DD00777CBC /* ExcelLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
