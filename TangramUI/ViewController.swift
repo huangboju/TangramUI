@@ -23,7 +23,8 @@ class ViewController: UIViewController {
             JungleCupCollectionViewController.self,
             ExcelLayoutController.self,
             StretchyHeaderLayoutController.self,
-            GridLayoutController.self
+            GridLayoutController.self,
+            PinterestLayoutController.self
         ]
     ]
     

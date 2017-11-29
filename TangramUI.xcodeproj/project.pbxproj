@@ -15,6 +15,11 @@
 		BE0D8A0F1FBED81800CA8114 /* TangramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D8A0E1FBED81800CA8114 /* TangramUITests.swift */; };
 		BE0D8A1A1FBED81800CA8114 /* TangramUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D8A191FBED81800CA8114 /* TangramUIUITests.swift */; };
 		BE0D8A291FBEDCA600CA8114 /* ServiceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D8A281FBEDCA600CA8114 /* ServiceLayout.swift */; };
+		BE511D651FCE635100BD9489 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE511D641FCE635100BD9489 /* PinterestLayout.swift */; };
+		BE511D671FCE638500BD9489 /* PinterestLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE511D661FCE638500BD9489 /* PinterestLayoutController.swift */; };
+		BE511D691FCE64E500BD9489 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE511D681FCE64E500BD9489 /* Photo.swift */; };
+		BE511D6C1FCE654E00BD9489 /* Photos.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE511D6A1FCE654E00BD9489 /* Photos.plist */; };
+		BE511D6D1FCE654E00BD9489 /* Photos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE511D6B1FCE654E00BD9489 /* Photos.xcassets */; };
 		BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7FAF941FC2796700788A5A /* TripletLayout.swift */; };
 		BE7FAF971FC2873100788A5A /* ReorderableTripletLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7FAF961FC2873100788A5A /* ReorderableTripletLayout.swift */; };
 		BE95F5201FC66CB70033D83B /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE95F50C1FC66CB70033D83B /* 8.jpg */; };
@@ -100,6 +105,11 @@
 		BE0D8A1B1FBED81800CA8114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0D8A281FBEDCA600CA8114 /* ServiceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayout.swift; sourceTree = "<group>"; };
 		BE0D8A2A1FBEDCB400CA8114 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+		BE511D641FCE635100BD9489 /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		BE511D661FCE638500BD9489 /* PinterestLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayoutController.swift; sourceTree = "<group>"; };
+		BE511D681FCE64E500BD9489 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		BE511D6A1FCE654E00BD9489 /* Photos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Photos.plist; sourceTree = "<group>"; };
+		BE511D6B1FCE654E00BD9489 /* Photos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Photos.xcassets; sourceTree = "<group>"; };
 		BE7FAF941FC2796700788A5A /* TripletLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripletLayout.swift; sourceTree = "<group>"; };
 		BE7FAF961FC2873100788A5A /* ReorderableTripletLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderableTripletLayout.swift; sourceTree = "<group>"; };
 		BE95F50C1FC66CB70033D83B /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
@@ -200,6 +210,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				BE511D631FCE634800BD9489 /* PinterestLayout */,
 				BEDA5DA91FCD277900777CBC /* GridLayout */,
 				BEDA5DA41FCD058A00777CBC /* StretchyHeaderLayout */,
 				BEDA5D9E1FCBE3C700777CBC /* ExcelLayout */,
@@ -249,6 +260,18 @@
 				BEDE1E641FBF155B0051F702 /* ServiceLayoutController.swift */,
 			);
 			path = ServiceLayout;
+			sourceTree = "<group>";
+		};
+		BE511D631FCE634800BD9489 /* PinterestLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BE511D6A1FCE654E00BD9489 /* Photos.plist */,
+				BE511D6B1FCE654E00BD9489 /* Photos.xcassets */,
+				BE511D681FCE64E500BD9489 /* Photo.swift */,
+				BE511D641FCE635100BD9489 /* PinterestLayout.swift */,
+				BE511D661FCE638500BD9489 /* PinterestLayoutController.swift */,
+			);
+			path = PinterestLayout;
 			sourceTree = "<group>";
 		};
 		BE7FAF931FC2792E00788A5A /* ReorderableTripletLayout */ = {
@@ -478,12 +501,14 @@
 				BE95F52D1FC66CB70033D83B /* 4.jpg in Resources */,
 				BE95F5311FC66CB70033D83B /* 2.jpg in Resources */,
 				BE0D8A041FBED81800CA8114 /* LaunchScreen.storyboard in Resources */,
+				BE511D6C1FCE654E00BD9489 /* Photos.plist in Resources */,
 				BE95F5321FC66CB70033D83B /* 3.jpg in Resources */,
 				BE95F52A1FC66CB70033D83B /* 20.jpg in Resources */,
 				BE95F52F1FC66CB70033D83B /* 7.jpg in Resources */,
 				BE95F5331FC66CB70033D83B /* 1.jpg in Resources */,
 				BE95F5271FC66CB70033D83B /* 13.jpg in Resources */,
 				BE0D8A011FBED81800CA8114 /* Assets.xcassets in Resources */,
+				BE511D6D1FCE654E00BD9489 /* Photos.xcassets in Resources */,
 				BE95F5301FC66CB70033D83B /* 6.jpg in Resources */,
 				BE95F5241FC66CB70033D83B /* 17.jpg in Resources */,
 				BE95F5211FC66CB70033D83B /* 9.jpg in Resources */,
@@ -526,8 +551,10 @@
 				BEF73AD31FCAB6EB00A37524 /* JungleCupController.swift in Sources */,
 				BEDE1E611FBF141D0051F702 /* ServicePicTwoTitleCell.swift in Sources */,
 				BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */,
+				BE511D691FCE64E500BD9489 /* Photo.swift in Sources */,
 				BEF73ADB1FCAE18900A37524 /* MenuView.swift in Sources */,
 				BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */,
+				BE511D651FCE635100BD9489 /* PinterestLayout.swift in Sources */,
 				BE0D89FA1FBED81800CA8114 /* AppDelegate.swift in Sources */,
 				BEF73ACF1FCAB60A00A37524 /* CustomLayout.swift in Sources */,
 				BEDE1E5C1FBF0EE40051F702 /* ServiceNormalCell.swift in Sources */,
@@ -541,6 +568,7 @@
 				BEC2AECE1FC068B500FB98C2 /* ReverseLayout.swift in Sources */,
 				BEDE1E5A1FBEF0E40051F702 /* ServiceLeftPicCell.swift in Sources */,
 				BEDE1E631FBF15250051F702 /* BaseController.swift in Sources */,
+				BE511D671FCE638500BD9489 /* PinterestLayoutController.swift in Sources */,
 				BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */,
 				BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */,
 				BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */,
