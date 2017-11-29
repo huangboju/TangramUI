@@ -17,7 +17,7 @@ class PinterestLayout: UICollectionViewLayout {
     var delegate: PinterestLayoutDelegate? {
         return collectionView?.delegate as? PinterestLayoutDelegate
     }
-    
+
     //2. Configurable properties
     fileprivate var numberOfColumns = 2
     fileprivate var cellPadding: CGFloat = 6
@@ -79,9 +79,9 @@ class PinterestLayout: UICollectionViewLayout {
     }
 
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        
+    
         var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
-        
+
         // Loop through the cache and look for items in the rect
         for attributes in cache {
             if attributes.frame.intersects(rect) {
@@ -90,7 +90,7 @@ class PinterestLayout: UICollectionViewLayout {
         }
         return visibleLayoutAttributes
     }
-    
+
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return cache[indexPath.item]
     }

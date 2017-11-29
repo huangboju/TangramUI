@@ -31,7 +31,7 @@ final class CustomLayout: UICollectionViewLayout {
     override public var collectionViewContentSize: CGSize {
         return CGSize(width: collectionViewWidth, height: contentHeight)
     }
-    
+
     // MARK: - Properties
     var settings = CustomLayoutSettings()
     private var oldBounds = CGRect.zero
@@ -43,7 +43,7 @@ final class CustomLayout: UICollectionViewLayout {
     private var collectionViewHeight: CGFloat {
         return collectionView!.frame.height
     }
-    
+
     private var collectionViewWidth: CGFloat {
         return collectionView!.frame.width
     }
@@ -109,24 +109,24 @@ extension CustomLayout {
             cache.isEmpty else {
                 return
         }
-        
+
         prepareCache()
         contentHeight = 0
         zIndex = 0
         oldBounds = collectionView.bounds
         let itemSize = CGSize(width: cellWidth, height: cellHeight)
-        
+
         let headerAttributes = CustomLayoutAttributes(
             forSupplementaryViewOfKind: Element.header.kind,
-            with: IndexPath(item: 0, section: 0)
+            with: .zero
         )
         prepareElement(size: headerSize, type: .header, attributes: headerAttributes)
         
         let menuAttributes = CustomLayoutAttributes(
             forSupplementaryViewOfKind: Element.menu.kind,
-            with: IndexPath(item: 0, section: 0))
+            with: .zero)
         prepareElement(size: menuSize, type: .menu, attributes: menuAttributes)
-        
+
         for section in 0 ..< collectionView.numberOfSections {
             
             let sectionHeaderAttributes = CustomLayoutAttributes(
@@ -142,7 +142,7 @@ extension CustomLayout {
                 let attributes = CustomLayoutAttributes(forCellWith: cellIndexPath)
                 let lineInterSpace = settings.minimumLineSpacing
                 attributes.frame = CGRect(
-                    x: 0 + settings.minimumInteritemSpacing,
+                    x: settings.minimumInteritemSpacing,
                     y: contentHeight + lineInterSpace,
                     width: itemSize.width,
                     height: itemSize.height
@@ -152,16 +152,17 @@ extension CustomLayout {
                 cache[.cell]?[cellIndexPath] = attributes
                 zIndex += 1
             }
-            
+
             let sectionFooterAttributes = CustomLayoutAttributes(
                 forSupplementaryViewOfKind: UICollectionElementKindSectionFooter,
-                with: IndexPath(item: 1, section: section))
+                with: IndexPath(item: 1, section: section)
+            )
             prepareElement(
                 size: sectionsFooterSize,
                 type: .sectionFooter,
                 attributes: sectionFooterAttributes)
         }
-        
+
         updateZIndexes()
     }
     
@@ -199,11 +200,11 @@ extension CustomLayout {
         guard let sectionHeaders = cache[.sectionHeader] else { return }
         
         var sectionHeadersZIndex = zIndex
-        for (_, attributes) in sectionHeaders {
+        for attributes in sectionHeaders.values {
             attributes.zIndex = sectionHeadersZIndex
             sectionHeadersZIndex += 1
         }
-        
+
         cache[.menu]?.first?.value.zIndex = sectionHeadersZIndex
     }
 }
@@ -270,23 +271,26 @@ extension CustomLayout {
             )
             
         } else if type == .header, settings.isHeaderStretchy {
-
+            let headerHeight = headerSize.height
             let updatedHeight = min(
                 collectionView.frame.height,
-                max(headerSize.height, headerSize.height - contentOffset.y))
-            
-            let scaleFactor = updatedHeight / headerSize.height
-            let delta = (updatedHeight - headerSize.height) / 2
+                max(headerHeight, headerHeight - contentOffset.y)
+            )
+
+            let scaleFactor = updatedHeight / headerHeight
+            let delta = (updatedHeight - headerHeight) / 2
             let scale = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
-            let translation = CGAffineTransform(translationX: 0, y: min(contentOffset.y, headerSize.height) + delta)
+            let translation = CGAffineTransform(translationX: 0, y: min(contentOffset.y, headerHeight) + delta)
             attributes.transform = scale.concatenating(translation)
             if settings.isAlphaOnHeaderActive {
-                attributes.headerOverlayAlpha = min(settings.headerOverlayMaxAlphaValue, contentOffset.y / headerSize.height)
+                attributes.headerOverlayAlpha = min(
+                    settings.headerOverlayMaxAlphaValue,
+                    contentOffset.y / headerHeight
+                )
             }
             
-        } else if type == .menu,
-            settings.isMenuSticky {
-            
+        } else if type == .menu, settings.isMenuSticky {
+
             attributes.transform = CGAffineTransform(translationX: 0, y: max(attributes.initialOrigin.y, contentOffset.y) - headerSize.height)
         }
     }
@@ -296,6 +300,12 @@ extension CustomLayout {
         let parallaxOffset = -(settings.maxParallaxOffset * cellDistanceFromCenter) / (halfHeight + halfCellHeight)
         let boundedParallaxOffset = min(max(-settings.maxParallaxOffset, parallaxOffset), settings.maxParallaxOffset)
         attributes.parallax = CGAffineTransform(translationX: 0, y: boundedParallaxOffset)
+    }
+}
+
+extension IndexPath {
+    static var zero: IndexPath {
+        return IndexPath(row: 0, section: 0)
     }
 }
 
