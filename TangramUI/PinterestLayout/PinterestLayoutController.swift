@@ -98,12 +98,15 @@ class AnnotatedPhotoCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        contentView.addSubview(containerView)
+        
+        // !!! 这里用contentView约束会不对
+        
+        addSubview(containerView)
 
-        containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        containerView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        containerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        containerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
 
         containerView.addSubview(imageView)
         imageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
