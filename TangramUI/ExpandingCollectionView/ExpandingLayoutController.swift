@@ -18,7 +18,6 @@ class ExpandingLayoutController: BaseController {
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
         collectionView.register(InspirationCell.self, forCellWithReuseIdentifier: "InspirationCell")
         return collectionView
     }()

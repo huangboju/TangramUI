@@ -39,7 +39,7 @@ class ExpandingLayout: UICollectionViewLayout {
     var contentOffsetY: CGFloat {
         return collectionView?.contentOffset.y ?? 0
     }
-    
+
     /* Returns the width of the collection view */
     var width: CGFloat {
         return collectionView?.bounds.width ?? 0
@@ -74,7 +74,7 @@ class ExpandingLayout: UICollectionViewLayout {
         
         for item in 0 ..< numberOfItems {
             // 1
-            let indexPath = IndexPath(item:item, section:0)
+            let indexPath = IndexPath(item: item, section:0)
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
             
             // 2
@@ -82,12 +82,12 @@ class ExpandingLayout: UICollectionViewLayout {
             var height = standardHeight
             
             // 3
-            if indexPath.item == featuredItemIndex {
+            if item == featuredItemIndex {
                 // 4
                 let yOffset = standardHeight * nextItemPercentageOffset
-                y = collectionView!.contentOffset.y - yOffset
+                y = contentOffsetY - yOffset
                 height = featuredHeight
-            } else if indexPath.item == (featuredItemIndex + 1) && indexPath.item != numberOfItems {
+            } else if item == (featuredItemIndex + 1) && item != numberOfItems {
                 // 5
                 let maxY = y + standardHeight
                 height = standardHeight + max((featuredHeight - standardHeight) * nextItemPercentageOffset, 0)
@@ -111,7 +111,7 @@ class ExpandingLayout: UICollectionViewLayout {
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
-    
+
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         let itemIndex = round(proposedContentOffset.y / dragOffset)
         let yOffset = itemIndex * dragOffset
