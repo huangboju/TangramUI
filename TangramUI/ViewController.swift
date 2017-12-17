@@ -24,7 +24,8 @@ class ViewController: UIViewController {
             ExcelLayoutController.self,
             StretchyHeaderLayoutController.self,
             GridLayoutController.self,
-            PinterestLayoutController.self
+            PinterestLayoutController.self,
+            ExpandingLayoutController.self
         ]
     ]
     
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
         title = "UICollectionView"
 
         view.addSubview(tableView)
+        
     }
 }
 

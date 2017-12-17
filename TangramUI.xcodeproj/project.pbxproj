@@ -20,6 +20,13 @@
 		BE511D691FCE64E500BD9489 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE511D681FCE64E500BD9489 /* Photo.swift */; };
 		BE511D6C1FCE654E00BD9489 /* Photos.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE511D6A1FCE654E00BD9489 /* Photos.plist */; };
 		BE511D6D1FCE654E00BD9489 /* Photos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE511D6B1FCE654E00BD9489 /* Photos.xcassets */; };
+		BE7D4A3F1FE67D06005AD328 /* ExpandingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A3E1FE67D06005AD328 /* ExpandingLayout.swift */; };
+		BE7D4A421FE67DA8005AD328 /* Inspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A401FE67DA7005AD328 /* Inspiration.swift */; };
+		BE7D4A431FE67DA8005AD328 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A411FE67DA8005AD328 /* Session.swift */; };
+		BE7D4A451FE67DC6005AD328 /* ExpandingLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A441FE67DC6005AD328 /* ExpandingLayoutController.swift */; };
+		BE7D4A471FE67E64005AD328 /* InspirationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A461FE67E64005AD328 /* InspirationCell.swift */; };
+		BE7D4A4D1FE69078005AD328 /* Inspirations.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE7D4A4A1FE69077005AD328 /* Inspirations.plist */; };
+		BE7D4A4E1FE69078005AD328 /* Inspirations.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE7D4A4B1FE69077005AD328 /* Inspirations.xcassets */; };
 		BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7FAF941FC2796700788A5A /* TripletLayout.swift */; };
 		BE7FAF971FC2873100788A5A /* ReorderableTripletLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7FAF961FC2873100788A5A /* ReorderableTripletLayout.swift */; };
 		BE95F5201FC66CB70033D83B /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE95F50C1FC66CB70033D83B /* 8.jpg */; };
@@ -110,6 +117,13 @@
 		BE511D681FCE64E500BD9489 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		BE511D6A1FCE654E00BD9489 /* Photos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Photos.plist; sourceTree = "<group>"; };
 		BE511D6B1FCE654E00BD9489 /* Photos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Photos.xcassets; sourceTree = "<group>"; };
+		BE7D4A3E1FE67D06005AD328 /* ExpandingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingLayout.swift; sourceTree = "<group>"; };
+		BE7D4A401FE67DA7005AD328 /* Inspiration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inspiration.swift; sourceTree = "<group>"; };
+		BE7D4A411FE67DA8005AD328 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		BE7D4A441FE67DC6005AD328 /* ExpandingLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingLayoutController.swift; sourceTree = "<group>"; };
+		BE7D4A461FE67E64005AD328 /* InspirationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationCell.swift; sourceTree = "<group>"; };
+		BE7D4A4A1FE69077005AD328 /* Inspirations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Inspirations.plist; sourceTree = "<group>"; };
+		BE7D4A4B1FE69077005AD328 /* Inspirations.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Inspirations.xcassets; sourceTree = "<group>"; };
 		BE7FAF941FC2796700788A5A /* TripletLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripletLayout.swift; sourceTree = "<group>"; };
 		BE7FAF961FC2873100788A5A /* ReorderableTripletLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderableTripletLayout.swift; sourceTree = "<group>"; };
 		BE95F50C1FC66CB70033D83B /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
@@ -210,6 +224,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				BE7D4A3D1FE67CC4005AD328 /* ExpandingCollectionView */,
 				BE511D631FCE634800BD9489 /* PinterestLayout */,
 				BEDA5DA91FCD277900777CBC /* GridLayout */,
 				BEDA5DA41FCD058A00777CBC /* StretchyHeaderLayout */,
@@ -272,6 +287,28 @@
 				BE511D661FCE638500BD9489 /* PinterestLayoutController.swift */,
 			);
 			path = PinterestLayout;
+			sourceTree = "<group>";
+		};
+		BE7D4A3D1FE67CC4005AD328 /* ExpandingCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				BE7D4A481FE69055005AD328 /* Resource */,
+				BE7D4A401FE67DA7005AD328 /* Inspiration.swift */,
+				BE7D4A411FE67DA8005AD328 /* Session.swift */,
+				BE7D4A3E1FE67D06005AD328 /* ExpandingLayout.swift */,
+				BE7D4A441FE67DC6005AD328 /* ExpandingLayoutController.swift */,
+				BE7D4A461FE67E64005AD328 /* InspirationCell.swift */,
+			);
+			path = ExpandingCollectionView;
+			sourceTree = "<group>";
+		};
+		BE7D4A481FE69055005AD328 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BE7D4A4A1FE69077005AD328 /* Inspirations.plist */,
+				BE7D4A4B1FE69077005AD328 /* Inspirations.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		BE7FAF931FC2792E00788A5A /* ReorderableTripletLayout */ = {
@@ -494,6 +531,7 @@
 				BE95F5261FC66CB70033D83B /* 12.jpg in Resources */,
 				BE95F5231FC66CB70033D83B /* 15.jpg in Resources */,
 				BE95F52E1FC66CB70033D83B /* 5.jpg in Resources */,
+				BE7D4A4E1FE69078005AD328 /* Inspirations.xcassets in Resources */,
 				BE95F5221FC66CB70033D83B /* 14.jpg in Resources */,
 				BE95F5281FC66CB70033D83B /* 11.jpg in Resources */,
 				BE95F52B1FC66CB70033D83B /* 18.jpg in Resources */,
@@ -512,6 +550,7 @@
 				BE95F5301FC66CB70033D83B /* 6.jpg in Resources */,
 				BE95F5241FC66CB70033D83B /* 17.jpg in Resources */,
 				BE95F5211FC66CB70033D83B /* 9.jpg in Resources */,
+				BE7D4A4D1FE69078005AD328 /* Inspirations.plist in Resources */,
 				BE95F5251FC66CB70033D83B /* 16.jpg in Resources */,
 				BE0D89FF1FBED81800CA8114 /* Main.storyboard in Resources */,
 				BE95F52C1FC66CB70033D83B /* 19.jpg in Resources */,
@@ -541,6 +580,7 @@
 			files = (
 				BE95F5351FC66CFC0033D83B /* ReorderableTripletLayoutController.swift in Sources */,
 				BEDA5DA21FCBE45F00777CBC /* ExcelLayoutController.swift in Sources */,
+				BE7D4A451FE67DC6005AD328 /* ExpandingLayoutController.swift in Sources */,
 				BE0D8A291FBEDCA600CA8114 /* ServiceLayout.swift in Sources */,
 				BE0D89FC1FBED81800CA8114 /* ViewController.swift in Sources */,
 				BEF73AD11FCAB64E00A37524 /* CustomLayoutSettings.swift in Sources */,
@@ -552,12 +592,15 @@
 				BEDE1E611FBF141D0051F702 /* ServicePicTwoTitleCell.swift in Sources */,
 				BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */,
 				BE511D691FCE64E500BD9489 /* Photo.swift in Sources */,
+				BE7D4A471FE67E64005AD328 /* InspirationCell.swift in Sources */,
 				BEF73ADB1FCAE18900A37524 /* MenuView.swift in Sources */,
 				BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */,
 				BE511D651FCE635100BD9489 /* PinterestLayout.swift in Sources */,
 				BE0D89FA1FBED81800CA8114 /* AppDelegate.swift in Sources */,
 				BEF73ACF1FCAB60A00A37524 /* CustomLayout.swift in Sources */,
+				BE7D4A3F1FE67D06005AD328 /* ExpandingLayout.swift in Sources */,
 				BEDE1E5C1FBF0EE40051F702 /* ServiceNormalCell.swift in Sources */,
+				BE7D4A431FE67DA8005AD328 /* Session.swift in Sources */,
 				BEDE1E5F1FBF0FFD0051F702 /* ServiceOnePicCell.swift in Sources */,
 				BEDE1E541FBEEE930051F702 /* UIColor+Extension.swift in Sources */,
 				BEF73ACD1FCAB5B000A37524 /* CustomLayoutAttributes.swift in Sources */,
@@ -570,6 +613,7 @@
 				BEDE1E631FBF15250051F702 /* BaseController.swift in Sources */,
 				BE511D671FCE638500BD9489 /* PinterestLayoutController.swift in Sources */,
 				BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */,
+				BE7D4A421FE67DA8005AD328 /* Inspiration.swift in Sources */,
 				BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */,
 				BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */,
 				BEDA5DAD1FCD4CE300777CBC /* GridLayoutController.swift in Sources */,
