@@ -12,16 +12,16 @@ let AAPLReusableIdentifierFromClass: (UIView.Type) -> String = { "\($0)" }
 
 let AAPLCollectionElementKindPlaceholder = "AAPLCollectionElementKindPlaceholder"
 
-class AAPLDataSource<ItemType> {
+class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
 
     /// The title of this data source. This value is used to populate section headers and the segmented control tab.
     open var title: String?
-    
+
     /// The number of sections in this data source.
     open func numberOfSections() -> Int {
         return 1
     }
-    
+
     /// Return the number of items in a specific section. Implement this instead of the UICollectionViewDataSource method.
     open func numberOfItems(in sectionIndex: Int) -> Int {
         return 0
@@ -126,13 +126,15 @@ class AAPLDataSource<ItemType> {
     }
     
     /// Update the supplementary view or views associated with the header's AAPLSupplementaryItem and invalidate the layout
-    open func notifyContentUpdated(for header: AAPLSupplementaryItem) {
+    open func notifyContentUpdated(forHeader header: AAPLSupplementaryItem) {
 
     }
 
     /// Update the supplementary view or views associated with the footer's AAPLSupplementaryItem and invalidate the layout
-    open func notifyContentUpdated(for footer: AAPLSupplementaryItem) {
-    
+    open func notifyContentUpdated(forFooter footer: AAPLSupplementaryItem) {
+        let indexPaths = self.indexPaths(for: footer, header: false)
+
+        notifyContentUpdatedForSupplementaryItem(footer, at: indexPaths, header: false)
     }
     
 
@@ -177,16 +179,23 @@ class AAPLDataSource<ItemType> {
      
      @note The configuration block for this header will be called once for each section in the data source.
      */
-    var newSectionHeader: AAPLSupplementaryItem {
-        
+    var newSectionHeader: AAPLSupplementaryItem? {
+        let defaultMetrics = self.defaultMetrics as? AAPLDataSourceSectionMetrics
+
+        let header = defaultMetrics?.newHeader as? AAPLDataSourceSupplementaryItem
+
+        return header
     }
-    
+
     /** Create a footer for each section in this data source.
      
      @note Like -newSectionHeader, the configuration block for this footer will be called once for each section in the data source.
      */
-    var newSectionFooter: AAPLSupplementaryItem {
-        
+    var newSectionFooter: AAPLSupplementaryItem? {
+        let defaultMetrics = self.defaultMetrics as? AAPLDataSourceSectionMetrics
+        let footer = defaultMetrics?.newFooter as? AAPLDataSourceSupplementaryItem
+
+        return footer
     }
     
     /// Create a new header for a specific section. This header will only appear in the given section.
@@ -292,8 +301,19 @@ class AAPLDataSource<ItemType> {
     }
     
     /// Compute a flattened snapshot of the layout metrics associated with this and any child data sources.
-    private var snapshotMetrics: [Int: AAPLDataSourceSectionMetrics] = [:] {
-    
+    private var snapshotMetrics: [Int: AAPLDataSourceSectionMetrics] {
+        let numberOfSections = self.numberOfSections()
+        var metrics: [Int: AAPLDataSourceSectionMetrics] = [:]
+
+        let globalMetrics = snapshotMetricsForSection(at: AAPLGlobalSectionIndex)
+        metrics[AAPLGlobalSectionIndex] = globalMetrics
+
+        for sectionIndex in 0 ..< numberOfSections{
+            let sectionMetrics = snapshotMetricsForSection(at: sectionIndex)
+            metrics[sectionIndex] = sectionMetrics
+        }
+
+        return metrics
     }
 
     /// Create a flattened snapshop of the layout metrics for the specified section. This resolves metrics from parent and child data sources.
@@ -302,23 +322,46 @@ class AAPLDataSource<ItemType> {
     }
     
     /// Should an activity indicator be displayed while we're refreshing the content. Default is NO.
-    private var showsActivityIndicatorWhileRefreshingContent: Bool {
-        
-    }
+    private(set) var showsActivityIndicatorWhileRefreshingContent = false
     
     /// Will this data source show an activity indicator given its current state?
     private var shouldShowActivityIndicator: Bool {
-        
+        let loadingState = self.loadingState
+
+        return (showsActivityIndicatorWhileRefreshingContent && loadingState == AAPLLoadStateRefreshingContent) || loadingState == AAPLLoadStateLoadingContent
     }
 
+    private var placeholder: AAPLDataSourcePlaceholder?
     /// Will this data source show a placeholder given its current state?
     private var shouldShowPlaceholder: Bool {
-        
+        return placeholder != nil
     }
-    
+
+    private var loadingProgress: AAPLLoadingProgress?
     /// Load the content of this data source.
     private func loadContent() {
+
+        loadingState = Set([AAPLLoadStateInitial, AAPLLoadStateLoadingContent]).contains(loadingState) ? AAPLLoadStateLoadingContent : AAPLLoadStateRefreshingContent
         
+        notifyWillLoadContent()
+
+        let loadingProgress = AAPLLoadingProgress { [weak self] (newState, error, update) in
+            // The only time newState will be nil is if the progress was cancelled.
+            guard let newState = newState else {
+                return
+            }
+            self?.endLoadingContent(with: newState, error: error, update: {
+                if let me = self {
+                    update?(me)
+                }
+            })
+        }
+
+        // Tell previous loading instance it's no longer current and remember this loading instance
+        loadingProgress.isCancelled = true
+        self.loadingProgress = loadingProgress
+
+        beginLoadingContent(with: loadingProgress)
     }
 
     /// The internal method which is actually called by loadContent. This allows subclasses to perform pre- and post-loading activities.
@@ -327,7 +370,7 @@ class AAPLDataSource<ItemType> {
     }
 
     /// The internal method called when loading is complete. Subclasses may implement this method to provide synchronisation of child data sources.
-    private func endLoadingContent(with state: String, error: Error, update: () -> Void) {
+    private func endLoadingContent(with state: String, error: Error?, update: () -> Void) {
     
     }
     
@@ -352,18 +395,33 @@ class AAPLDataSource<ItemType> {
     }
     
     /// State machine delegate method for notifying that the state is about to change. This is used to update the loadingState property.
-    private func stateWillChange() {
+    func stateWillChange() {
         
     }
 
     /// State machine delegate method for notifying that the state has changed. This is used to update the loadingState property.
-    private func stateDidChange() {
+    func stateDidChange() {
         
     }
     
     /// Return the number of headers associated with the section.
     private func numberOfHeadersInSection(at sectionIndex: Int, includeChildDataSouces: Bool) -> Int {
 
+        if AAPLGlobalSectionIndex == sectionIndex && isRootDataSource {
+
+            return headers.count
+        }
+
+        let defaultMetrics = self.defaultMetrics as? AAPLDataSourceSectionMetrics
+        var numberOfHeaders = defaultMetrics.headers.count
+        
+        if (!sectionIndex && !rootDataSource)
+        numberOfHeaders += _headers.count;
+
+        let sectionMetrics = _sectionMetrics[sectionIndex]
+        numberOfHeaders += sectionMetrics.headers.count
+
+        return numberOfHeaders
     }
 
     /// Return the number of footers associated with the section.
@@ -419,16 +477,98 @@ class AAPLDataSource<ItemType> {
     private func notifyContentUpdatedForSupplementaryItem(_ metrics: AAPLSupplementaryItem, at indexPaths: [IndexPath], header: Bool) {
         
     }
-}
 
-extension AAPLDataSource: UICollectionViewDataSource {
+    // MARK: - UICollectionViewDataSource
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return numberOfSections()
+    }
 
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return placeholder != nil ? 0 : numberOfItems(in: section)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        fatalError("Should be implemented by subclasses")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == AAPLCollectionElementKindPlaceholder {
+            return dequeuePlaceholderView(for: collectionView, at: indexPath)
+        }
+        
+        var header = false
+        
+        if kind == UICollectionElementKindSectionHeader {
+            header = true
+        } else if kind == UICollectionElementKindSectionFooter {
+            header = false
+        } else {
+            return UICollectionReusableView()
+        }
+        
+        var metrics: AAPLSupplementaryItem?
+        var localIndexPath: IndexPath?
+        var dataSource = self
+        
+        findSupplementaryItem(for: header, indexPath: indexPath) { (foundDataSource, foundIndexPath, foundMetrics) in
+            dataSource = foundDataSource;
+            localIndexPath = foundIndexPath;
+            metrics = foundMetrics;
+        }
+
+        guard let _metrics = metrics else {
+            return UICollectionReusableView()
+        }
+
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: _metrics.reuseIdentifier, for: indexPath)
+
+        _metrics.configureView?(view, dataSource as! AAPLDataSource<Any>, localIndexPath!)
+
+        return view
+    }
+    
+    private var resettingContent = false
 }
 
 extension AAPLDataSource: AAPLContentLoading {
+    var loadingState: String {
+        get {
+            // Don't cause the creation of the state machine just by inspection of the loading state.
+            return stateMachine.currentState ?? ""
+        }
+        set {
+            if newValue != stateMachine.currentState {
+                stateMachine.currentState = loadingState
+            }
+        }
+    }
+
+    var loadingError: Error? {
+        get {
+            
+        }
+        set {
+            
+        }
+    }
     
+    func loadContent(with progress: AAPLLoadingProgress) {
+        
+    }
 }
 
 extension AAPLDataSource: AAPLStateMachineDelegate {
-    
+    func missingTransition(from state: String, toState: String) -> String {
+        if resettingContent == nil {
+            return ""
+        }
+
+        if AAPLLoadStateInitial == toState {
+
+            return toState
+        }
+
+        // All other cases fail
+        return ""
+    }
 }

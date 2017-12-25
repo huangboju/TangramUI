@@ -57,7 +57,7 @@ class AAPLLoadingProgress {
     }
     
     /// Has this loading operation been cancelled? It's important to check whether the loading progress has been cancelled before calling one of the completion methods (-ignore, -done, -doneWithError:, updateWithContent:, or -updateWithNoContent:). When loading has been cancelled, updating via a completion method will throw an assertion in DEBUG mode.
-    private(set) var isCancelled = false {
+    var isCancelled = false {
         didSet {
             ignore()
         }
