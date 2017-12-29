@@ -68,6 +68,7 @@
 		BEDE1E611FBF141D0051F702 /* ServicePicTwoTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E601FBF141D0051F702 /* ServicePicTwoTitleCell.swift */; };
 		BEDE1E631FBF15250051F702 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E621FBF15250051F702 /* BaseController.swift */; };
 		BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E641FBF155B0051F702 /* ServiceLayoutController.swift */; };
+		BEDF26841FF61F4A00BFC97B /* AAPLDataSourceMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDF26831FF61F4A00BFC97B /* AAPLDataSourceMapping.swift */; };
 		BEEF65891FEFB70A003CECAF /* AAPLDataSource_Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF65791FEFB70A003CECAF /* AAPLDataSource_Private.swift */; };
 		BEEF658A1FEFB70A003CECAF /* AAPLDataSourcePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF657A1FEFB70A003CECAF /* AAPLDataSourcePlaceholder.swift */; };
 		BEEF658B1FEFB70A003CECAF /* AAPLDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF657B1FEFB70A003CECAF /* AAPLDataSource.swift */; };
@@ -178,6 +179,7 @@
 		BEDE1E601FBF141D0051F702 /* ServicePicTwoTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePicTwoTitleCell.swift; sourceTree = "<group>"; };
 		BEDE1E621FBF15250051F702 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		BEDE1E641FBF155B0051F702 /* ServiceLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayoutController.swift; sourceTree = "<group>"; };
+		BEDF26831FF61F4A00BFC97B /* AAPLDataSourceMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAPLDataSourceMapping.swift; sourceTree = "<group>"; };
 		BEEF65791FEFB70A003CECAF /* AAPLDataSource_Private.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLDataSource_Private.swift; sourceTree = "<group>"; };
 		BEEF657A1FEFB70A003CECAF /* AAPLDataSourcePlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLDataSourcePlaceholder.swift; sourceTree = "<group>"; };
 		BEEF657B1FEFB70A003CECAF /* AAPLDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLDataSource.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				BEEF657B1FEFB70A003CECAF /* AAPLDataSource.swift */,
 				BEEF657C1FEFB70A003CECAF /* AAPLDataSourceSectionMetrics.swift */,
 				BEEF657D1FEFB70A003CECAF /* AAPLDataSourceDelegate.swift */,
+				BEDF26831FF61F4A00BFC97B /* AAPLDataSourceMapping.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 				BEDE1E5C1FBF0EE40051F702 /* ServiceNormalCell.swift in Sources */,
 				BEEF65891FEFB70A003CECAF /* AAPLDataSource_Private.swift in Sources */,
 				BEEF65951FEFB70A003CECAF /* AAPLCollectionPlaceholderView.swift in Sources */,
+				BEDF26841FF61F4A00BFC97B /* AAPLDataSourceMapping.swift in Sources */,
 				BE7D4A431FE67DA8005AD328 /* Session.swift in Sources */,
 				BEDE1E5F1FBF0FFD0051F702 /* ServiceOnePicCell.swift in Sources */,
 				BEDE1E541FBEEE930051F702 /* UIColor+Extension.swift in Sources */,
