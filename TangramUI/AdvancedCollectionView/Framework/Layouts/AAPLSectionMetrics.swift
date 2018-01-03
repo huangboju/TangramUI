@@ -7,5 +7,7 @@
 //
 
 class AAPLSectionMetrics {
-    
+    func applyValues(from metrics: AAPLSectionMetrics) {
+        
+    }
 }

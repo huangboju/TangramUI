@@ -6,6 +6,30 @@
 //  Copyright © 2017年 黄伯驹. All rights reserved.
 //
 
+extension Array where Element: Equatable {
+    
+    @discardableResult
+    mutating func remove(object: Element) -> Bool {
+        if let index = index(of: object) {
+            self.remove(at: index)
+            return true
+        }
+        return false
+    }
+    
+    @discardableResult
+    mutating func remove(where predicate: (Array.Iterator.Element) -> Bool) -> Bool {
+        if let index = self.index(where: { (element) -> Bool in
+            return predicate(element)
+        }) {
+            self.remove(at: index)
+            return true
+        }
+        return false
+    }
+    
+}
+
 private let AAPLGlobalSectionIndex = Int.max
 
 let AAPLReusableIdentifierFromClass: (UIView.Type) -> String = { "\($0)" }
@@ -144,35 +168,50 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
     open var defaultMetrics = AAPLSectionMetrics()
     /// The metrics for the global section (headers and footers) for this data source. This is only meaningful when this is the root or top-level data source.
     open var globalMetrics = AAPLSectionMetrics()
-    
+
     /// Retrieve the layout metrics for a specific section within this data source.
-    open func metricsForSection(at sectionIndex: Int) -> AAPLSectionMetrics {
-    
+    open func metricsForSection(at sectionIndex: Int) -> AAPLSectionMetrics? {
+        return sectionMetrics[sectionIndex]
     }
 
     /// Store customised layout metrics for a section in this data source. The values specified in metrics will override values specified by the data source's defaultMetrics.
     open func setMetrics(_ metrics: AAPLSectionMetrics, forSectionAt sectionIndex: Int) {
-    
+        sectionMetrics[sectionIndex] = metrics
     }
-    
+
+    private var headersByKey: [String: AAPLSupplementaryItem] = [:]
     /// Look up a data source header by its key. These headers will appear before headers from section 0. Returns nil when the header with the given key can not be found.
-    open func header(for key: String) -> AAPLSupplementaryItem {
-    
+    open func header(for key: String) -> AAPLSupplementaryItem? {
+        return headersByKey[key]
     }
 
     /// Create a new header and append it to the collection of data source headers.
     open func newHeader(for key: String) -> AAPLSupplementaryItem {
-    
+        assert(headersByKey[key] == nil, "Attempting to add a header for a key that already exists: \(key)")
+
+        let header = AAPLSupplementaryItem(kind: UICollectionElementKindSectionHeader)
+        headersByKey[key] = header
+        headers.append(header)
+        return header
     }
 
     /// Remove a data source header specified by its key.
     open func removeHeader(for key: String) {
-    
+        let oldHeader = headersByKey[key]
+        assert(oldHeader != nil, "Attempting to remove a header that doesn't exist: key = \(key)")
+
+        headers.remove(object: oldHeader!)
+        headersByKey.removeValue(forKey: key)
     }
 
     /// Replace a data source header specified by its key with a new header with the same key.
     open func replaceHeader(for key: String, with header: AAPLSupplementaryItem) {
-    
+        let oldHeader = headersByKey[key]
+        assert(oldHeader != nil, "Attempting to replace a header that doesn't exist: key = \(key)")
+
+        let headerIndex = headers.index(of: oldHeader!)
+        headersByKey[key] = header
+        headers[headerIndex!] = header
     }
 
     /** Create a header for each section in this data source.
@@ -199,20 +238,32 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
     }
     
     /// Create a new header for a specific section. This header will only appear in the given section.
-    open func newHeaderForSection(at sectionIndex: Int) -> AAPLSupplementaryItem {
-    
+    open func newHeaderForSection(at sectionIndex: Int) -> AAPLSupplementaryItem? {
+        var metrics = sectionMetrics[sectionIndex] as? AAPLDataSourceSectionMetrics
+        if metrics == nil {
+            metrics = AAPLDataSourceSectionMetrics()
+            sectionMetrics[sectionIndex] = metrics
+        }
+
+        return metrics?.newHeader
     }
 
     /// Create a new footer for a specific section. This footer will only appear in the given section.
-    open func newFooterForSection(at sectionIndex: Int) -> AAPLSupplementaryItem {
+    open func newFooterForSection(at sectionIndex: Int) -> AAPLSupplementaryItem? {
+        var metrics = sectionMetrics[sectionIndex] as? AAPLDataSourceSectionMetrics
+        if metrics == nil {
+            metrics = AAPLDataSourceSectionMetrics()
+            sectionMetrics[sectionIndex] = metrics
+        }
 
+        return metrics?.newFooter
     }
     
     // MARK: - Placeholders
     
     /// The placeholder to show when the data source is in the No Content state.
     open var noContentPlaceholder = AAPLDataSourcePlaceholder()
-    
+
     /// The placeholder to show when the data source is in the Error state.
     open var errorPlaceholder = AAPLDataSourcePlaceholder()
     
@@ -297,7 +348,11 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
     
     /// Create an instance of the placeholder view for this data source.
     private func dequeuePlaceholderView(for collectionView: UICollectionView, at indexPath: IndexPath) -> AAPLCollectionPlaceholderView {
-    
+        let placeholderView = collectionView.dequeueReusableSupplementaryView(ofKind: AAPLCollectionElementKindPlaceholder, withReuseIdentifier: AAPLReusableIdentifierFromClass(AAPLCollectionPlaceholderView.self), for: indexPath) as? AAPLCollectionPlaceholderView
+
+        updatePlaceholderView(placeholderView!, forSectionAt: indexPath.section)
+
+        return placeholderView!
     }
     
     /// Compute a flattened snapshot of the layout metrics associated with this and any child data sources.
@@ -318,7 +373,35 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
 
     /// Create a flattened snapshop of the layout metrics for the specified section. This resolves metrics from parent and child data sources.
     private func snapshotMetricsForSection(at sectionIndex: Int) -> AAPLDataSourceSectionMetrics {
-    
+
+        let metrics = self.defaultMetrics as? AAPLDataSourceSectionMetrics
+        metrics?.applyValues(from: sectionMetrics[sectionIndex]!)
+
+        // The root data source puts its headers into the special global section. Other data sources put theirs into their 0 section.
+        let rootDataSource = self.isRootDataSource
+        if rootDataSource && AAPLGlobalSectionIndex == sectionIndex {
+            metrics?.headers = headers
+        }
+        
+        // Stash the placeholder in the metrics. This is really only used so we can determine the range of the placeholders.
+        metrics?.placeholder = self.placeholder
+        
+        // We need to handle global headers and the placeholder view for section 0
+        if sectionIndex == 0 {
+            var headers: [AAPLSupplementaryItem] = []
+
+            if !rootDataSource {
+                headers.append(contentsOf: self.headers)
+            }
+            
+            if let h = metrics?.headers {
+                headers.append(contentsOf: h)
+            }
+
+            metrics?.headers = headers
+        }
+
+        return metrics!
     }
     
     /// Should an activity indicator be displayed while we're refreshing the content. Default is NO.
@@ -366,17 +449,42 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
 
     /// The internal method which is actually called by loadContent. This allows subclasses to perform pre- and post-loading activities.
     private func beginLoadingContent(with progress: AAPLLoadingProgress) {
-    
+        loadContent(with: progress)
     }
 
+    private var pendingUpdateBlock: (() -> Void)?
     /// The internal method called when loading is complete. Subclasses may implement this method to provide synchronisation of child data sources.
     private func endLoadingContent(with state: String, error: Error?, update: () -> Void) {
-    
+        loadingError = error
+        loadingState = state
+
+        let pendingUpdates = pendingUpdateBlock
+        pendingUpdateBlock = nil
+
+        performUpdate {
+            pendingUpdates?()
+            update()
+        }
+
+        notifyContentLoaded(with: error)
     }
     
     /// Display an activity indicator for this data source. If sections is nil, display the activity indicator for the entire data source. The sections must be contiguous.
     private func presentActivityIndicator(for sections: IndexSet) {
+        let delegate = self.delegate
+        
+//        internalPerformUpdate {
+//            if (sections as NSIndexSet).contains(integersIn: NSRange(location: 0, length: numberOfSections())) {
+//                placeholder = AAPLDataSourcePlaceholder()
+//            }
+//
+//            // The data source can't do this itself, so the request is passed up the tree. Ultimately this will be handled by the collection view by passing it along to the layout.
+//            [delegate dataSource:self didPresentActivityIndicatorForSections:sections];
+//        }
+    }
     
+    private func internalPerformUpdate(_ block: () -> Void, complete: (() -> Void)? = nil) {
+
     }
     
     /// Display a placeholder for this data source. If sections is nil, display the placeholder for the entire data source. The sections must be contiguous.
@@ -404,39 +512,205 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
         
     }
     
+    private var headers: [AAPLSupplementaryItem] = []
+    private var sectionMetrics: [Int: AAPLSectionMetrics] = [:]
+
     /// Return the number of headers associated with the section.
     private func numberOfHeadersInSection(at sectionIndex: Int, includeChildDataSouces: Bool) -> Int {
 
         if AAPLGlobalSectionIndex == sectionIndex && isRootDataSource {
-
             return headers.count
         }
 
         let defaultMetrics = self.defaultMetrics as? AAPLDataSourceSectionMetrics
-        var numberOfHeaders = defaultMetrics.headers.count
-        
-        if (!sectionIndex && !rootDataSource)
-        numberOfHeaders += _headers.count;
+        var numberOfHeaders = defaultMetrics?.headers.count ?? 0
 
-        let sectionMetrics = _sectionMetrics[sectionIndex]
-        numberOfHeaders += sectionMetrics.headers.count
+        if sectionIndex == 0 && !isRootDataSource {
+            numberOfHeaders += headers.count
+        }
+
+        let sectionMetrics = self.sectionMetrics[sectionIndex] as? AAPLDataSourceSectionMetrics
+        numberOfHeaders += (sectionMetrics?.headers.count ?? 0)
 
         return numberOfHeaders
     }
 
     /// Return the number of footers associated with the section.
-    private func numberOfFootersInSection(at sectionIndex: Int, includeChildDataSouces: Bool) {
-        
+    private func numberOfFootersInSection(at sectionIndex: Int, includeChildDataSouces: Bool) -> Int {
+        let rootDataSource = isRootDataSource
+
+        if AAPLGlobalSectionIndex == sectionIndex && rootDataSource {
+            return 0
+        }
+
+        let defaultMetrics = self.defaultMetrics as? AAPLDataSourceSectionMetrics
+        var numberOfFooters = defaultMetrics?.footers.count ?? 0
+
+        if let sectionMetrics = self.sectionMetrics[sectionIndex] as? AAPLDataSourceSectionMetrics {
+            numberOfFooters += sectionMetrics.footers.count
+        }
+
+        return numberOfFooters
     }
     
     /// Returns NSIndexPath instances any occurrences of the supplementary metrics in this data source. If the supplementary metrics are part of the default metrics for the data source, an NSIndexPath for each section will be returned. Returns an empty array if the supplementary metrics are not found.
     private func indexPaths(for supplementaryItem: AAPLSupplementaryItem, header: Bool) -> [IndexPath] {
-    
+        let rootDataSource = self.isRootDataSource
+        let numberOfSections = self.numberOfSections()
+        var itemIndex: Int?
+        
+        let defaultMetrics = self.defaultMetrics as? AAPLDataSourceSectionMetrics
+        
+        if header {
+            itemIndex = headers.index(of: supplementaryItem)
+            if let itemIndex = itemIndex {
+                let indexPath = rootDataSource ? IndexPath(index: itemIndex) : IndexPath(item: itemIndex, section: 0)
+                return [indexPath]
+            }
+            
+            let numberOfGlobalHeaders = headers.count
+
+            itemIndex = defaultMetrics?.headers.index(of: supplementaryItem)
+            if let itemIndex = itemIndex {
+                var result: [IndexPath] = []
+                
+                // When the header is found in the default metrics, we need to create one NSIndexPath for each section
+                for sectionIndex in 0 ..< numberOfSections {
+                    var headerIndex = itemIndex
+                    if sectionIndex == 0 && !rootDataSource {
+                        headerIndex += numberOfGlobalHeaders
+                    }
+
+                    result.append(IndexPath(item: headerIndex, section: sectionIndex))
+                }
+
+                return result
+            }
+            
+            let numberOfDefaultHeaders = defaultMetrics?.headers.count ?? 0
+
+            var result: IndexPath?
+            
+            // If the supplementary metrics exist, it's in one of the section metrics. However, it **might** simply not exist.
+            for (sectionIndex, sectionMetrics) in sectionMetrics.enumerated() {
+
+                itemIndex = (sectionMetrics.value as? AAPLDataSourceSectionMetrics)?.headers.index(of: supplementaryItem) ?? 0
+
+                guard let itemIndex = itemIndex else {
+                    continue
+                }
+ 
+                var headerIndex = numberOfDefaultHeaders + itemIndex
+                if sectionIndex == 0 && !rootDataSource {
+                    headerIndex += numberOfGlobalHeaders
+                }
+
+                result = IndexPath(item: headerIndex, section: sectionIndex)
+            }
+            
+            if let result = result {
+                return [result]
+            }
+            return []
+        } else {
+            var numberOfGlobalFooters = 0
+
+            itemIndex = defaultMetrics?.footers.index(of: supplementaryItem)
+            if let itemIndex = itemIndex {
+                var result: [IndexPath] = []
+
+                // When the header is found in the default metrics, we need to create one NSIndexPath for each section
+                for sectionIndex in 0 ..< numberOfSections {
+                    var footerIndex = itemIndex
+                    if sectionIndex == 0 && !rootDataSource {
+                        footerIndex += numberOfGlobalFooters
+                    }
+
+                    result.append(IndexPath(item: footerIndex, section: sectionIndex))
+                }
+                return result
+            }
+            
+            let numberOfDefaultFooters = defaultMetrics?.footers.count ?? 0
+            
+            var result: IndexPath?
+            
+            // If the supplementary metrics exist, it's in one of the section metrics. However, it **might** simply not exist.
+            for (sectionIndex, sectionMetrics) in sectionMetrics.enumerated() {
+                itemIndex = (sectionMetrics.value as? AAPLDataSourceSectionMetrics)?.footers.index(of: supplementaryItem) ?? 0
+                guard let itemIndex = itemIndex else {
+                    continue
+                }
+
+                var footerIndex = numberOfDefaultFooters + itemIndex
+                if sectionIndex == 0 && !rootDataSource {
+                    footerIndex += numberOfGlobalFooters
+                }
+
+                result = IndexPath(item: footerIndex, section: sectionIndex)
+            }
+
+            if let result = result {
+                return [result]
+            }
+            return []
+        }
     }
     
     /// The block will only be called if the supplementary item is found.
     private func findSupplementaryItem(for header: Bool, indexPath: IndexPath, usingBlock block: (AAPLDataSource, IndexPath, AAPLSupplementaryItem) -> Void) {
-    
+        let sectionIndex = (indexPath.count > 1 ? indexPath.section : AAPLGlobalSectionIndex)
+        var itemIndex = (indexPath.count > 1 ? indexPath.item : (indexPath as NSIndexPath).index(atPosition: 0))
+
+        let rootDataSource = isRootDataSource
+        
+        // We should only have the global section when we're also the root data source
+        assert(AAPLGlobalSectionIndex != sectionIndex || rootDataSource, "Should only have a global section index when we're the root data source")
+
+        if header {
+            if AAPLGlobalSectionIndex == sectionIndex && rootDataSource {
+                if itemIndex < headers.count {
+                    block(self, indexPath, headers[itemIndex])
+                }
+                return
+            }
+
+            if 0 == sectionIndex && !rootDataSource {
+                if itemIndex < headers.count {
+                    return block(self, indexPath, headers[itemIndex])
+                }
+                // need to allow for the headers that were added from the "global" data source headers.
+                itemIndex -= headers.count
+            }
+
+            // check for headers in the default metrics
+            let defaultMetrics = self.defaultMetrics as? AAPLDataSourceSectionMetrics
+            let headersCount = defaultMetrics?.headers.count ?? 0
+            if itemIndex < headersCount {
+                return block(self, IndexPath(item: itemIndex, section: sectionIndex), defaultMetrics!.headers[itemIndex])
+            }
+
+            itemIndex -= headersCount
+
+            let sectionMetrics = self.sectionMetrics[sectionIndex] as? AAPLDataSourceSectionMetrics
+            if itemIndex < sectionMetrics!.headers.count {
+                return block(self, IndexPath(item: itemIndex, section: sectionIndex), sectionMetrics!.headers[itemIndex])
+            }
+        } else {
+            // check for footers in the default metrics
+            let defaultMetrics = self.defaultMetrics as? AAPLDataSourceSectionMetrics
+            if itemIndex < defaultMetrics!.footers.count {
+                return block(self, IndexPath(item: itemIndex, section: sectionIndex), defaultMetrics!.footers[itemIndex])
+            }
+
+            itemIndex -= defaultMetrics!.footers.count
+            
+            // There's no equivalent to the headers by key (yet)
+            let sectionMetrics = self.sectionMetrics[sectionIndex] as? AAPLDataSourceSectionMetrics
+            if itemIndex < sectionMetrics!.footers.count {
+                return block(self, IndexPath(item: itemIndex, section: sectionIndex), sectionMetrics!.footers[itemIndex])
+            }
+        }
     }
     
     /// Get an index path for the data source represented by the global index path. This works with -dataSourceForSectionAtIndex:.
@@ -458,7 +732,7 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
     }
     
     /// Notify the parent data source that this data source has finished loading its content with the given error (nil if no error). Unlike other notifications, this notification will not propagate past the parent data source.
-    private func notifyContentLoaded(with error: Error) {
+    private func notifyContentLoaded(with error: Error?) {
     
     }
     
@@ -511,9 +785,9 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
         var dataSource = self
         
         findSupplementaryItem(for: header, indexPath: indexPath) { (foundDataSource, foundIndexPath, foundMetrics) in
-            dataSource = foundDataSource;
-            localIndexPath = foundIndexPath;
-            metrics = foundMetrics;
+            dataSource = foundDataSource
+            localIndexPath = foundIndexPath
+            metrics = foundMetrics
         }
 
         guard let _metrics = metrics else {
@@ -559,7 +833,7 @@ extension AAPLDataSource: AAPLContentLoading {
 
 extension AAPLDataSource: AAPLStateMachineDelegate {
     func missingTransition(from state: String, toState: String) -> String {
-        if resettingContent == nil {
+        if !resettingContent {
             return ""
         }
 

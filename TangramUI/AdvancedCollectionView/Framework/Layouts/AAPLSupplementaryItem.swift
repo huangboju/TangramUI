@@ -8,7 +8,7 @@
 
 typealias AAPLSupplementaryItemConfigurationBlock = (UICollectionReusableView, AAPLDataSource<Any>, IndexPath) -> Void
 
-class AAPLSupplementaryItem {
+class AAPLSupplementaryItem: NSObject {
     /// The class to use when dequeuing an instance of this supplementary view
     var supplementaryViewClass = UIView.self
     
