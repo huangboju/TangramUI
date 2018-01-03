@@ -473,30 +473,54 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
     private func presentActivityIndicator(for sections: IndexSet) {
         let delegate = self.delegate
         
-//        internalPerformUpdate {
-//            if (sections as NSIndexSet).contains(integersIn: NSRange(location: 0, length: numberOfSections())) {
-//                placeholder = AAPLDataSourcePlaceholder()
-//            }
-//
-//            // The data source can't do this itself, so the request is passed up the tree. Ultimately this will be handled by the collection view by passing it along to the layout.
-//            [delegate dataSource:self didPresentActivityIndicatorForSections:sections];
-//        }
+        internalPerformUpdate({
+            if (sections as NSIndexSet).contains(in: NSRange(location: 0, length: self.numberOfSections()))  {
+                placeholder = AAPLDataSourcePlaceholder()
+            }
+            // The data source can't do this itself, so the request is passed up the tree. Ultimately this will be handled by the collection view by passing it along to the layout.
+            delegate?.dataSource(self as! AAPLDataSource<Any>, didPresentActivityIndicatorFor: sections)
+        })
     }
-    
-    private func internalPerformUpdate(_ block: () -> Void, complete: (() -> Void)? = nil) {
 
+    private func internalPerformUpdate(_ block: () -> Void, complete: (() -> Void)? = nil) {
+        // If our delegate our delegate can handle this for us, pass it up the tree
+        if let delegate = self.delegate {
+            delegate.dataSource(self as! AAPLDataSource<Any>, performBatchUpdate: block, complete: complete)
+        } else {
+            block()
+            complete?()
+        }
     }
     
     /// Display a placeholder for this data source. If sections is nil, display the placeholder for the entire data source. The sections must be contiguous.
     private func presentPlaceholder(_ placeholder: AAPLDataSourcePlaceholder, for sections: IndexSet) {
-    
+        let delegate = self.delegate
+
+        internalPerformUpdate( {
+            if (sections as NSIndexSet).contains(in: NSRange(location: 0, length: self.numberOfSections())) {
+                self.placeholder = placeholder
+            }
+            
+            // The data source can't do this itself, so the request is passed up the tree. Ultimately this will be handled by the collection view by passing it along to the layout.
+            delegate?.dataSource(self as! AAPLDataSource<Any>, didPresentPlaceholderFor: sections)
+        })
     }
 
     /// Dismiss a placeholder or activity indicator
     private func dismissPlaceholder(for sections: IndexSet) {
-    
+        let delegate = self.delegate
+
+        internalPerformUpdate({
+            // Clear the placeholder when the sections represents the entire range of sections in this data source.
+            if (sections as NSIndexSet).contains(in: NSRange(location: 0, length: self.numberOfSections()))) {
+                self.placeholder = nil
+            }
+            
+            // We need to pass this up the tree of data sources until it reaches the collection view, which will then pass it to the layout.
+            delegate?.dataSource(self as! AAPLDataSource<Any>, didDismissPlaceholderFor: sections)
+        })
     }
-    
+
     /// Update the placeholder view for a given section.
     private func updatePlaceholderView(_ placeholderView: AAPLCollectionPlaceholderView, forSectionAt sectionIndex: Int) {
     
