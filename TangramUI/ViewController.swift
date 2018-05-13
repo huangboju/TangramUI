@@ -25,7 +25,8 @@ class ViewController: UIViewController {
             StretchyHeaderLayoutController.self,
             GridLayoutController.self,
             PinterestLayoutController.self,
-            ExpandingLayoutController.self
+            ExpandingLayoutController.self,
+            AdsorptionController.self
         ]
     ]
     

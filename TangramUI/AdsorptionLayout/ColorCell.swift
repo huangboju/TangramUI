@@ -8,12 +8,12 @@
 
 class ColorCell: UICollectionViewCell {
     
-    private lazy var textLabel: UILabel = {
+    lazy var textLabel: UILabel = {
         let textLabel = UILabel()
         return textLabel
     }()
     
-    private lazy var colorLayer: CALayer = {
+    lazy var colorLayer: CALayer = {
        let colorLayer = CALayer()
         colorLayer.cornerRadius = 10
         return colorLayer

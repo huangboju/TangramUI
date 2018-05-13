@@ -7,10 +7,11 @@
 //
 
 class SearchBarCell: UICollectionViewCell {
-    private let searchBar = UISearchBar()
-    
+    let searchBar = UISearchBar()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
+
         contentView.addSubview(searchBar)
     }
     

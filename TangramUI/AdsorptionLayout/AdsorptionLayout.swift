@@ -93,8 +93,8 @@ open class AdsorptionLayout: UICollectionViewFlowLayout {
             lastKnownTargetContentOffsetY = lastKnownTargetContentOffset?.y
             proposedContentOffsetX = proposedContentOffset.x
             proposedContentOffsetY = proposedContentOffset.y
-            firstItemRetractableAreaInsetTop = self.firstItemRetractableAreaInset.top
-            firstItemRetractableAreaInsetBottom = self.firstItemRetractableAreaInset.bottom
+            firstItemRetractableAreaInsetTop = firstItemRetractableAreaInset.top
+            firstItemRetractableAreaInsetBottom = firstItemRetractableAreaInset.bottom
             firstItemFrameMinY = firstItemFrame.minY
             firstItemFrameMidY = firstItemFrame.midY
             firstItemFrameMaxY = firstItemFrame.maxY
@@ -103,14 +103,14 @@ open class AdsorptionLayout: UICollectionViewFlowLayout {
             lastKnownTargetContentOffsetY = lastKnownTargetContentOffset?.x
             proposedContentOffsetX = proposedContentOffset.y
             proposedContentOffsetY = proposedContentOffset.x
-            firstItemRetractableAreaInsetTop = self.firstItemRetractableAreaInset.left
-            firstItemRetractableAreaInsetBottom = self.firstItemRetractableAreaInset.right
+            firstItemRetractableAreaInsetTop = firstItemRetractableAreaInset.left
+            firstItemRetractableAreaInsetBottom = firstItemRetractableAreaInset.right
             firstItemFrameMinY = firstItemFrame.minX
             firstItemFrameMidY = firstItemFrame.midX
             firstItemFrameMaxY = firstItemFrame.maxX
         }
-        
-        guard proposedContentOffsetY > firstItemFrameMinY && proposedContentOffsetY < firstItemFrameMaxY else {
+
+        guard (firstItemFrameMinY ..< firstItemFrameMaxY) ~= proposedContentOffsetY else {
             
             let targetContentOffset = super.targetContentOffset(forProposedContentOffset: proposedContentOffset, withScrollingVelocity: velocity)
             lastKnownTargetContentOffset = targetContentOffset
