@@ -15,11 +15,15 @@
 		BE0D8A0F1FBED81800CA8114 /* TangramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D8A0E1FBED81800CA8114 /* TangramUITests.swift */; };
 		BE0D8A1A1FBED81800CA8114 /* TangramUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D8A191FBED81800CA8114 /* TangramUIUITests.swift */; };
 		BE0D8A291FBEDCA600CA8114 /* ServiceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D8A281FBEDCA600CA8114 /* ServiceLayout.swift */; };
+		BE406CF720A7E9DE009A4D6E /* AdsorptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE406CF620A7E9DE009A4D6E /* AdsorptionController.swift */; };
+		BE406CF920A7EA54009A4D6E /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE406CF820A7EA54009A4D6E /* SearchBarCell.swift */; };
+		BE406CFB20A7EB5F009A4D6E /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE406CFA20A7EB5F009A4D6E /* ColorCell.swift */; };
 		BE511D651FCE635100BD9489 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE511D641FCE635100BD9489 /* PinterestLayout.swift */; };
 		BE511D671FCE638500BD9489 /* PinterestLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE511D661FCE638500BD9489 /* PinterestLayoutController.swift */; };
 		BE511D691FCE64E500BD9489 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE511D681FCE64E500BD9489 /* Photo.swift */; };
 		BE511D6C1FCE654E00BD9489 /* Photos.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE511D6A1FCE654E00BD9489 /* Photos.plist */; };
 		BE511D6D1FCE654E00BD9489 /* Photos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE511D6B1FCE654E00BD9489 /* Photos.xcassets */; };
+		BE54ADAB20A5806D00B8A473 /* AdsorptionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE54ADAA20A5806D00B8A473 /* AdsorptionLayout.swift */; };
 		BE7D4A3F1FE67D06005AD328 /* ExpandingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A3E1FE67D06005AD328 /* ExpandingLayout.swift */; };
 		BE7D4A421FE67DA8005AD328 /* Inspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A401FE67DA7005AD328 /* Inspiration.swift */; };
 		BE7D4A431FE67DA8005AD328 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A411FE67DA8005AD328 /* Session.swift */; };
@@ -68,19 +72,6 @@
 		BEDE1E611FBF141D0051F702 /* ServicePicTwoTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E601FBF141D0051F702 /* ServicePicTwoTitleCell.swift */; };
 		BEDE1E631FBF15250051F702 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E621FBF15250051F702 /* BaseController.swift */; };
 		BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E641FBF155B0051F702 /* ServiceLayoutController.swift */; };
-		BEEF65891FEFB70A003CECAF /* AAPLDataSource_Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF65791FEFB70A003CECAF /* AAPLDataSource_Private.swift */; };
-		BEEF658A1FEFB70A003CECAF /* AAPLDataSourcePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF657A1FEFB70A003CECAF /* AAPLDataSourcePlaceholder.swift */; };
-		BEEF658B1FEFB70A003CECAF /* AAPLDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF657B1FEFB70A003CECAF /* AAPLDataSource.swift */; };
-		BEEF658C1FEFB70A003CECAF /* AAPLDataSourceSectionMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF657C1FEFB70A003CECAF /* AAPLDataSourceSectionMetrics.swift */; };
-		BEEF658D1FEFB70A003CECAF /* AAPLDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF657D1FEFB70A003CECAF /* AAPLDataSourceDelegate.swift */; };
-		BEEF658E1FEFB70A003CECAF /* AAPLContentLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF657F1FEFB70A003CECAF /* AAPLContentLoading.swift */; };
-		BEEF658F1FEFB70A003CECAF /* AAPLAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF65801FEFB70A003CECAF /* AAPLAction.swift */; };
-		BEEF65901FEFB70A003CECAF /* AAPLDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF65811FEFB70A003CECAF /* AAPLDebug.swift */; };
-		BEEF65911FEFB70A003CECAF /* AAPLTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF65821FEFB70A003CECAF /* AAPLTheme.swift */; };
-		BEEF65921FEFB70A003CECAF /* AAPLStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF65831FEFB70A003CECAF /* AAPLStateMachine.swift */; };
-		BEEF65931FEFB70A003CECAF /* AAPLSupplementaryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF65851FEFB70A003CECAF /* AAPLSupplementaryItem.swift */; };
-		BEEF65941FEFB70A003CECAF /* AAPLSectionMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF65861FEFB70A003CECAF /* AAPLSectionMetrics.swift */; };
-		BEEF65951FEFB70A003CECAF /* AAPLCollectionPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF65881FEFB70A003CECAF /* AAPLCollectionPlaceholderView.swift */; };
 		BEF73ACD1FCAB5B000A37524 /* CustomLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73ACC1FCAB5B000A37524 /* CustomLayoutAttributes.swift */; };
 		BEF73ACF1FCAB60A00A37524 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73ACE1FCAB60A00A37524 /* CustomLayout.swift */; };
 		BEF73AD11FCAB64E00A37524 /* CustomLayoutSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73AD01FCAB64E00A37524 /* CustomLayoutSettings.swift */; };
@@ -125,11 +116,15 @@
 		BE0D8A1B1FBED81800CA8114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0D8A281FBEDCA600CA8114 /* ServiceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayout.swift; sourceTree = "<group>"; };
 		BE0D8A2A1FBEDCB400CA8114 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+		BE406CF620A7E9DE009A4D6E /* AdsorptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsorptionController.swift; sourceTree = "<group>"; };
+		BE406CF820A7EA54009A4D6E /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
+		BE406CFA20A7EB5F009A4D6E /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		BE511D641FCE635100BD9489 /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		BE511D661FCE638500BD9489 /* PinterestLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayoutController.swift; sourceTree = "<group>"; };
 		BE511D681FCE64E500BD9489 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		BE511D6A1FCE654E00BD9489 /* Photos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Photos.plist; sourceTree = "<group>"; };
 		BE511D6B1FCE654E00BD9489 /* Photos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Photos.xcassets; sourceTree = "<group>"; };
+		BE54ADAA20A5806D00B8A473 /* AdsorptionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsorptionLayout.swift; sourceTree = "<group>"; };
 		BE7D4A3E1FE67D06005AD328 /* ExpandingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingLayout.swift; sourceTree = "<group>"; };
 		BE7D4A401FE67DA7005AD328 /* Inspiration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inspiration.swift; sourceTree = "<group>"; };
 		BE7D4A411FE67DA8005AD328 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -178,19 +173,6 @@
 		BEDE1E601FBF141D0051F702 /* ServicePicTwoTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePicTwoTitleCell.swift; sourceTree = "<group>"; };
 		BEDE1E621FBF15250051F702 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		BEDE1E641FBF155B0051F702 /* ServiceLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayoutController.swift; sourceTree = "<group>"; };
-		BEEF65791FEFB70A003CECAF /* AAPLDataSource_Private.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLDataSource_Private.swift; sourceTree = "<group>"; };
-		BEEF657A1FEFB70A003CECAF /* AAPLDataSourcePlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLDataSourcePlaceholder.swift; sourceTree = "<group>"; };
-		BEEF657B1FEFB70A003CECAF /* AAPLDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLDataSource.swift; sourceTree = "<group>"; };
-		BEEF657C1FEFB70A003CECAF /* AAPLDataSourceSectionMetrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLDataSourceSectionMetrics.swift; sourceTree = "<group>"; };
-		BEEF657D1FEFB70A003CECAF /* AAPLDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLDataSourceDelegate.swift; sourceTree = "<group>"; };
-		BEEF657F1FEFB70A003CECAF /* AAPLContentLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLContentLoading.swift; sourceTree = "<group>"; };
-		BEEF65801FEFB70A003CECAF /* AAPLAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLAction.swift; sourceTree = "<group>"; };
-		BEEF65811FEFB70A003CECAF /* AAPLDebug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLDebug.swift; sourceTree = "<group>"; };
-		BEEF65821FEFB70A003CECAF /* AAPLTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLTheme.swift; sourceTree = "<group>"; };
-		BEEF65831FEFB70A003CECAF /* AAPLStateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLStateMachine.swift; sourceTree = "<group>"; };
-		BEEF65851FEFB70A003CECAF /* AAPLSupplementaryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLSupplementaryItem.swift; sourceTree = "<group>"; };
-		BEEF65861FEFB70A003CECAF /* AAPLSectionMetrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLSectionMetrics.swift; sourceTree = "<group>"; };
-		BEEF65881FEFB70A003CECAF /* AAPLCollectionPlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLCollectionPlaceholderView.swift; sourceTree = "<group>"; };
 		BEF73ACC1FCAB5B000A37524 /* CustomLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutAttributes.swift; sourceTree = "<group>"; };
 		BEF73ACE1FCAB60A00A37524 /* CustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 		BEF73AD01FCAB64E00A37524 /* CustomLayoutSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLayoutSettings.swift; sourceTree = "<group>"; };
@@ -250,7 +232,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
-				BEEF65771FEFB70A003CECAF /* AdvancedCollectionView */,
+				BE54ADA920A5804700B8A473 /* AdsorptionLayout */,
 				BE7D4A3D1FE67CC4005AD328 /* ExpandingCollectionView */,
 				BE511D631FCE634800BD9489 /* PinterestLayout */,
 				BEDA5DA91FCD277900777CBC /* GridLayout */,
@@ -314,6 +296,17 @@
 				BE511D661FCE638500BD9489 /* PinterestLayoutController.swift */,
 			);
 			path = PinterestLayout;
+			sourceTree = "<group>";
+		};
+		BE54ADA920A5804700B8A473 /* AdsorptionLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BE54ADAA20A5806D00B8A473 /* AdsorptionLayout.swift */,
+				BE406CF620A7E9DE009A4D6E /* AdsorptionController.swift */,
+				BE406CF820A7EA54009A4D6E /* SearchBarCell.swift */,
+				BE406CFA20A7EB5F009A4D6E /* ColorCell.swift */,
+			);
+			path = AdsorptionLayout;
 			sourceTree = "<group>";
 		};
 		BE7D4A3D1FE67CC4005AD328 /* ExpandingCollectionView */ = {
@@ -429,58 +422,6 @@
 				BEDE1E601FBF141D0051F702 /* ServicePicTwoTitleCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		BEEF65771FEFB70A003CECAF /* AdvancedCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				BEEF657E1FEFB70A003CECAF /* Framework */,
-			);
-			path = AdvancedCollectionView;
-			sourceTree = "<group>";
-		};
-		BEEF65781FEFB70A003CECAF /* DataSources */ = {
-			isa = PBXGroup;
-			children = (
-				BEEF65791FEFB70A003CECAF /* AAPLDataSource_Private.swift */,
-				BEEF657A1FEFB70A003CECAF /* AAPLDataSourcePlaceholder.swift */,
-				BEEF657B1FEFB70A003CECAF /* AAPLDataSource.swift */,
-				BEEF657C1FEFB70A003CECAF /* AAPLDataSourceSectionMetrics.swift */,
-				BEEF657D1FEFB70A003CECAF /* AAPLDataSourceDelegate.swift */,
-			);
-			path = DataSources;
-			sourceTree = "<group>";
-		};
-		BEEF657E1FEFB70A003CECAF /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-				BEEF65841FEFB70A003CECAF /* Layouts */,
-				BEEF65871FEFB70A003CECAF /* Views */,
-				BEEF65781FEFB70A003CECAF /* DataSources */,
-				BEEF657F1FEFB70A003CECAF /* AAPLContentLoading.swift */,
-				BEEF65801FEFB70A003CECAF /* AAPLAction.swift */,
-				BEEF65811FEFB70A003CECAF /* AAPLDebug.swift */,
-				BEEF65821FEFB70A003CECAF /* AAPLTheme.swift */,
-				BEEF65831FEFB70A003CECAF /* AAPLStateMachine.swift */,
-			);
-			path = Framework;
-			sourceTree = "<group>";
-		};
-		BEEF65841FEFB70A003CECAF /* Layouts */ = {
-			isa = PBXGroup;
-			children = (
-				BEEF65851FEFB70A003CECAF /* AAPLSupplementaryItem.swift */,
-				BEEF65861FEFB70A003CECAF /* AAPLSectionMetrics.swift */,
-			);
-			path = Layouts;
-			sourceTree = "<group>";
-		};
-		BEEF65871FEFB70A003CECAF /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				BEEF65881FEFB70A003CECAF /* AAPLCollectionPlaceholderView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		BEF73ACB1FCAB59E00A37524 /* JungleCup */ = {
@@ -661,13 +602,10 @@
 				BEDA5DA21FCBE45F00777CBC /* ExcelLayoutController.swift in Sources */,
 				BE7D4A451FE67DC6005AD328 /* ExpandingLayoutController.swift in Sources */,
 				BE0D8A291FBEDCA600CA8114 /* ServiceLayout.swift in Sources */,
-				BEEF65941FEFB70A003CECAF /* AAPLSectionMetrics.swift in Sources */,
 				BE0D89FC1FBED81800CA8114 /* ViewController.swift in Sources */,
 				BEF73AD11FCAB64E00A37524 /* CustomLayoutSettings.swift in Sources */,
 				BE7FAF971FC2873100788A5A /* ReorderableTripletLayout.swift in Sources */,
-				BEEF658F1FEFB70A003CECAF /* AAPLAction.swift in Sources */,
 				BEDA5DAF1FCD4D8E00777CBC /* GridLayoutHeaderFooterView.swift in Sources */,
-				BEEF658C1FEFB70A003CECAF /* AAPLDataSourceSectionMetrics.swift in Sources */,
 				BEF73AD71FCADA9900A37524 /* PlayerCell.swift in Sources */,
 				BEF73AD51FCAB79000A37524 /* MockDataManager.swift in Sources */,
 				BEF73AD31FCAB6EB00A37524 /* JungleCupController.swift in Sources */,
@@ -677,38 +615,32 @@
 				BE7D4A471FE67E64005AD328 /* InspirationCell.swift in Sources */,
 				BEF73ADB1FCAE18900A37524 /* MenuView.swift in Sources */,
 				BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */,
-				BEEF65901FEFB70A003CECAF /* AAPLDebug.swift in Sources */,
+				BE406CF920A7EA54009A4D6E /* SearchBarCell.swift in Sources */,
 				BE511D651FCE635100BD9489 /* PinterestLayout.swift in Sources */,
 				BE0D89FA1FBED81800CA8114 /* AppDelegate.swift in Sources */,
 				BEF73ACF1FCAB60A00A37524 /* CustomLayout.swift in Sources */,
 				BE7D4A3F1FE67D06005AD328 /* ExpandingLayout.swift in Sources */,
-				BEEF65931FEFB70A003CECAF /* AAPLSupplementaryItem.swift in Sources */,
 				BEDE1E5C1FBF0EE40051F702 /* ServiceNormalCell.swift in Sources */,
-				BEEF65891FEFB70A003CECAF /* AAPLDataSource_Private.swift in Sources */,
-				BEEF65951FEFB70A003CECAF /* AAPLCollectionPlaceholderView.swift in Sources */,
 				BE7D4A431FE67DA8005AD328 /* Session.swift in Sources */,
 				BEDE1E5F1FBF0FFD0051F702 /* ServiceOnePicCell.swift in Sources */,
 				BEDE1E541FBEEE930051F702 /* UIColor+Extension.swift in Sources */,
-				BEEF65911FEFB70A003CECAF /* AAPLTheme.swift in Sources */,
 				BEF73ACD1FCAB5B000A37524 /* CustomLayoutAttributes.swift in Sources */,
 				BEDA5DA61FCD059D00777CBC /* StretchyHeaderLayout.swift in Sources */,
 				BEF73AD91FCAE0D700A37524 /* SectionFooterView.swift in Sources */,
 				BEC2AECC1FC0681F00FB98C2 /* ReverseLayoutController.swift in Sources */,
 				BEDA5DAB1FCD278700777CBC /* GridLayout.swift in Sources */,
 				BEC2AECE1FC068B500FB98C2 /* ReverseLayout.swift in Sources */,
-				BEEF658E1FEFB70A003CECAF /* AAPLContentLoading.swift in Sources */,
 				BEDE1E5A1FBEF0E40051F702 /* ServiceLeftPicCell.swift in Sources */,
 				BEDE1E631FBF15250051F702 /* BaseController.swift in Sources */,
 				BE511D671FCE638500BD9489 /* PinterestLayoutController.swift in Sources */,
-				BEEF658A1FEFB70A003CECAF /* AAPLDataSourcePlaceholder.swift in Sources */,
-				BEEF658B1FEFB70A003CECAF /* AAPLDataSource.swift in Sources */,
+				BE54ADAB20A5806D00B8A473 /* AdsorptionLayout.swift in Sources */,
 				BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */,
-				BEEF658D1FEFB70A003CECAF /* AAPLDataSourceDelegate.swift in Sources */,
 				BE7D4A421FE67DA8005AD328 /* Inspiration.swift in Sources */,
+				BE406CFB20A7EB5F009A4D6E /* ColorCell.swift in Sources */,
 				BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */,
-				BEEF65921FEFB70A003CECAF /* AAPLStateMachine.swift in Sources */,
 				BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */,
 				BEDA5DAD1FCD4CE300777CBC /* GridLayoutController.swift in Sources */,
+				BE406CF720A7E9DE009A4D6E /* AdsorptionController.swift in Sources */,
 				BEDA5DA81FCD07D000777CBC /* StretchyHeaderLayoutController.swift in Sources */,
 				BEDA5DA01FCBE3DD00777CBC /* ExcelLayout.swift in Sources */,
 			);

@@ -26,7 +26,7 @@ class ExcelLayout: UICollectionViewLayout {
         }
         
         if itemAttributes.count != collectionView.numberOfSections {
-            generateItemAttributes(collectionView: collectionView)
+            generateItemAttributes(collectionView)
             return
         }
         
@@ -80,7 +80,7 @@ class ExcelLayout: UICollectionViewLayout {
 // MARK: - Helpers
 extension ExcelLayout {
     
-    func generateItemAttributes(collectionView: UICollectionView) {
+    func generateItemAttributes(_ collectionView: UICollectionView) {
         if itemsSize.count != numberOfColumns {
             calculateItemSizes()
         }

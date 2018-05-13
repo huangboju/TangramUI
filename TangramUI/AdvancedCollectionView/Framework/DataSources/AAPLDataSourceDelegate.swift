@@ -25,7 +25,7 @@ protocol AAPLDataSourceDelegate: class {
 
     func dataSourceDidReloadData(_ dataSource: AAPLDataSource<Any>)
 
-    func dataSource(_ dataSource: AAPLDataSource<Any>, performBatchUpdate update: () -> Void, complete: () -> Void)
+    func dataSource(_ dataSource: AAPLDataSource<Any>, performBatchUpdate update: () -> Void, complete: (() -> Void)?)
 
     /// If the content was loaded successfully, the error will be nil.
     func dataSource(_ dataSource: AAPLDataSource<Any>, didLoadContentWith error: Error)

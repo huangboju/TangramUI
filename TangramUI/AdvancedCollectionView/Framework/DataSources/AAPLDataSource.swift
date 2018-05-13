@@ -81,12 +81,31 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
     
     /// Called when a data source becomes active in a collection view. If the data source is in the `AAPLLoadStateInitial` state, it will be sent a `-loadContent` message.
     open func didBecomeActive() {
+
+        if loadingState == AAPLLoadStateInitial {
+            setNeedsLoadContent()
+            return
+        }
         
+        if shouldShowActivityIndicator {
+            presentActivityIndicator(for: IndexSet())
+            return
+        }
+        
+        // If there's a placeholder, we assume it needs to be re-presented. This means the placeholder ivar must be cleared when the placeholder is dismissed.
+        if let placeholder = placeholder {
+            presentPlaceholder(placeholder, for: IndexSet())
+        }
     }
     
     /// Called when a data source becomes inactive in a collection view
     open func willResignActive() {
-        
+        // We need to hang onto the placeholder, because dismiss clears it
+        let placeholder = self.placeholder
+        if placeholder != nil {
+            dismissPlaceholder(for: IndexSet())
+            self.placeholder = placeholder;
+        }
     }
     
     /// Should this data source allow its items to be selected? The default value is true.
@@ -95,33 +114,53 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
     // MARK: - Notifications
     
     /// Update the state of the data source in a safe manner. This ensures the collection view will be updated appropriately.
-    open func performUpdate(_ update: () -> Void, complete: () -> Void) {
+    open func performUpdate(_ update: @escaping () -> Void, completion: (() -> Void)? = nil) {
+        // If this data source is loading, wait until we're done before we execute the update
+        if loadingState == AAPLLoadStateLoadingContent {
+            
+            enqueueUpdateBlock({ [weak self] in
+                self?.performUpdate(update, completion: completion)
+            })
+            return
+        }
 
+        internalPerformUpdate(update, completion: completion)
     }
     
-    /// Update the state of the data source in a safe manner. This ensures the collection view will be updated appropriately.
-    open func performUpdate(_ update: () -> Void) {
-        
+    func enqueueUpdateBlock(_ block: (() -> Void)?) {
+        var update: (() -> Void)?
+
+        if let pendingUpdateBlock = pendingUpdateBlock {
+            let oldPendingUpdate = pendingUpdateBlock
+            update = {
+                oldPendingUpdate()
+                block?()
+            }
+        } else {
+            update = block
+        }
+
+        pendingUpdateBlock = update
     }
     
     /// Notify the parent data source and the collection view that new items have been inserted at positions represented by insertedIndexPaths.
     open func notifyItemsInserted(at indexPaths: [IndexPath]) {
-        
+        delegate?.dataSource(self as! AAPLDataSource<Any>, didInsertItemsAt: indexPaths)
     }
 
     /// Notify the parent data source and collection view that the items represented by removedIndexPaths have been removed from this data source.
     open func notifyItemsRemoved(at indexPaths: [IndexPath]) {
-        
+        delegate?.dataSource(self as! AAPLDataSource<Any>, didRemoveItemsAt: indexPaths)
     }
 
     /// Notify the parent data sources and collection view that the items represented by refreshedIndexPaths have been updated and need redrawing.
     open func notifyItemsRefreshed(at indexPaths: [IndexPath]) {
-    
+        delegate?.dataSource(self as! AAPLDataSource<Any>, didRefreshItemsAt: indexPaths)
     }
 
     /// Alert parent data sources and the collection view that the item at indexPath was moved to newIndexPath.
     open func notifyItemMoved(from indexPath: IndexPath, toIndexPaths newIndexPath: IndexPath) {
-        
+        delegate?.dataSource(self, didMoveItemAt: indexPath, toIndexPath: toIndexPaths)
     }
     
     /// Notify parent data sources and the collection view that the sections were inserted.
@@ -278,9 +317,9 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
     open func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
         return false
     }
-    
+
     /// Determine whether an item may be moved from its original location to a proposed location. Default implementation returns NO.
-    open func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath, toIndexPath destinationIndexPath: IndexPath) -> Bool {
+    open func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) -> Bool {
         return false
     }
 
@@ -331,17 +370,38 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
     
     /// Signal that the datasource should reload its content
     open func setNeedsLoadContent() {
-        
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(loadContent), object: nil)
+        perform(#selector(loadContent))
     }
-    
+
     /// Reset the content and loading state.
     open func resetContent() {
+        resettingContent = true
+        // This ONLY works because the resettingContent flag is set to YES. This will be checked in -missingTransitionFromState:toState: to decide whether to allow the transition.
+        loadingState = AAPLLoadStateInitial
+        resettingContent = false
         
+        // Content has been reset, if we're loading something, chances are we don't need it.
+        loadingProgress?.isCancelled = true
     }
-    
+
     /// Use this method to wait for content to load. The block will be called once the loadingState has transitioned to the ContentLoaded, NoContent, or Error states. If the data source is already in that state, the block will be called immediately.
-    open func whenLoaded(_ block: () -> Void) {
-    
+    open func whenLoaded(_ block: @escaping () -> Void) {
+        var complete: Int32 = 0
+        
+        let oldLoadingCompleteBlock = self.loadingCompletionBlock
+
+        self.loadingCompletionBlock = {
+            // Already called the completion handler
+            if !OSAtomicCompareAndSwap32(0, 1, &complete) {
+                return
+            }
+
+            // Call the previous completion block if there was one.
+            oldLoadingCompleteBlock?()
+
+            block()
+        }
     }
     
     // MARK: - Private
@@ -422,6 +482,7 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
 
     private var loadingProgress: AAPLLoadingProgress?
     /// Load the content of this data source.
+    @objc
     private func loadContent() {
 
         loadingState = Set([AAPLLoadStateInitial, AAPLLoadStateLoadingContent]).contains(loadingState) ? AAPLLoadStateLoadingContent : AAPLLoadStateRefreshingContent
@@ -449,10 +510,11 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
 
     /// The internal method which is actually called by loadContent. This allows subclasses to perform pre- and post-loading activities.
     private func beginLoadingContent(with progress: AAPLLoadingProgress) {
-        loadContent(with: progress)
+        loadContentWithProgress(progress)
     }
 
     private var pendingUpdateBlock: (() -> Void)?
+    var loadingError: Error?
     /// The internal method called when loading is complete. Subclasses may implement this method to provide synchronisation of child data sources.
     private func endLoadingContent(with state: String, error: Error?, update: () -> Void) {
         loadingError = error
@@ -475,20 +537,20 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
         
         internalPerformUpdate({
             if (sections as NSIndexSet).contains(in: NSRange(location: 0, length: self.numberOfSections()))  {
-                placeholder = AAPLDataSourcePlaceholder()
+                placeholder = AAPLDataSourcePlaceholder.placeholderWithActivityIndicator
             }
             // The data source can't do this itself, so the request is passed up the tree. Ultimately this will be handled by the collection view by passing it along to the layout.
             delegate?.dataSource(self as! AAPLDataSource<Any>, didPresentActivityIndicatorFor: sections)
         })
     }
 
-    private func internalPerformUpdate(_ block: () -> Void, complete: (() -> Void)? = nil) {
+    private func internalPerformUpdate(_ block: () -> Void, completion: (() -> Void)? = nil) {
         // If our delegate our delegate can handle this for us, pass it up the tree
         if let delegate = self.delegate {
             delegate.dataSource(self as! AAPLDataSource<Any>, performBatchUpdate: block, complete: complete)
         } else {
             block()
-            complete?()
+            completion?()
         }
     }
     
@@ -512,10 +574,10 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
 
         internalPerformUpdate({
             // Clear the placeholder when the sections represents the entire range of sections in this data source.
-            if (sections as NSIndexSet).contains(in: NSRange(location: 0, length: self.numberOfSections()))) {
+            if (sections as NSIndexSet).contains(in: NSRange(location: 0, length: self.numberOfSections())) {
                 self.placeholder = nil
             }
-            
+
             // We need to pass this up the tree of data sources until it reaches the collection view, which will then pass it to the layout.
             delegate?.dataSource(self as! AAPLDataSource<Any>, didDismissPlaceholderFor: sections)
         })
@@ -523,17 +585,39 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
 
     /// Update the placeholder view for a given section.
     private func updatePlaceholderView(_ placeholderView: AAPLCollectionPlaceholderView, forSectionAt sectionIndex: Int) {
-    
+        var message: String?
+        var title: String?
+        var image: UIImage?
+        
+        // Handle loading and refreshing states
+        if shouldShowActivityIndicator {
+            placeholderView.showActivityIndicator(true)
+            placeholderView.hidePlaceholderAnimated(true)
+            return
+        }
+        
+        // For other states, start by turning off the activity indicator
+        placeholderView.showActivityIndicator(false)
+
+        title = placeholder?.title
+        message = placeholder?.message
+        image = placeholder?.image
+
+        if title != nil || message != nil || image  != nil {
+            placeholderView.showPlaceholder(with: title, message: message, image: image, animated: true)
+        } else {
+            placeholderView.hidePlaceholderAnimated(true)
+        }
     }
-    
+
     /// State machine delegate method for notifying that the state is about to change. This is used to update the loadingState property.
     func stateWillChange() {
-        
+        willChangeValue(forKey: "loadingState")
     }
 
     /// State machine delegate method for notifying that the state has changed. This is used to update the loadingState property.
     func stateDidChange() {
-        
+        didChangeValue(forKey: "loadingState")
     }
     
     private var headers: [AAPLSupplementaryItem] = []
@@ -637,7 +721,7 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
             }
             return []
         } else {
-            var numberOfGlobalFooters = 0
+            let numberOfGlobalFooters = 0
 
             itemIndex = defaultMetrics?.footers.index(of: supplementaryItem)
             if let itemIndex = itemIndex {
@@ -752,28 +836,34 @@ class AAPLDataSource<ItemType>: NSObject, UICollectionViewDataSource {
     
     /// Notify the parent data source that this data source will load its content. Unlike other notifications, this notification will not be propagated past the parent data source.
     private func notifyWillLoadContent() {
-        
+        delegate?.dataSourceWillLoadContent(self as! AAPLDataSource<Any>)
     }
-    
+
+    private var loadingCompletionBlock: (() -> Void)?
+
     /// Notify the parent data source that this data source has finished loading its content with the given error (nil if no error). Unlike other notifications, this notification will not propagate past the parent data source.
     private func notifyContentLoaded(with error: Error?) {
-    
+        let loadingCompleteBlock = self.loadingCompletionBlock
+        self.loadingCompletionBlock = nil
+        loadingCompleteBlock?()
+
+        delegate?.dataSource(self as! AAPLDataSource<Any>, didLoadContentWith: error!)
     }
     
-    private func notifySectionsInserted(_ sections: IndexSet, direction: AAPLDataSourceSectionOperationDirection) {
-    
+    private func notifySectionsInserted(_ sections: IndexSet, direction: AAPLDataSourceSectionOperationDirection = .none) {
+        delegate?.dataSource(self as! AAPLDataSource<Any>, didInsert: sections, direction: direction)
     }
 
-    private func notifySectionsRemoved(_ sections: IndexSet, direction: AAPLDataSourceSectionOperationDirection) {
-    
+    private func notifySectionsRemoved(_ sections: IndexSet, direction: AAPLDataSourceSectionOperationDirection = .none) {
+        delegate?.dataSource(self as! AAPLDataSource<Any>, didRemove: sections, direction: direction)
     }
 
-    private func notifySectionMovedFrom(_ section: Int, to newSection: Int, direction: AAPLDataSourceSectionOperationDirection) {
-        
+    private func notifySectionMovedFrom(_ section: Int, to newSection: Int, direction: AAPLDataSourceSectionOperationDirection = .none) {
+        delegate?.dataSource(self as! AAPLDataSource<Any>, didMove: section, toSection: newSection, direction: direction)
     }
     
     private func notifyContentUpdatedForSupplementaryItem(_ metrics: AAPLSupplementaryItem, at indexPaths: [IndexPath], header: Bool) {
-        
+        delegate?.dataSource(self as! AAPLDataSource<Any>, didUpdateSupplementaryItem: metrics, at: indexPaths, header: header)
     }
 
     // MARK: - UICollectionViewDataSource
@@ -841,17 +931,8 @@ extension AAPLDataSource: AAPLContentLoading {
         }
     }
 
-    var loadingError: Error? {
-        get {
-            
-        }
-        set {
-            
-        }
-    }
-    
-    func loadContent(with progress: AAPLLoadingProgress) {
-        
+    func loadContentWithProgress(_ progress: AAPLLoadingProgress) {
+        progress.done()
     }
 }
 

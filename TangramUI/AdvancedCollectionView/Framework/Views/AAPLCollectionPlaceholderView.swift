@@ -7,5 +7,15 @@
 //
 
 class AAPLCollectionPlaceholderView: UICollectionReusableView {
+    func showActivityIndicator(_ show: Bool) {
     
+    }
+    
+    func hidePlaceholderAnimated(_ animated: Bool) {
+        
+    }
+
+    func showPlaceholder(with title: String?, message: String?, image: UIImage?, animated: Bool) {
+        
+    }
 }

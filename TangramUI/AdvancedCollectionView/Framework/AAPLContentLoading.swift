@@ -35,6 +35,7 @@ class AAPLLoadingProgress {
     func ignore() {
         doneWithNewState(nil, error: nil, update: nil)
     }
+
     /// Signals that loading is complete with no errors. This triggers a transition to the Loaded state.
     func done() {
         doneWithNewState(AAPLLoadStateContentLoaded, error: nil, update: nil)
@@ -55,42 +56,45 @@ class AAPLLoadingProgress {
     func updateWithNoContent(_ update: @escaping AAPLLoadingUpdateBlock) {
         doneWithNewState(AAPLLoadStateNoContent, error: nil, update: update)
     }
-    
+
     /// Has this loading operation been cancelled? It's important to check whether the loading progress has been cancelled before calling one of the completion methods (-ignore, -done, -doneWithError:, updateWithContent:, or -updateWithNoContent:). When loading has been cancelled, updating via a completion method will throw an assertion in DEBUG mode.
     var isCancelled = false {
         didSet {
             ignore()
         }
     }
-    
+
     private var block: ((String?, Error?, AAPLLoadingUpdateBlock?) -> Void)?
 
     /// create a new loading helper
     init(handler: @escaping (String?, Error?, AAPLLoadingUpdateBlock?) -> Void) {
         self.block = handler
     }
-    
+
     private func doneWithNewState(_ newState: String?, error: Error?, update: AAPLLoadingUpdateBlock?) {
 
         let block = self.block
-        
+
         DispatchQueue.main.async {
             block?(newState, error, update)
         }
-        
+
         self.block = nil
     }
 }
 
 /// A protocol that defines content loading behavior
 protocol AAPLContentLoading {
+
     /// The current state of the content loading operation
     var loadingState: String { set get }
+
     /// Any error that occurred during content loading. Valid only when loadingState == AAPLLoadStateError.
     var loadingError: Error? { set get }
-    
+
     /// Public method used to begin loading the content.
-    func loadContent(with progress: AAPLLoadingProgress)
+    func loadContentWithProgress(_ progress: AAPLLoadingProgress)
+
     /// Public method used to reset the content of the receiver.
     func resetContent()
 }

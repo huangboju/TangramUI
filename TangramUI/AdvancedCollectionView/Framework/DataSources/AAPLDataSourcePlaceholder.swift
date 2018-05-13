@@ -15,8 +15,8 @@ struct AAPLDataSourcePlaceholder {
     var image: UIImage?
     
     var activityIndicator = false
-    
-    var placeholderWithActivityIndicator: AAPLDataSourcePlaceholder {
+
+    static var placeholderWithActivityIndicator: AAPLDataSourcePlaceholder {
         return AAPLDataSourcePlaceholder(title: nil, message: nil, image: nil, activityIndicator: true)
     }
 }
