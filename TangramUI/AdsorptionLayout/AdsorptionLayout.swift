@@ -6,6 +6,8 @@
 //  Copyright © 2018 黄伯驹. All rights reserved.
 //
 
+// https://github.com/ruslanskorb/RSKCollectionViewRetractableFirstItemLayout
+
 /// A light-weight `UICollectionViewFlowLayout` subclass that allows the first item to be retractable.
 open class AdsorptionLayout: UICollectionViewFlowLayout {
     
