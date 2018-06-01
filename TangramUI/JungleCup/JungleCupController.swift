@@ -99,14 +99,14 @@ extension JungleCupCollectionViewController: UICollectionViewDataSource {
         switch kind {
         case UICollectionElementKindSectionHeader:
             let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomLayout.Element.sectionHeader.id, for: indexPath)
-            if let sectionHeaderView = supplementaryView as? SectionHeaderView {
+            if supplementaryView is SectionHeaderView {
 //                sectionHeaderView.title.text = sections[indexPath.section]
             }
             return supplementaryView
 
         case UICollectionElementKindSectionFooter:
             let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomLayout.Element.sectionFooter.id, for: indexPath)
-            if let sectionFooterView = supplementaryView as? SectionFooterView {
+            if supplementaryView is SectionFooterView {
 //                sectionFooterView.mark.text = "Strength: \(teams[displayedTeam].marks[indexPath.section])"
             }
             return supplementaryView
@@ -125,7 +125,7 @@ extension JungleCupCollectionViewController: UICollectionViewDataSource {
                 withReuseIdentifier: CustomLayout.Element.menu.id,
                 for: indexPath
             )
-            if let menuView = menuView as? MenuView {
+            if menuView is MenuView {
 //                menuView.delegate = self
             }
             return menuView

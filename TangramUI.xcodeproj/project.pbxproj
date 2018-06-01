@@ -54,6 +54,7 @@
 		BE95F5321FC66CB70033D83B /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE95F51E1FC66CB70033D83B /* 3.jpg */; };
 		BE95F5331FC66CB70033D83B /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE95F51F1FC66CB70033D83B /* 1.jpg */; };
 		BE95F5351FC66CFC0033D83B /* ReorderableTripletLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE95F5341FC66CFC0033D83B /* ReorderableTripletLayoutController.swift */; };
+		BEB8E1A520C17E1500B79A53 /* CenterLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8E1A420C17E1500B79A53 /* CenterLayout.swift */; };
 		BEC2AECC1FC0681F00FB98C2 /* ReverseLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC2AECB1FC0681F00FB98C2 /* ReverseLayoutController.swift */; };
 		BEC2AECE1FC068B500FB98C2 /* ReverseLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC2AECD1FC068B500FB98C2 /* ReverseLayout.swift */; };
 		BEDA5DA01FCBE3DD00777CBC /* ExcelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA5D9F1FCBE3DD00777CBC /* ExcelLayout.swift */; };
@@ -155,6 +156,7 @@
 		BE95F51E1FC66CB70033D83B /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		BE95F51F1FC66CB70033D83B /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		BE95F5341FC66CFC0033D83B /* ReorderableTripletLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderableTripletLayoutController.swift; sourceTree = "<group>"; };
+		BEB8E1A420C17E1500B79A53 /* CenterLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterLayout.swift; sourceTree = "<group>"; };
 		BEC2AECB1FC0681F00FB98C2 /* ReverseLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseLayoutController.swift; sourceTree = "<group>"; };
 		BEC2AECD1FC068B500FB98C2 /* ReverseLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseLayout.swift; sourceTree = "<group>"; };
 		BEDA5D9F1FCBE3DD00777CBC /* ExcelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelLayout.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				BEB8E1A320C17DF300B79A53 /* CenterLayout */,
 				BE54ADA920A5804700B8A473 /* AdsorptionLayout */,
 				BE7D4A3D1FE67CC4005AD328 /* ExpandingCollectionView */,
 				BE511D631FCE634800BD9489 /* PinterestLayout */,
@@ -366,6 +369,14 @@
 				BE95F51F1FC66CB70033D83B /* 1.jpg */,
 			);
 			path = photos;
+			sourceTree = "<group>";
+		};
+		BEB8E1A320C17DF300B79A53 /* CenterLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BEB8E1A420C17E1500B79A53 /* CenterLayout.swift */,
+			);
+			path = CenterLayout;
 			sourceTree = "<group>";
 		};
 		BEC2AECA1FC067EC00FB98C2 /* ReverseCollectionView */ = {
@@ -503,7 +514,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "黄伯驹";
 				TargetAttributes = {
 					BE0D89F51FBED81800CA8114 = {
@@ -610,6 +621,7 @@
 				BEF73AD51FCAB79000A37524 /* MockDataManager.swift in Sources */,
 				BEF73AD31FCAB6EB00A37524 /* JungleCupController.swift in Sources */,
 				BEDE1E611FBF141D0051F702 /* ServicePicTwoTitleCell.swift in Sources */,
+				BEB8E1A520C17E1500B79A53 /* CenterLayout.swift in Sources */,
 				BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */,
 				BE511D691FCE64E500BD9489 /* Photo.swift in Sources */,
 				BE7D4A471FE67E64005AD328 /* InspirationCell.swift in Sources */,
@@ -711,6 +723,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -718,6 +731,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -768,6 +782,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -775,6 +790,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

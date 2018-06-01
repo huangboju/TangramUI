@@ -52,7 +52,7 @@ class ReorderableTripletLayoutController: BaseController {
     override func initSubviews() {
         view.addSubview(collectionView)
         
-        images = (1 ... 20).flatMap { UIImage(named: "\($0).jpg") }
+        images = (1 ... 20).compactMap { UIImage(named: "\($0).jpg") }
     }
 }
 
