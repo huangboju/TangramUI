@@ -23,7 +23,7 @@ class StretchyHeaderLayoutController: BaseController {
         collectionView.register(StretchyHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
         return collectionView
     }()
-    
+
     override func initSubviews() {
 
         view.addSubview(collectionView)

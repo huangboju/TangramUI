@@ -26,7 +26,8 @@ class ViewController: UIViewController {
             GridLayoutController.self,
             PinterestLayoutController.self,
             ExpandingLayoutController.self,
-            AdsorptionController.self
+            AdsorptionController.self,
+            CenterLayoutController.self
         ]
     ]
     

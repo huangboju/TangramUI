@@ -117,10 +117,12 @@ class CenterLayout: UICollectionViewFlowLayout {
 
         // x-x-x-x ... sum up the interim space
         var interitemSpacing = minimumInteritemSpacing
-        
+
         // Check for minimumInteritemSpacingForSectionAtIndex support
         if rowBuddies.count > 0 {
-            interitemSpacing = flowDelegate?.collectionView!(collectionView!, layout: self, minimumLineSpacingForSectionAt: indexPath.section) ?? 0
+            if let spacing = flowDelegate?.collectionView?(collectionView!, layout: self, minimumLineSpacingForSectionAt: indexPath.section) {
+                interitemSpacing = spacing
+            }
         }
 
         let aggregateInteritemSpacing = interitemSpacing * CGFloat(rowBuddies.count - 1)
