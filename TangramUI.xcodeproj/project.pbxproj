@@ -25,6 +25,8 @@
 		BE511D6D1FCE654E00BD9489 /* Photos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE511D6B1FCE654E00BD9489 /* Photos.xcassets */; };
 		BE54ADAB20A5806D00B8A473 /* AdsorptionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE54ADAA20A5806D00B8A473 /* AdsorptionLayout.swift */; };
 		BE720B9E20C26E5100E86818 /* CenterLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720B9D20C26E5100E86818 /* CenterLayoutController.swift */; };
+		BE720BA120C2816700E86818 /* CollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BA020C2816700E86818 /* CollectionViewWaterfallLayout.swift */; };
+		BE720BA320C28DCE00E86818 /* WaterfallLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BA220C28DCE00E86818 /* WaterfallLayoutController.swift */; };
 		BE7D4A3F1FE67D06005AD328 /* ExpandingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A3E1FE67D06005AD328 /* ExpandingLayout.swift */; };
 		BE7D4A421FE67DA8005AD328 /* Inspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A401FE67DA7005AD328 /* Inspiration.swift */; };
 		BE7D4A431FE67DA8005AD328 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A411FE67DA8005AD328 /* Session.swift */; };
@@ -128,6 +130,8 @@
 		BE511D6B1FCE654E00BD9489 /* Photos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Photos.xcassets; sourceTree = "<group>"; };
 		BE54ADAA20A5806D00B8A473 /* AdsorptionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsorptionLayout.swift; sourceTree = "<group>"; };
 		BE720B9D20C26E5100E86818 /* CenterLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterLayoutController.swift; sourceTree = "<group>"; };
+		BE720BA020C2816700E86818 /* CollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
+		BE720BA220C28DCE00E86818 /* WaterfallLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayoutController.swift; sourceTree = "<group>"; };
 		BE7D4A3E1FE67D06005AD328 /* ExpandingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingLayout.swift; sourceTree = "<group>"; };
 		BE7D4A401FE67DA7005AD328 /* Inspiration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inspiration.swift; sourceTree = "<group>"; };
 		BE7D4A411FE67DA8005AD328 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				BE720B9F20C2813200E86818 /* CollectionViewWaterfallLayout */,
 				BEB8E1A320C17DF300B79A53 /* CenterLayout */,
 				BE54ADA920A5804700B8A473 /* AdsorptionLayout */,
 				BE7D4A3D1FE67CC4005AD328 /* ExpandingCollectionView */,
@@ -312,6 +317,15 @@
 				BE406CFA20A7EB5F009A4D6E /* ColorCell.swift */,
 			);
 			path = AdsorptionLayout;
+			sourceTree = "<group>";
+		};
+		BE720B9F20C2813200E86818 /* CollectionViewWaterfallLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BE720BA020C2816700E86818 /* CollectionViewWaterfallLayout.swift */,
+				BE720BA220C28DCE00E86818 /* WaterfallLayoutController.swift */,
+			);
+			path = CollectionViewWaterfallLayout;
 			sourceTree = "<group>";
 		};
 		BE7D4A3D1FE67CC4005AD328 /* ExpandingCollectionView */ = {
@@ -641,6 +655,7 @@
 				BEDE1E541FBEEE930051F702 /* UIColor+Extension.swift in Sources */,
 				BEF73ACD1FCAB5B000A37524 /* CustomLayoutAttributes.swift in Sources */,
 				BEDA5DA61FCD059D00777CBC /* StretchyHeaderLayout.swift in Sources */,
+				BE720BA120C2816700E86818 /* CollectionViewWaterfallLayout.swift in Sources */,
 				BEF73AD91FCAE0D700A37524 /* SectionFooterView.swift in Sources */,
 				BEC2AECC1FC0681F00FB98C2 /* ReverseLayoutController.swift in Sources */,
 				BEDA5DAB1FCD278700777CBC /* GridLayout.swift in Sources */,
@@ -654,6 +669,7 @@
 				BE406CFB20A7EB5F009A4D6E /* ColorCell.swift in Sources */,
 				BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */,
 				BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */,
+				BE720BA320C28DCE00E86818 /* WaterfallLayoutController.swift in Sources */,
 				BEDA5DAD1FCD4CE300777CBC /* GridLayoutController.swift in Sources */,
 				BE406CF720A7E9DE009A4D6E /* AdsorptionController.swift in Sources */,
 				BEDA5DA81FCD07D000777CBC /* StretchyHeaderLayoutController.swift in Sources */,
@@ -829,6 +845,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D2CVGDWDEG;
 				INFOPLIST_FILE = TangramUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boju.TangramUI;
@@ -844,6 +861,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D2CVGDWDEG;
 				INFOPLIST_FILE = TangramUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boju.TangramUI;
