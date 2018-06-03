@@ -27,6 +27,8 @@
 		BE720B9E20C26E5100E86818 /* CenterLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720B9D20C26E5100E86818 /* CenterLayoutController.swift */; };
 		BE720BA120C2816700E86818 /* CollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BA020C2816700E86818 /* CollectionViewWaterfallLayout.swift */; };
 		BE720BA320C28DCE00E86818 /* WaterfallLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BA220C28DCE00E86818 /* WaterfallLayoutController.swift */; };
+		BE720BA620C29F2300E86818 /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BA520C29F2300E86818 /* CHTCollectionViewWaterfallLayout.swift */; };
+		BE720BA920C29FF500E86818 /* CHTCollectionViewWaterfallLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BA820C29FF500E86818 /* CHTCollectionViewWaterfallLayoutController.swift */; };
 		BE7D4A3F1FE67D06005AD328 /* ExpandingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A3E1FE67D06005AD328 /* ExpandingLayout.swift */; };
 		BE7D4A421FE67DA8005AD328 /* Inspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A401FE67DA7005AD328 /* Inspiration.swift */; };
 		BE7D4A431FE67DA8005AD328 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A411FE67DA8005AD328 /* Session.swift */; };
@@ -132,6 +134,8 @@
 		BE720B9D20C26E5100E86818 /* CenterLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterLayoutController.swift; sourceTree = "<group>"; };
 		BE720BA020C2816700E86818 /* CollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
 		BE720BA220C28DCE00E86818 /* WaterfallLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayoutController.swift; sourceTree = "<group>"; };
+		BE720BA520C29F2300E86818 /* CHTCollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHTCollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
+		BE720BA820C29FF500E86818 /* CHTCollectionViewWaterfallLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHTCollectionViewWaterfallLayoutController.swift; sourceTree = "<group>"; };
 		BE7D4A3E1FE67D06005AD328 /* ExpandingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingLayout.swift; sourceTree = "<group>"; };
 		BE7D4A401FE67DA7005AD328 /* Inspiration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inspiration.swift; sourceTree = "<group>"; };
 		BE7D4A411FE67DA8005AD328 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				BE720BA420C29F0200E86818 /* CHTCollectionViewWaterfallLayout */,
 				BE720B9F20C2813200E86818 /* CollectionViewWaterfallLayout */,
 				BEB8E1A320C17DF300B79A53 /* CenterLayout */,
 				BE54ADA920A5804700B8A473 /* AdsorptionLayout */,
@@ -326,6 +331,15 @@
 				BE720BA220C28DCE00E86818 /* WaterfallLayoutController.swift */,
 			);
 			path = CollectionViewWaterfallLayout;
+			sourceTree = "<group>";
+		};
+		BE720BA420C29F0200E86818 /* CHTCollectionViewWaterfallLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BE720BA520C29F2300E86818 /* CHTCollectionViewWaterfallLayout.swift */,
+				BE720BA820C29FF500E86818 /* CHTCollectionViewWaterfallLayoutController.swift */,
+			);
+			path = CHTCollectionViewWaterfallLayout;
 			sourceTree = "<group>";
 		};
 		BE7D4A3D1FE67CC4005AD328 /* ExpandingCollectionView */ = {
@@ -647,6 +661,7 @@
 				BE406CF920A7EA54009A4D6E /* SearchBarCell.swift in Sources */,
 				BE511D651FCE635100BD9489 /* PinterestLayout.swift in Sources */,
 				BE0D89FA1FBED81800CA8114 /* AppDelegate.swift in Sources */,
+				BE720BA620C29F2300E86818 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 				BEF73ACF1FCAB60A00A37524 /* CustomLayout.swift in Sources */,
 				BE7D4A3F1FE67D06005AD328 /* ExpandingLayout.swift in Sources */,
 				BEDE1E5C1FBF0EE40051F702 /* ServiceNormalCell.swift in Sources */,
@@ -667,6 +682,7 @@
 				BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */,
 				BE7D4A421FE67DA8005AD328 /* Inspiration.swift in Sources */,
 				BE406CFB20A7EB5F009A4D6E /* ColorCell.swift in Sources */,
+				BE720BA920C29FF500E86818 /* CHTCollectionViewWaterfallLayoutController.swift in Sources */,
 				BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */,
 				BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */,
 				BE720BA320C28DCE00E86818 /* WaterfallLayoutController.swift in Sources */,

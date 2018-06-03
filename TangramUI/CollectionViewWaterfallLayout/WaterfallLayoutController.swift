@@ -56,7 +56,8 @@ extension WaterfallLayoutController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
 
-        cell.backgroundColor = UIColor.random
+        cell.layer.cornerRadius = 8
+        cell.layer.backgroundColor = UIColor.random.cgColor
 
         return cell
     }

@@ -94,7 +94,7 @@ public class CollectionViewWaterfallLayout: UICollectionViewLayout {
     override public func prepare() {
         super.prepare()
         
-        let numberOfSections = collectionView?.numberOfSections
+        let numberOfSections = collectionView?.numberOfSections ?? 0
         
         if numberOfSections == 0 {
             return
@@ -111,52 +111,49 @@ public class CollectionViewWaterfallLayout: UICollectionViewLayout {
         allItemAttributes.removeAll(keepingCapacity: false)
         sectionItemAttributes.removeAll(keepingCapacity: false)
         
-        for _ in 0..<columnCount {
-            self.columnHeights.append(0)
+        for _ in 0 ..< columnCount {
+            columnHeights.append(0)
         }
         
         // Create attributes
         var top: CGFloat = 0
         var attributes: UICollectionViewLayoutAttributes
         
-        for section in 0..<numberOfSections! {
+        for section in 0 ..< numberOfSections {
             /*
             * 1. Get section-specific metrics (minimumInteritemSpacing, sectionInset)
             */
-            var minimumInteritemSpacing: CGFloat
+            let minimumInteritemSpacing: CGFloat
             if let height = delegate?.collectionView?(collectionView: collectionView!, layout: self, minimumInteritemSpacingForSection: section) {
                 minimumInteritemSpacing = height
             } else {
                 minimumInteritemSpacing = self.minimumInteritemSpacing
             }
             
-            var sectionInset: UIEdgeInsets
+            let sectionInset: UIEdgeInsets
             if let inset = delegate?.collectionView?(collectionView: collectionView!, layout: self, insetForSection: section) {
                 sectionInset = inset
-            }
-            else {
+            } else {
                 sectionInset = self.sectionInset
             }
             
             let width = collectionView!.frame.width - sectionInset.left - sectionInset.right
-            let itemWidth = floor((width - CGFloat(columnCount - 1) * CGFloat(minimumColumnSpacing)) / CGFloat(columnCount))
+            let itemWidth = floor((width - CGFloat(columnCount - 1) * minimumColumnSpacing) / CGFloat(columnCount))
             
             /*
             * 2. Section header
             */
-            var headerHeight: CGFloat
+            let headerHeight: CGFloat
             if let height = delegate?.collectionView?(collectionView: collectionView!, layout: self, heightForHeaderInSection: section) {
                 headerHeight = height
-            }
-            else {
+            } else {
                 headerHeight = self.headerHeight
             }
             
-            var headerInset: UIEdgeInsets
+            let headerInset: UIEdgeInsets
             if let inset = delegate?.collectionView?(collectionView: collectionView!, layout: self, insetForHeaderInSection: section) {
                 headerInset = inset
-            }
-            else {
+            } else {
                 headerInset = self.headerInset
             }
             
@@ -164,8 +161,8 @@ public class CollectionViewWaterfallLayout: UICollectionViewLayout {
             
             if headerHeight > 0 {
                 attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: CollectionViewWaterfallElementKindSectionHeader, with: IndexPath(item: 0, section: section))
-                attributes.frame = CGRect(x: headerInset.left, y: CGFloat(top), width: collectionView!.frame.width - (headerInset.left + headerInset.right), height: CGFloat(headerHeight))
-                
+                attributes.frame = CGRect(x: headerInset.left, y: CGFloat(top), width: collectionView!.frame.width - (headerInset.left + headerInset.right), height: headerHeight)
+
                 headersAttribute[section] = attributes
                 allItemAttributes.append(attributes)
                 
@@ -173,7 +170,8 @@ public class CollectionViewWaterfallLayout: UICollectionViewLayout {
             }
             
             top += sectionInset.top
-            for idx in 0..<columnCount {
+            
+            for idx in 0 ..< columnCount {
                 columnHeights[idx] = top
             }
             
@@ -189,7 +187,7 @@ public class CollectionViewWaterfallLayout: UICollectionViewLayout {
                 let indexPath = IndexPath(row: idx, section: section)
                 let columnIndex = shortestColumnIndex()
                 
-                let xOffset = sectionInset.left + itemWidth + minimumColumnSpacing * CGFloat(columnIndex)
+                let xOffset = sectionInset.left + (itemWidth + minimumColumnSpacing) * CGFloat(columnIndex)
                 let yOffset = columnHeights[columnIndex]
                 let itemSize = delegate?.collectionView(collectionView: collectionView!, layout: self, sizeForItemAt: indexPath) ?? .zero
                 var itemHeight: CGFloat = 0.0
@@ -357,7 +355,7 @@ public class CollectionViewWaterfallLayout: UICollectionViewLayout {
                 index = idx
             }
         }
-        
+
         return index
     }
     
