@@ -81,9 +81,7 @@ public class CHTCollectionViewWaterfallLayout: UICollectionViewLayout {
     
     //    private property and method above.
     public weak var delegate: CHTCollectionViewDelegateWaterfallLayout? {
-        get {
-            return self.collectionView!.delegate as? CHTCollectionViewDelegateWaterfallLayout
-        }
+        return self.collectionView!.delegate as? CHTCollectionViewDelegateWaterfallLayout
     }
     public var columnHeights: [[CGFloat]]
     public var sectionItemAttributes: [[UICollectionViewLayoutAttributes]]

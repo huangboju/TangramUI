@@ -46,16 +46,13 @@ extension PinterestLayoutController: UICollectionViewDataSource {
     
 }
 
-extension PinterestLayoutController: UICollectionViewDelegate {}
-
 //MARK: - PINTEREST LAYOUT DELEGATE
 extension PinterestLayoutController: PinterestLayoutDelegate {
 
     // 1. Returns the photo height
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAt indexPath: IndexPath) -> CGFloat {
         return photos[indexPath.item].image.size.height
-    }
-    
+    }   
 }
 
 class AnnotatedPhotoCell: UICollectionViewCell {

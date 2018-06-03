@@ -6,7 +6,7 @@
 //  Copyright © 2017年 黄伯驹. All rights reserved.
 //
 
-protocol PinterestLayoutDelegate: class {
+protocol PinterestLayoutDelegate: UICollectionViewDelegate {
     // 1. Method to ask the delegate for the height of the image
 
     func collectionView(_ collectionView:UICollectionView, heightForPhotoAt indexPath: IndexPath) -> CGFloat
@@ -14,7 +14,7 @@ protocol PinterestLayoutDelegate: class {
 
 class PinterestLayout: UICollectionViewLayout {
     //1. Pinterest Layout Delegate
-    var delegate: PinterestLayoutDelegate? {
+    weak var delegate: PinterestLayoutDelegate? {
         return collectionView?.delegate as? PinterestLayoutDelegate
     }
 

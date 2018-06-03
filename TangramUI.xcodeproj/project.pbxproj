@@ -29,6 +29,10 @@
 		BE720BA320C28DCE00E86818 /* WaterfallLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BA220C28DCE00E86818 /* WaterfallLayoutController.swift */; };
 		BE720BA620C29F2300E86818 /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BA520C29F2300E86818 /* CHTCollectionViewWaterfallLayout.swift */; };
 		BE720BA920C29FF500E86818 /* CHTCollectionViewWaterfallLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BA820C29FF500E86818 /* CHTCollectionViewWaterfallLayoutController.swift */; };
+		BE720BAD20C3BD9A00E86818 /* PinterestLayout1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BAC20C3BD9A00E86818 /* PinterestLayout1.swift */; };
+		BE720BAF20C3BDB800E86818 /* PinterestLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BAE20C3BDB800E86818 /* PinterestLayoutAttributes.swift */; };
+		BE720BB120C3BDCB00E86818 /* PinterestLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BB020C3BDCB00E86818 /* PinterestLayoutDelegate.swift */; };
+		BE720BB320C3BF1200E86818 /* PinterestLayout1Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BB220C3BF1200E86818 /* PinterestLayout1Controller.swift */; };
 		BE7D4A3F1FE67D06005AD328 /* ExpandingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A3E1FE67D06005AD328 /* ExpandingLayout.swift */; };
 		BE7D4A421FE67DA8005AD328 /* Inspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A401FE67DA7005AD328 /* Inspiration.swift */; };
 		BE7D4A431FE67DA8005AD328 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A411FE67DA8005AD328 /* Session.swift */; };
@@ -136,6 +140,10 @@
 		BE720BA220C28DCE00E86818 /* WaterfallLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayoutController.swift; sourceTree = "<group>"; };
 		BE720BA520C29F2300E86818 /* CHTCollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHTCollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
 		BE720BA820C29FF500E86818 /* CHTCollectionViewWaterfallLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHTCollectionViewWaterfallLayoutController.swift; sourceTree = "<group>"; };
+		BE720BAC20C3BD9A00E86818 /* PinterestLayout1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout1.swift; sourceTree = "<group>"; };
+		BE720BAE20C3BDB800E86818 /* PinterestLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayoutAttributes.swift; sourceTree = "<group>"; };
+		BE720BB020C3BDCB00E86818 /* PinterestLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayoutDelegate.swift; sourceTree = "<group>"; };
+		BE720BB220C3BF1200E86818 /* PinterestLayout1Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout1Controller.swift; sourceTree = "<group>"; };
 		BE7D4A3E1FE67D06005AD328 /* ExpandingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingLayout.swift; sourceTree = "<group>"; };
 		BE7D4A401FE67DA7005AD328 /* Inspiration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inspiration.swift; sourceTree = "<group>"; };
 		BE7D4A411FE67DA8005AD328 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -304,6 +312,7 @@
 		BE511D631FCE634800BD9489 /* PinterestLayout */ = {
 			isa = PBXGroup;
 			children = (
+				BE720BAB20C3BD7F00E86818 /* PinterestLayout1 */,
 				BE511D6A1FCE654E00BD9489 /* Photos.plist */,
 				BE511D6B1FCE654E00BD9489 /* Photos.xcassets */,
 				BE511D681FCE64E500BD9489 /* Photo.swift */,
@@ -340,6 +349,17 @@
 				BE720BA820C29FF500E86818 /* CHTCollectionViewWaterfallLayoutController.swift */,
 			);
 			path = CHTCollectionViewWaterfallLayout;
+			sourceTree = "<group>";
+		};
+		BE720BAB20C3BD7F00E86818 /* PinterestLayout1 */ = {
+			isa = PBXGroup;
+			children = (
+				BE720BAC20C3BD9A00E86818 /* PinterestLayout1.swift */,
+				BE720BAE20C3BDB800E86818 /* PinterestLayoutAttributes.swift */,
+				BE720BB020C3BDCB00E86818 /* PinterestLayoutDelegate.swift */,
+				BE720BB220C3BF1200E86818 /* PinterestLayout1Controller.swift */,
+			);
+			path = PinterestLayout1;
 			sourceTree = "<group>";
 		};
 		BE7D4A3D1FE67CC4005AD328 /* ExpandingCollectionView */ = {
@@ -654,11 +674,15 @@
 				BEDE1E611FBF141D0051F702 /* ServicePicTwoTitleCell.swift in Sources */,
 				BEB8E1A520C17E1500B79A53 /* CenterLayout.swift in Sources */,
 				BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */,
+				BE720BAD20C3BD9A00E86818 /* PinterestLayout1.swift in Sources */,
+				BE720BAF20C3BDB800E86818 /* PinterestLayoutAttributes.swift in Sources */,
 				BE511D691FCE64E500BD9489 /* Photo.swift in Sources */,
 				BE7D4A471FE67E64005AD328 /* InspirationCell.swift in Sources */,
+				BE720BB320C3BF1200E86818 /* PinterestLayout1Controller.swift in Sources */,
 				BEF73ADB1FCAE18900A37524 /* MenuView.swift in Sources */,
 				BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */,
 				BE406CF920A7EA54009A4D6E /* SearchBarCell.swift in Sources */,
+				BE720BB120C3BDCB00E86818 /* PinterestLayoutDelegate.swift in Sources */,
 				BE511D651FCE635100BD9489 /* PinterestLayout.swift in Sources */,
 				BE0D89FA1FBED81800CA8114 /* AppDelegate.swift in Sources */,
 				BE720BA620C29F2300E86818 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
