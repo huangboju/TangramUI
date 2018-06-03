@@ -30,7 +30,8 @@ class ViewController: UIViewController {
             AdsorptionController.self,
             CenterLayoutController.self,
             WaterfallLayoutController.self,
-            CHTCollectionViewWaterfallLayoutController.self
+            CHTCollectionViewWaterfallLayoutController.self,
+            MosaicLayoutController.self
         ]
     ]
     

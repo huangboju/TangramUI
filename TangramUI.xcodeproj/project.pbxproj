@@ -33,6 +33,9 @@
 		BE720BAF20C3BDB800E86818 /* PinterestLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BAE20C3BDB800E86818 /* PinterestLayoutAttributes.swift */; };
 		BE720BB120C3BDCB00E86818 /* PinterestLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BB020C3BDCB00E86818 /* PinterestLayoutDelegate.swift */; };
 		BE720BB320C3BF1200E86818 /* PinterestLayout1Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BB220C3BF1200E86818 /* PinterestLayout1Controller.swift */; };
+		BE720BB620C3DB4A00E86818 /* TRMosaicLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BB520C3DB4A00E86818 /* TRMosaicLayout.swift */; };
+		BE720BB820C3DB6500E86818 /* TRMosaicColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BB720C3DB6500E86818 /* TRMosaicColumn.swift */; };
+		BE720BBA20C3DD4A00E86818 /* MosaicLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BB920C3DD4A00E86818 /* MosaicLayoutController.swift */; };
 		BE7D4A3F1FE67D06005AD328 /* ExpandingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A3E1FE67D06005AD328 /* ExpandingLayout.swift */; };
 		BE7D4A421FE67DA8005AD328 /* Inspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A401FE67DA7005AD328 /* Inspiration.swift */; };
 		BE7D4A431FE67DA8005AD328 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D4A411FE67DA8005AD328 /* Session.swift */; };
@@ -144,6 +147,9 @@
 		BE720BAE20C3BDB800E86818 /* PinterestLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayoutAttributes.swift; sourceTree = "<group>"; };
 		BE720BB020C3BDCB00E86818 /* PinterestLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayoutDelegate.swift; sourceTree = "<group>"; };
 		BE720BB220C3BF1200E86818 /* PinterestLayout1Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout1Controller.swift; sourceTree = "<group>"; };
+		BE720BB520C3DB4A00E86818 /* TRMosaicLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRMosaicLayout.swift; sourceTree = "<group>"; };
+		BE720BB720C3DB6500E86818 /* TRMosaicColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRMosaicColumn.swift; sourceTree = "<group>"; };
+		BE720BB920C3DD4A00E86818 /* MosaicLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLayoutController.swift; sourceTree = "<group>"; };
 		BE7D4A3E1FE67D06005AD328 /* ExpandingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingLayout.swift; sourceTree = "<group>"; };
 		BE7D4A401FE67DA7005AD328 /* Inspiration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inspiration.swift; sourceTree = "<group>"; };
 		BE7D4A411FE67DA8005AD328 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -252,6 +258,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				BE720BB420C3DB4200E86818 /* TRMosaicLayout */,
 				BE720BA420C29F0200E86818 /* CHTCollectionViewWaterfallLayout */,
 				BE720B9F20C2813200E86818 /* CollectionViewWaterfallLayout */,
 				BEB8E1A320C17DF300B79A53 /* CenterLayout */,
@@ -360,6 +367,16 @@
 				BE720BB220C3BF1200E86818 /* PinterestLayout1Controller.swift */,
 			);
 			path = PinterestLayout1;
+			sourceTree = "<group>";
+		};
+		BE720BB420C3DB4200E86818 /* TRMosaicLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BE720BB520C3DB4A00E86818 /* TRMosaicLayout.swift */,
+				BE720BB720C3DB6500E86818 /* TRMosaicColumn.swift */,
+				BE720BB920C3DD4A00E86818 /* MosaicLayoutController.swift */,
+			);
+			path = TRMosaicLayout;
 			sourceTree = "<group>";
 		};
 		BE7D4A3D1FE67CC4005AD328 /* ExpandingCollectionView */ = {
@@ -701,12 +718,15 @@
 				BEC2AECE1FC068B500FB98C2 /* ReverseLayout.swift in Sources */,
 				BEDE1E5A1FBEF0E40051F702 /* ServiceLeftPicCell.swift in Sources */,
 				BEDE1E631FBF15250051F702 /* BaseController.swift in Sources */,
+				BE720BBA20C3DD4A00E86818 /* MosaicLayoutController.swift in Sources */,
 				BE511D671FCE638500BD9489 /* PinterestLayoutController.swift in Sources */,
 				BE54ADAB20A5806D00B8A473 /* AdsorptionLayout.swift in Sources */,
 				BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */,
 				BE7D4A421FE67DA8005AD328 /* Inspiration.swift in Sources */,
 				BE406CFB20A7EB5F009A4D6E /* ColorCell.swift in Sources */,
 				BE720BA920C29FF500E86818 /* CHTCollectionViewWaterfallLayoutController.swift in Sources */,
+				BE720BB820C3DB6500E86818 /* TRMosaicColumn.swift in Sources */,
+				BE720BB620C3DB4A00E86818 /* TRMosaicLayout.swift in Sources */,
 				BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */,
 				BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */,
 				BE720BA320C28DCE00E86818 /* WaterfallLayoutController.swift in Sources */,

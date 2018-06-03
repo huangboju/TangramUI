@@ -9,7 +9,7 @@
 class PinterestLayoutController: BaseController {
     let layout = PinterestLayout()
 
-    var photos = Photo.allPhotos()
+    let photos = Photo.allPhotos()
 
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
