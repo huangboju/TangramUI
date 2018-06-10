@@ -85,6 +85,7 @@
 		BEDE1E611FBF141D0051F702 /* ServicePicTwoTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E601FBF141D0051F702 /* ServicePicTwoTitleCell.swift */; };
 		BEDE1E631FBF15250051F702 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E621FBF15250051F702 /* BaseController.swift */; };
 		BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE1E641FBF155B0051F702 /* ServiceLayoutController.swift */; };
+		BEEACC8620CCC17300C1D180 /* MosaicLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEACC8520CCC17300C1D180 /* MosaicLayout.swift */; };
 		BEF73ACD1FCAB5B000A37524 /* CustomLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73ACC1FCAB5B000A37524 /* CustomLayoutAttributes.swift */; };
 		BEF73ACF1FCAB60A00A37524 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73ACE1FCAB60A00A37524 /* CustomLayout.swift */; };
 		BEF73AD11FCAB64E00A37524 /* CustomLayoutSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73AD01FCAB64E00A37524 /* CustomLayoutSettings.swift */; };
@@ -199,6 +200,7 @@
 		BEDE1E601FBF141D0051F702 /* ServicePicTwoTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePicTwoTitleCell.swift; sourceTree = "<group>"; };
 		BEDE1E621FBF15250051F702 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		BEDE1E641FBF155B0051F702 /* ServiceLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayoutController.swift; sourceTree = "<group>"; };
+		BEEACC8520CCC17300C1D180 /* MosaicLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLayout.swift; sourceTree = "<group>"; };
 		BEF73ACC1FCAB5B000A37524 /* CustomLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutAttributes.swift; sourceTree = "<group>"; };
 		BEF73ACE1FCAB60A00A37524 /* CustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 		BEF73AD01FCAB64E00A37524 /* CustomLayoutSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLayoutSettings.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				BEEACC8720CCC17900C1D180 /* MosaicLayout */,
 				BE720BB420C3DB4200E86818 /* TRMosaicLayout */,
 				BE720BA420C29F0200E86818 /* CHTCollectionViewWaterfallLayout */,
 				BE720B9F20C2813200E86818 /* CollectionViewWaterfallLayout */,
@@ -503,6 +506,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		BEEACC8720CCC17900C1D180 /* MosaicLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BEEACC8520CCC17300C1D180 /* MosaicLayout.swift */,
+			);
+			path = MosaicLayout;
+			sourceTree = "<group>";
+		};
 		BEF73ACB1FCAB59E00A37524 /* JungleCup */ = {
 			isa = PBXGroup;
 			children = (
@@ -685,6 +696,7 @@
 				BEF73AD11FCAB64E00A37524 /* CustomLayoutSettings.swift in Sources */,
 				BE7FAF971FC2873100788A5A /* ReorderableTripletLayout.swift in Sources */,
 				BEDA5DAF1FCD4D8E00777CBC /* GridLayoutHeaderFooterView.swift in Sources */,
+				BEEACC8620CCC17300C1D180 /* MosaicLayout.swift in Sources */,
 				BEF73AD71FCADA9900A37524 /* PlayerCell.swift in Sources */,
 				BEF73AD51FCAB79000A37524 /* MockDataManager.swift in Sources */,
 				BEF73AD31FCAB6EB00A37524 /* JungleCupController.swift in Sources */,

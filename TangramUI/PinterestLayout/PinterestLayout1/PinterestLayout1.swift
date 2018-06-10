@@ -166,7 +166,7 @@ public class PinterestLayout1: UICollectionViewLayout {
     }
     
     override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        
+
         let layoutAttributes = cache.filter { $0.frame.intersects(rect) }
 
         return layoutAttributes

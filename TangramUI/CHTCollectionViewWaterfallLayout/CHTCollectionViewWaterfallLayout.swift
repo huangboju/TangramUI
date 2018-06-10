@@ -88,7 +88,7 @@ public class CHTCollectionViewWaterfallLayout: UICollectionViewLayout {
     public var allItemAttributes: [UICollectionViewLayoutAttributes]
     public var headersAttributes: [Int: UICollectionViewLayoutAttributes]
     public var footersAttributes: [Int: UICollectionViewLayoutAttributes]
-    public var unionRects: [NSValue]
+    public var unionRects: [CGRect]
     public let unionSize = 20
     
     override public init() {
@@ -270,7 +270,7 @@ public class CHTCollectionViewWaterfallLayout: UICollectionViewLayout {
             let rect1 = self.allItemAttributes[idx].frame
             idx = min(idx + unionSize, itemCounts) - 1
             let rect2 = self.allItemAttributes[idx].frame
-            self.unionRects.append(NSValue(cgRect:rect1.union(rect2)))
+            self.unionRects.append(rect1.union(rect2))
             idx += 1
         }
     }
@@ -322,14 +322,14 @@ public class CHTCollectionViewWaterfallLayout: UICollectionViewLayout {
         
         for i in 0 ..< end {
             let unionRect = self.unionRects[i]
-            if rect.intersects(unionRect.cgRectValue) {
+            if rect.intersects(unionRect) {
                 begin = i * unionSize
                 break
             }
         }
         for i in (0 ..< self.unionRects.count).reversed() {
             let unionRect = self.unionRects[i]
-            if rect.intersects(unionRect.cgRectValue) {
+            if rect.intersects(unionRect) {
                 end = min((i + 1) * unionSize, self.allItemAttributes.count)
                 break
             }
