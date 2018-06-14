@@ -84,6 +84,7 @@ class AKPFlowLayoutController: BaseController {
 
 extension AKPFlowLayoutController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        layout.invalidateLayout()
         return 5
     }
     
