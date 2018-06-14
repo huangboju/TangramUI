@@ -16,6 +16,7 @@ class AKPFlowLayoutController: BaseController {
     private lazy var collectionView: UICollectionView = {
         let layout = AKPFlowLayout()
         layout.minimumInteritemSpacing = 2
+        layout.minimumLineSpacing = 2
         layout.sectionInset = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2)
         layout.layoutOptions = layoutOptions
         layout.firsSectionMaximumStretchHeight = self.view.bounds.width

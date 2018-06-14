@@ -155,7 +155,7 @@ extension AKPFlowLayout {
         var headersIdxs = Set<Int>()
         for attributes in layoutAttributes
                 where attributes.visibleSectionHeader(sectionsShouldPin) {
-            headersIdxs.insert((attributes.indexPath as NSIndexPath).section)
+            headersIdxs.insert(attributes.indexPath.section)
         }
         if layoutOptions.contains(.firstSectionIsGlobalHeader) {
             headersIdxs.insert(0)
@@ -172,7 +172,7 @@ extension AKPFlowLayout {
         // remove the sections that should already be taken care of by UICollectionViewFlowLayout
         for attributes in layoutAttributes
             where attributes.representedElementKind == UICollectionElementKindSectionHeader {
-                sectionIdxs.remove((attributes.indexPath as NSIndexPath).section)
+                sectionIdxs.remove(attributes.indexPath.section)
         }
         return sectionIdxs
     }
@@ -182,7 +182,7 @@ extension AKPFlowLayout {
                                             sectionHeadersLayoutAttributes: AKPFlowLayoutAttributes)
                                                                                              -> (CGRect, Int) {
         guard let collectionView = collectionView else { return (CGRect.zero, 0) }
-        let section = (sectionHeadersLayoutAttributes.indexPath as NSIndexPath).section
+        let section = sectionHeadersLayoutAttributes.indexPath.section
         var sectionFrame = sectionHeadersLayoutAttributes.frame
 
         // 1. Establish the section boundaries:
@@ -194,7 +194,12 @@ extension AKPFlowLayout {
                                                                                                 
         // 3. If within the above boundaries, the section should follow content offset
         //   (adjusting a few more things along the way)
+                                                                                                
+                                                                                                
         var offset = collectionView.contentOffset.y + collectionView.contentInset.top
+                                                                                                if #available(iOS 11, *) {
+                                                                                                    offset += collectionView.adjustedContentInset.top
+                                                                                                }
         if (section > 0) {
             // The global section
             if layoutOptions.contains(.sectionsPinToGlobalHeaderOrVisibleBounds) {
@@ -205,6 +210,7 @@ extension AKPFlowLayout {
                 sectionFrame.origin.y = min(max(offset, minY), maxY)
             }
         } else {
+            
             if layoutOptions.contains(.firstSectionStretchable) && offset < 0 {
                 // Stretchy header
                 if firstSectionHeight - offset < firsSectionMaximumStretchHeight {
@@ -232,7 +238,7 @@ extension AKPFlowLayout {
                                                                                         -> (CGFloat, CGFloat) {
             // get attributes for first and last items in section
             guard let collectionView = collectionView  else { return (0, 0) }
-            let section = (sectionHeadersLayoutAttributes.indexPath as NSIndexPath).section
+            let section = sectionHeadersLayoutAttributes.indexPath.section
             
             // Trying to use layoutAttributesForItemAtIndexPath for empty section would
             // cause EXC_ARITHMETIC in simulator (division by zero items)
@@ -255,7 +261,7 @@ extension AKPFlowLayout {
     }
     
     fileprivate func firstSectionMetrics() -> (height: CGFloat, insets: UIEdgeInsets) {
-        guard let collectionView = collectionView else { return (0, UIEdgeInsets.zero) }
+        guard let collectionView = collectionView else { return (0, .zero) }
         // height of the first section
         var firstSectionHeight = headerReferenceSize.height
         if let delegate = collectionView.delegate as? UICollectionViewDelegateFlowLayout
@@ -267,7 +273,7 @@ extension AKPFlowLayout {
         // insets of the first section
         var theSectionInset = sectionInset
         if let delegate = collectionView.delegate as? UICollectionViewDelegateFlowLayout
-                                                            , theSectionInset == UIEdgeInsets.zero {
+                                                            , theSectionInset == .zero {
             theSectionInset = delegate.collectionView!(collectionView,
                                                        layout: self,
                                                        insetForSectionAt: 0)
