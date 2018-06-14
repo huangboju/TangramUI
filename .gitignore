@@ -35,7 +35,7 @@ playground.xcworkspace
 Packages/
 .build/
 
-# CocoaPods
+CocoaPods
 Pods/
 
 # Carthage
