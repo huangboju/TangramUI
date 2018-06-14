@@ -317,6 +317,7 @@ public class CHTCollectionViewWaterfallLayout: UICollectionViewLayout {
     }
     
     override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+
         var begin = 0, end = self.unionRects.count
         var attrs: [UICollectionViewLayoutAttributes] = []
         
@@ -340,7 +341,6 @@ public class CHTCollectionViewWaterfallLayout: UICollectionViewLayout {
                 attrs.append(attr)
             }
         }
-        
         return attrs
     }
     

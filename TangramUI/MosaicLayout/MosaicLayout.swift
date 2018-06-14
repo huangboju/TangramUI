@@ -63,7 +63,7 @@ class MosaicLayout: UICollectionViewLayout {
 //        var upperBound = range.count
 //        while lowerBound < upperBound {
 //            let midIndex = lowerBound + (upperBound - lowerBound) / 2
-//            if cachedAttributes[midIndex].frame == rect {
+//            if cachedAttributes[midIndex].frame.intersects(rect) {
 //                return midIndex
 //            } else if cachedAttributes[midIndex] < rect {
 //                lowerBound = midIndex + 1

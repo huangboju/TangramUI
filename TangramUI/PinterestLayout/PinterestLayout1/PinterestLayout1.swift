@@ -21,7 +21,7 @@ public class PinterestLayout1: UICollectionViewLayout {
     public var cellPadding: CGFloat = 5
     
     
-    private var cache = [PinterestLayoutAttributes]()
+    private var cachedAttributes = [PinterestLayoutAttributes]()
     private var contentHeight: CGFloat = 0
     private var contentWidth: CGFloat {
         let bounds = collectionView.bounds
@@ -56,14 +56,14 @@ public class PinterestLayout1: UICollectionViewLayout {
      Invalidates layout.
      */
     override public func invalidateLayout() {
-        cache.removeAll()
+        cachedAttributes.removeAll()
         contentHeight = 0
         
         super.invalidateLayout()
     }
     
     override public func prepare() {
-        guard cache.isEmpty else {
+        guard cachedAttributes.isEmpty else {
             return
         }
         let collumnWidth = contentWidth / CGFloat(numberOfColumns)
@@ -95,7 +95,7 @@ public class PinterestLayout1: UICollectionViewLayout {
                     with: IndexPath(item: 0, section: section)
                 )
                 headerAttributes.frame = headerFrame
-                cache.append(headerAttributes)
+                cachedAttributes.append(headerAttributes)
                 
                 contentHeight = headerFrame.maxY
             }
@@ -135,7 +135,7 @@ public class PinterestLayout1: UICollectionViewLayout {
                 )
                 attributes.frame = insetFrame
                 attributes.imageHeight = imageHeight
-                cache.append(attributes)
+                cachedAttributes.append(attributes)
                 
                 contentHeight = max(contentHeight, frame.maxY)
                 yOffsets[column] = yOffsets[column] + cellHeight
@@ -158,7 +158,7 @@ public class PinterestLayout1: UICollectionViewLayout {
                     with: IndexPath(item: 0, section: section)
                 )
                 footerAttributes.frame = footerFrame
-                cache.append(footerAttributes)
+                cachedAttributes.append(footerAttributes)
                 
                 contentHeight = footerFrame.maxY
             }
@@ -167,8 +167,7 @@ public class PinterestLayout1: UICollectionViewLayout {
     
     override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
 
-        let layoutAttributes = cache.filter { $0.frame.intersects(rect) }
-
+        let layoutAttributes = cachedAttributes.filter { $0.frame.intersects(rect) }
         return layoutAttributes
     }
 }
