@@ -95,6 +95,14 @@
 		BEF73AD91FCAE0D700A37524 /* SectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73AD81FCAE0D700A37524 /* SectionFooterView.swift */; };
 		BEF73ADB1FCAE18900A37524 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73ADA1FCAE18900A37524 /* MenuView.swift */; };
 		BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73ADC1FCAE24700A37524 /* HeaderView.swift */; };
+		F7387C1620D24C2C0044B6DF /* AKPFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C0E20D24C2C0044B6DF /* AKPFlowLayout.swift */; };
+		F7387C1720D24C2C0044B6DF /* ImageCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C0F20D24C2C0044B6DF /* ImageCollectionViewHeader.swift */; };
+		F7387C1820D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1020D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift */; };
+		F7387C1920D24C2C0044B6DF /* AKPFlowLayoutError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1120D24C2C0044B6DF /* AKPFlowLayoutError.swift */; };
+		F7387C1A20D24C2C0044B6DF /* AKPFlowLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1220D24C2C0044B6DF /* AKPFlowLayoutAttributes.swift */; };
+		F7387C1B20D24C2C0044B6DF /* AKPLayoutConfigOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1320D24C2C0044B6DF /* AKPLayoutConfigOptions.swift */; };
+		F7387C1C20D24C2C0044B6DF /* AKPFlowLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1420D24C2C0044B6DF /* AKPFlowLayoutController.swift */; };
+		F7387C1D20D24C2C0044B6DF /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1520D24C2C0044B6DF /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,6 +218,14 @@
 		BEF73AD81FCAE0D700A37524 /* SectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionFooterView.swift; sourceTree = "<group>"; };
 		BEF73ADA1FCAE18900A37524 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		BEF73ADC1FCAE24700A37524 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		F7387C0E20D24C2C0044B6DF /* AKPFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayout.swift; sourceTree = "<group>"; };
+		F7387C0F20D24C2C0044B6DF /* ImageCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewHeader.swift; sourceTree = "<group>"; };
+		F7387C1020D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewGlobalHeader.swift; sourceTree = "<group>"; };
+		F7387C1120D24C2C0044B6DF /* AKPFlowLayoutError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutError.swift; sourceTree = "<group>"; };
+		F7387C1220D24C2C0044B6DF /* AKPFlowLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutAttributes.swift; sourceTree = "<group>"; };
+		F7387C1320D24C2C0044B6DF /* AKPLayoutConfigOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPLayoutConfigOptions.swift; sourceTree = "<group>"; };
+		F7387C1420D24C2C0044B6DF /* AKPFlowLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutController.swift; sourceTree = "<group>"; };
+		F7387C1520D24C2C0044B6DF /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +276,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				F7387C0D20D24C2C0044B6DF /* AKPFlowLayout */,
 				BEEACC8720CCC17900C1D180 /* MosaicLayout */,
 				BE720BB420C3DB4200E86818 /* TRMosaicLayout */,
 				BE720BA420C29F0200E86818 /* CHTCollectionViewWaterfallLayout */,
@@ -530,6 +547,21 @@
 			path = JungleCup;
 			sourceTree = "<group>";
 		};
+		F7387C0D20D24C2C0044B6DF /* AKPFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F7387C0E20D24C2C0044B6DF /* AKPFlowLayout.swift */,
+				F7387C0F20D24C2C0044B6DF /* ImageCollectionViewHeader.swift */,
+				F7387C1020D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift */,
+				F7387C1120D24C2C0044B6DF /* AKPFlowLayoutError.swift */,
+				F7387C1220D24C2C0044B6DF /* AKPFlowLayoutAttributes.swift */,
+				F7387C1320D24C2C0044B6DF /* AKPLayoutConfigOptions.swift */,
+				F7387C1420D24C2C0044B6DF /* AKPFlowLayoutController.swift */,
+				F7387C1520D24C2C0044B6DF /* ImageCollectionViewCell.swift */,
+			);
+			path = AKPFlowLayout;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -696,6 +728,7 @@
 				BEF73AD11FCAB64E00A37524 /* CustomLayoutSettings.swift in Sources */,
 				BE7FAF971FC2873100788A5A /* ReorderableTripletLayout.swift in Sources */,
 				BEDA5DAF1FCD4D8E00777CBC /* GridLayoutHeaderFooterView.swift in Sources */,
+				F7387C1620D24C2C0044B6DF /* AKPFlowLayout.swift in Sources */,
 				BEEACC8620CCC17300C1D180 /* MosaicLayout.swift in Sources */,
 				BEF73AD71FCADA9900A37524 /* PlayerCell.swift in Sources */,
 				BEF73AD51FCAB79000A37524 /* MockDataManager.swift in Sources */,
@@ -704,6 +737,7 @@
 				BEB8E1A520C17E1500B79A53 /* CenterLayout.swift in Sources */,
 				BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */,
 				BE720BAD20C3BD9A00E86818 /* PinterestLayout1.swift in Sources */,
+				F7387C1A20D24C2C0044B6DF /* AKPFlowLayoutAttributes.swift in Sources */,
 				BE720BAF20C3BDB800E86818 /* PinterestLayoutAttributes.swift in Sources */,
 				BE511D691FCE64E500BD9489 /* Photo.swift in Sources */,
 				BE7D4A471FE67E64005AD328 /* InspirationCell.swift in Sources */,
@@ -711,7 +745,10 @@
 				BEF73ADB1FCAE18900A37524 /* MenuView.swift in Sources */,
 				BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */,
 				BE406CF920A7EA54009A4D6E /* SearchBarCell.swift in Sources */,
+				F7387C1720D24C2C0044B6DF /* ImageCollectionViewHeader.swift in Sources */,
+				F7387C1B20D24C2C0044B6DF /* AKPLayoutConfigOptions.swift in Sources */,
 				BE720BB120C3BDCB00E86818 /* PinterestLayoutDelegate.swift in Sources */,
+				F7387C1C20D24C2C0044B6DF /* AKPFlowLayoutController.swift in Sources */,
 				BE511D651FCE635100BD9489 /* PinterestLayout.swift in Sources */,
 				BE0D89FA1FBED81800CA8114 /* AppDelegate.swift in Sources */,
 				BE720BA620C29F2300E86818 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
@@ -731,6 +768,7 @@
 				BEDE1E5A1FBEF0E40051F702 /* ServiceLeftPicCell.swift in Sources */,
 				BEDE1E631FBF15250051F702 /* BaseController.swift in Sources */,
 				BE720BBA20C3DD4A00E86818 /* MosaicLayoutController.swift in Sources */,
+				F7387C1D20D24C2C0044B6DF /* ImageCollectionViewCell.swift in Sources */,
 				BE511D671FCE638500BD9489 /* PinterestLayoutController.swift in Sources */,
 				BE54ADAB20A5806D00B8A473 /* AdsorptionLayout.swift in Sources */,
 				BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */,
@@ -741,7 +779,9 @@
 				BE720BB620C3DB4A00E86818 /* TRMosaicLayout.swift in Sources */,
 				BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */,
 				BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */,
+				F7387C1920D24C2C0044B6DF /* AKPFlowLayoutError.swift in Sources */,
 				BE720BA320C28DCE00E86818 /* WaterfallLayoutController.swift in Sources */,
+				F7387C1820D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift in Sources */,
 				BEDA5DAD1FCD4CE300777CBC /* GridLayoutController.swift in Sources */,
 				BE406CF720A7E9DE009A4D6E /* AdsorptionController.swift in Sources */,
 				BEDA5DA81FCD07D000777CBC /* StretchyHeaderLayoutController.swift in Sources */,
