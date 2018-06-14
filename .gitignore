@@ -38,7 +38,7 @@ Packages/
 CocoaPods
 Pods/
 
-# Carthage
+Carthage
 Carthage/Checkouts
 Carthage/Build
 
