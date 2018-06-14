@@ -6,15 +6,28 @@
 //  Copyright © 2018 黄伯驹. All rights reserved.
 //
 
+extension UIAlertAction {
+    /// 设置文字颜色
+    func setTextColor(_ color: UIColor) {
+        setValue(color, forKey: "_titleTextColor")
+    }
+}
+
 class AKPFlowLayoutController: BaseController {
     var layoutOptions: AKPLayoutConfigOptions = [
         .firstSectionIsGlobalHeader,
         .firstSectionStretchable,
         .sectionsPinToGlobalHeaderOrVisibleBounds
-    ]
+        ] {
+        didSet {
+            layout.layoutOptions = layoutOptions
+            layout.invalidateLayout()
+        }
+    }
+    
 
+    let layout = AKPFlowLayout()
     private lazy var collectionView: UICollectionView = {
-        let layout = AKPFlowLayout()
         layout.minimumInteritemSpacing = 2
         layout.minimumLineSpacing = 2
         layout.sectionInset = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2)
@@ -39,12 +52,18 @@ class AKPFlowLayoutController: BaseController {
     func showLayoutConfigOptions(_ sender: UIButton) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let action1 = UIAlertAction(title: "First Section Is Global Header", style: .default) { action in
-            
+            self.updateOptions(with: .firstSectionIsGlobalHeader)
+        }
+        if layoutOptions.contains(.firstSectionIsGlobalHeader) {
+            action1.setTextColor(.red)
         }
         alert.addAction(action1)
 
         let action2 = UIAlertAction(title: "First Section Stretchable", style: .default) { action in
-            
+            self.updateOptions(with: .firstSectionStretchable)
+        }
+        if layoutOptions.contains(.firstSectionStretchable) {
+            action2.setTextColor(.red)
         }
         alert.addAction(action2)
         
@@ -52,6 +71,14 @@ class AKPFlowLayoutController: BaseController {
         alert.addAction(action3)
     
         present(alert, animated: true, completion: nil)
+    }
+    
+    func updateOptions(with option: AKPLayoutConfigOptions) {
+        if self.layoutOptions.contains(option) {
+            self.layoutOptions.remove(option)
+        } else {
+            self.layoutOptions.insert(option)
+        }
     }
 }
 

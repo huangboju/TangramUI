@@ -41,7 +41,6 @@ class ViewController: UIViewController {
         title = "UICollectionView"
 
         view.addSubview(tableView)
-        
     }
 }
 

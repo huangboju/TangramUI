@@ -14,10 +14,12 @@ struct ImageCollectionViewCellItem {
 class ImageCollectionViewCell: UICollectionViewCell {
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        imageView.backgroundColor = UIColor(white: 0.9, alpha: 1)
         return imageView
     }()
-    
+
     private lazy var textLabel: UILabel = {
         let textLabel = UILabel()
         textLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.footnote)
