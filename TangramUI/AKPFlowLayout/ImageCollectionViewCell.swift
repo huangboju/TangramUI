@@ -7,6 +7,7 @@
 //
 
 import Kingfisher
+import SDWebImage
 
 class ImageCollectionViewCell: UICollectionViewCell {
     private lazy var imageView: UIImageView = {
@@ -31,7 +32,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
     var url: String? {
         didSet {
-            imageView.kf.setImage(with: URL(string: url ?? ""), options: [.transition(.fade(0.25))])
+            imageView.sd_imageTransition = .fade
+            imageView.sd_setImage(with: URL(string: url ?? ""))
+//            imageView.kf.setImage(with: URL(string: url ?? ""), options: [.transition(.fade(0.25)), .cacheMemoryOnly, .backgroundDecode])
         }
     }
 

@@ -7,6 +7,7 @@
 //
 
 import Kingfisher
+import SDWebImage
 
 extension UIAlertAction {
     /// 设置文字颜色
@@ -90,10 +91,9 @@ class AKPFlowLayoutController: BaseController {
 
 extension AKPFlowLayoutController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        layout.invalidateLayout()
         return 2
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageList.count
     }
@@ -151,8 +151,10 @@ extension AKPFlowLayoutController: UICollectionViewDelegateFlowLayout {
 
 extension AKPFlowLayoutController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+
         let urls = indexPaths.compactMap { URL(string: imageList[$0.row]) }
-        ImagePrefetcher(urls: urls).start()
+        SDWebImagePrefetcher.shared().prefetchURLs(urls)
+//        ImagePrefetcher(urls: urls).start()
     }
 
     func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
