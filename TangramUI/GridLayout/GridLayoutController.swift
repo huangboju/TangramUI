@@ -49,6 +49,7 @@ extension GridLayoutController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        cell.contentView.layer.cornerRadius = 8
         
         // Configure the cell
         if indexPath.section % 2 == 1 {

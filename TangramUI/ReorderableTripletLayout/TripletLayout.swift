@@ -193,7 +193,6 @@ class TripletLayout: UICollectionViewLayout {
                 guard let attribute = layoutAttributesForItem(at: indexPath) else {
                     continue
                 }
-                print(attribute)
                 if rect.intersects(attribute.frame) {
                     attributes.append(attribute)
                 }

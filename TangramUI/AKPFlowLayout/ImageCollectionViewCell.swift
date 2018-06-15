@@ -6,10 +6,7 @@
 //  Copyright © 2018 黄伯驹. All rights reserved.
 //
 
-struct ImageCollectionViewCellItem {
-    let url: String
-    let text: String
-}
+import Kingfisher
 
 class ImageCollectionViewCell: UICollectionViewCell {
     private lazy var imageView: UIImageView = {
@@ -17,6 +14,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        imageView.clipsToBounds = true
         return imageView
     }()
 
@@ -30,13 +28,13 @@ class ImageCollectionViewCell: UICollectionViewCell {
         textLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         return textLabel
     }()
-    
-    var item: ImageCollectionViewCellItem? {
+
+    var url: String? {
         didSet {
-            textLabel.text = item?.text
+            imageView.kf.setImage(with: URL(string: url ?? ""), options: [.transition(.fade(0.25))])
         }
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         

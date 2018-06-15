@@ -91,7 +91,7 @@ extension ServiceLayoutController: UICollectionViewDataSource {
 
 extension ServiceLayoutController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        print(indexPath)
+        
     }
 }
 

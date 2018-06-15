@@ -6,6 +6,8 @@
 //  Copyright © 2018 黄伯驹. All rights reserved.
 //
 
+import Kingfisher
+
 extension UIAlertAction {
     /// 设置文字颜色
     func setTextColor(_ color: UIColor) {
@@ -25,6 +27,7 @@ class AKPFlowLayoutController: BaseController {
         }
     }
     
+    let imageList = AKPFlowLayoutData.imageList
 
     let layout = AKPFlowLayout()
     private lazy var collectionView: UICollectionView = {
@@ -38,6 +41,9 @@ class AKPFlowLayoutController: BaseController {
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
+        if #available(iOS 10, *) {
+            collectionView.prefetchDataSource = self
+        }
         collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: "AnnotatedPhotoCell")
         collectionView.register(ImageCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
         collectionView.register(ImageCollectionViewGlobalHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "globalHeader")
@@ -74,10 +80,10 @@ class AKPFlowLayoutController: BaseController {
     }
     
     func updateOptions(with option: AKPLayoutConfigOptions) {
-        if self.layoutOptions.contains(option) {
-            self.layoutOptions.remove(option)
+        if layoutOptions.contains(option) {
+            layoutOptions.remove(option)
         } else {
-            self.layoutOptions.insert(option)
+            layoutOptions.insert(option)
         }
     }
 }
@@ -85,21 +91,21 @@ class AKPFlowLayoutController: BaseController {
 extension AKPFlowLayoutController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         layout.invalidateLayout()
-        return 5
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return imageList.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnnotatedPhotoCell", for: indexPath)
         cell.backgroundColor = UIColor.random
-//        (cell as? ImageCollectionViewCell)
+        (cell as? ImageCollectionViewCell)?.url = imageList[indexPath.row]
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
@@ -140,5 +146,16 @@ extension AKPFlowLayoutController: UICollectionViewDelegateFlowLayout {
         } else {
             return CGSize(width: width, height: 35)
         }
+    }
+}
+
+extension AKPFlowLayoutController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        let urls = indexPaths.compactMap { URL(string: imageList[$0.row]) }
+        ImagePrefetcher(urls: urls).start()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        
     }
 }
