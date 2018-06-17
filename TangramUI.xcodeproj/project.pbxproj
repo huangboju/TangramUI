@@ -15,17 +15,6 @@
 		BE0D8A0F1FBED81800CA8114 /* TangramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D8A0E1FBED81800CA8114 /* TangramUITests.swift */; };
 		BE0D8A1A1FBED81800CA8114 /* TangramUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D8A191FBED81800CA8114 /* TangramUIUITests.swift */; };
 		BE0D8A291FBEDCA600CA8114 /* ServiceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D8A281FBEDCA600CA8114 /* ServiceLayout.swift */; };
-		BE1D2BC520D28A4700D6E440 /* AKPFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D2BBD20D28A4400D6E440 /* AKPFlowLayout.swift */; };
-		BE1D2BC620D28A4700D6E440 /* ImageCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D2BBE20D28A4400D6E440 /* ImageCollectionViewHeader.swift */; };
-		BE1D2BC720D28A4700D6E440 /* ImageCollectionViewGlobalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D2BBF20D28A4400D6E440 /* ImageCollectionViewGlobalHeader.swift */; };
-		BE1D2BC820D28A4700D6E440 /* AKPFlowLayoutError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D2BC020D28A4400D6E440 /* AKPFlowLayoutError.swift */; };
-		BE1D2BC920D28A4700D6E440 /* AKPFlowLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D2BC120D28A4400D6E440 /* AKPFlowLayoutAttributes.swift */; };
-		BE1D2BCA20D28A4700D6E440 /* AKPLayoutConfigOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D2BC220D28A4400D6E440 /* AKPLayoutConfigOptions.swift */; };
-		BE1D2BCB20D28A4700D6E440 /* AKPFlowLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D2BC320D28A4400D6E440 /* AKPFlowLayoutController.swift */; };
-		BE1D2BCC20D28A4700D6E440 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D2BC420D28A4400D6E440 /* ImageCollectionViewCell.swift */; };
-		BE32F92220D369310056482F /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE32F92020D3692D0056482F /* Kingfisher.framework */; };
-		BE32F92320D369310056482F /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE32F92020D3692D0056482F /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BE32F92620D36C9B0056482F /* AKPFlowLayoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32F92520D36C9B0056482F /* AKPFlowLayoutData.swift */; };
 		BE406CF720A7E9DE009A4D6E /* AdsorptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE406CF620A7E9DE009A4D6E /* AdsorptionController.swift */; };
 		BE406CF920A7EA54009A4D6E /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE406CF820A7EA54009A4D6E /* SearchBarCell.swift */; };
 		BE406CFB20A7EB5F009A4D6E /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE406CFA20A7EB5F009A4D6E /* ColorCell.swift */; };
@@ -106,6 +95,19 @@
 		BEF73AD91FCAE0D700A37524 /* SectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73AD81FCAE0D700A37524 /* SectionFooterView.swift */; };
 		BEF73ADB1FCAE18900A37524 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73ADA1FCAE18900A37524 /* MenuView.swift */; };
 		BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73ADC1FCAE24700A37524 /* HeaderView.swift */; };
+		F7070B7720D391CD004195FB /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7070B7320D391C7004195FB /* Kingfisher.framework */; };
+		F7070B7820D391CD004195FB /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F7070B7320D391C7004195FB /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F7070B7920D391CD004195FB /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7070B7420D391C7004195FB /* SDWebImage.framework */; };
+		F7070B7A20D391CD004195FB /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F7070B7420D391C7004195FB /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F7070B7D20D391EC004195FB /* AKPFlowLayoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7070B7C20D391EC004195FB /* AKPFlowLayoutData.swift */; };
+		F7387C1620D24C2C0044B6DF /* AKPFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C0E20D24C2C0044B6DF /* AKPFlowLayout.swift */; };
+		F7387C1720D24C2C0044B6DF /* ImageCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C0F20D24C2C0044B6DF /* ImageCollectionViewHeader.swift */; };
+		F7387C1820D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1020D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift */; };
+		F7387C1920D24C2C0044B6DF /* AKPFlowLayoutError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1120D24C2C0044B6DF /* AKPFlowLayoutError.swift */; };
+		F7387C1A20D24C2C0044B6DF /* AKPFlowLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1220D24C2C0044B6DF /* AKPFlowLayoutAttributes.swift */; };
+		F7387C1B20D24C2C0044B6DF /* AKPLayoutConfigOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1320D24C2C0044B6DF /* AKPLayoutConfigOptions.swift */; };
+		F7387C1C20D24C2C0044B6DF /* AKPFlowLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1420D24C2C0044B6DF /* AKPFlowLayoutController.swift */; };
+		F7387C1D20D24C2C0044B6DF /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1520D24C2C0044B6DF /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,13 +128,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		BE32F92420D369320056482F /* Embed Frameworks */ = {
+		F7070B7B20D391CD004195FB /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BE32F92320D369310056482F /* Kingfisher.framework in Embed Frameworks */,
+				F7070B7A20D391CD004195FB /* SDWebImage.framework in Embed Frameworks */,
+				F7070B7820D391CD004195FB /* Kingfisher.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,16 +158,6 @@
 		BE0D8A1B1FBED81800CA8114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0D8A281FBEDCA600CA8114 /* ServiceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayout.swift; sourceTree = "<group>"; };
 		BE0D8A2A1FBEDCB400CA8114 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
-		BE1D2BBD20D28A4400D6E440 /* AKPFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayout.swift; sourceTree = "<group>"; };
-		BE1D2BBE20D28A4400D6E440 /* ImageCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewHeader.swift; sourceTree = "<group>"; };
-		BE1D2BBF20D28A4400D6E440 /* ImageCollectionViewGlobalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewGlobalHeader.swift; sourceTree = "<group>"; };
-		BE1D2BC020D28A4400D6E440 /* AKPFlowLayoutError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutError.swift; sourceTree = "<group>"; };
-		BE1D2BC120D28A4400D6E440 /* AKPFlowLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutAttributes.swift; sourceTree = "<group>"; };
-		BE1D2BC220D28A4400D6E440 /* AKPLayoutConfigOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPLayoutConfigOptions.swift; sourceTree = "<group>"; };
-		BE1D2BC320D28A4400D6E440 /* AKPFlowLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutController.swift; sourceTree = "<group>"; };
-		BE1D2BC420D28A4400D6E440 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		BE32F92020D3692D0056482F /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
-		BE32F92520D36C9B0056482F /* AKPFlowLayoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutData.swift; sourceTree = "<group>"; };
 		BE406CF620A7E9DE009A4D6E /* AdsorptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsorptionController.swift; sourceTree = "<group>"; };
 		BE406CF820A7EA54009A4D6E /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
 		BE406CFA20A7EB5F009A4D6E /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
@@ -245,6 +238,17 @@
 		BEF73AD81FCAE0D700A37524 /* SectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionFooterView.swift; sourceTree = "<group>"; };
 		BEF73ADA1FCAE18900A37524 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		BEF73ADC1FCAE24700A37524 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		F7070B7320D391C7004195FB /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		F7070B7420D391C7004195FB /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		F7070B7C20D391EC004195FB /* AKPFlowLayoutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutData.swift; sourceTree = "<group>"; };
+		F7387C0E20D24C2C0044B6DF /* AKPFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayout.swift; sourceTree = "<group>"; };
+		F7387C0F20D24C2C0044B6DF /* ImageCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewHeader.swift; sourceTree = "<group>"; };
+		F7387C1020D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewGlobalHeader.swift; sourceTree = "<group>"; };
+		F7387C1120D24C2C0044B6DF /* AKPFlowLayoutError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutError.swift; sourceTree = "<group>"; };
+		F7387C1220D24C2C0044B6DF /* AKPFlowLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutAttributes.swift; sourceTree = "<group>"; };
+		F7387C1320D24C2C0044B6DF /* AKPLayoutConfigOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPLayoutConfigOptions.swift; sourceTree = "<group>"; };
+		F7387C1420D24C2C0044B6DF /* AKPFlowLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutController.swift; sourceTree = "<group>"; };
+		F7387C1520D24C2C0044B6DF /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,7 +256,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE32F92220D369310056482F /* Kingfisher.framework in Frameworks */,
+				F7070B7920D391CD004195FB /* SDWebImage.framework in Frameworks */,
+				F7070B7720D391CD004195FB /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +285,7 @@
 				BE0D8A0D1FBED81800CA8114 /* TangramUITests */,
 				BE0D8A181FBED81800CA8114 /* TangramUIUITests */,
 				BE0D89F71FBED81800CA8114 /* Products */,
-				BE32F91F20D3692D0056482F /* Frameworks */,
+				F7070B7220D391C3004195FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -297,7 +302,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
-				BE1D2BBC20D28A4400D6E440 /* AKPFlowLayout */,
+				F7387C0D20D24C2C0044B6DF /* AKPFlowLayout */,
 				BEEACC8720CCC17900C1D180 /* MosaicLayout */,
 				BE720BB420C3DB4200E86818 /* TRMosaicLayout */,
 				BE720BA420C29F0200E86818 /* CHTCollectionViewWaterfallLayout */,
@@ -355,30 +360,6 @@
 				BEDE1E641FBF155B0051F702 /* ServiceLayoutController.swift */,
 			);
 			path = ServiceLayout;
-			sourceTree = "<group>";
-		};
-		BE1D2BBC20D28A4400D6E440 /* AKPFlowLayout */ = {
-			isa = PBXGroup;
-			children = (
-				BE1D2BBD20D28A4400D6E440 /* AKPFlowLayout.swift */,
-				BE1D2BBE20D28A4400D6E440 /* ImageCollectionViewHeader.swift */,
-				BE1D2BBF20D28A4400D6E440 /* ImageCollectionViewGlobalHeader.swift */,
-				BE1D2BC020D28A4400D6E440 /* AKPFlowLayoutError.swift */,
-				BE1D2BC120D28A4400D6E440 /* AKPFlowLayoutAttributes.swift */,
-				BE1D2BC220D28A4400D6E440 /* AKPLayoutConfigOptions.swift */,
-				BE1D2BC320D28A4400D6E440 /* AKPFlowLayoutController.swift */,
-				BE1D2BC420D28A4400D6E440 /* ImageCollectionViewCell.swift */,
-				BE32F92520D36C9B0056482F /* AKPFlowLayoutData.swift */,
-			);
-			path = AKPFlowLayout;
-			sourceTree = "<group>";
-		};
-		BE32F91F20D3692D0056482F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BE32F92020D3692D0056482F /* Kingfisher.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BE511D631FCE634800BD9489 /* PinterestLayout */ = {
@@ -592,6 +573,31 @@
 			path = JungleCup;
 			sourceTree = "<group>";
 		};
+		F7070B7220D391C3004195FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7070B7320D391C7004195FB /* Kingfisher.framework */,
+				F7070B7420D391C7004195FB /* SDWebImage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7387C0D20D24C2C0044B6DF /* AKPFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F7070B7C20D391EC004195FB /* AKPFlowLayoutData.swift */,
+				F7387C0E20D24C2C0044B6DF /* AKPFlowLayout.swift */,
+				F7387C0F20D24C2C0044B6DF /* ImageCollectionViewHeader.swift */,
+				F7387C1020D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift */,
+				F7387C1120D24C2C0044B6DF /* AKPFlowLayoutError.swift */,
+				F7387C1220D24C2C0044B6DF /* AKPFlowLayoutAttributes.swift */,
+				F7387C1320D24C2C0044B6DF /* AKPLayoutConfigOptions.swift */,
+				F7387C1420D24C2C0044B6DF /* AKPFlowLayoutController.swift */,
+				F7387C1520D24C2C0044B6DF /* ImageCollectionViewCell.swift */,
+			);
+			path = AKPFlowLayout;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -602,7 +608,7 @@
 				BE0D89F21FBED81800CA8114 /* Sources */,
 				BE0D89F31FBED81800CA8114 /* Frameworks */,
 				BE0D89F41FBED81800CA8114 /* Resources */,
-				BE32F92420D369320056482F /* Embed Frameworks */,
+				F7070B7B20D391CD004195FB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -757,10 +763,10 @@
 				BE0D8A291FBEDCA600CA8114 /* ServiceLayout.swift in Sources */,
 				BE0D89FC1FBED81800CA8114 /* ViewController.swift in Sources */,
 				BEF73AD11FCAB64E00A37524 /* CustomLayoutSettings.swift in Sources */,
-				BE32F92620D36C9B0056482F /* AKPFlowLayoutData.swift in Sources */,
+				F7070B7D20D391EC004195FB /* AKPFlowLayoutData.swift in Sources */,
 				BE7FAF971FC2873100788A5A /* ReorderableTripletLayout.swift in Sources */,
 				BEDA5DAF1FCD4D8E00777CBC /* GridLayoutHeaderFooterView.swift in Sources */,
-				BE1D2BC520D28A4700D6E440 /* AKPFlowLayout.swift in Sources */,
+				F7387C1620D24C2C0044B6DF /* AKPFlowLayout.swift in Sources */,
 				BEEACC8620CCC17300C1D180 /* MosaicLayout.swift in Sources */,
 				BEF73AD71FCADA9900A37524 /* PlayerCell.swift in Sources */,
 				BEF73AD51FCAB79000A37524 /* MockDataManager.swift in Sources */,
@@ -769,7 +775,7 @@
 				BEB8E1A520C17E1500B79A53 /* CenterLayout.swift in Sources */,
 				BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */,
 				BE720BAD20C3BD9A00E86818 /* PinterestLayout1.swift in Sources */,
-				BE1D2BC920D28A4700D6E440 /* AKPFlowLayoutAttributes.swift in Sources */,
+				F7387C1A20D24C2C0044B6DF /* AKPFlowLayoutAttributes.swift in Sources */,
 				BE720BAF20C3BDB800E86818 /* PinterestLayoutAttributes.swift in Sources */,
 				BE511D691FCE64E500BD9489 /* Photo.swift in Sources */,
 				BE7D4A471FE67E64005AD328 /* InspirationCell.swift in Sources */,
@@ -777,10 +783,10 @@
 				BEF73ADB1FCAE18900A37524 /* MenuView.swift in Sources */,
 				BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */,
 				BE406CF920A7EA54009A4D6E /* SearchBarCell.swift in Sources */,
-				BE1D2BC620D28A4700D6E440 /* ImageCollectionViewHeader.swift in Sources */,
-				BE1D2BCA20D28A4700D6E440 /* AKPLayoutConfigOptions.swift in Sources */,
+				F7387C1720D24C2C0044B6DF /* ImageCollectionViewHeader.swift in Sources */,
+				F7387C1B20D24C2C0044B6DF /* AKPLayoutConfigOptions.swift in Sources */,
 				BE720BB120C3BDCB00E86818 /* PinterestLayoutDelegate.swift in Sources */,
-				BE1D2BCB20D28A4700D6E440 /* AKPFlowLayoutController.swift in Sources */,
+				F7387C1C20D24C2C0044B6DF /* AKPFlowLayoutController.swift in Sources */,
 				BE511D651FCE635100BD9489 /* PinterestLayout.swift in Sources */,
 				BE0D89FA1FBED81800CA8114 /* AppDelegate.swift in Sources */,
 				BE720BA620C29F2300E86818 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
@@ -800,7 +806,7 @@
 				BEDE1E5A1FBEF0E40051F702 /* ServiceLeftPicCell.swift in Sources */,
 				BEDE1E631FBF15250051F702 /* BaseController.swift in Sources */,
 				BE720BBA20C3DD4A00E86818 /* MosaicLayoutController.swift in Sources */,
-				BE1D2BCC20D28A4700D6E440 /* ImageCollectionViewCell.swift in Sources */,
+				F7387C1D20D24C2C0044B6DF /* ImageCollectionViewCell.swift in Sources */,
 				BE511D671FCE638500BD9489 /* PinterestLayoutController.swift in Sources */,
 				BE54ADAB20A5806D00B8A473 /* AdsorptionLayout.swift in Sources */,
 				BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */,
@@ -811,9 +817,9 @@
 				BE720BB620C3DB4A00E86818 /* TRMosaicLayout.swift in Sources */,
 				BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */,
 				BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */,
-				BE1D2BC820D28A4700D6E440 /* AKPFlowLayoutError.swift in Sources */,
+				F7387C1920D24C2C0044B6DF /* AKPFlowLayoutError.swift in Sources */,
 				BE720BA320C28DCE00E86818 /* WaterfallLayoutController.swift in Sources */,
-				BE1D2BC720D28A4700D6E440 /* ImageCollectionViewGlobalHeader.swift in Sources */,
+				F7387C1820D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift in Sources */,
 				BEDA5DAD1FCD4CE300777CBC /* GridLayoutController.swift in Sources */,
 				BE406CF720A7E9DE009A4D6E /* AdsorptionController.swift in Sources */,
 				BEDA5DA81FCD07D000777CBC /* StretchyHeaderLayoutController.swift in Sources */,
@@ -995,6 +1001,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = TangramUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boju.TangramUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1015,6 +1022,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = TangramUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boju.TangramUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
