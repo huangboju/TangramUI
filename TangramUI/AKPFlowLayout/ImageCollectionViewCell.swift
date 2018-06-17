@@ -31,7 +31,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
     var url: String? {
         didSet {
-            imageView.kf.setImage(with: URL(string: url ?? ""), options: [.transition(.fade(0.25))])
+            imageView.kf.setImage(with: URL(string: url ?? ""), options: [.transition(.fade(0.25)), .cacheMemoryOnly])
         }
     }
 
