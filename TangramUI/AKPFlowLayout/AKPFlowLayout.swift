@@ -20,9 +20,10 @@ public final class AKPFlowLayout: UICollectionViewFlowLayout {
         .firstSectionStretchable,
         .sectionsPinToGlobalHeaderOrVisibleBounds
     ]
+
     /// For stretchy headers, allowis limiting amount of stretch
     public var firsSectionMaximumStretchHeight = CGFloat.greatestFiniteMagnitude
-    
+
     // MARK: - Initialization
     override public init() {
         super.init()
@@ -34,9 +35,11 @@ public final class AKPFlowLayout: UICollectionViewFlowLayout {
                                                     options: .new, context: &AKPFlowLayoutKVOContext)
         }
     }
+
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+
     deinit {
         if #available(iOS 9.0, *) {
             removeObserver(self, forKeyPath: "sectionHeadersPinToVisibleBounds", context: &AKPFlowLayoutKVOContext)
@@ -73,7 +76,7 @@ public final class AKPFlowLayout: UICollectionViewFlowLayout {
         }
         return layoutAttributes
     }
-    
+
     /// Adjusts layout attributes for the custom section headers
     override public func layoutAttributesForSupplementaryView(ofKind elementKind: String,
                                                              at indexPath: IndexPath)
@@ -90,7 +93,7 @@ public final class AKPFlowLayout: UICollectionViewFlowLayout {
                                         adjustLayoutAttributes(forSectionAttributes: sectionHeaderAttributes)
         return sectionHeaderAttributes
     }
-    
+
     // MARK: - 🎳Invalidation
     /// - returns: `true`, unless running on iOS9 with `sectionHeadersPinToVisibleBounds` set to `true`
     override public func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
@@ -99,8 +102,7 @@ public final class AKPFlowLayout: UICollectionViewFlowLayout {
     }
     
     /// Custom invalidation
-    override public func invalidationContext(forBoundsChange newBounds: CGRect)
-                                        -> UICollectionViewLayoutInvalidationContext {
+    override public func invalidationContext(forBoundsChange newBounds: CGRect) -> UICollectionViewLayoutInvalidationContext {
         guard shouldDoCustomLayout,
               let invalidationContext = super.invalidationContext(forBoundsChange: newBounds)
                                                 as? UICollectionViewFlowLayoutInvalidationContext,
@@ -131,8 +133,8 @@ public final class AKPFlowLayout: UICollectionViewFlowLayout {
 extension AKPFlowLayout {
     fileprivate var shouldDoCustomLayout: Bool {
         var requestForCustomLayout = layoutOptions.contains(.firstSectionIsGlobalHeader) ||
-                                     layoutOptions.contains(.firstSectionStretchable) ||
-                                     layoutOptions.contains(.sectionsPinToGlobalHeaderOrVisibleBounds)
+            layoutOptions.contains(.firstSectionStretchable) ||
+            layoutOptions.contains(.sectionsPinToGlobalHeaderOrVisibleBounds)
         // iOS9 supports sticky headers natively, so we should not
         // interfere with the the built-in functionality
         if #available(iOS 9.0, *) {
@@ -141,10 +143,10 @@ extension AKPFlowLayout {
         return requestForCustomLayout
     }
 
-    fileprivate func zIndexForSection(_ section: Int) -> Int {
+    fileprivate func zIndex(for section: Int) -> Int {
         return section > 0 ? 128 : 256
     }
-    
+
     // Given a rect, calculates indexes of all confined section headers
     // _including_ the custom headers
     fileprivate func sectionsHeadersIDxs(forRect rect: CGRect) -> Set<Int>? {
@@ -230,12 +232,11 @@ extension AKPFlowLayout {
                 sectionFrame.origin.y = min(max(offset, minY), maxY)
             }
         }
-        return (sectionFrame, zIndexForSection(section))
+
+        return (sectionFrame, zIndex(for: section))
     }
     
-    fileprivate func boundaryMetrics(
-                    forSectionAttributes sectionHeadersLayoutAttributes: UICollectionViewLayoutAttributes)
-                                                                                        -> (CGFloat, CGFloat) {
+    fileprivate func boundaryMetrics( forSectionAttributes sectionHeadersLayoutAttributes: UICollectionViewLayoutAttributes) -> (CGFloat, CGFloat) {
             // get attributes for first and last items in section
             guard let collectionView = collectionView  else { return (0, 0) }
             let section = sectionHeadersLayoutAttributes.indexPath.section
