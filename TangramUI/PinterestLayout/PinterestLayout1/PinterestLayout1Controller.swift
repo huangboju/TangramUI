@@ -4,19 +4,19 @@
 //
 //  Created by 黄伯驹 on 2018/6/3.
 //  Copyright © 2018 黄伯驹. All rights reserved.
-//
+// 
 
 class PinterestLayout1Controller: BaseController {
     let layout = PinterestLayout1()
     
-    var photos = Photo.allPhotos()
+    var photos = Photo.gifLink
     
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(AnnotatedPhotoCell.self, forCellWithReuseIdentifier: "AnnotatedPhotoCell")
+        collectionView.register(PinterestLayout1Cell.self, forCellWithReuseIdentifier: "AnnotatedPhotoCell")
         return collectionView
     }()
     
@@ -38,12 +38,11 @@ extension PinterestLayout1Controller: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnnotatedPhotoCell", for: indexPath)
-        if let annotateCell = cell as? AnnotatedPhotoCell {
-            annotateCell.photo = photos[indexPath.item]
+        if let annotateCell = cell as? PinterestLayout1Cell {
+            annotateCell.url = photos[indexPath.item]
         }
         return cell
     }
-    
 }
 
 
@@ -54,7 +53,7 @@ extension PinterestLayout1Controller: PinterestLayoutDelegate1 {
     func collectionView(collectionView: UICollectionView,
                         heightForImageAt indexPath: IndexPath,
                         withWidth: CGFloat) -> CGFloat {
-        return photos[indexPath.item].image.size.height
+        return CGFloat(arc4random_uniform(200) + 30)
     }
     
     func collectionView(collectionView: UICollectionView,

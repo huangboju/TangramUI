@@ -17,6 +17,7 @@
 		BE0D8A0F1FBED81800CA8114 /* TangramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D8A0E1FBED81800CA8114 /* TangramUITests.swift */; };
 		BE0D8A1A1FBED81800CA8114 /* TangramUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D8A191FBED81800CA8114 /* TangramUIUITests.swift */; };
 		BE0D8A291FBEDCA600CA8114 /* ServiceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D8A281FBEDCA600CA8114 /* ServiceLayout.swift */; };
+		BE22B6AF20E21BC50032490A /* PinterestLayout1Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B6AE20E21BC50032490A /* PinterestLayout1Cell.swift */; };
 		BE406CF720A7E9DE009A4D6E /* AdsorptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE406CF620A7E9DE009A4D6E /* AdsorptionController.swift */; };
 		BE406CF920A7EA54009A4D6E /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE406CF820A7EA54009A4D6E /* SearchBarCell.swift */; };
 		BE406CFB20A7EB5F009A4D6E /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE406CFA20A7EB5F009A4D6E /* ColorCell.swift */; };
@@ -148,6 +149,7 @@
 		BE0D8A1B1FBED81800CA8114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0D8A281FBEDCA600CA8114 /* ServiceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayout.swift; sourceTree = "<group>"; };
 		BE0D8A2A1FBEDCB400CA8114 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+		BE22B6AE20E21BC50032490A /* PinterestLayout1Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout1Cell.swift; sourceTree = "<group>"; };
 		BE406CF620A7E9DE009A4D6E /* AdsorptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsorptionController.swift; sourceTree = "<group>"; };
 		BE406CF820A7EA54009A4D6E /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
 		BE406CFA20A7EB5F009A4D6E /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 				BE720BAE20C3BDB800E86818 /* PinterestLayoutAttributes.swift */,
 				BE720BB020C3BDCB00E86818 /* PinterestLayoutDelegate.swift */,
 				BE720BB220C3BF1200E86818 /* PinterestLayout1Controller.swift */,
+				BE22B6AE20E21BC50032490A /* PinterestLayout1Cell.swift */,
 			);
 			path = PinterestLayout1;
 			sourceTree = "<group>";
@@ -853,6 +856,7 @@
 				BE7D4A451FE67DC6005AD328 /* ExpandingLayoutController.swift in Sources */,
 				BE0D8A291FBEDCA600CA8114 /* ServiceLayout.swift in Sources */,
 				BE0D89FC1FBED81800CA8114 /* ViewController.swift in Sources */,
+				BE22B6AF20E21BC50032490A /* PinterestLayout1Cell.swift in Sources */,
 				BEF73AD11FCAB64E00A37524 /* CustomLayoutSettings.swift in Sources */,
 				F7070B7D20D391EC004195FB /* AKPFlowLayoutData.swift in Sources */,
 				BE7FAF971FC2873100788A5A /* ReorderableTripletLayout.swift in Sources */,
