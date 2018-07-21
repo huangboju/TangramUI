@@ -7,20 +7,21 @@
 //
 
 import FLAnimatedImage
+import SDWebImage
 
 class PinterestLayout1Cell: UICollectionViewCell {
     
-//    private lazy var imageView: FLAnimatedImageView = {
-//        let imageView = FLAnimatedImageView()
-//        imageView.backgroundColor = UIColor(white: 0.9, alpha: 1)
-//        return imageView
-//    }()
-    
-    private lazy var imageView: UIImageView = {
-        let _imageView = UIImageView()
-        _imageView.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        return _imageView
+    private lazy var imageView: FLAnimatedImageView = {
+        let imageView = FLAnimatedImageView()
+        imageView.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        return imageView
     }()
+    
+//    private lazy var imageView: UIImageView = {
+//        let _imageView = UIImageView()
+//        _imageView.backgroundColor = UIColor(white: 0.9, alpha: 1)
+//        return _imageView
+//    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,6 +31,7 @@ class PinterestLayout1Cell: UICollectionViewCell {
 
     var url: String? {
         didSet {
+
             imageView.sd_imageTransition = .fade
             imageView.sd_setImage(with: URL(string: url ?? ""), placeholderImage: nil, options: .cacheMemoryOnly, completed: nil)
         }

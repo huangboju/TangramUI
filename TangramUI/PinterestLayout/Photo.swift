@@ -138,5 +138,33 @@ struct Photo {
         "http://speedup.voicer.me/wp-content/uploads/2016/03/2%EF%BC%8D2.gif"
         ]
     }
+    
+    
+    static var appGifLink: [String] {
+        return [
+            "http://sg.xiaohongshu.com/lqCIn-DXuBseFx9fT1XldKBWtW2z_gif_w320?sign=cdedab8de8e67fd28e3c60a638518b7b&t=5b344f2a",
+            "http://sg.xiaohongshu.com/liadqncArU7Q6fCgp2Ap7TJVs4nc_gif_w320?sign=ca91b7f00bfe7aeebae3b7f7476c0ff9&t=5b345035",
+            "http://sg.xiaohongshu.com/pgc/20fc7f24-791b3ff-874e-a49bb8b90a02_gif_w320?sign=b1854684dbe9eaff911c6bc54128af8b&t=5b345035",
+            "http://sg.xiaohongshu.com/pgc/2be41204-654f245-a4a3-82b722427805_gif_w320?sign=1c9bc616ff0d1024b5810e4959b94eda&t=5b345035",
+            "http://sg.xiaohongshu.com/pgc/e042e338-13077b0-93bd-57b74881488b_gif_w320?sign=6d1b9fe67669dac349c24c4491f744cd&t=5b345035",
+            "http://sg.xiaohongshu.com/lndPTZfJIcCj8KtgUzPaHdbOBbjS_gif_w320?sign=5aeb0b43fadd3f3a82e903f9fe918982&t=5b345035",
+            "http://sg.xiaohongshu.com/lrvgyzQsK7DDjCLY9Ehp_FrZXs98_gif_w320?sign=f46aa111a9e187fcaa0bc16a39ae9a7a&t=5b345035",
+            "http://sg.xiaohongshu.com/lp3lePCbimKznYXDqXDF0XGpNd5o_gif_w320?sign=1fe7e7bdeab0c95229b3019071f0d9ca&t=5b345035",
+            "http://sg.xiaohongshu.com/FhWYi2-YV7nrbNaDKIAHQ7Q31gLc_gif_w320?sign=b8681d0971414dbc577f94ad491f9ef1&t=5b345035",
+            "http://sg.xiaohongshu.com/llbRJiXqdfkOhC7qPNkj7R6jAJY0_gif_w320?sign=a4f5c32f3fe626b58e9c23c9ba99b0b3&t=5b345035",
+            "http://sg.xiaohongshu.com/ll-jubmwL01yEzCcM_ufeIDRI7gK_gif_w320?sign=50f5416edfdddb14e1a069672c957e5a&t=5b345035",
+            "http://sg.xiaohongshu.com/FtUsV5DoAJfN2SqGaa7RPUSdiu1A_gif_w320?sign=3ced48e2b7ab6b1c41c738266229c64a&t=5b345035",
+            "http://sg.xiaohongshu.com/lp3q9jxoia4JS8V7FbHPM9ZBvQNt_gif_w320?sign=6c5cf8fc65dfe59edd9a49a844945ce6&t=5b345035",
+            "http://sg.xiaohongshu.com/pgc/43710ea2-a6aede1-8ca6-06a0e714c923_gif_w320?sign=01c675f945b105f78657d2e8ba5048a8&t=5b345035",
+            "http://sg.xiaohongshu.com/lvAZPe6eOrHxxuWLqQLUhvL-_9M8_gif_w320?sign=c51201560cb22b08fe0e720418c8ca74&t=5b345035",
+            "http://sg.xiaohongshu.com/lpIiTjNjPnDVRBsExpSDOxcflaGM_gif_w320?sign=a999346c48ab07d216c7449c36384fd3&t=5b345035",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    }
+    
   
 }

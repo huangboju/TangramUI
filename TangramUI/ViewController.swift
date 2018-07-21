@@ -32,7 +32,8 @@ class ViewController: UIViewController {
             WaterfallLayoutController.self,
             CHTCollectionViewWaterfallLayoutController.self,
             MosaicLayoutController.self,
-            AKPFlowLayoutController.self
+            AKPFlowLayoutController.self,
+            StickyHeadersLayoutController.self
         ]
     ]
     

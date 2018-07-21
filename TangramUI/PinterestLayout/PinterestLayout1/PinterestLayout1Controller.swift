@@ -22,6 +22,8 @@ class PinterestLayout1Controller: BaseController {
     
     override func initSubviews() {
         
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         if let patternImage = UIImage(named: "Pattern") {
             view.backgroundColor = UIColor(patternImage: patternImage)
         }

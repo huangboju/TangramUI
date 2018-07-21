@@ -183,7 +183,7 @@ extension AKPFlowLayout {
     fileprivate func adjustLayoutAttributes(forSectionAttributes
                                             sectionHeadersLayoutAttributes: AKPFlowLayoutAttributes)
                                                                                              -> (CGRect, Int) {
-        guard let collectionView = collectionView else { return (CGRect.zero, 0) }
+        guard let collectionView = collectionView else { return (.zero, 0) }
         let section = sectionHeadersLayoutAttributes.indexPath.section
         var sectionFrame = sectionHeadersLayoutAttributes.frame
 
