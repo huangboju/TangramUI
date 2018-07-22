@@ -20,6 +20,8 @@
 		BE1C79F021036F18009C3CBA /* StickyHeadersCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C79EF21036F18009C3CBA /* StickyHeadersCollectionViewFlowLayout.swift */; };
 		BE1C79F221036F67009C3CBA /* StickyHeadersLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C79F121036F67009C3CBA /* StickyHeadersLayoutController.swift */; };
 		BE1C79F421037001009C3CBA /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C79F321037001009C3CBA /* SectionHeader.swift */; };
+		BE1C79F721037370009C3CBA /* CSStickyHeaderFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C79F621037370009C3CBA /* CSStickyHeaderFlowLayout.swift */; };
+		BE1C79F921037402009C3CBA /* CSStickyHeaderFlowLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C79F821037402009C3CBA /* CSStickyHeaderFlowLayoutAttributes.swift */; };
 		BE22B6AF20E21BC50032490A /* PinterestLayout1Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B6AE20E21BC50032490A /* PinterestLayout1Cell.swift */; };
 		BE406CF720A7E9DE009A4D6E /* AdsorptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE406CF620A7E9DE009A4D6E /* AdsorptionController.swift */; };
 		BE406CF920A7EA54009A4D6E /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE406CF820A7EA54009A4D6E /* SearchBarCell.swift */; };
@@ -155,6 +157,8 @@
 		BE1C79EF21036F18009C3CBA /* StickyHeadersCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeadersCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		BE1C79F121036F67009C3CBA /* StickyHeadersLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeadersLayoutController.swift; sourceTree = "<group>"; };
 		BE1C79F321037001009C3CBA /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		BE1C79F621037370009C3CBA /* CSStickyHeaderFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSStickyHeaderFlowLayout.swift; sourceTree = "<group>"; };
+		BE1C79F821037402009C3CBA /* CSStickyHeaderFlowLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSStickyHeaderFlowLayoutAttributes.swift; sourceTree = "<group>"; };
 		BE22B6AE20E21BC50032490A /* PinterestLayout1Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout1Cell.swift; sourceTree = "<group>"; };
 		BE406CF620A7E9DE009A4D6E /* AdsorptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsorptionController.swift; sourceTree = "<group>"; };
 		BE406CF820A7EA54009A4D6E /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
@@ -305,6 +309,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				BE1C79F521037336009C3CBA /* CSStickyHeaderFlowLayout */,
 				BE1C79EE21036F07009C3CBA /* StickyHeadersCollectionViewFlowLayout */,
 				F7387C0D20D24C2C0044B6DF /* AKPFlowLayout */,
 				BEEACC8720CCC17900C1D180 /* MosaicLayout */,
@@ -374,6 +379,15 @@
 				BE1C79F321037001009C3CBA /* SectionHeader.swift */,
 			);
 			path = StickyHeadersCollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
+		BE1C79F521037336009C3CBA /* CSStickyHeaderFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BE1C79F621037370009C3CBA /* CSStickyHeaderFlowLayout.swift */,
+				BE1C79F821037402009C3CBA /* CSStickyHeaderFlowLayoutAttributes.swift */,
+			);
+			path = CSStickyHeaderFlowLayout;
 			sourceTree = "<group>";
 		};
 		BE511D631FCE634800BD9489 /* PinterestLayout */ = {
@@ -879,6 +893,7 @@
 				BE7FAF971FC2873100788A5A /* ReorderableTripletLayout.swift in Sources */,
 				BEDA5DAF1FCD4D8E00777CBC /* GridLayoutHeaderFooterView.swift in Sources */,
 				BE1C79F021036F18009C3CBA /* StickyHeadersCollectionViewFlowLayout.swift in Sources */,
+				BE1C79F721037370009C3CBA /* CSStickyHeaderFlowLayout.swift in Sources */,
 				F7387C1620D24C2C0044B6DF /* AKPFlowLayout.swift in Sources */,
 				BEEACC8620CCC17300C1D180 /* MosaicLayout.swift in Sources */,
 				BEF73AD71FCADA9900A37524 /* PlayerCell.swift in Sources */,
@@ -899,6 +914,7 @@
 				F7387C1720D24C2C0044B6DF /* ImageCollectionViewHeader.swift in Sources */,
 				F7387C1B20D24C2C0044B6DF /* AKPLayoutConfigOptions.swift in Sources */,
 				BE720BB120C3BDCB00E86818 /* PinterestLayoutDelegate.swift in Sources */,
+				BE1C79F921037402009C3CBA /* CSStickyHeaderFlowLayoutAttributes.swift in Sources */,
 				F7387C1C20D24C2C0044B6DF /* AKPFlowLayoutController.swift in Sources */,
 				BE511D651FCE635100BD9489 /* PinterestLayout.swift in Sources */,
 				BE0D89FA1FBED81800CA8114 /* AppDelegate.swift in Sources */,

@@ -32,8 +32,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     var url: String? {
         didSet {
             imageView.sd_imageTransition = .fade
-            imageView.sd_setImage(with: URL(string: url ?? ""), placeholderImage: nil, options: .cacheMemoryOnly, completed: nil)
-//            imageView.kf.setImage(with: URL(string: url ?? ""), options: [.transition(.fade(0.25)), .cacheMemoryOnly, .backgroundDecode])
+            imageView.sd_setImage(with: URL(string: url ?? ""))
         }
     }
 
