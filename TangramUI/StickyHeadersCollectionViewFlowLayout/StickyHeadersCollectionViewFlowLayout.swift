@@ -10,6 +10,13 @@ class StickyHeadersCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     // MARK: - Collection View Flow Layout Methods
     
+    override func prepare() {
+        super.prepare()
+        if #available(iOS 10, *) {
+            collectionView?.isPrefetchingEnabled = false
+        }
+    }
+    
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
@@ -52,12 +59,18 @@ class StickyHeadersCollectionViewFlowLayout: UICollectionViewFlowLayout {
         guard let collectionView = collectionView else { return layoutAttributes }
         
         // Helpers
-        let contentOffsetY = collectionView.contentOffset.y
+        
+        var top = collectionView.contentInset.top
+        if #available(iOS 11, *) {
+            top = collectionView.adjustedContentInset.top
+        }
+        
+        let contentOffsetY = collectionView.contentOffset.y + top
         var frameForSupplementaryView = layoutAttributes.frame
         
         let minimum = boundaries.minimum - frameForSupplementaryView.height
         let maximum = boundaries.maximum - frameForSupplementaryView.height
-        
+
         if contentOffsetY < minimum {
             frameForSupplementaryView.origin.y = minimum
         } else if contentOffsetY > maximum {

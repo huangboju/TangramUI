@@ -14,7 +14,10 @@ class SectionHeader: UICollectionReusableView {
         
         addSubview(titleLabel)
         
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        titleLabel.textAlignment = .center
         titleLabel.textColor = .white
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

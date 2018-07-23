@@ -61,11 +61,11 @@ extension StickyHeadersLayoutController: UICollectionViewDataSource {
     // MARK: - Collection View Data Source Methods
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 20
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return section == 1 ? 20 : 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -114,7 +114,7 @@ extension StickyHeadersLayoutController: UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 80.0)
+        return section == 1 ? CGSize(width: collectionView.bounds.width, height: 80.0) : .zero
     }
     
 }
