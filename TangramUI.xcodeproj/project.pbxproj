@@ -24,6 +24,7 @@
 		BE1C79F921037402009C3CBA /* CSStickyHeaderFlowLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C79F821037402009C3CBA /* CSStickyHeaderFlowLayoutAttributes.swift */; };
 		BE1C79FB210489F8009C3CBA /* CSStickyHeaderFlowLayoutMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C79FA210489F8009C3CBA /* CSStickyHeaderFlowLayoutMenu.swift */; };
 		BE1C79FD21048A66009C3CBA /* CSLockedHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C79FC21048A66009C3CBA /* CSLockedHeaderViewController.swift */; };
+		BE1C7A0021057EE2009C3CBA /* CSSearchBarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C79FF21057EE2009C3CBA /* CSSearchBarHeader.swift */; };
 		BE22B6AF20E21BC50032490A /* PinterestLayout1Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B6AE20E21BC50032490A /* PinterestLayout1Cell.swift */; };
 		BE406CF720A7E9DE009A4D6E /* AdsorptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE406CF620A7E9DE009A4D6E /* AdsorptionController.swift */; };
 		BE406CF920A7EA54009A4D6E /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE406CF820A7EA54009A4D6E /* SearchBarCell.swift */; };
@@ -163,6 +164,7 @@
 		BE1C79F821037402009C3CBA /* CSStickyHeaderFlowLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSStickyHeaderFlowLayoutAttributes.swift; sourceTree = "<group>"; };
 		BE1C79FA210489F8009C3CBA /* CSStickyHeaderFlowLayoutMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSStickyHeaderFlowLayoutMenu.swift; sourceTree = "<group>"; };
 		BE1C79FC21048A66009C3CBA /* CSLockedHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLockedHeaderViewController.swift; sourceTree = "<group>"; };
+		BE1C79FF21057EE2009C3CBA /* CSSearchBarHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSearchBarHeader.swift; sourceTree = "<group>"; };
 		BE22B6AE20E21BC50032490A /* PinterestLayout1Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout1Cell.swift; sourceTree = "<group>"; };
 		BE406CF620A7E9DE009A4D6E /* AdsorptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsorptionController.swift; sourceTree = "<group>"; };
 		BE406CF820A7EA54009A4D6E /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
@@ -388,12 +390,21 @@
 		BE1C79F521037336009C3CBA /* CSStickyHeaderFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
+				BE1C79FE21057ED7009C3CBA /* View */,
 				BE1C79F621037370009C3CBA /* CSStickyHeaderFlowLayout.swift */,
 				BE1C79F821037402009C3CBA /* CSStickyHeaderFlowLayoutAttributes.swift */,
 				BE1C79FA210489F8009C3CBA /* CSStickyHeaderFlowLayoutMenu.swift */,
 				BE1C79FC21048A66009C3CBA /* CSLockedHeaderViewController.swift */,
 			);
 			path = CSStickyHeaderFlowLayout;
+			sourceTree = "<group>";
+		};
+		BE1C79FE21057ED7009C3CBA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BE1C79FF21057EE2009C3CBA /* CSSearchBarHeader.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BE511D631FCE634800BD9489 /* PinterestLayout */ = {
@@ -902,6 +913,7 @@
 				BE1C79F721037370009C3CBA /* CSStickyHeaderFlowLayout.swift in Sources */,
 				F7387C1620D24C2C0044B6DF /* AKPFlowLayout.swift in Sources */,
 				BEEACC8620CCC17300C1D180 /* MosaicLayout.swift in Sources */,
+				BE1C7A0021057EE2009C3CBA /* CSSearchBarHeader.swift in Sources */,
 				BEF73AD71FCADA9900A37524 /* PlayerCell.swift in Sources */,
 				BEF73AD51FCAB79000A37524 /* MockDataManager.swift in Sources */,
 				BEF73AD31FCAB6EB00A37524 /* JungleCupController.swift in Sources */,
