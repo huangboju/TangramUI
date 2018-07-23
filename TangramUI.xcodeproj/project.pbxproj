@@ -22,6 +22,8 @@
 		BE1C79F421037001009C3CBA /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C79F321037001009C3CBA /* SectionHeader.swift */; };
 		BE1C79F721037370009C3CBA /* CSStickyHeaderFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C79F621037370009C3CBA /* CSStickyHeaderFlowLayout.swift */; };
 		BE1C79F921037402009C3CBA /* CSStickyHeaderFlowLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C79F821037402009C3CBA /* CSStickyHeaderFlowLayoutAttributes.swift */; };
+		BE1C79FB210489F8009C3CBA /* CSStickyHeaderFlowLayoutMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C79FA210489F8009C3CBA /* CSStickyHeaderFlowLayoutMenu.swift */; };
+		BE1C79FD21048A66009C3CBA /* CSLockedHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C79FC21048A66009C3CBA /* CSLockedHeaderViewController.swift */; };
 		BE22B6AF20E21BC50032490A /* PinterestLayout1Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B6AE20E21BC50032490A /* PinterestLayout1Cell.swift */; };
 		BE406CF720A7E9DE009A4D6E /* AdsorptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE406CF620A7E9DE009A4D6E /* AdsorptionController.swift */; };
 		BE406CF920A7EA54009A4D6E /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE406CF820A7EA54009A4D6E /* SearchBarCell.swift */; };
@@ -159,6 +161,8 @@
 		BE1C79F321037001009C3CBA /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		BE1C79F621037370009C3CBA /* CSStickyHeaderFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSStickyHeaderFlowLayout.swift; sourceTree = "<group>"; };
 		BE1C79F821037402009C3CBA /* CSStickyHeaderFlowLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSStickyHeaderFlowLayoutAttributes.swift; sourceTree = "<group>"; };
+		BE1C79FA210489F8009C3CBA /* CSStickyHeaderFlowLayoutMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSStickyHeaderFlowLayoutMenu.swift; sourceTree = "<group>"; };
+		BE1C79FC21048A66009C3CBA /* CSLockedHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLockedHeaderViewController.swift; sourceTree = "<group>"; };
 		BE22B6AE20E21BC50032490A /* PinterestLayout1Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout1Cell.swift; sourceTree = "<group>"; };
 		BE406CF620A7E9DE009A4D6E /* AdsorptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsorptionController.swift; sourceTree = "<group>"; };
 		BE406CF820A7EA54009A4D6E /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
@@ -386,6 +390,8 @@
 			children = (
 				BE1C79F621037370009C3CBA /* CSStickyHeaderFlowLayout.swift */,
 				BE1C79F821037402009C3CBA /* CSStickyHeaderFlowLayoutAttributes.swift */,
+				BE1C79FA210489F8009C3CBA /* CSStickyHeaderFlowLayoutMenu.swift */,
+				BE1C79FC21048A66009C3CBA /* CSLockedHeaderViewController.swift */,
 			);
 			path = CSStickyHeaderFlowLayout;
 			sourceTree = "<group>";
@@ -911,6 +917,7 @@
 				BEF73ADB1FCAE18900A37524 /* MenuView.swift in Sources */,
 				BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */,
 				BE406CF920A7EA54009A4D6E /* SearchBarCell.swift in Sources */,
+				BE1C79FD21048A66009C3CBA /* CSLockedHeaderViewController.swift in Sources */,
 				F7387C1720D24C2C0044B6DF /* ImageCollectionViewHeader.swift in Sources */,
 				F7387C1B20D24C2C0044B6DF /* AKPLayoutConfigOptions.swift in Sources */,
 				BE720BB120C3BDCB00E86818 /* PinterestLayoutDelegate.swift in Sources */,
@@ -934,6 +941,7 @@
 				BEC2AECE1FC068B500FB98C2 /* ReverseLayout.swift in Sources */,
 				BEDE1E5A1FBEF0E40051F702 /* ServiceLeftPicCell.swift in Sources */,
 				BEDE1E631FBF15250051F702 /* BaseController.swift in Sources */,
+				BE1C79FB210489F8009C3CBA /* CSStickyHeaderFlowLayoutMenu.swift in Sources */,
 				BE720BBA20C3DD4A00E86818 /* MosaicLayoutController.swift in Sources */,
 				F7387C1D20D24C2C0044B6DF /* ImageCollectionViewCell.swift in Sources */,
 				BE511D671FCE638500BD9489 /* PinterestLayoutController.swift in Sources */,

@@ -1,12 +1,12 @@
 //
-//  ViewController.swift
+//  CSStickyHeaderFlowLayoutMenu.swift
 //  TangramUI
 //
-//  Created by 黄伯驹 on 2017/11/17.
-//  Copyright © 2017年 黄伯驹. All rights reserved.
+//  Created by 黄伯驹 on 2018/7/22.
+//  Copyright © 2018 黄伯驹. All rights reserved.
 //
 
-class ViewController: UIViewController {
+class CSStickyHeaderFlowLayoutMenu: UIViewController {
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
         tableView.dataSource = self
@@ -17,36 +17,19 @@ class ViewController: UIViewController {
     
     lazy var data: [[UIViewController.Type]] = [
         [
-            ServiceLayoutController.self,
-            ReverseLayoutController.self,
-            ReorderableTripletLayoutController.self,
-            JungleCupCollectionViewController.self,
-            ExcelLayoutController.self,
-            StretchyHeaderLayoutController.self,
-            GridLayoutController.self,
-            PinterestLayoutController.self,
-            PinterestLayout1Controller.self,
-            ExpandingLayoutController.self,
-            AdsorptionController.self,
-            CenterLayoutController.self,
-            WaterfallLayoutController.self,
-            CHTCollectionViewWaterfallLayoutController.self,
-            MosaicLayoutController.self,
-            AKPFlowLayoutController.self,
-            StickyHeadersLayoutController.self,
-            CSStickyHeaderFlowLayoutMenu.self
+            CSLockedHeaderViewController.self,
         ]
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "UICollectionView"
-
+        title = "CSStickyHeaderFlowLayoutMenu"
+        
         view.addSubview(tableView)
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension CSStickyHeaderFlowLayoutMenu: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return data.count
     }
@@ -60,7 +43,7 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension CSStickyHeaderFlowLayoutMenu: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.accessoryType = .disclosureIndicator
@@ -68,13 +51,12 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         defer { tableView.deselectRow(at: indexPath, animated: false) }
-
+        
         let controller = data[indexPath.section][indexPath.row].init()
         controller.title = "\(controller.classForCoder)"
         controller.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(controller, animated: true)
     }
 }
-
