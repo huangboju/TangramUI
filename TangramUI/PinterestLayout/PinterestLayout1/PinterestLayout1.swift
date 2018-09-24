@@ -91,7 +91,7 @@ public class PinterestLayout1: UICollectionViewLayout {
                     size: headerSize
                 )
                 let headerAttributes = PinterestLayoutAttributes(
-                    forSupplementaryViewOfKind: UICollectionElementKindSectionHeader,
+                    forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                     with: IndexPath(item: 0, section: section)
                 )
                 headerAttributes.frame = headerFrame
@@ -154,7 +154,7 @@ public class PinterestLayout1: UICollectionViewLayout {
                     size: footerSize
                 )
                 let footerAttributes = PinterestLayoutAttributes(
-                    forSupplementaryViewOfKind: UICollectionElementKindSectionFooter,
+                    forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
                     with: IndexPath(item: 0, section: section)
                 )
                 footerAttributes.frame = footerFrame

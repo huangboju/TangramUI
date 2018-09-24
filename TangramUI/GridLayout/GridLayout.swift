@@ -98,7 +98,7 @@ class GridLayout: UICollectionViewLayout {
      Defaults to vertical.
      */
     @IBInspectable
-    public var scrollDirection: UICollectionViewScrollDirection = .vertical {
+    public var scrollDirection: UICollectionView.ScrollDirection = .vertical {
         didSet {
             invalidateLayout()
         }
@@ -285,7 +285,7 @@ class GridLayout: UICollectionViewLayout {
             return nil
         }
 
-        let attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, with: indexPath)
+        let attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, with: indexPath)
 
         var frame: CGRect = .zero
         
@@ -312,7 +312,7 @@ class GridLayout: UICollectionViewLayout {
             return nil
         }
         
-        let attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, with: indexPath)
+        let attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, with: indexPath)
         
         var frame: CGRect = .zero
         
@@ -346,21 +346,21 @@ class GridLayout: UICollectionViewLayout {
     private func calculateLayoutAttributes() {
         cellAttributesBySection.removeAll(keepingCapacity: true)
         
-        supplementaryAttributes[UICollectionElementKindSectionHeader] = [:]
-        supplementaryAttributes[UICollectionElementKindSectionFooter] = [:]
+        supplementaryAttributes[UICollectionView.elementKindSectionHeader] = [:]
+        supplementaryAttributes[UICollectionView.elementKindSectionFooter] = [:]
         
         for section in  0 ..< numberOfSections {
             
             let headerFooterPath = IndexPath(row: 0, section: section)
 
             if let headerAttributes = self.headerAttributes(for: headerFooterPath) {
-                supplementaryAttributes[UICollectionElementKindSectionHeader]?[headerFooterPath] = headerAttributes
+                supplementaryAttributes[UICollectionView.elementKindSectionHeader]?[headerFooterPath] = headerAttributes
             }
             
             cellAttributesBySection.append(layoutAttributesForItems(in: section))
 
             if let footerAttributes = footerAttributes(for: headerFooterPath) {
-                supplementaryAttributes[UICollectionElementKindSectionFooter]?[headerFooterPath] = footerAttributes
+                supplementaryAttributes[UICollectionView.elementKindSectionFooter]?[headerFooterPath] = footerAttributes
             }
         }
     }

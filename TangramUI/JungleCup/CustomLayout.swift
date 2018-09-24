@@ -130,7 +130,7 @@ extension CustomLayout {
         for section in 0 ..< collectionView.numberOfSections {
             
             let sectionHeaderAttributes = CustomLayoutAttributes(
-                forSupplementaryViewOfKind: UICollectionElementKindSectionHeader,
+                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                 with: IndexPath(item: 0, section: section))
             prepareElement(
                 size: sectionsHeaderSize,
@@ -154,7 +154,7 @@ extension CustomLayout {
             }
 
             let sectionFooterAttributes = CustomLayoutAttributes(
-                forSupplementaryViewOfKind: UICollectionElementKindSectionFooter,
+                forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
                 with: IndexPath(item: 1, section: section)
             )
             prepareElement(
@@ -214,10 +214,10 @@ extension CustomLayout {
     
     public override func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         switch elementKind {
-        case UICollectionElementKindSectionHeader:
+        case UICollectionView.elementKindSectionHeader:
             return cache[.sectionHeader]?[indexPath]
             
-        case UICollectionElementKindSectionFooter:
+        case UICollectionView.elementKindSectionFooter:
             return cache[.sectionFooter]?[indexPath]
             
         case Element.header.kind:

@@ -27,7 +27,7 @@ open class AdsorptionLayout: UICollectionViewFlowLayout {
     
     // MARK: - Superclass Properties
     
-    open override var scrollDirection: UICollectionViewScrollDirection {
+    open override var scrollDirection: UICollectionView.ScrollDirection {
         
         didSet {
             if scrollDirection != oldValue {

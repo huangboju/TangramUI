@@ -58,7 +58,7 @@ class ImageCollectionViewGlobalHeader: UICollectionReusableView {
     private lazy var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
+        label.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
         label.textColor = .white
         label.textAlignment = .center
         label.text = "About Cats and Dogs..."

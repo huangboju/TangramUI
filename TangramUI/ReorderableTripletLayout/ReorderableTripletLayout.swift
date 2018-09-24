@@ -159,7 +159,7 @@ class ReorderableTripletLayout: TripletLayout {
         }
 
         displayLink = CADisplayLink(target: self, selector: #selector(autoScroll))
-        displayLink?.add(to: RunLoop.current, forMode: .commonModes)
+        displayLink?.add(to: RunLoop.current, forMode: RunLoop.Mode.common)
     }
     
     private func deinitDisplayLink() {

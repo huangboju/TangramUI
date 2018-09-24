@@ -45,8 +45,8 @@ class AKPFlowLayoutController: BaseController {
             collectionView.prefetchDataSource = self
         }
         collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: "AnnotatedPhotoCell")
-        collectionView.register(ImageCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
-        collectionView.register(ImageCollectionViewGlobalHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "globalHeader")
+        collectionView.register(ImageCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
+        collectionView.register(ImageCollectionViewGlobalHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "globalHeader")
         return collectionView
     }()
     
@@ -109,10 +109,10 @@ extension AKPFlowLayoutController: UICollectionViewDataSource {
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
         if indexPath.section == 0 {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "globalHeader", for: indexPath)
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "globalHeader", for: indexPath)
             return header
         } else {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
             (header as? ImageCollectionViewHeader)?.sectionHeaderText = "今天天气很好"
             return header
         }

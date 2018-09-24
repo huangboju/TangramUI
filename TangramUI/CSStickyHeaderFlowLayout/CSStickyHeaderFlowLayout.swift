@@ -102,8 +102,8 @@ class CSStickyHeaderFlowLayout: UICollectionViewFlowLayout {
             
             let indexPath = obj.indexPath
 
-            let isHeader = obj.representedElementKind == UICollectionElementKindSectionHeader
-            let isFooter = obj.representedElementKind == UICollectionElementKindSectionFooter
+            let isHeader = obj.representedElementKind == UICollectionView.elementKindSectionHeader
+            let isFooter = obj.representedElementKind == UICollectionView.elementKindSectionFooter
             
             if isHeader {
                 headers[indexPath.section] = obj
@@ -167,7 +167,7 @@ class CSStickyHeaderFlowLayout: UICollectionViewFlowLayout {
                 // CollectionView automatically removes headers not in bounds
                 if header == nil {
 
-                    header = layoutAttributesForSupplementaryView(ofKind: UICollectionElementKindSectionHeader, at: IndexPath(item: 0, section: indexPathKey))
+                    header = layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, at: IndexPath(item: 0, section: indexPathKey))
 
                     if header != nil && header!.frame.size != .zero {
                         allItems.append(header!)

@@ -22,7 +22,7 @@ class WaterfallLayoutController: BaseController {
     private lazy var collectionView: UICollectionView = {
         let layout = CollectionViewWaterfallLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.headerInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        layout.headerInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         layout.headerHeight = 50
         layout.footerHeight = 20
         layout.minimumColumnSpacing = 10

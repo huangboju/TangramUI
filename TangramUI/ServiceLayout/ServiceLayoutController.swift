@@ -27,8 +27,8 @@ class ServiceLayoutController: BaseController {
 
         cells.forEach { collectionView.register($0.0, forCellWithReuseIdentifier: $0.1) }
         
-        collectionView.register(HeaderReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "\(HeaderReusableView.classForCoder())")
-        collectionView.register(FooterReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "\(FooterReusableView.classForCoder())")
+        collectionView.register(HeaderReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(HeaderReusableView.classForCoder())")
+        collectionView.register(FooterReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "\(FooterReusableView.classForCoder())")
         
         return collectionView
     }()
@@ -79,7 +79,7 @@ extension ServiceLayoutController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionElementKindSectionHeader {
+        if kind == UICollectionView.elementKindSectionHeader {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(HeaderReusableView.classForCoder())", for: indexPath)
             return headerView
         } else {

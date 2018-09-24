@@ -22,7 +22,7 @@ class StretchyHeaderLayout: UICollectionViewFlowLayout {
 
             if let attributes = attributes {
                 for attrs in attributes {
-                    if attrs.representedElementKind == UICollectionElementKindSectionHeader  {
+                    if attrs.representedElementKind == UICollectionView.elementKindSectionHeader  {
                         var headerRect = attrs.frame
                         headerRect.size.height = max(minY, headerSize.height + deltaY)
                         headerRect.origin.y = headerRect.origin.y - deltaY

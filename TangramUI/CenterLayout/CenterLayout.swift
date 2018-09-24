@@ -30,11 +30,11 @@ class CenterLayout: UICollectionViewFlowLayout {
                     updatedAttributes.append(attrs)
                 }
 
-                if let headerAttrs =  super.layoutAttributesForSupplementaryView(ofKind: UICollectionElementKindSectionHeader, at: indexPath), headerAttrs.frame.intersects(rect) {
+                if let headerAttrs =  super.layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, at: indexPath), headerAttrs.frame.intersects(rect) {
                     updatedAttributes.append(headerAttrs)
                 }
                 
-                if let footerAttrs =  super.layoutAttributesForSupplementaryView(ofKind: UICollectionElementKindSectionFooter, at: indexPath), footerAttrs.frame.intersects(rect) {
+                if let footerAttrs =  super.layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, at: indexPath), footerAttrs.frame.intersects(rect) {
                     updatedAttributes.append(footerAttrs)
                 }
             }

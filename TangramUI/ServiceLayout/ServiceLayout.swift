@@ -42,7 +42,7 @@ class ServiceLayout: UICollectionViewLayout {
             
             let indexPath = IndexPath(index: i)
 
-            if let attr = layoutAttributesForSupplementaryView(ofKind: UICollectionElementKindSectionHeader, at: indexPath) {
+            if let attr = layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, at: indexPath) {
                 attributesArr.append(attr)
             }
 
@@ -54,7 +54,7 @@ class ServiceLayout: UICollectionViewLayout {
                 attributesArr.append(attrs)
             }
 
-            if let attr1 = layoutAttributesForSupplementaryView(ofKind: UICollectionElementKindSectionFooter, at: indexPath) {
+            if let attr1 = layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, at: indexPath) {
                 attributesArr.append(attr1)
             }
         }
@@ -69,7 +69,7 @@ class ServiceLayout: UICollectionViewLayout {
         let layoutAttrs = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: elementKind, with: indexPath)
         var height: CGFloat = 0
         
-        if elementKind == UICollectionElementKindSectionHeader {
+        if elementKind == UICollectionView.elementKindSectionHeader {
             height = delegate?.heightOfSectionHeader(for: indexPath) ?? 0
         } else {
             height = delegate?.heightOfSectionFooter(for: indexPath) ?? 0

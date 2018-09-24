@@ -36,7 +36,7 @@ class StickyHeadersCollectionViewFlowLayout: UICollectionViewFlowLayout {
                 // Update Sections to Add
                 let indexPath = IndexPath(item: 0, section: layoutAttributesSet.indexPath.section)
                 
-                if let sectionAttributes = layoutAttributesForSupplementaryView(ofKind: UICollectionElementKindSectionHeader, at: indexPath) {
+                if let sectionAttributes = layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, at: indexPath) {
                     newLayoutAttributes.append(sectionAttributes)
                 }
                 
@@ -44,7 +44,7 @@ class StickyHeadersCollectionViewFlowLayout: UICollectionViewFlowLayout {
                 // Update Sections to Add
                 let indexPath = IndexPath(item: 0, section: layoutAttributesSet.indexPath.section)
                 
-                if let sectionAttributes = layoutAttributesForSupplementaryView(ofKind: UICollectionElementKindSectionHeader, at: indexPath) {
+                if let sectionAttributes = layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, at: indexPath) {
                     newLayoutAttributes.append(sectionAttributes)
                 }
             }

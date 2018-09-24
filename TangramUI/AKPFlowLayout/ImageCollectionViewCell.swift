@@ -20,7 +20,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
     private lazy var textLabel: UILabel = {
         let textLabel = UILabel()
-        textLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.footnote)
+        textLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.footnote)
         textLabel.text = "Image Caption"
         textLabel.textAlignment = .center
         textLabel.translatesAutoresizingMaskIntoConstraints = false
