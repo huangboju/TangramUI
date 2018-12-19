@@ -10,18 +10,19 @@ class CSSearchBarHeader: UICollectionReusableView {
     
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        backgroundColor = UIColor.blue
+        
         addSubview(searchBar)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        searchBar.frame = bounds
+        searchBar.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        searchBar.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        searchBar.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
