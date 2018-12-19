@@ -1,7 +1,7 @@
 PODS:
   - FLAnimatedImage (1.0.12)
-  - SDWebImage/Core (4.4.1)
-  - SDWebImage/GIF (4.4.1):
+  - SDWebImage/Core (4.4.3)
+  - SDWebImage/GIF (4.4.3):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
 
@@ -15,7 +15,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
 
 PODFILE CHECKSUM: d24b225cc4a1da134d01cf7a2eaedaf735246b19
 
