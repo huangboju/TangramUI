@@ -22,7 +22,7 @@ class CSSearchBarHeader: UICollectionReusableView {
         addSubview(searchBar)
         searchBar.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         searchBar.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        searchBar.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        searchBar.topAnchor.constraint(equalTo: topAnchor).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {

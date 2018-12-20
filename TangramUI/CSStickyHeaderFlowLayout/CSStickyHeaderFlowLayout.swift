@@ -69,8 +69,6 @@ class CSStickyHeaderFlowLayout: UICollectionViewFlowLayout {
         var adjustedRect = rect
         adjustedRect.origin.y -= parallaxHeaderReferenceSize.height
         
-        print(adjustedRect)
-        
         var allItems: [UICollectionViewLayoutAttributes] = []
         if let originalAttributes = super.layoutAttributesForElements(in: adjustedRect) {
             allItems = originalAttributes.compactMap { $0.copy() as? UICollectionViewLayoutAttributes }
@@ -139,7 +137,6 @@ class CSStickyHeaderFlowLayout: UICollectionViewFlowLayout {
 
             let currentAttribute = CSStickyHeaderFlowLayoutAttributes(forSupplementaryViewOfKind: CSStickyHeaderParallaxHeader, with: IndexPath(index: 0))
             updateParallaxHeaderAttribute(currentAttribute)
-            print(currentAttribute.frame)
             allItems.append(currentAttribute)
         }
         
@@ -159,7 +156,7 @@ class CSStickyHeaderFlowLayout: UICollectionViewFlowLayout {
                     }
                 }
                 if header != nil && header!.frame.size != .zero {
-                    updateHeaderAttributes(header!, lastCellAttributes: lastCells[indexPathKey])
+                    updateHeaderAttributes(header!, lastCellAttributes: lastCells[indexPathKey]!)
                 }
             }
         }
@@ -190,10 +187,8 @@ class CSStickyHeaderFlowLayout: UICollectionViewFlowLayout {
         return CSStickyHeaderFlowLayoutAttributes.self
     }
 
-    private func updateHeaderAttributes(_ attributes: UICollectionViewLayoutAttributes, lastCellAttributes: UICollectionViewLayoutAttributes?) {
+    private func updateHeaderAttributes(_ attributes: UICollectionViewLayoutAttributes, lastCellAttributes: UICollectionViewLayoutAttributes) {
         let currentBounds = collectionView?.bounds ?? .zero
-        
-        guard let lastCellAttributes = lastCellAttributes else { return }
         
         attributes.zIndex = CSStickyHeaderFlowLayout.kHeaderZIndex
         attributes.isHidden = false
