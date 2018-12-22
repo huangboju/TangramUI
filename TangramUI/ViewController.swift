@@ -6,6 +6,8 @@
 //  Copyright © 2017年 黄伯驹. All rights reserved.
 //
 
+// http://martiancraft.com/blog/2017/05/collection-view-layouts/
+
 class ViewController: UIViewController {
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
