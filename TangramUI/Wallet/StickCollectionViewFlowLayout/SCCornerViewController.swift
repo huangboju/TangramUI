@@ -90,4 +90,3 @@ extension SCCornerViewController: UICollectionViewDataSource {
         return cell
     }
 }
-
