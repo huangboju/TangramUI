@@ -108,6 +108,8 @@
 		BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73ADC1FCAE24700A37524 /* HeaderView.swift */; };
 		CDDF92E4861A390C36D0836B /* Pods_TangramUIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD301C8FA189BA6DB6AA000 /* Pods_TangramUIUITests.framework */; };
 		F7070B7D20D391EC004195FB /* AKPFlowLayoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7070B7C20D391EC004195FB /* AKPFlowLayoutData.swift */; };
+		F7316D1F21D757B70051B559 /* StickCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D1E21D757B70051B559 /* StickCollectionViewFlowLayout.swift */; };
+		F7316D2121D759F30051B559 /* SCCornerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D2021D759F30051B559 /* SCCornerViewController.swift */; };
 		F7387C1620D24C2C0044B6DF /* AKPFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C0E20D24C2C0044B6DF /* AKPFlowLayout.swift */; };
 		F7387C1720D24C2C0044B6DF /* ImageCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C0F20D24C2C0044B6DF /* ImageCollectionViewHeader.swift */; };
 		F7387C1820D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1020D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift */; };
@@ -251,6 +253,8 @@
 		F7070B7320D391C7004195FB /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		F7070B7420D391C7004195FB /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		F7070B7C20D391EC004195FB /* AKPFlowLayoutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutData.swift; sourceTree = "<group>"; };
+		F7316D1E21D757B70051B559 /* StickCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		F7316D2021D759F30051B559 /* SCCornerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCCornerViewController.swift; sourceTree = "<group>"; };
 		F7387C0E20D24C2C0044B6DF /* AKPFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayout.swift; sourceTree = "<group>"; };
 		F7387C0F20D24C2C0044B6DF /* ImageCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewHeader.swift; sourceTree = "<group>"; };
 		F7387C1020D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewGlobalHeader.swift; sourceTree = "<group>"; };
@@ -315,6 +319,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				F7316D1D21D757A10051B559 /* StickCollectionViewFlowLayout */,
 				BE1C79F521037336009C3CBA /* CSStickyHeaderFlowLayout */,
 				BE1C79EE21036F07009C3CBA /* StickyHeadersCollectionViewFlowLayout */,
 				F7387C0D20D24C2C0044B6DF /* AKPFlowLayout */,
@@ -644,6 +649,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F7316D1D21D757A10051B559 /* StickCollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F7316D1E21D757B70051B559 /* StickCollectionViewFlowLayout.swift */,
+				F7316D2021D759F30051B559 /* SCCornerViewController.swift */,
+			);
+			path = StickCollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
 		F7387C0D20D24C2C0044B6DF /* AKPFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -913,6 +927,7 @@
 				BEDA5DAF1FCD4D8E00777CBC /* GridLayoutHeaderFooterView.swift in Sources */,
 				BE1C79F021036F18009C3CBA /* StickyHeadersCollectionViewFlowLayout.swift in Sources */,
 				BE1C79F721037370009C3CBA /* CSStickyHeaderFlowLayout.swift in Sources */,
+				F7316D2121D759F30051B559 /* SCCornerViewController.swift in Sources */,
 				F7387C1620D24C2C0044B6DF /* AKPFlowLayout.swift in Sources */,
 				BEEACC8620CCC17300C1D180 /* MosaicLayout.swift in Sources */,
 				BE1C7A0021057EE2009C3CBA /* CSSearchBarHeader.swift in Sources */,
@@ -946,6 +961,7 @@
 				BE7D4A431FE67DA8005AD328 /* Session.swift in Sources */,
 				BEDE1E5F1FBF0FFD0051F702 /* ServiceOnePicCell.swift in Sources */,
 				BEDE1E541FBEEE930051F702 /* UIColor+Extension.swift in Sources */,
+				F7316D1F21D757B70051B559 /* StickCollectionViewFlowLayout.swift in Sources */,
 				BEF73ACD1FCAB5B000A37524 /* CustomLayoutAttributes.swift in Sources */,
 				BEDA5DA61FCD059D00777CBC /* StretchyHeaderLayout.swift in Sources */,
 				BE720BA120C2816700E86818 /* CollectionViewWaterfallLayout.swift in Sources */,

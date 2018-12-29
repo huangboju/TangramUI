@@ -36,7 +36,8 @@ class ViewController: UIViewController {
             MosaicLayoutController.self,
             AKPFlowLayoutController.self,
             StickyHeadersLayoutController.self,
-            CSStickyHeaderFlowLayoutMenu.self
+            CSStickyHeaderFlowLayoutMenu.self,
+            SCCornerViewController.self
         ]
     ]
     
@@ -76,7 +77,7 @@ extension ViewController: UITableViewDelegate {
         let controller = data[indexPath.section][indexPath.row].init()
         controller.title = "\(controller.classForCoder)"
         controller.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(controller, animated: true)
+        show(controller, sender: nil)
     }
 }
 

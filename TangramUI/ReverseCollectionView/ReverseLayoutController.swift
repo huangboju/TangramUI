@@ -22,6 +22,27 @@ class ReverseLayoutController: BaseController {
 
     override func initSubviews() {
         view.addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        if #available(iOS 11, *) {
+            NSLayoutConstraint.activate([
+                collectionView.leadingAnchor.constraint(
+                    equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+                collectionView.trailingAnchor.constraint(
+                    equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+                collectionView.topAnchor.constraint(
+                    equalTo: view.safeAreaLayoutGuide.topAnchor,
+                    constant: 24),
+                collectionView.bottomAnchor.constraint(
+                    equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+                ])
+        } else {
+            NSLayoutConstraint.activate([
+                collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+                collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                ])
+        }
         
         let stepper = UIStepper()
         stepper.minimumValue = Double(numberOfItems)
