@@ -8,22 +8,28 @@
 
 @objc public protocol CHTCollectionViewDelegateWaterfallLayout: UICollectionViewDelegate {
     
-    func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    func collectionView (_ collectionView: UICollectionView,
+                         layout collectionViewLayout: UICollectionViewLayout,
                          sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize
     
-    @objc optional func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    @objc optional func collectionView (_ collectionView: UICollectionView,
+                                        layout collectionViewLayout: UICollectionViewLayout,
                                         heightForHeaderInSection section: Int) -> CGFloat
     
-    @objc optional func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    @objc optional func collectionView (_ collectionView: UICollectionView,
+                                        layout collectionViewLayout: UICollectionViewLayout,
                                         heightForFooterInSection section: Int) -> CGFloat
     
-    @objc optional func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    @objc optional func collectionView (_ collectionView: UICollectionView,
+                                        layout collectionViewLayout: UICollectionViewLayout,
                                         insetForSectionAtIndex section: Int) -> UIEdgeInsets
     
-    @objc optional func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    @objc optional func collectionView (_ collectionView: UICollectionView,
+                                        layout collectionViewLayout: UICollectionViewLayout,
                                         minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat
     
-    @objc optional func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    @objc optional func collectionView (_ collectionView: UICollectionView,
+                                        layout collectionViewLayout: UICollectionViewLayout,
                                         columnCountForSection section: Int) -> Int
 }
 
@@ -33,8 +39,10 @@ public enum CHTCollectionViewWaterfallLayoutItemRenderDirection: Int {
     case rightToLeft
 }
 
-public  let CHTCollectionElementKindSectionHeader = "CHTCollectionElementKindSectionHeader"
-public  let CHTCollectionElementKindSectionFooter = "CHTCollectionElementKindSectionFooter"
+public let CHTCollectionElementKindSectionHeader = "CHTCollectionElementKindSectionHeader"
+public let CHTCollectionElementKindSectionFooter = "CHTCollectionElementKindSectionFooter"
+
+
 public class CHTCollectionViewWaterfallLayout: UICollectionViewLayout {
     public var columnCount: Int = 2 {
         didSet {
