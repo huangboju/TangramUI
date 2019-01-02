@@ -1,14 +1,12 @@
 //
-//  ViewController.swift
+//  WalletMenu.swift
 //  TangramUI
 //
-//  Created by 黄伯驹 on 2017/11/17.
-//  Copyright © 2017年 黄伯驹. All rights reserved.
+//  Created by xiAo_Ju on 2018/12/29.
+//  Copyright © 2018 黄伯驹. All rights reserved.
 //
 
-// http://martiancraft.com/blog/2017/05/collection-view-layouts/
-
-class ViewController: UIViewController {
+class ExcelMenu: UIViewController {
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
         tableView.dataSource = self
@@ -19,37 +17,20 @@ class ViewController: UIViewController {
     
     lazy var data: [[UIViewController.Type]] = [
         [
-            ServiceLayoutController.self,
-            ReverseLayoutController.self,
-            ReorderableTripletLayoutController.self,
-            JungleCupCollectionViewController.self,
-            ExcelMenu.self,
-            StretchyHeaderLayoutController.self,
-            GridLayoutController.self,
-            PinterestLayoutController.self,
-            PinterestLayout1Controller.self,
-            ExpandingLayoutController.self,
-            AdsorptionController.self,
-            CenterLayoutController.self,
-            WaterfallLayoutController.self,
-            CHTCollectionViewWaterfallLayoutController.self,
-            MosaicLayoutController.self,
-            AKPFlowLayoutController.self,
-            StickyHeadersLayoutController.self,
-            CSStickyHeaderFlowLayoutMenu.self,
-            WalletMenu.self
+            ExcelLayoutController.self,
+            StickyGridCollectionViewLayoutController.self
         ]
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "UICollectionView"
-
+        title = "CSStickyHeaderFlowLayoutMenu"
+        
         view.addSubview(tableView)
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension ExcelMenu: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return data.count
     }
@@ -63,7 +44,7 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension ExcelMenu: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.accessoryType = .disclosureIndicator
@@ -71,13 +52,12 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         defer { tableView.deselectRow(at: indexPath, animated: false) }
-
+        
         let controller = data[indexPath.section][indexPath.row].init()
         controller.title = "\(controller.classForCoder)"
         controller.hidesBottomBarWhenPushed = true
-        show(controller, sender: nil)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
-

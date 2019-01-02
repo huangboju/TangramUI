@@ -112,6 +112,10 @@
 		F7316D2121D759F30051B559 /* SCCornerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D2021D759F30051B559 /* SCCornerViewController.swift */; };
 		F7316D2421D761E80051B559 /* WalletMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D2321D761E80051B559 /* WalletMenu.swift */; };
 		F7316D2621D762300051B559 /* SCPrimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D2521D762300051B559 /* SCPrimerViewController.swift */; };
+		F7316D2921DC5CAF0051B559 /* ExcelMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D2821DC5CAF0051B559 /* ExcelMenu.swift */; };
+		F7316D2C21DC5D290051B559 /* StickyGridCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D2B21DC5D290051B559 /* StickyGridCollectionViewLayout.swift */; };
+		F7316D2E21DC5EDF0051B559 /* StickyGridCollectionViewLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D2D21DC5EDF0051B559 /* StickyGridCollectionViewLayoutController.swift */; };
+		F7316D3021DC64050051B559 /* ExcelFlowLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D2F21DC64050051B559 /* ExcelFlowLayoutAttributes.swift */; };
 		F7387C1620D24C2C0044B6DF /* AKPFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C0E20D24C2C0044B6DF /* AKPFlowLayout.swift */; };
 		F7387C1720D24C2C0044B6DF /* ImageCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C0F20D24C2C0044B6DF /* ImageCollectionViewHeader.swift */; };
 		F7387C1820D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1020D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift */; };
@@ -259,6 +263,10 @@
 		F7316D2021D759F30051B559 /* SCCornerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCCornerViewController.swift; sourceTree = "<group>"; };
 		F7316D2321D761E80051B559 /* WalletMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletMenu.swift; sourceTree = "<group>"; };
 		F7316D2521D762300051B559 /* SCPrimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPrimerViewController.swift; sourceTree = "<group>"; };
+		F7316D2821DC5CAF0051B559 /* ExcelMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelMenu.swift; sourceTree = "<group>"; };
+		F7316D2B21DC5D290051B559 /* StickyGridCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyGridCollectionViewLayout.swift; sourceTree = "<group>"; };
+		F7316D2D21DC5EDF0051B559 /* StickyGridCollectionViewLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyGridCollectionViewLayoutController.swift; sourceTree = "<group>"; };
+		F7316D2F21DC64050051B559 /* ExcelFlowLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelFlowLayoutAttributes.swift; sourceTree = "<group>"; };
 		F7387C0E20D24C2C0044B6DF /* AKPFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayout.swift; sourceTree = "<group>"; };
 		F7387C0F20D24C2C0044B6DF /* ImageCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewHeader.swift; sourceTree = "<group>"; };
 		F7387C1020D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewGlobalHeader.swift; sourceTree = "<group>"; };
@@ -560,8 +568,11 @@
 		BEDA5D9E1FCBE3C700777CBC /* ExcelLayout */ = {
 			isa = PBXGroup;
 			children = (
+				F7316D2A21DC5D040051B559 /* StickyGridCollectionViewLayout */,
 				BEDA5D9F1FCBE3DD00777CBC /* ExcelLayout.swift */,
 				BEDA5DA11FCBE45F00777CBC /* ExcelLayoutController.swift */,
+				F7316D2821DC5CAF0051B559 /* ExcelMenu.swift */,
+				F7316D2F21DC64050051B559 /* ExcelFlowLayoutAttributes.swift */,
 			);
 			path = ExcelLayout;
 			sourceTree = "<group>";
@@ -670,6 +681,15 @@
 				F7316D2321D761E80051B559 /* WalletMenu.swift */,
 			);
 			path = Wallet;
+			sourceTree = "<group>";
+		};
+		F7316D2A21DC5D040051B559 /* StickyGridCollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F7316D2B21DC5D290051B559 /* StickyGridCollectionViewLayout.swift */,
+				F7316D2D21DC5EDF0051B559 /* StickyGridCollectionViewLayoutController.swift */,
+			);
+			path = StickyGridCollectionViewLayout;
 			sourceTree = "<group>";
 		};
 		F7387C0D20D24C2C0044B6DF /* AKPFlowLayout */ = {
@@ -936,6 +956,7 @@
 				BE0D89FC1FBED81800CA8114 /* ViewController.swift in Sources */,
 				BE22B6AF20E21BC50032490A /* PinterestLayout1Cell.swift in Sources */,
 				BEF73AD11FCAB64E00A37524 /* CustomLayoutSettings.swift in Sources */,
+				F7316D2E21DC5EDF0051B559 /* StickyGridCollectionViewLayoutController.swift in Sources */,
 				F7070B7D20D391EC004195FB /* AKPFlowLayoutData.swift in Sources */,
 				BE7FAF971FC2873100788A5A /* ReorderableTripletLayout.swift in Sources */,
 				F7316D2421D761E80051B559 /* WalletMenu.swift in Sources */,
@@ -971,6 +992,7 @@
 				BE0D89FA1FBED81800CA8114 /* AppDelegate.swift in Sources */,
 				BE720BA620C29F2300E86818 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 				BEF73ACF1FCAB60A00A37524 /* CustomLayout.swift in Sources */,
+				F7316D2C21DC5D290051B559 /* StickyGridCollectionViewLayout.swift in Sources */,
 				BE7D4A3F1FE67D06005AD328 /* ExpandingLayout.swift in Sources */,
 				BEDE1E5C1FBF0EE40051F702 /* ServiceNormalCell.swift in Sources */,
 				BE7D4A431FE67DA8005AD328 /* Session.swift in Sources */,
@@ -981,6 +1003,7 @@
 				BEDA5DA61FCD059D00777CBC /* StretchyHeaderLayout.swift in Sources */,
 				BE720BA120C2816700E86818 /* CollectionViewWaterfallLayout.swift in Sources */,
 				BEF73AD91FCAE0D700A37524 /* SectionFooterView.swift in Sources */,
+				F7316D3021DC64050051B559 /* ExcelFlowLayoutAttributes.swift in Sources */,
 				BEC2AECC1FC0681F00FB98C2 /* ReverseLayoutController.swift in Sources */,
 				BEDA5DAB1FCD278700777CBC /* GridLayout.swift in Sources */,
 				BEC2AECE1FC068B500FB98C2 /* ReverseLayout.swift in Sources */,
@@ -999,6 +1022,7 @@
 				BE720BB820C3DB6500E86818 /* TRMosaicColumn.swift in Sources */,
 				BE720BB620C3DB4A00E86818 /* TRMosaicLayout.swift in Sources */,
 				BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */,
+				F7316D2921DC5CAF0051B559 /* ExcelMenu.swift in Sources */,
 				BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */,
 				F7387C1920D24C2C0044B6DF /* AKPFlowLayoutError.swift in Sources */,
 				BE720BA320C28DCE00E86818 /* WaterfallLayoutController.swift in Sources */,

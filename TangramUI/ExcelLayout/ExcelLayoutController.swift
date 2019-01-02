@@ -13,8 +13,6 @@ class ExcelLayoutController: BaseController {
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: excelLayout)
         collectionView.backgroundColor = .white
         collectionView.dataSource = self
-        collectionView.frame.origin.y = 64
-        collectionView.frame.size.height -= 64
         collectionView.register(ExcelLayoutCell.self, forCellWithReuseIdentifier: "cellId")
         return collectionView
     }()
@@ -38,15 +36,9 @@ extension ExcelLayoutController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId",
                                                       for: indexPath) as! ExcelLayoutCell
-        if indexPath.section % 2 != 0 {
-            cell.backgroundColor = UIColor(white: 242/255.0, alpha: 1.0)
-        } else {
-            cell.backgroundColor = UIColor.white
-        }
 
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                cell.backgroundColor = .red
                 cell.updateView(with: "Date")
             } else {
                 cell.updateView(with: "Section")
@@ -84,6 +76,19 @@ class ExcelLayoutCell: UICollectionViewCell {
 
     func updateView(with text: String?) {
         textLabel.text = text
+    }
+    
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.apply(layoutAttributes)
+        let indexPath = layoutAttributes.indexPath
+        if indexPath.section % 2 != 0 {
+            backgroundColor = UIColor(white: 242/255.0, alpha: 1.0)
+        } else {
+            backgroundColor = UIColor.white
+        }
+        if indexPath == IndexPath(item: 0, section: 0) {
+            backgroundColor = .red
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

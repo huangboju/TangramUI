@@ -12,7 +12,7 @@ class ExcelLayout: UICollectionViewLayout {
     var shouldPinFirstColumn = true
     var shouldPinFirstRow = true
     
-    var itemAttributes = [[UICollectionViewLayoutAttributes]]()
+    var itemAttributes = [[ExcelFlowLayoutAttributes]]()
     var itemsSize = [CGSize]()
     var contentSize: CGSize = .zero
     
@@ -93,12 +93,12 @@ extension ExcelLayout {
         itemAttributes = []
         
         for section in 0..<collectionView.numberOfSections {
-            var sectionAttributes: [UICollectionViewLayoutAttributes] = []
+            var sectionAttributes: [ExcelFlowLayoutAttributes] = []
             
             for index in 0 ..< numberOfColumns {
                 let itemSize = itemsSize[index]
                 let indexPath = IndexPath(item: index, section: section)
-                let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
+                let attributes = ExcelFlowLayoutAttributes(forCellWith: indexPath)
                 attributes.frame = CGRect(x: xOffset, y: yOffset, width: itemSize.width, height: itemSize.height).integral
                 
                 if section == 0 && index == 0 {
