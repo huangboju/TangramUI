@@ -153,7 +153,6 @@ extension AKPFlowLayoutController: UICollectionViewDataSourcePrefetching {
 
         let urls = indexPaths.compactMap { URL(string: imageList[$0.row]) }
         SDWebImagePrefetcher.shared().prefetchURLs(urls)
-//        ImagePrefetcher(urls: urls).start()
     }
 
     func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
