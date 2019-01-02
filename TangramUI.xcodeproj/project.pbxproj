@@ -116,6 +116,7 @@
 		F7316D2C21DC5D290051B559 /* StickyGridCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D2B21DC5D290051B559 /* StickyGridCollectionViewLayout.swift */; };
 		F7316D2E21DC5EDF0051B559 /* StickyGridCollectionViewLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D2D21DC5EDF0051B559 /* StickyGridCollectionViewLayoutController.swift */; };
 		F7316D3021DC64050051B559 /* ExcelFlowLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D2F21DC64050051B559 /* ExcelFlowLayoutAttributes.swift */; };
+		F7316D3221DC66590051B559 /* PinterestLayoutMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D3121DC66590051B559 /* PinterestLayoutMenu.swift */; };
 		F7387C1620D24C2C0044B6DF /* AKPFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C0E20D24C2C0044B6DF /* AKPFlowLayout.swift */; };
 		F7387C1720D24C2C0044B6DF /* ImageCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C0F20D24C2C0044B6DF /* ImageCollectionViewHeader.swift */; };
 		F7387C1820D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1020D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift */; };
@@ -267,6 +268,7 @@
 		F7316D2B21DC5D290051B559 /* StickyGridCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyGridCollectionViewLayout.swift; sourceTree = "<group>"; };
 		F7316D2D21DC5EDF0051B559 /* StickyGridCollectionViewLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyGridCollectionViewLayoutController.swift; sourceTree = "<group>"; };
 		F7316D2F21DC64050051B559 /* ExcelFlowLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelFlowLayoutAttributes.swift; sourceTree = "<group>"; };
+		F7316D3121DC66590051B559 /* PinterestLayoutMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayoutMenu.swift; sourceTree = "<group>"; };
 		F7387C0E20D24C2C0044B6DF /* AKPFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayout.swift; sourceTree = "<group>"; };
 		F7387C0F20D24C2C0044B6DF /* ImageCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewHeader.swift; sourceTree = "<group>"; };
 		F7387C1020D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewGlobalHeader.swift; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 				BE511D681FCE64E500BD9489 /* Photo.swift */,
 				BE511D641FCE635100BD9489 /* PinterestLayout.swift */,
 				BE511D661FCE638500BD9489 /* PinterestLayoutController.swift */,
+				F7316D3121DC66590051B559 /* PinterestLayoutMenu.swift */,
 			);
 			path = PinterestLayout;
 			sourceTree = "<group>";
@@ -1031,6 +1034,7 @@
 				BE406CF720A7E9DE009A4D6E /* AdsorptionController.swift in Sources */,
 				BE1C79F221036F67009C3CBA /* StickyHeadersLayoutController.swift in Sources */,
 				BE1C79F421037001009C3CBA /* SectionHeader.swift in Sources */,
+				F7316D3221DC66590051B559 /* PinterestLayoutMenu.swift in Sources */,
 				BEDA5DA81FCD07D000777CBC /* StretchyHeaderLayoutController.swift in Sources */,
 				BE720B9E20C26E5100E86818 /* CenterLayoutController.swift in Sources */,
 				BEDA5DA01FCBE3DD00777CBC /* ExcelLayout.swift in Sources */,
