@@ -38,15 +38,15 @@ class ExcelLayout: UICollectionViewLayout {
                 
                 let attributes = layoutAttributesForItem(at: IndexPath(item: item, section: section))!
                 if section == 0 {
-                    var frame = attributes.frame
-                    frame.origin.y = collectionView.contentOffset.y
-                    attributes.frame = frame
+                    var top = collectionView.contentInset.top
+                    if #available(iOS 11.0, *) {
+                        top = collectionView.adjustedContentInset.top
+                    }
+                    attributes.frame.origin.y = collectionView.contentOffset.y + top
                 }
                 
                 if item == 0 {
-                    var frame = attributes.frame
-                    frame.origin.x = collectionView.contentOffset.x
-                    attributes.frame = frame
+                    attributes.frame.origin.x = collectionView.contentOffset.x
                 }
             }
         }
@@ -110,14 +110,14 @@ extension ExcelLayout {
                 }
                 
                 if section == 0 {
-                    var frame = attributes.frame
-                    frame.origin.y = collectionView.contentOffset.y
-                    attributes.frame = frame
+                    var top = collectionView.contentInset.top
+                    if #available(iOS 11.0, *) {
+                        top = collectionView.adjustedContentInset.top
+                    }
+                    attributes.frame.origin.y = collectionView.contentOffset.y + top
                 }
                 if index == 0 {
-                    var frame = attributes.frame
-                    frame.origin.x = collectionView.contentOffset.x
-                    attributes.frame = frame
+                    attributes.frame.origin.x = collectionView.contentOffset.x
                 }
                 
                 sectionAttributes.append(attributes)

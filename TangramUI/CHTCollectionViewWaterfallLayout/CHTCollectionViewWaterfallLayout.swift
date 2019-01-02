@@ -143,12 +143,12 @@ public class CHTCollectionViewWaterfallLayout: UICollectionViewLayout {
             return
         }
         
-        self.headersAttributes = [:]
-        self.footersAttributes = [:]
-        self.unionRects = []
-        self.columnHeights = []
-        self.allItemAttributes = []
-        self.sectionItemAttributes = []
+        headersAttributes = [:]
+        footersAttributes = [:]
+        unionRects = []
+        columnHeights = []
+        allItemAttributes = []
+        sectionItemAttributes = []
         
         for section in 0 ..< numberOfSections {
             let columnCount = self.columnCountForSection(section)
@@ -293,11 +293,11 @@ public class CHTCollectionViewWaterfallLayout: UICollectionViewLayout {
     }
     
     override public func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        if (indexPath as NSIndexPath).section >= self.sectionItemAttributes.count {
+        if indexPath.section >= self.sectionItemAttributes.count {
             return nil
         }
         let list = self.sectionItemAttributes[indexPath.section]
-        if (indexPath as NSIndexPath).item >= list.count {
+        if indexPath.item >= list.count {
             return nil
         }
         return list[indexPath.item]
