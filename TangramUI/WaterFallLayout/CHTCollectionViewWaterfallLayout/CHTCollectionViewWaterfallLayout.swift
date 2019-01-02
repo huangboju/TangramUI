@@ -314,6 +314,7 @@ public class CHTCollectionViewWaterfallLayout: UICollectionViewLayout {
                 break
             }
         }
+        print(begin, end)
         for i in begin ..< end {
             let attr = allItemAttributes[i]
             if rect.intersects(attr.frame) {

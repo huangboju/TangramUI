@@ -117,6 +117,7 @@
 		F7316D2E21DC5EDF0051B559 /* StickyGridCollectionViewLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D2D21DC5EDF0051B559 /* StickyGridCollectionViewLayoutController.swift */; };
 		F7316D3021DC64050051B559 /* ExcelFlowLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D2F21DC64050051B559 /* ExcelFlowLayoutAttributes.swift */; };
 		F7316D3221DC66590051B559 /* PinterestLayoutMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D3121DC66590051B559 /* PinterestLayoutMenu.swift */; };
+		F7316D3521DC6CB40051B559 /* WaterFallLayoutMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7316D3421DC6CB40051B559 /* WaterFallLayoutMenu.swift */; };
 		F7387C1620D24C2C0044B6DF /* AKPFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C0E20D24C2C0044B6DF /* AKPFlowLayout.swift */; };
 		F7387C1720D24C2C0044B6DF /* ImageCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C0F20D24C2C0044B6DF /* ImageCollectionViewHeader.swift */; };
 		F7387C1820D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1020D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift */; };
@@ -269,6 +270,7 @@
 		F7316D2D21DC5EDF0051B559 /* StickyGridCollectionViewLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyGridCollectionViewLayoutController.swift; sourceTree = "<group>"; };
 		F7316D2F21DC64050051B559 /* ExcelFlowLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelFlowLayoutAttributes.swift; sourceTree = "<group>"; };
 		F7316D3121DC66590051B559 /* PinterestLayoutMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayoutMenu.swift; sourceTree = "<group>"; };
+		F7316D3421DC6CB40051B559 /* WaterFallLayoutMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterFallLayoutMenu.swift; sourceTree = "<group>"; };
 		F7387C0E20D24C2C0044B6DF /* AKPFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayout.swift; sourceTree = "<group>"; };
 		F7387C0F20D24C2C0044B6DF /* ImageCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewHeader.swift; sourceTree = "<group>"; };
 		F7387C1020D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewGlobalHeader.swift; sourceTree = "<group>"; };
@@ -333,14 +335,13 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				F7316D3321DC6C670051B559 /* WaterFallLayout */,
 				F7316D2221D761CA0051B559 /* Wallet */,
 				BE1C79F521037336009C3CBA /* CSStickyHeaderFlowLayout */,
 				BE1C79EE21036F07009C3CBA /* StickyHeadersCollectionViewFlowLayout */,
 				F7387C0D20D24C2C0044B6DF /* AKPFlowLayout */,
 				BEEACC8720CCC17900C1D180 /* MosaicLayout */,
 				BE720BB420C3DB4200E86818 /* TRMosaicLayout */,
-				BE720BA420C29F0200E86818 /* CHTCollectionViewWaterfallLayout */,
-				BE720B9F20C2813200E86818 /* CollectionViewWaterfallLayout */,
 				BEB8E1A320C17DF300B79A53 /* CenterLayout */,
 				BE54ADA920A5804700B8A473 /* AdsorptionLayout */,
 				BE7D4A3D1FE67CC4005AD328 /* ExpandingCollectionView */,
@@ -695,6 +696,16 @@
 			path = StickyGridCollectionViewLayout;
 			sourceTree = "<group>";
 		};
+		F7316D3321DC6C670051B559 /* WaterFallLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BE720B9F20C2813200E86818 /* CollectionViewWaterfallLayout */,
+				BE720BA420C29F0200E86818 /* CHTCollectionViewWaterfallLayout */,
+				F7316D3421DC6CB40051B559 /* WaterFallLayoutMenu.swift */,
+			);
+			path = WaterFallLayout;
+			sourceTree = "<group>";
+		};
 		F7387C0D20D24C2C0044B6DF /* AKPFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -1014,6 +1025,7 @@
 				BEDE1E631FBF15250051F702 /* BaseController.swift in Sources */,
 				BE1C79FB210489F8009C3CBA /* CSStickyHeaderFlowLayoutMenu.swift in Sources */,
 				F7316D2621D762300051B559 /* SCPrimerViewController.swift in Sources */,
+				F7316D3521DC6CB40051B559 /* WaterFallLayoutMenu.swift in Sources */,
 				BE720BBA20C3DD4A00E86818 /* MosaicLayoutController.swift in Sources */,
 				F7387C1D20D24C2C0044B6DF /* ImageCollectionViewCell.swift in Sources */,
 				BE511D671FCE638500BD9489 /* PinterestLayoutController.swift in Sources */,
