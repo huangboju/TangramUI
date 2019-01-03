@@ -126,6 +126,8 @@
 		F7387C1B20D24C2C0044B6DF /* AKPLayoutConfigOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1320D24C2C0044B6DF /* AKPLayoutConfigOptions.swift */; };
 		F7387C1C20D24C2C0044B6DF /* AKPFlowLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1420D24C2C0044B6DF /* AKPFlowLayoutController.swift */; };
 		F7387C1D20D24C2C0044B6DF /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1520D24C2C0044B6DF /* ImageCollectionViewCell.swift */; };
+		F754780921DDB93F004D3D32 /* StickyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754780821DDB93F004D3D32 /* StickyLayout.swift */; };
+		F754780B21DDB986004D3D32 /* StickyLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754780A21DDB986004D3D32 /* StickyLayoutController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -279,6 +281,8 @@
 		F7387C1320D24C2C0044B6DF /* AKPLayoutConfigOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPLayoutConfigOptions.swift; sourceTree = "<group>"; };
 		F7387C1420D24C2C0044B6DF /* AKPFlowLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutController.swift; sourceTree = "<group>"; };
 		F7387C1520D24C2C0044B6DF /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		F754780821DDB93F004D3D32 /* StickyLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyLayout.swift; sourceTree = "<group>"; };
+		F754780A21DDB986004D3D32 /* StickyLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyLayoutController.swift; sourceTree = "<group>"; };
 		FFD301C8FA189BA6DB6AA000 /* Pods_TangramUIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TangramUIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -335,6 +339,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				F754780721DDB926004D3D32 /* StickyLayout */,
 				F7316D3321DC6C670051B559 /* WaterFallLayout */,
 				F7316D2221D761CA0051B559 /* Wallet */,
 				BE1C79F521037336009C3CBA /* CSStickyHeaderFlowLayout */,
@@ -722,6 +727,15 @@
 			path = AKPFlowLayout;
 			sourceTree = "<group>";
 		};
+		F754780721DDB926004D3D32 /* StickyLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F754780821DDB93F004D3D32 /* StickyLayout.swift */,
+				F754780A21DDB986004D3D32 /* StickyLayoutController.swift */,
+			);
+			path = StickyLayout;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -989,9 +1003,11 @@
 				BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */,
 				BE720BAD20C3BD9A00E86818 /* PinterestLayout1.swift in Sources */,
 				F7387C1A20D24C2C0044B6DF /* AKPFlowLayoutAttributes.swift in Sources */,
+				F754780921DDB93F004D3D32 /* StickyLayout.swift in Sources */,
 				BE720BAF20C3BDB800E86818 /* PinterestLayoutAttributes.swift in Sources */,
 				BE511D691FCE64E500BD9489 /* Photo.swift in Sources */,
 				BE7D4A471FE67E64005AD328 /* InspirationCell.swift in Sources */,
+				F754780B21DDB986004D3D32 /* StickyLayoutController.swift in Sources */,
 				BE720BB320C3BF1200E86818 /* PinterestLayout1Controller.swift in Sources */,
 				BEF73ADB1FCAE18900A37524 /* MenuView.swift in Sources */,
 				BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */,

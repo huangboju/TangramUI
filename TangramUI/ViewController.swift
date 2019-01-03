@@ -35,7 +35,8 @@ class ViewController: UIViewController {
             AKPFlowLayoutController.self,
             StickyHeadersLayoutController.self,
             CSStickyHeaderFlowLayoutMenu.self,
-            WalletMenu.self
+            WalletMenu.self,
+            StickyLayoutController.self
         ]
     ]
     
