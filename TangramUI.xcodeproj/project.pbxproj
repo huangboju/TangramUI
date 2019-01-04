@@ -339,6 +339,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				F754784021DEFF67004D3D32 /* SearchResultLayout */,
 				F754780721DDB926004D3D32 /* StickyLayout */,
 				F7316D3321DC6C670051B559 /* WaterFallLayout */,
 				F7316D2221D761CA0051B559 /* Wallet */,
@@ -734,6 +735,13 @@
 				F754780A21DDB986004D3D32 /* StickyLayoutController.swift */,
 			);
 			path = StickyLayout;
+			sourceTree = "<group>";
+		};
+		F754784021DEFF67004D3D32 /* SearchResultLayout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SearchResultLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
