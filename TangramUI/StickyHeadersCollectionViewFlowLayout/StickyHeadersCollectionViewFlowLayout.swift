@@ -55,8 +55,8 @@ class StickyHeadersCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     override func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         guard let layoutAttributes = super.layoutAttributesForSupplementaryView(ofKind: elementKind, at: indexPath) else { return nil }
-        let boundaries = self.boundaries(forSection: indexPath.section)
         guard let collectionView = collectionView else { return layoutAttributes }
+        let boundaries = self.boundaries(forSection: indexPath.section)
         
         // Helpers
         
