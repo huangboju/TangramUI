@@ -18,7 +18,11 @@ class StickyHeadersCollectionViewFlowLayout: UICollectionViewFlowLayout {
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        return true
+        let oldBounds = collectionView?.bounds
+        if newBounds != oldBounds {
+            return true
+        }
+        return false
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
