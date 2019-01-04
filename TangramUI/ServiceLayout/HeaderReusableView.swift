@@ -8,19 +8,22 @@
 
 class HeaderReusableView : UICollectionReusableView {
 
-    private lazy var imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .center
-        return imageView
+    private lazy var textLabel: UILabel = {
+        let textLabel = UILabel()
+        textLabel.text = "header"
+        return textLabel
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(imageView)
+        
+        backgroundColor = .red
+        
+        addSubview(textLabel)
 
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        imageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
+        textLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        textLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {

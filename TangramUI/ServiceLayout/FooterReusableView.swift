@@ -10,7 +10,7 @@ class FooterReusableView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        backgroundColor = UIColor(r: 243, g: 243, b: 243)
+        backgroundColor = .yellow
     }
     
     required init?(coder aDecoder: NSCoder) {
