@@ -10,9 +10,12 @@ class StretchyHeaderLayout: UICollectionViewFlowLayout {
 
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
-        let insets = collectionView?.contentInset ?? .zero
+        var top = collectionView?.contentInset.top ?? 0
+        if #available(iOS 11, *) {
+            top = collectionView?.adjustedContentInset.top ?? 0
+        }
         let offset = collectionView?.contentOffset ?? .zero
-        let minY = -insets.top
+        let minY = -top
 
         let attributes = super.layoutAttributesForElements(in: rect)
 
@@ -20,16 +23,15 @@ class StretchyHeaderLayout: UICollectionViewFlowLayout {
             let headerSize = headerReferenceSize
             let  deltaY = abs(offset.y - minY)
 
-            if let attributes = attributes {
-                for attrs in attributes {
-                    if attrs.representedElementKind == UICollectionView.elementKindSectionHeader  {
-                        var headerRect = attrs.frame
-                        headerRect.size.height = max(minY, headerSize.height + deltaY)
-                        headerRect.origin.y = headerRect.origin.y - deltaY
-                        attrs.frame = headerRect
-                        break
-                    }
-                }
+            guard let att = attributes else {
+                return attributes
+            }
+            for attrs in att where attrs.representedElementKind == UICollectionView.elementKindSectionHeader {
+                var headerRect = attrs.frame
+                headerRect.size.height = max(minY, headerSize.height + deltaY)
+                headerRect.origin.y = headerRect.origin.y - deltaY
+                attrs.frame = headerRect
+                break
             }
         }
         

@@ -11,14 +11,12 @@ class StretchyHeaderLayoutController: BaseController {
     private lazy var collectionView: UICollectionView = {
         let stretchyLayout = StretchyHeaderLayout()
         stretchyLayout.sectionInset = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
-        stretchyLayout.itemSize = CGSize(width: 300.0, height: 494.0)
-        stretchyLayout.headerReferenceSize = CGSize(width: 320.0, height: 160.0)
+        stretchyLayout.itemSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height)
+        stretchyLayout.headerReferenceSize = CGSize(width: self.view.frame.width - 20, height: 260.0)
 
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: stretchyLayout)
         collectionView.backgroundColor = .white
         collectionView.dataSource = self
-        collectionView.frame.origin.y = 64
-        collectionView.frame.size.height -= 64
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
         collectionView.register(StretchyHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
         return collectionView
