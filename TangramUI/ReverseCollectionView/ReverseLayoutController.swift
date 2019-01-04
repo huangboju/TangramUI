@@ -12,7 +12,7 @@ class ReverseLayoutController: BaseController {
 
     private lazy var collectionView: UICollectionView = {
         let layout = ReverseLayout()
-        layout.itemSize = CGSize(width: SCREEN_WIDTH, height: 44)
+        layout.itemSize = CGSize(width: self.view.frame.width, height: 44)
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         collectionView.dataSource = self

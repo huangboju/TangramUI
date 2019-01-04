@@ -6,8 +6,6 @@
 //  Copyright © 2017年 黄伯驹. All rights reserved.
 //
 
-let SCREEN_WIDTH = UIScreen.main.bounds.width
-
 protocol ServiceLayoutDelegate: class {
 
     func heightOfSectionHeader(for indexPath: IndexPath) -> CGFloat
@@ -29,14 +27,22 @@ class ServiceLayout: UICollectionViewLayout {
     private var totalHeight: CGFloat = 0
 
     private var attributesArr: [UICollectionViewLayoutAttributes] = []
+    
+    private var curCollectionView: UICollectionView {
+        guard let collectionView = collectionView else {
+            fatalError("collectionView 不能为nil")
+        }
+        return collectionView
+    }
+    
+    private var contentWidth: CGFloat {
+        return curCollectionView.frame.width
+    }
 
     override func prepare() {
         super.prepare()
         
-        
-        guard let collectionView = collectionView else { return }
-        
-        let sectionCount = collectionView.numberOfSections
+        let sectionCount = curCollectionView.numberOfSections
 
         for i in 0 ..< sectionCount {
             
@@ -46,7 +52,7 @@ class ServiceLayout: UICollectionViewLayout {
                 attributesArr.append(attr)
             }
 
-            let itemCount = collectionView.numberOfItems(inSection: i)
+            let itemCount = curCollectionView.numberOfItems(inSection: i)
             
             for j in 0 ..< itemCount {
                 let indexPath = IndexPath(item: j, section: i)
@@ -74,7 +80,7 @@ class ServiceLayout: UICollectionViewLayout {
         } else {
             height = delegate?.heightOfSectionFooter(for: indexPath) ?? 0
         }
-        layoutAttrs.frame = CGRect(x: 0, y: totalHeight, width: SCREEN_WIDTH, height: height)
+        layoutAttrs.frame = CGRect(x: 0, y: totalHeight, width: contentWidth, height: height)
         totalHeight += height
         return layoutAttrs
     }
@@ -105,16 +111,17 @@ class ServiceLayout: UICollectionViewLayout {
     /// 服务
     private func layoutAttributesForServiceLayout(with layoutAttributes: UICollectionViewLayoutAttributes, at indexPath: IndexPath) {
         let y = totalHeight
+        let width = contentWidth
         if indexPath.item == 0 {
-            layoutAttributes.frame = CGRect(x: 0, y: y, width: SCREEN_WIDTH, height: kBaseLine(85))
-            totalHeight += kBaseLine(85)
+            layoutAttributes.frame = CGRect(x: 0, y: y, width: width, height: 85)
+            totalHeight += 85
         } else {
             if indexPath.item > 6 { return }
             let row = CGFloat(indexPath.item - 1).truncatingRemainder(dividingBy: 3)
-            let width = SCREEN_WIDTH / 3.0
-            layoutAttributes.frame = CGRect(x: row * width, y: y, width: width, height: kBaseLine(100))
+            let itemWidth = width / 3.0
+            layoutAttributes.frame = CGRect(x: row * itemWidth, y: y, width: itemWidth, height: 100)
             if indexPath.item == 3 || indexPath.item == collectionView!.numberOfItems(inSection: indexPath.section) - 1 {
-                self.totalHeight += kBaseLine(100)
+                self.totalHeight += 100
             }
         }
     }
@@ -122,8 +129,8 @@ class ServiceLayout: UICollectionViewLayout {
     /// 版权
     func layoutAttributesForCopyRightlayout(with layoutAttributes: UICollectionViewLayoutAttributes, at indexPath: IndexPath) {
         let y = self.totalHeight
-        let width = SCREEN_WIDTH / 2.0
-        let height = kBaseLine(160)
+        let width = contentWidth / 2.0
+        let height: CGFloat = 160
         switch (indexPath.item) {
         case 0:
             layoutAttributes.frame = CGRect(x: 0, y: y, width: width, height: height)
@@ -135,7 +142,7 @@ class ServiceLayout: UICollectionViewLayout {
             break
         }
 
-        if indexPath.item == collectionView!.numberOfItems(inSection: indexPath.section) - 1 {
+        if indexPath.item == curCollectionView.numberOfItems(inSection: indexPath.section) - 1 {
             totalHeight += height
         }
     }
@@ -146,14 +153,14 @@ class ServiceLayout: UICollectionViewLayout {
         var height: CGFloat = 0
         switch (indexPath.item) {
         case 0:
-            layoutAttributes.frame = CGRect(x: 0, y: y, width: SCREEN_WIDTH, height: kBaseLine(85))
-            height = kBaseLine(85)
+            layoutAttributes.frame = CGRect(x: 0, y: y, width: contentWidth, height: 85)
+            height = 85
         case 1:
-            layoutAttributes.frame = CGRect(x: 0, y: y, width: SCREEN_WIDTH / 2.0, height: kBaseLine(80))
-            height = kBaseLine(80)
+            layoutAttributes.frame = CGRect(x: 0, y: y, width: contentWidth / 2.0, height: 80)
+            height = 80
         case 2:
-            layoutAttributes.frame = CGRect(x: SCREEN_WIDTH / 2.0, y: y, width: SCREEN_WIDTH / 2.0, height: kBaseLine(80))
-            height = kBaseLine(80)
+            layoutAttributes.frame = CGRect(x: contentWidth / 2.0, y: y, width: contentWidth / 2.0, height: 80)
+            height = 80
         default:
             break
         }
@@ -168,19 +175,15 @@ class ServiceLayout: UICollectionViewLayout {
         let y = totalHeight
         switch indexPath.item {
         case 0:
-            layoutAttributes.frame = CGRect(x: 0, y: y, width: SCREEN_WIDTH / 2.0, height: kBaseLine(80))
-            totalHeight += kBaseLine(80)
+            layoutAttributes.frame = CGRect(x: 0, y: y, width: contentWidth / 2.0, height: 80)
+            totalHeight += 80
         case 1:
-            layoutAttributes.frame = CGRect(x: 0, y: y, width: SCREEN_WIDTH/2.0, height: kBaseLine(80))
-            totalHeight += kBaseLine(80)
+            layoutAttributes.frame = CGRect(x: 0, y: y, width: contentWidth / 2.0, height: 80)
+            totalHeight += 80
         case 2:
-            layoutAttributes.frame = CGRect(x: SCREEN_WIDTH/2.0, y: y - kBaseLine(160), width: SCREEN_WIDTH/2.0, height: kBaseLine(160))
+            layoutAttributes.frame = CGRect(x: contentWidth / 2.0, y: y - 160, width: contentWidth / 2.0, height: 160)
         default:
             break
         }
     }
 }
-
-
-let kBaseLine: (CGFloat) -> CGFloat = { $0 * SCREEN_WIDTH / 375.0 }
-
