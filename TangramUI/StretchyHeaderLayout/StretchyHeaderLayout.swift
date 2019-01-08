@@ -22,15 +22,14 @@ class StretchyHeaderLayout: UICollectionViewFlowLayout {
         if offset.y < minY {
             let headerSize = headerReferenceSize
             let  deltaY = abs(offset.y - minY)
+            collectionView?.scrollIndicatorInsets.top = headerSize.height
 
             guard let att = attributes else {
                 return attributes
             }
             for attrs in att where attrs.representedElementKind == UICollectionView.elementKindSectionHeader {
-                var headerRect = attrs.frame
-                headerRect.size.height = max(minY, headerSize.height + deltaY)
-                headerRect.origin.y = headerRect.origin.y - deltaY
-                attrs.frame = headerRect
+                attrs.frame.size.height = max(minY, headerSize.height + deltaY)
+                attrs.frame.origin.y = attrs.frame.minY - deltaY
                 break
             }
         }

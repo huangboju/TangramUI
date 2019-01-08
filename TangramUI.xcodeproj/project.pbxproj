@@ -128,6 +128,11 @@
 		F7387C1D20D24C2C0044B6DF /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1520D24C2C0044B6DF /* ImageCollectionViewCell.swift */; };
 		F754780921DDB93F004D3D32 /* StickyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754780821DDB93F004D3D32 /* StickyLayout.swift */; };
 		F754780B21DDB986004D3D32 /* StickyLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754780A21DDB986004D3D32 /* StickyLayoutController.swift */; };
+		F754784A21DF67C1004D3D32 /* TableFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754784521DF67C1004D3D32 /* TableFlowLayout.swift */; };
+		F754784B21DF67C1004D3D32 /* TableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754784621DF67C1004D3D32 /* TableCollectionViewController.swift */; };
+		F754784C21DF67C1004D3D32 /* TableCollectionViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754784721DF67C1004D3D32 /* TableCollectionViewLayoutAttributes.swift */; };
+		F754784D21DF67C1004D3D32 /* TableCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754784821DF67C1004D3D32 /* TableCollectionViewSection.swift */; };
+		F754784E21DF67C1004D3D32 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754784921DF67C1004D3D32 /* UICollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -283,6 +288,11 @@
 		F7387C1520D24C2C0044B6DF /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		F754780821DDB93F004D3D32 /* StickyLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyLayout.swift; sourceTree = "<group>"; };
 		F754780A21DDB986004D3D32 /* StickyLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyLayoutController.swift; sourceTree = "<group>"; };
+		F754784521DF67C1004D3D32 /* TableFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableFlowLayout.swift; sourceTree = "<group>"; };
+		F754784621DF67C1004D3D32 /* TableCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCollectionViewController.swift; sourceTree = "<group>"; };
+		F754784721DF67C1004D3D32 /* TableCollectionViewLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCollectionViewLayoutAttributes.swift; sourceTree = "<group>"; };
+		F754784821DF67C1004D3D32 /* TableCollectionViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCollectionViewSection.swift; sourceTree = "<group>"; };
+		F754784921DF67C1004D3D32 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		FFD301C8FA189BA6DB6AA000 /* Pods_TangramUIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TangramUIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -339,6 +349,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				F754784321DF66FD004D3D32 /* TableFlowLayout */,
 				F754784021DEFF67004D3D32 /* SearchResultLayout */,
 				F754780721DDB926004D3D32 /* StickyLayout */,
 				F7316D3321DC6C670051B559 /* WaterFallLayout */,
@@ -744,6 +755,26 @@
 			path = SearchResultLayout;
 			sourceTree = "<group>";
 		};
+		F754784321DF66FD004D3D32 /* TableFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F754784421DF67C1004D3D32 /* Core */,
+			);
+			path = TableFlowLayout;
+			sourceTree = "<group>";
+		};
+		F754784421DF67C1004D3D32 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F754784521DF67C1004D3D32 /* TableFlowLayout.swift */,
+				F754784621DF67C1004D3D32 /* TableCollectionViewController.swift */,
+				F754784721DF67C1004D3D32 /* TableCollectionViewLayoutAttributes.swift */,
+				F754784821DF67C1004D3D32 /* TableCollectionViewSection.swift */,
+				F754784921DF67C1004D3D32 /* UICollectionViewCell.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -999,6 +1030,7 @@
 				BEDA5DAF1FCD4D8E00777CBC /* GridLayoutHeaderFooterView.swift in Sources */,
 				BE1C79F021036F18009C3CBA /* StickyHeadersCollectionViewFlowLayout.swift in Sources */,
 				BE1C79F721037370009C3CBA /* CSStickyHeaderFlowLayout.swift in Sources */,
+				F754784A21DF67C1004D3D32 /* TableFlowLayout.swift in Sources */,
 				F7316D2121D759F30051B559 /* SCCornerViewController.swift in Sources */,
 				F7387C1620D24C2C0044B6DF /* AKPFlowLayout.swift in Sources */,
 				BEEACC8620CCC17300C1D180 /* MosaicLayout.swift in Sources */,
@@ -1007,6 +1039,7 @@
 				BEF73AD51FCAB79000A37524 /* MockDataManager.swift in Sources */,
 				BEF73AD31FCAB6EB00A37524 /* JungleCupController.swift in Sources */,
 				BEDE1E611FBF141D0051F702 /* ServicePicTwoTitleCell.swift in Sources */,
+				F754784B21DF67C1004D3D32 /* TableCollectionViewController.swift in Sources */,
 				BEB8E1A520C17E1500B79A53 /* CenterLayout.swift in Sources */,
 				BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */,
 				BE720BAD20C3BD9A00E86818 /* PinterestLayout1.swift in Sources */,
@@ -1021,6 +1054,7 @@
 				BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */,
 				BE406CF920A7EA54009A4D6E /* SearchBarCell.swift in Sources */,
 				BE1C79FD21048A66009C3CBA /* CSLockedHeaderViewController.swift in Sources */,
+				F754784E21DF67C1004D3D32 /* UICollectionViewCell.swift in Sources */,
 				F7387C1720D24C2C0044B6DF /* ImageCollectionViewHeader.swift in Sources */,
 				F7387C1B20D24C2C0044B6DF /* AKPLayoutConfigOptions.swift in Sources */,
 				BE720BB120C3BDCB00E86818 /* PinterestLayoutDelegate.swift in Sources */,
@@ -1039,6 +1073,7 @@
 				F7316D1F21D757B70051B559 /* StickCollectionViewFlowLayout.swift in Sources */,
 				BEF73ACD1FCAB5B000A37524 /* CustomLayoutAttributes.swift in Sources */,
 				BEDA5DA61FCD059D00777CBC /* StretchyHeaderLayout.swift in Sources */,
+				F754784D21DF67C1004D3D32 /* TableCollectionViewSection.swift in Sources */,
 				BE720BA120C2816700E86818 /* CollectionViewWaterfallLayout.swift in Sources */,
 				BEF73AD91FCAE0D700A37524 /* SectionFooterView.swift in Sources */,
 				F7316D3021DC64050051B559 /* ExcelFlowLayoutAttributes.swift in Sources */,
@@ -1063,6 +1098,7 @@
 				BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */,
 				F7316D2921DC5CAF0051B559 /* ExcelMenu.swift in Sources */,
 				BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */,
+				F754784C21DF67C1004D3D32 /* TableCollectionViewLayoutAttributes.swift in Sources */,
 				F7387C1920D24C2C0044B6DF /* AKPFlowLayoutError.swift in Sources */,
 				BE720BA320C28DCE00E86818 /* WaterfallLayoutController.swift in Sources */,
 				F7387C1820D24C2C0044B6DF /* ImageCollectionViewGlobalHeader.swift in Sources */,
@@ -1245,7 +1281,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D2CVGDWDEG;
+				DEVELOPMENT_TEAM = 7XJTY6W57S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1253,7 +1289,7 @@
 				INFOPLIST_FILE = TangramUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.boju.TangramUI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = TangramUI/Bridging.h;
 				SWIFT_VERSION = 4.2;
@@ -1267,7 +1303,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D2CVGDWDEG;
+				DEVELOPMENT_TEAM = 7XJTY6W57S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1275,7 +1311,7 @@
 				INFOPLIST_FILE = TangramUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.boju.TangramUI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = TangramUI/Bridging.h;
 				SWIFT_VERSION = 4.2;
