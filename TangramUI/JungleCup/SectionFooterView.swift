@@ -6,7 +6,7 @@
 //  Copyright © 2017年 黄伯驹. All rights reserved.
 //
 
-final class SectionFooterView: UICollectionReusableView {
+final class JCSectionFooterView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -18,7 +18,7 @@ final class SectionFooterView: UICollectionReusableView {
     }
 }
 
-final class SectionHeaderView: UICollectionReusableView {
+final class JCSectionHeaderView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 

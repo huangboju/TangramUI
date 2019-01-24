@@ -36,7 +36,8 @@ class ViewController: UIViewController {
             StickyHeadersLayoutController.self,
             CSStickyHeaderFlowLayoutMenu.self,
             WalletMenu.self,
-            StickyLayoutController.self
+            StickyLayoutController.self,
+            TableFlowLayoutVC.self
         ]
     ]
     
@@ -72,8 +73,14 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         defer { tableView.deselectRow(at: indexPath, animated: false) }
-
-        let controller = data[indexPath.section][indexPath.row].init()
+        let type = data[indexPath.section][indexPath.row]
+        let controller: UIViewController
+        if type == TableFlowLayoutVC.self {
+            controller = TableFlowLayoutVC()
+        } else {
+            controller = type.init()
+        }
+        
         controller.title = "\(controller.classForCoder)"
         controller.hidesBottomBarWhenPushed = true
         show(controller, sender: nil)

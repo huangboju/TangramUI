@@ -50,13 +50,13 @@ class JungleCupCollectionViewController: BaseController {
         )
         
         collectionView.register(
-            SectionHeaderView.self,
+            JCSectionFooterView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: CustomLayout.Element.sectionHeader.id
         )
         
         collectionView.register(
-            SectionFooterView.self,
+            JCSectionFooterView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
             withReuseIdentifier: CustomLayout.Element.sectionFooter.id
         )
@@ -99,14 +99,14 @@ extension JungleCupCollectionViewController: UICollectionViewDataSource {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomLayout.Element.sectionHeader.id, for: indexPath)
-            if supplementaryView is SectionHeaderView {
+            if supplementaryView is JCSectionHeaderView {
 //                sectionHeaderView.title.text = sections[indexPath.section]
             }
             return supplementaryView
 
         case UICollectionView.elementKindSectionFooter:
             let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomLayout.Element.sectionFooter.id, for: indexPath)
-            if supplementaryView is SectionFooterView {
+            if supplementaryView is JCSectionFooterView {
 //                sectionFooterView.mark.text = "Strength: \(teams[displayedTeam].marks[indexPath.section])"
             }
             return supplementaryView
