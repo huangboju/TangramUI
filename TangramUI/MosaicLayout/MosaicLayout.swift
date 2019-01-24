@@ -58,19 +58,19 @@ class MosaicLayout: UICollectionViewLayout {
         
     }
     
-    func binarySearchAttributes(range: CountableClosedRange<Int>, rect: CGRect) -> Int? {
-//        var lowerBound = 0
-//        var upperBound = range.count
-//        while lowerBound < upperBound {
-//            let midIndex = lowerBound + (upperBound - lowerBound) / 2
-//            if cachedAttributes[midIndex].frame.intersects(rect) {
-//                return midIndex
-//            } else if cachedAttributes[midIndex] < rect {
-//                lowerBound = midIndex + 1
-//            } else {
-//                upperBound = midIndex
-//            }
-//        }
+    private func binarySearchAttributes(range: CountableClosedRange<Int>, rect: CGRect) -> Int? {
+        var lowerBound = 0
+        var upperBound = range.count - 1
+        while lowerBound < upperBound {
+            let midIndex = lowerBound + (upperBound - lowerBound) / 2
+            if cachedAttributes[midIndex].frame.intersects(rect) {
+                return midIndex
+            } else if cachedAttributes[midIndex].frame.maxY < rect.minY {
+                lowerBound = midIndex + 1
+            } else {
+                upperBound = midIndex
+            }
+        }
         return nil
     }
 }

@@ -300,6 +300,6 @@ extension TRMosaicLayout {
      */
     func resetLayoutState() {
         columns = TRMosaicColumns()
-        cachedCellLayoutAttributes = [IndexPath: UICollectionViewLayoutAttributes]()
+        cachedCellLayoutAttributes.removeAll()
     }
 }
