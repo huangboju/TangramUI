@@ -28,7 +28,7 @@ class Session{
         self.backgroundImage = backgroundImage
     }
     
-    convenience init (dictionary:NSDictionary){
+    convenience init (dictionary: [String: Any]){
         let title = dictionary["Title"] as? String
         let speaker = dictionary["Speaker"] as? String
         let room = dictionary["Room"] as? String

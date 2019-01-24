@@ -104,12 +104,36 @@ class ExpandingLayout: UICollectionViewLayout {
     
     /* Return all attributes in the cache whose frame intersects with the rect passed to the method */
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        let result = cache.filter { $0.frame.intersects(rect) }
-        return result
+        var attributesArr: [UICollectionViewLayoutAttributes] = []
+        guard let firstMatchIndex = binarySearchAttributes(range: 0...cache.endIndex, rect: rect) else {
+            return attributesArr
+        }
+
+        for attributes in cache[..<firstMatchIndex].reversed() {
+            guard attributes.frame.maxY >= rect.minY else { break }
+            attributesArr.insert(attributes, at: 0)
+        }
+
+        for attributes in cache[firstMatchIndex...] {
+            guard attributes.frame.minY <= rect.maxY else { break }
+            attributesArr.append(attributes)
+        }
+        return attributesArr
     }
     
     private func binarySearchAttributes(range: CountableClosedRange<Int>, rect: CGRect) -> Int? {
-        
+        var lowerBound = 0
+        var upperBound = range.count - 1
+        while lowerBound < upperBound {
+            let midIndex = lowerBound + (upperBound - lowerBound) / 2
+            if cache[midIndex].frame.intersects(rect) {
+                return midIndex
+            } else if cache[midIndex].frame.maxY < rect.minY {
+                lowerBound = midIndex + 1
+            } else {
+                upperBound = midIndex
+            }
+        }
         return nil
     }
     
