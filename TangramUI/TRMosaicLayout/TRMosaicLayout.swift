@@ -131,7 +131,6 @@ public class TRMosaicLayout: UICollectionViewLayout {
      Returns all layout attributes within the given rectangle
      */
     override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-
         let attributesInRect = cachedCellLayoutAttributes.filter { $1.frame.intersects(rect) }
         return Array(attributesInRect.values)
     }

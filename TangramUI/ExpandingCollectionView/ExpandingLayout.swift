@@ -104,7 +104,13 @@ class ExpandingLayout: UICollectionViewLayout {
     
     /* Return all attributes in the cache whose frame intersects with the rect passed to the method */
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        return cache.filter { $0.frame.intersects(rect) }
+        let result = cache.filter { $0.frame.intersects(rect) }
+        return result
+    }
+    
+    private func binarySearchAttributes(range: CountableClosedRange<Int>, rect: CGRect) -> Int? {
+        
+        return nil
     }
     
     /* Return true so that the layout is continuously invalidated as the user scrolls */
@@ -116,5 +122,15 @@ class ExpandingLayout: UICollectionViewLayout {
         let itemIndex = round(proposedContentOffset.y / dragOffset)
         let yOffset = itemIndex * dragOffset
         return CGPoint(x: 0, y: yOffset)
+    }
+}
+
+extension CGRect {
+    func isRectIntersect(_ b: CGRect) -> Bool {
+        let centerX1 = b.midX
+        let centerY1 = b.midY
+        let centerX2 = midX
+        let centerY2 = midY
+        return (abs(centerX1 - centerX2) <= (b.width + width) / 2) && (abs(centerY1 - centerY2) <= (b.height + height) / 2)
     }
 }
