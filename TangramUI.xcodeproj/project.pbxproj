@@ -163,6 +163,9 @@
 		F7387C1B20D24C2C0044B6DF /* AKPLayoutConfigOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1320D24C2C0044B6DF /* AKPLayoutConfigOptions.swift */; };
 		F7387C1C20D24C2C0044B6DF /* AKPFlowLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1420D24C2C0044B6DF /* AKPFlowLayoutController.swift */; };
 		F7387C1D20D24C2C0044B6DF /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7387C1520D24C2C0044B6DF /* ImageCollectionViewCell.swift */; };
+		F7408FF221FAF66C001214AE /* VegaScrollFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7408FF121FAF66C001214AE /* VegaScrollFlowLayout.swift */; };
+		F7408FF421FAF68C001214AE /* VegaScrollFlowLayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7408FF321FAF68C001214AE /* VegaScrollFlowLayoutVC.swift */; };
+		F7408FF621FAF897001214AE /* VegaScrollFlowLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7408FF521FAF897001214AE /* VegaScrollFlowLayoutCell.swift */; };
 		F754780921DDB93F004D3D32 /* StickyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754780821DDB93F004D3D32 /* StickyLayout.swift */; };
 		F754780B21DDB986004D3D32 /* StickyLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754780A21DDB986004D3D32 /* StickyLayoutController.swift */; };
 		F754784A21DF67C1004D3D32 /* TableFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754784521DF67C1004D3D32 /* TableFlowLayout.swift */; };
@@ -360,6 +363,9 @@
 		F7387C1320D24C2C0044B6DF /* AKPLayoutConfigOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPLayoutConfigOptions.swift; sourceTree = "<group>"; };
 		F7387C1420D24C2C0044B6DF /* AKPFlowLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutController.swift; sourceTree = "<group>"; };
 		F7387C1520D24C2C0044B6DF /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7408FF121FAF66C001214AE /* VegaScrollFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayout.swift; sourceTree = "<group>"; };
+		F7408FF321FAF68C001214AE /* VegaScrollFlowLayoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayoutVC.swift; sourceTree = "<group>"; };
+		F7408FF521FAF897001214AE /* VegaScrollFlowLayoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayoutCell.swift; sourceTree = "<group>"; };
 		F754780821DDB93F004D3D32 /* StickyLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyLayout.swift; sourceTree = "<group>"; };
 		F754780A21DDB986004D3D32 /* StickyLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyLayoutController.swift; sourceTree = "<group>"; };
 		F754784521DF67C1004D3D32 /* TableFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableFlowLayout.swift; sourceTree = "<group>"; };
@@ -423,6 +429,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				F7408FF021FAF647001214AE /* VegaScrollFlowLayout */,
 				F724F30421FAA98E0035CCB2 /* Sticky */,
 				F754784321DF66FD004D3D32 /* TableFlowLayout */,
 				F754784021DEFF67004D3D32 /* SearchResultLayout */,
@@ -916,6 +923,16 @@
 			path = AKPFlowLayout;
 			sourceTree = "<group>";
 		};
+		F7408FF021FAF647001214AE /* VegaScrollFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F7408FF121FAF66C001214AE /* VegaScrollFlowLayout.swift */,
+				F7408FF321FAF68C001214AE /* VegaScrollFlowLayoutVC.swift */,
+				F7408FF521FAF897001214AE /* VegaScrollFlowLayoutCell.swift */,
+			);
+			path = VegaScrollFlowLayout;
+			sourceTree = "<group>";
+		};
 		F754780721DDB926004D3D32 /* StickyLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -1216,6 +1233,7 @@
 				F728B75921F9D93E008E6FEE /* MapViewModel.swift in Sources */,
 				F7070B7D20D391EC004195FB /* AKPFlowLayoutData.swift in Sources */,
 				F728B75021F9D89C008E6FEE /* SectionHeaderView.swift in Sources */,
+				F7408FF621FAF897001214AE /* VegaScrollFlowLayoutCell.swift in Sources */,
 				BE7FAF971FC2873100788A5A /* ReorderableTripletLayout.swift in Sources */,
 				F724F2FF21F9DF080035CCB2 /* SimpleSection.swift in Sources */,
 				F7316D2421D761E80051B559 /* WalletMenu.swift in Sources */,
@@ -1232,6 +1250,7 @@
 				BEF73AD71FCADA9900A37524 /* PlayerCell.swift in Sources */,
 				F728B76321F9DA3D008E6FEE /* Place.swift in Sources */,
 				BEF73AD51FCAB79000A37524 /* MockDataManager.swift in Sources */,
+				F7408FF221FAF66C001214AE /* VegaScrollFlowLayout.swift in Sources */,
 				F728B73F21F9D865008E6FEE /* GallerySectionManager.swift in Sources */,
 				F728B73121F9D827008E6FEE /* SectionRepresentable.swift in Sources */,
 				F724F30121F9DF080035CCB2 /* SimpleImageLabelCell.swift in Sources */,
@@ -1298,6 +1317,7 @@
 				BE1C79FB210489F8009C3CBA /* CSStickyHeaderFlowLayoutMenu.swift in Sources */,
 				F7316D2621D762300051B559 /* SCPrimerViewController.swift in Sources */,
 				F728B74921F9D89C008E6FEE /* ReviewCell.swift in Sources */,
+				F7408FF421FAF68C001214AE /* VegaScrollFlowLayoutVC.swift in Sources */,
 				F728B73E21F9D865008E6FEE /* TopActionsSectionManager.swift in Sources */,
 				F7316D3521DC6CB40051B559 /* WaterFallLayoutMenu.swift in Sources */,
 				BE720BBA20C3DD4A00E86818 /* MosaicLayoutController.swift in Sources */,

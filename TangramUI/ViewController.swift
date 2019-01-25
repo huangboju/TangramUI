@@ -35,7 +35,8 @@ class ViewController: UIViewController {
             AKPFlowLayoutController.self,
             WalletMenu.self,
             StickyLayoutMenu.self,
-            TableFlowLayoutVC.self
+            TableFlowLayoutVC.self,
+            VegaScrollFlowLayoutVC.self
         ]
     ]
     
