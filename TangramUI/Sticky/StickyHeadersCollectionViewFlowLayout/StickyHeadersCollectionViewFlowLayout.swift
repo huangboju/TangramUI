@@ -65,8 +65,8 @@ class StickyHeadersCollectionViewFlowLayout: UICollectionViewFlowLayout {
         let contentOffsetY = collectionView.contentOffset.y + top
         var frameForSupplementaryView = layoutAttributes.frame
         
-        let minimum = boundaries.minimum - frameForSupplementaryView.height
-        let maximum = boundaries.maximum - frameForSupplementaryView.height
+        let minimum = boundaries.minimum - frameForSupplementaryView.height + top
+        let maximum = boundaries.maximum - frameForSupplementaryView.height + top
 
         if contentOffsetY < minimum {
             frameForSupplementaryView.origin.y = minimum
