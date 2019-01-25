@@ -30,12 +30,15 @@ class StickyHeadersLayoutController: UIViewController {
     private func setupCollectionView() {
         // Initialize Collection View Flow Layout
         let layout = StickyHeadersCollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: view.bounds.width, height: 44)
+        layout.minimumLineSpacing = 2
+        layout.minimumInteritemSpacing = 0
+        layout.headerReferenceSize = CGSize(width: view.bounds.width, height: 66)
         
         // Initialize Collection View
         let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         
         // Configure Collection View
-        collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
         
@@ -61,11 +64,11 @@ extension StickyHeadersLayoutController: UICollectionViewDataSource {
     // MARK: - Collection View Data Source Methods
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return section == 1 ? 20 : 2
+        return Int(arc4random_uniform(10) + 2)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -90,31 +93,6 @@ extension StickyHeadersLayoutController: UICollectionViewDataSource {
         }
         
         fatalError("Unable to Dequeue Reusable Supplementary View")
-    }
-    
-}
-
-extension StickyHeadersLayoutController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    // MARK: - Collection View Delegate Flow Layout Methods
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 44.0)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .zero
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 2.0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return section == 1 ? CGSize(width: collectionView.bounds.width, height: 80.0) : .zero
     }
     
 }

@@ -9,7 +9,6 @@
 class StickyHeadersCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     // MARK: - Collection View Flow Layout Methods
-    
     override func prepare() {
         super.prepare()
         if #available(iOS 10, *) {
@@ -18,18 +17,14 @@ class StickyHeadersCollectionViewFlowLayout: UICollectionViewFlowLayout {
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        let oldBounds = collectionView?.bounds
-        if newBounds != oldBounds {
-            return true
-        }
-        return false
+        return true
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        
         guard let layoutAttributes = super.layoutAttributesForElements(in: rect) else { return nil }
         
         // Helpers
+        var sectionsToAdd = Set<Int>()
         var newLayoutAttributes = [UICollectionViewLayoutAttributes]()
         
         for layoutAttributesSet in layoutAttributes {
@@ -38,19 +33,19 @@ class StickyHeadersCollectionViewFlowLayout: UICollectionViewFlowLayout {
                 newLayoutAttributes.append(layoutAttributesSet)
                 
                 // Update Sections to Add
-                let indexPath = IndexPath(item: 0, section: layoutAttributesSet.indexPath.section)
-                
-                if let sectionAttributes = layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, at: indexPath) {
-                    newLayoutAttributes.append(sectionAttributes)
-                }
+                sectionsToAdd.insert(layoutAttributesSet.indexPath.section)
                 
             } else if layoutAttributesSet.representedElementCategory == .supplementaryView {
                 // Update Sections to Add
-                let indexPath = IndexPath(item: 0, section: layoutAttributesSet.indexPath.section)
-                
-                if let sectionAttributes = layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, at: indexPath) {
-                    newLayoutAttributes.append(sectionAttributes)
-                }
+                sectionsToAdd.insert(layoutAttributesSet.indexPath.section)
+            }
+        }
+        
+        for section in sectionsToAdd {
+            let indexPath = IndexPath(item: 0, section: section)
+            
+            if let sectionAttributes = self.layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, at: indexPath) {
+                newLayoutAttributes.append(sectionAttributes)
             }
         }
         
@@ -59,16 +54,14 @@ class StickyHeadersCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     override func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         guard let layoutAttributes = super.layoutAttributesForSupplementaryView(ofKind: elementKind, at: indexPath) else { return nil }
+        guard let boundaries = boundaries(forSection: indexPath.section) else { return layoutAttributes }
         guard let collectionView = collectionView else { return layoutAttributes }
-        let boundaries = self.boundaries(forSection: indexPath.section)
         
         // Helpers
-        
         var top = collectionView.contentInset.top
         if #available(iOS 11, *) {
             top = collectionView.adjustedContentInset.top
         }
-        
         let contentOffsetY = collectionView.contentOffset.y + top
         var frameForSupplementaryView = layoutAttributes.frame
         
@@ -90,7 +83,7 @@ class StickyHeadersCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     // MARK: - Helper Methods
     
-    func boundaries(forSection section: Int) -> (minimum: CGFloat, maximum: CGFloat) {
+    func boundaries(forSection section: Int) -> (minimum: CGFloat, maximum: CGFloat)? {
         // Helpers
         var result = (minimum: CGFloat(0.0), maximum: CGFloat(0.0))
         
