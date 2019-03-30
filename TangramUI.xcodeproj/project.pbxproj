@@ -39,6 +39,7 @@
 		BE56D9A0224F711A0048BF13 /* StretchyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE56D99D224F711A0048BF13 /* StretchyHeaderView.swift */; };
 		BE56D9A1224F711A0048BF13 /* StretchyCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE56D99E224F711A0048BF13 /* StretchyCollectionViewLayout.swift */; };
 		BE56D9A2224F711A0048BF13 /* StretchyCollectionViewLayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE56D99F224F711A0048BF13 /* StretchyCollectionViewLayoutVC.swift */; };
+		BE56D9A5224F73320048BF13 /* StretchyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE56D9A4224F73320048BF13 /* StretchyViewController.swift */; };
 		BE720B9E20C26E5100E86818 /* CenterLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720B9D20C26E5100E86818 /* CenterLayoutController.swift */; };
 		BE720BA120C2816700E86818 /* CollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BA020C2816700E86818 /* CollectionViewWaterfallLayout.swift */; };
 		BE720BA320C28DCE00E86818 /* WaterfallLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BA220C28DCE00E86818 /* WaterfallLayoutController.swift */; };
@@ -240,6 +241,7 @@
 		BE56D99D224F711A0048BF13 /* StretchyHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchyHeaderView.swift; sourceTree = "<group>"; };
 		BE56D99E224F711A0048BF13 /* StretchyCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchyCollectionViewLayout.swift; sourceTree = "<group>"; };
 		BE56D99F224F711A0048BF13 /* StretchyCollectionViewLayoutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchyCollectionViewLayoutVC.swift; sourceTree = "<group>"; };
+		BE56D9A4224F73320048BF13 /* StretchyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyViewController.swift; sourceTree = "<group>"; };
 		BE720B9D20C26E5100E86818 /* CenterLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterLayoutController.swift; sourceTree = "<group>"; };
 		BE720BA020C2816700E86818 /* CollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
 		BE720BA220C28DCE00E86818 /* WaterfallLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayoutController.swift; sourceTree = "<group>"; };
@@ -559,6 +561,7 @@
 		BE56D999224F70320048BF13 /* Stretchy */ = {
 			isa = PBXGroup;
 			children = (
+				BE56D9A3224F73290048BF13 /* StretchyViewController */,
 				BE56D99C224F70F60048BF13 /* StretchyCollectionViewLayout */,
 				BEDA5DA41FCD058A00777CBC /* StretchyHeaderLayout */,
 				BE56D99A224F70A50048BF13 /* StretchyLayoutMenu.swift */,
@@ -574,6 +577,14 @@
 				BE56D99F224F711A0048BF13 /* StretchyCollectionViewLayoutVC.swift */,
 			);
 			path = StretchyCollectionViewLayout;
+			sourceTree = "<group>";
+		};
+		BE56D9A3224F73290048BF13 /* StretchyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BE56D9A4224F73320048BF13 /* StretchyViewController.swift */,
+			);
+			path = StretchyViewController;
 			sourceTree = "<group>";
 		};
 		BE720B9F20C2813200E86818 /* CollectionViewWaterfallLayout */ = {
@@ -1360,6 +1371,7 @@
 				BE7D4A421FE67DA8005AD328 /* Inspiration.swift in Sources */,
 				BE406CFB20A7EB5F009A4D6E /* ColorCell.swift in Sources */,
 				BE720BA920C29FF500E86818 /* CHTCollectionViewWaterfallLayoutController.swift in Sources */,
+				BE56D9A5224F73320048BF13 /* StretchyViewController.swift in Sources */,
 				BE720BB820C3DB6500E86818 /* TRMosaicColumn.swift in Sources */,
 				BE720BB620C3DB4A00E86818 /* TRMosaicLayout.swift in Sources */,
 				F728B73321F9D827008E6FEE /* CellRepresentable.swift in Sources */,

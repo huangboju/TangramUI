@@ -20,7 +20,8 @@ class StretchyLayoutMenu: UIViewController {
     lazy var data: [[UIViewController.Type]] = [
         [
             StretchyHeaderLayoutController.self,
-            StretchyCollectionViewLayoutVC.self
+            StretchyCollectionViewLayoutVC.self,
+            StretchyViewController.self
         ]
     ]
     
