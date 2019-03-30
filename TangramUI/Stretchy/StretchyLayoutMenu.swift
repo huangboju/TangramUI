@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  StretchyLayoutMenu.swift
 //  TangramUI
 //
-//  Created by 黄伯驹 on 2017/11/17.
-//  Copyright © 2017年 黄伯驹. All rights reserved.
+//  Created by 黄伯驹 on 2019/3/30.
+//  Copyright © 2019 黄伯驹. All rights reserved.
 //
 
-// http://martiancraft.com/blog/2017/05/collection-view-layouts/
+import UIKit
 
-class ViewController: UIViewController {
+class StretchyLayoutMenu: UIViewController {
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
         tableView.dataSource = self
@@ -19,36 +19,20 @@ class ViewController: UIViewController {
     
     lazy var data: [[UIViewController.Type]] = [
         [
-            ServiceLayoutController.self,
-            ReverseLayoutController.self,
-            ReorderableTripletLayoutController.self,
-            JungleCupCollectionViewController.self,
-            ExcelMenu.self,
-            StretchyLayoutMenu.self,
-            GridLayoutController.self,
-            PinterestLayoutMenu.self,
-            ExpandingLayoutController.self,
-            AdsorptionController.self,
-            CenterLayoutController.self,
-            WaterFallLayoutMenu.self,
-            MosaicLayoutController.self,
-            AKPFlowLayoutController.self,
-            WalletMenu.self,
-            StickyLayoutMenu.self,
-            TableFlowLayoutVC.self,
-            VegaScrollFlowLayoutVC.self
+            StretchyHeaderLayoutController.self,
+            StretchyCollectionViewLayoutVC.self
         ]
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "UICollectionView"
-
+        title = "StretchyLayout"
+        
         view.addSubview(tableView)
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension StretchyLayoutMenu: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return data.count
     }
@@ -62,7 +46,7 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension StretchyLayoutMenu: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.accessoryType = .disclosureIndicator
@@ -70,12 +54,12 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         defer { tableView.deselectRow(at: indexPath, animated: false) }
+        
         let controller = data[indexPath.section][indexPath.row].init()
         controller.title = "\(controller.classForCoder)"
         controller.hidesBottomBarWhenPushed = true
         show(controller, sender: nil)
     }
 }
-

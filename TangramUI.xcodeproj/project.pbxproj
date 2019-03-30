@@ -35,6 +35,10 @@
 		BE511D6C1FCE654E00BD9489 /* Photos.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE511D6A1FCE654E00BD9489 /* Photos.plist */; };
 		BE511D6D1FCE654E00BD9489 /* Photos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE511D6B1FCE654E00BD9489 /* Photos.xcassets */; };
 		BE54ADAB20A5806D00B8A473 /* AdsorptionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE54ADAA20A5806D00B8A473 /* AdsorptionLayout.swift */; };
+		BE56D99B224F70A50048BF13 /* StretchyLayoutMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE56D99A224F70A50048BF13 /* StretchyLayoutMenu.swift */; };
+		BE56D9A0224F711A0048BF13 /* StretchyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE56D99D224F711A0048BF13 /* StretchyHeaderView.swift */; };
+		BE56D9A1224F711A0048BF13 /* StretchyCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE56D99E224F711A0048BF13 /* StretchyCollectionViewLayout.swift */; };
+		BE56D9A2224F711A0048BF13 /* StretchyCollectionViewLayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE56D99F224F711A0048BF13 /* StretchyCollectionViewLayoutVC.swift */; };
 		BE720B9E20C26E5100E86818 /* CenterLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720B9D20C26E5100E86818 /* CenterLayoutController.swift */; };
 		BE720BA120C2816700E86818 /* CollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BA020C2816700E86818 /* CollectionViewWaterfallLayout.swift */; };
 		BE720BA320C28DCE00E86818 /* WaterfallLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE720BA220C28DCE00E86818 /* WaterfallLayoutController.swift */; };
@@ -232,6 +236,10 @@
 		BE511D6A1FCE654E00BD9489 /* Photos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Photos.plist; sourceTree = "<group>"; };
 		BE511D6B1FCE654E00BD9489 /* Photos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Photos.xcassets; sourceTree = "<group>"; };
 		BE54ADAA20A5806D00B8A473 /* AdsorptionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsorptionLayout.swift; sourceTree = "<group>"; };
+		BE56D99A224F70A50048BF13 /* StretchyLayoutMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyLayoutMenu.swift; sourceTree = "<group>"; };
+		BE56D99D224F711A0048BF13 /* StretchyHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchyHeaderView.swift; sourceTree = "<group>"; };
+		BE56D99E224F711A0048BF13 /* StretchyCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchyCollectionViewLayout.swift; sourceTree = "<group>"; };
+		BE56D99F224F711A0048BF13 /* StretchyCollectionViewLayoutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchyCollectionViewLayoutVC.swift; sourceTree = "<group>"; };
 		BE720B9D20C26E5100E86818 /* CenterLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterLayoutController.swift; sourceTree = "<group>"; };
 		BE720BA020C2816700E86818 /* CollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
 		BE720BA220C28DCE00E86818 /* WaterfallLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayoutController.swift; sourceTree = "<group>"; };
@@ -429,6 +437,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				BE56D999224F70320048BF13 /* Stretchy */,
 				F7408FF021FAF647001214AE /* VegaScrollFlowLayout */,
 				F724F30421FAA98E0035CCB2 /* Sticky */,
 				F754784321DF66FD004D3D32 /* TableFlowLayout */,
@@ -443,7 +452,6 @@
 				BE7D4A3D1FE67CC4005AD328 /* ExpandingCollectionView */,
 				BE511D631FCE634800BD9489 /* PinterestLayout */,
 				BEDA5DA91FCD277900777CBC /* GridLayout */,
-				BEDA5DA41FCD058A00777CBC /* StretchyHeaderLayout */,
 				BEDA5D9E1FCBE3C700777CBC /* ExcelLayout */,
 				BEF73ACB1FCAB59E00A37524 /* JungleCup */,
 				BE95F50B1FC66CB70033D83B /* photos */,
@@ -546,6 +554,26 @@
 				BE406CFA20A7EB5F009A4D6E /* ColorCell.swift */,
 			);
 			path = AdsorptionLayout;
+			sourceTree = "<group>";
+		};
+		BE56D999224F70320048BF13 /* Stretchy */ = {
+			isa = PBXGroup;
+			children = (
+				BE56D99C224F70F60048BF13 /* StretchyCollectionViewLayout */,
+				BEDA5DA41FCD058A00777CBC /* StretchyHeaderLayout */,
+				BE56D99A224F70A50048BF13 /* StretchyLayoutMenu.swift */,
+				BE56D99D224F711A0048BF13 /* StretchyHeaderView.swift */,
+			);
+			path = Stretchy;
+			sourceTree = "<group>";
+		};
+		BE56D99C224F70F60048BF13 /* StretchyCollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BE56D99E224F711A0048BF13 /* StretchyCollectionViewLayout.swift */,
+				BE56D99F224F711A0048BF13 /* StretchyCollectionViewLayoutVC.swift */,
+			);
+			path = StretchyCollectionViewLayout;
 			sourceTree = "<group>";
 		};
 		BE720B9F20C2813200E86818 /* CollectionViewWaterfallLayout */ = {
@@ -1047,17 +1075,18 @@
 				TargetAttributes = {
 					BE0D89F51FBED81800CA8114 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					BE0D8A091FBED81800CA8114 = {
 						CreatedOnToolsVersion = 9.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BE0D89F51FBED81800CA8114;
 					};
 					BE0D8A141FBED81800CA8114 = {
 						CreatedOnToolsVersion = 9.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BE0D89F51FBED81800CA8114;
 					};
@@ -1177,7 +1206,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TangramUI/Pods-TangramUI-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TangramUI/Pods-TangramUI-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
@@ -1188,7 +1217,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TangramUI/Pods-TangramUI-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TangramUI/Pods-TangramUI-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EA1B156906E80A4B40266DF0 /* [CP] Check Pods Manifest.lock */ = {
@@ -1246,6 +1275,7 @@
 				F7387C1620D24C2C0044B6DF /* AKPFlowLayout.swift in Sources */,
 				BEEACC8620CCC17300C1D180 /* MosaicLayout.swift in Sources */,
 				BE1C7A0021057EE2009C3CBA /* CSSearchBarHeader.swift in Sources */,
+				BE56D9A2224F711A0048BF13 /* StretchyCollectionViewLayoutVC.swift in Sources */,
 				F728B76621F9DA3D008E6FEE /* Action.swift in Sources */,
 				BEF73AD71FCADA9900A37524 /* PlayerCell.swift in Sources */,
 				F728B76321F9DA3D008E6FEE /* Place.swift in Sources */,
@@ -1279,6 +1309,7 @@
 				BEF73ADB1FCAE18900A37524 /* MenuView.swift in Sources */,
 				F728B73221F9D827008E6FEE /* CollectionViewViewModel.swift in Sources */,
 				BEDE1E581FBEEF8C0051F702 /* HeaderReusableView.swift in Sources */,
+				BE56D99B224F70A50048BF13 /* StretchyLayoutMenu.swift in Sources */,
 				BE406CF920A7EA54009A4D6E /* SearchBarCell.swift in Sources */,
 				BE1C79FD21048A66009C3CBA /* CSLockedHeaderViewController.swift in Sources */,
 				F754784E21DF67C1004D3D32 /* UICollectionViewCell.swift in Sources */,
@@ -1348,7 +1379,9 @@
 				BE1C79F421037001009C3CBA /* SectionHeader.swift in Sources */,
 				F7316D3221DC66590051B559 /* PinterestLayoutMenu.swift in Sources */,
 				BEDA5DA81FCD07D000777CBC /* StretchyHeaderLayoutController.swift in Sources */,
+				BE56D9A0224F711A0048BF13 /* StretchyHeaderView.swift in Sources */,
 				BE720B9E20C26E5100E86818 /* CenterLayoutController.swift in Sources */,
+				BE56D9A1224F711A0048BF13 /* StretchyCollectionViewLayout.swift in Sources */,
 				BEDA5DA01FCBE3DD00777CBC /* ExcelLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1532,7 +1565,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.boj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = TangramUI/Bridging.h;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1554,7 +1587,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.boj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = TangramUI/Bridging.h;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1570,7 +1603,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boju.TangramUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TangramUI.app/TangramUI";
 			};
@@ -1587,7 +1620,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boju.TangramUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TangramUI.app/TangramUI";
 			};
@@ -1603,7 +1636,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boju.TangramUIUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TangramUI;
 			};
@@ -1619,7 +1652,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boju.TangramUIUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TangramUI;
 			};

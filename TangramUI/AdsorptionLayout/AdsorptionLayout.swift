@@ -59,6 +59,8 @@ open class AdsorptionLayout: UICollectionViewFlowLayout {
         case .horizontal:
             collectionViewContentSize.width = max(collectionViewContentSize.width, collectionView.frame.width + firstItemLayoutAttributes.frame.width)
             return collectionViewContentSize
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -110,6 +112,8 @@ open class AdsorptionLayout: UICollectionViewFlowLayout {
             firstItemFrameMinY = firstItemFrame.minX
             firstItemFrameMidY = firstItemFrame.midX
             firstItemFrameMaxY = firstItemFrame.maxX
+        @unknown default:
+            fatalError()
         }
 
         guard (firstItemFrameMinY ..< firstItemFrameMaxY) ~= proposedContentOffsetY else {

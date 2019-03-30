@@ -27,47 +27,47 @@ public protocol TableCollectionViewSection {
 
 public extension TableCollectionViewSection {
     
-    public func heightForHeader(viewWidth: CGFloat) -> CGFloat {
+    func heightForHeader(viewWidth: CGFloat) -> CGFloat {
         return 0
     }
     
-    public var footerHeight: CGFloat {
+    var footerHeight: CGFloat {
         return 0
     }
     
-    public var colsPerRow: Int {
+    var colsPerRow: Int {
         return 1
     }
 
-    public var rowHeight: CGFloat {
+    var rowHeight: CGFloat {
         return 0
     }
     
-    public var sectionInset: UIEdgeInsets {
+    var sectionInset: UIEdgeInsets {
         return UIEdgeInsets.zero
     }
     
-    public var sectionBorderWidth: CGFloat {
+    var sectionBorderWidth: CGFloat {
         return  1 / UIScreen.main.scale
     }
     
-    public var minimumLineSpacing: CGFloat {
+    var minimumLineSpacing: CGFloat {
         return 0
     }
     
-    public var minimumInteritemSpacing: CGFloat {
+    var minimumInteritemSpacing: CGFloat {
         return 0
     }
     
-    public var shouldSelectItems: Bool {
+    var shouldSelectItems: Bool {
         return true
     }
 
-    public var borderColor: UIColor {
+    var borderColor: UIColor {
         return UIColor(hue:0.05, saturation:0.03, brightness:0.90, alpha:1.00)
     }
     
-    public var stringToCopy: String? {
+    var stringToCopy: String? {
         return nil
     }
 }
