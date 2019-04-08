@@ -114,6 +114,7 @@
 		CDDF92E4861A390C36D0836B /* Pods_TangramUIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD301C8FA189BA6DB6AA000 /* Pods_TangramUIUITests.framework */; };
 		F7070B7D20D391EC004195FB /* AKPFlowLayoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7070B7C20D391EC004195FB /* AKPFlowLayoutData.swift */; };
 		F719D1B7225B24E300275E4E /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F719D1B6225B24E300275E4E /* UIScrollView+Extension.swift */; };
+		F719D1B9225B27DE00275E4E /* CHTCollectionViewWaterfallLayoutHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F719D1B8225B27DE00275E4E /* CHTCollectionViewWaterfallLayoutHeader.swift */; };
 		F724F2F721F9DE880035CCB2 /* TableFlowLayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F724F2F621F9DE880035CCB2 /* TableFlowLayoutVC.swift */; };
 		F724F2FF21F9DF080035CCB2 /* SimpleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F724F2F921F9DF080035CCB2 /* SimpleSection.swift */; };
 		F724F30021F9DF080035CCB2 /* SimpleLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F724F2FB21F9DF080035CCB2 /* SimpleLabelCell.swift */; };
@@ -320,6 +321,7 @@
 		F7070B7420D391C7004195FB /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		F7070B7C20D391EC004195FB /* AKPFlowLayoutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutData.swift; sourceTree = "<group>"; };
 		F719D1B6225B24E300275E4E /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		F719D1B8225B27DE00275E4E /* CHTCollectionViewWaterfallLayoutHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHTCollectionViewWaterfallLayoutHeader.swift; sourceTree = "<group>"; };
 		F724F2F621F9DE880035CCB2 /* TableFlowLayoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableFlowLayoutVC.swift; sourceTree = "<group>"; };
 		F724F2F921F9DF080035CCB2 /* SimpleSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleSection.swift; sourceTree = "<group>"; };
 		F724F2FB21F9DF080035CCB2 /* SimpleLabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLabelCell.swift; sourceTree = "<group>"; };
@@ -603,6 +605,7 @@
 			children = (
 				BE720BA520C29F2300E86818 /* CHTCollectionViewWaterfallLayout.swift */,
 				BE720BA820C29FF500E86818 /* CHTCollectionViewWaterfallLayoutController.swift */,
+				F719D1B8225B27DE00275E4E /* CHTCollectionViewWaterfallLayoutHeader.swift */,
 			);
 			path = CHTCollectionViewWaterfallLayout;
 			sourceTree = "<group>";
@@ -1259,6 +1262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F719D1B9225B27DE00275E4E /* CHTCollectionViewWaterfallLayoutHeader.swift in Sources */,
 				F724F30321F9DF080035CCB2 /* SimpleViewController.swift in Sources */,
 				BE95F5351FC66CFC0033D83B /* ReorderableTripletLayoutController.swift in Sources */,
 				BEDA5DA21FCBE45F00777CBC /* ExcelLayoutController.swift in Sources */,

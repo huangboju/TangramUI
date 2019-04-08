@@ -30,7 +30,7 @@ class StickyLayout: UICollectionViewFlowLayout {
         return attributes
     }
     
-    func adjustAttributesIfNeeded(_ attributes: UICollectionViewLayoutAttributes) {
+    private func adjustAttributesIfNeeded(_ attributes: UICollectionViewLayoutAttributes) {
         switch attributes.representedElementKind {
         case UICollectionView.elementKindSectionHeader?:
             adjustHeaderAttributesIfNeeded(attributes)
@@ -60,5 +60,4 @@ class StickyLayout: UICollectionViewFlowLayout {
             attributes.frame.origin.y = collectionView.contentOffset.y + collectionView.bounds.height - attributes.frame.height + top
         }
     }
-
 }

@@ -11,7 +11,7 @@ class CHTCollectionViewWaterfallLayoutController: BaseController {
     lazy var cellSizes: [CGSize] = {
         var _cellSizes = [CGSize]()
         
-        for _ in 0...100 {
+        for _ in 0...20 {
             let random = Int(arc4random_uniform((UInt32(100))))
             _cellSizes.append(CGSize(width: 140, height: 50 + random))
         }
@@ -23,12 +23,13 @@ class CHTCollectionViewWaterfallLayoutController: BaseController {
         let layout = CHTCollectionViewWaterfallLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         layout.headerHeight = 50
-        layout.footerHeight = 20
+//        layout.footerHeight = 20
         layout.minimumColumnSpacing = 10
         layout.minimumInteritemSpacing = 10
 
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(CHTCollectionViewWaterfallLayoutHeader.self, forSupplementaryViewOfKind: CHTCollectionViewWaterfallLayout.sectionHeader, withReuseIdentifier: "header")
         collectionView.backgroundColor = .white
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -41,6 +42,11 @@ class CHTCollectionViewWaterfallLayoutController: BaseController {
 }
 
 extension CHTCollectionViewWaterfallLayoutController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cellSizes.count
     }
@@ -52,6 +58,10 @@ extension CHTCollectionViewWaterfallLayoutController: UICollectionViewDataSource
         cell.layer.backgroundColor = UIColor.random.cgColor
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        return collectionView.dequeueReusableSupplementaryView(ofKind: CHTCollectionViewWaterfallLayout.sectionHeader, withReuseIdentifier: "header", for: indexPath)
     }
 }
 
