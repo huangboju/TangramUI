@@ -46,10 +46,7 @@ class StickyLayout: UICollectionViewFlowLayout {
         guard attributes.indexPath.section == 0 else { return }
         
         if collectionView.contentOffset.y < 0 {
-            var top = collectionView.contentInset.top
-            if #available(iOS 11, *) {
-                top = collectionView.adjustedContentInset.top
-            }
+            let top = collectionView.realContentInset.top
             attributes.frame.origin.y = collectionView.contentOffset.y + top
         }
     }
@@ -59,10 +56,7 @@ class StickyLayout: UICollectionViewFlowLayout {
         guard attributes.indexPath.section == collectionView.numberOfSections - 1 else { return }
         
         if collectionView.contentOffset.y + collectionView.bounds.size.height > collectionView.contentSize.height {
-            var top = collectionView.contentInset.top
-            if #available(iOS 11, *) {
-                top = collectionView.adjustedContentInset.top
-            }
+            let top = collectionView.realContentInset.top
             attributes.frame.origin.y = collectionView.contentOffset.y + collectionView.bounds.height - attributes.frame.height + top
         }
     }

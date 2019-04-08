@@ -30,10 +30,7 @@ class StickCollectionViewFlowLayout: UICollectionViewFlowLayout {
     }
     
     private func updateCellAttributes(_ attributes: UICollectionViewLayoutAttributes, withSectionHeader headerAttributes: UICollectionViewLayoutAttributes?) {
-        var top = collectionView!.contentInset.top
-        if #available(iOS 11, *) {
-            top = collectionView!.adjustedContentInset.top
-        }
+        let top = collectionView!.realContentInset.top
 
         let minY = collectionView!.bounds.minY + top
         let maxY = attributes.frame.minY - (headerAttributes?.bounds.height ?? 0)

@@ -194,7 +194,8 @@ class CSStickyHeaderFlowLayout: UICollectionViewFlowLayout {
         attributes.isHidden = false
         
         let sectionMaxY = lastCellAttributes.frame.maxY - attributes.frame.height
-        var y = currentBounds.maxY - currentBounds.size.height + collectionView!.contentInset.top
+        let insetTop = collectionView!.realContentInset.top
+        var y = currentBounds.maxY - currentBounds.size.height + insetTop
 
         if parallaxHeaderAlwaysOnTop {
             y += parallaxHeaderMinimumReferenceSize.height
@@ -215,7 +216,7 @@ class CSStickyHeaderFlowLayout: UICollectionViewFlowLayout {
         let bounds = collectionView.bounds
         let maxY = currentAttribute?.frame.maxY ?? 0
         
-        let insetTop = collectionView.contentInset.top
+        let insetTop = collectionView.realContentInset.top
         
         // make sure the frame won't be negative values
         var y = min(maxY - parallaxHeaderMinimumReferenceSize.height, bounds.minY + insetTop)

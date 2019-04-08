@@ -113,6 +113,7 @@
 		BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF73ADC1FCAE24700A37524 /* HeaderView.swift */; };
 		CDDF92E4861A390C36D0836B /* Pods_TangramUIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD301C8FA189BA6DB6AA000 /* Pods_TangramUIUITests.framework */; };
 		F7070B7D20D391EC004195FB /* AKPFlowLayoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7070B7C20D391EC004195FB /* AKPFlowLayoutData.swift */; };
+		F719D1B7225B24E300275E4E /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F719D1B6225B24E300275E4E /* UIScrollView+Extension.swift */; };
 		F724F2F721F9DE880035CCB2 /* TableFlowLayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F724F2F621F9DE880035CCB2 /* TableFlowLayoutVC.swift */; };
 		F724F2FF21F9DF080035CCB2 /* SimpleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F724F2F921F9DF080035CCB2 /* SimpleSection.swift */; };
 		F724F30021F9DF080035CCB2 /* SimpleLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F724F2FB21F9DF080035CCB2 /* SimpleLabelCell.swift */; };
@@ -318,6 +319,7 @@
 		F7070B7320D391C7004195FB /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		F7070B7420D391C7004195FB /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		F7070B7C20D391EC004195FB /* AKPFlowLayoutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutData.swift; sourceTree = "<group>"; };
+		F719D1B6225B24E300275E4E /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		F724F2F621F9DE880035CCB2 /* TableFlowLayoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableFlowLayoutVC.swift; sourceTree = "<group>"; };
 		F724F2F921F9DF080035CCB2 /* SimpleSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleSection.swift; sourceTree = "<group>"; };
 		F724F2FB21F9DF080035CCB2 /* SimpleLabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLabelCell.swift; sourceTree = "<group>"; };
@@ -739,6 +741,7 @@
 			isa = PBXGroup;
 			children = (
 				BEDE1E531FBEEE930051F702 /* UIColor+Extension.swift */,
+				F719D1B6225B24E300275E4E /* UIScrollView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1087,7 +1090,7 @@
 					BE0D89F51FBED81800CA8114 = {
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					BE0D8A091FBED81800CA8114 = {
 						CreatedOnToolsVersion = 9.1;
@@ -1375,6 +1378,7 @@
 				BE720BB820C3DB6500E86818 /* TRMosaicColumn.swift in Sources */,
 				BE720BB620C3DB4A00E86818 /* TRMosaicLayout.swift in Sources */,
 				F728B73321F9D827008E6FEE /* CellRepresentable.swift in Sources */,
+				F719D1B7225B24E300275E4E /* UIScrollView+Extension.swift in Sources */,
 				BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */,
 				F724F30221F9DF080035CCB2 /* SimpleSectionHeaderView.swift in Sources */,
 				F7316D2921DC5CAF0051B559 /* ExcelMenu.swift in Sources */,
@@ -1565,8 +1569,8 @@
 			baseConfigurationReference = 228A354DF23F594F398F7303 /* Pods-TangramUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7XJTY6W57S;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 6E5E8VY4L7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1576,6 +1580,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS wildcard dev";
 				SWIFT_OBJC_BRIDGING_HEADER = TangramUI/Bridging.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1587,8 +1592,8 @@
 			baseConfigurationReference = 86C4176A43A9073F073BBB23 /* Pods-TangramUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7XJTY6W57S;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1598,6 +1603,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = TangramUI/Bridging.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

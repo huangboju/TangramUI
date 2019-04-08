@@ -45,6 +45,9 @@ public class CHTCollectionViewWaterfallLayout: UICollectionViewLayout {
     public static let sectionHeader = "CHTCollectionElementKindSectionHeader"
     public static let sectionFooter = "CHTCollectionElementKindSectionFooter"
     
+    public var sectionHeadersPinToVisibleBounds = false
+    public var sectionFootersPinToVisibleBounds = false
+    
     public var columnCount: Int = 2 {
         didSet {
             invalidateLayout()

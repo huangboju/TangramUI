@@ -20,52 +20,52 @@ public final class AKPFlowLayout: UICollectionViewFlowLayout {
         .firstSectionStretchable,
         .sectionsPinToGlobalHeaderOrVisibleBounds
     ]
-
+    
     /// For stretchy headers, allowis limiting amount of stretch
     public var firsSectionMaximumStretchHeight = CGFloat.greatestFiniteMagnitude
-
+    
     // MARK: - Initialization
     override public init() {
         super.init()
         // For iOS9, needs to ensure the impl does not interfere with `sectionHeadersPinToVisibleBounds`
-        // Seems to be no reasonable way yet to use Swift property observers with conditional compilation, 
+        // Seems to be no reasonable way yet to use Swift property observers with conditional compilation,
         // so falling back to KVO
         if #available(iOS 9.0, *) {
             addObserver(self, forKeyPath: "sectionHeadersPinToVisibleBounds",
-                                                    options: .new, context: &AKPFlowLayoutKVOContext)
+                        options: .new, context: &AKPFlowLayoutKVOContext)
         }
     }
-
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
+    
     deinit {
         if #available(iOS 9.0, *) {
             removeObserver(self, forKeyPath: "sectionHeadersPinToVisibleBounds", context: &AKPFlowLayoutKVOContext)
         }
     }
-
+    
     // MARK: - 📐Custom Layout
     /// - returns:  AKPFlowLayoutAttributes class for handling layout attributes
     override public class var layoutAttributesClass : AnyClass {
         return AKPFlowLayoutAttributes.self
     }
-
+    
     /// Returns layout attributes for specified rectangle, with added custom headers
     override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         guard shouldDoCustomLayout else { return super.layoutAttributesForElements(in: rect) }
-
+        
         guard var layoutAttributes = super.layoutAttributesForElements(in: rect) as? [AKPFlowLayoutAttributes],
-              // calculate custom headers that should be confined in the rect
-              let customSectionHeadersIdxs = customSectionHeadersIdxs(rect) else { return nil }
+            // calculate custom headers that should be confined in the rect
+            let customSectionHeadersIdxs = customSectionHeadersIdxs(rect) else { return nil }
         
         // add the custom headers to the regular UICollectionViewFlowLayout layoutAttributes
         for idx in customSectionHeadersIdxs {
             let indexPath = IndexPath(item: 0, section: idx)
             if let attributes = super.layoutAttributesForSupplementaryView(
-                                                    ofKind: UICollectionView.elementKindSectionHeader,
-                                                    at: indexPath) as? AKPFlowLayoutAttributes {
+                ofKind: UICollectionView.elementKindSectionHeader,
+                at: indexPath) as? AKPFlowLayoutAttributes {
                 layoutAttributes.append(attributes)
             }
         }
@@ -76,24 +76,24 @@ public final class AKPFlowLayout: UICollectionViewFlowLayout {
         }
         return layoutAttributes
     }
-
+    
     /// Adjusts layout attributes for the custom section headers
     override public func layoutAttributesForSupplementaryView(ofKind elementKind: String,
-                                                             at indexPath: IndexPath)
-                                                                    -> UICollectionViewLayoutAttributes? {
-        guard shouldDoCustomLayout else {
-            return super.layoutAttributesForSupplementaryView(ofKind: elementKind, at: indexPath) }
-        
-        guard let sectionHeaderAttributes = super.layoutAttributesForSupplementaryView(
-                                                            ofKind: elementKind,
-                                                            at: indexPath)
-                                                            as? AKPFlowLayoutAttributes else { return nil }
-        // Adjust section attributes
-        (sectionHeaderAttributes.frame, sectionHeaderAttributes.zIndex) =
-                                        adjustLayoutAttributes(forSectionAttributes: sectionHeaderAttributes)
-        return sectionHeaderAttributes
+                                                              at indexPath: IndexPath)
+        -> UICollectionViewLayoutAttributes? {
+            guard shouldDoCustomLayout else {
+                return super.layoutAttributesForSupplementaryView(ofKind: elementKind, at: indexPath) }
+            
+            guard let sectionHeaderAttributes = super.layoutAttributesForSupplementaryView(
+                ofKind: elementKind,
+                at: indexPath)
+                as? AKPFlowLayoutAttributes else { return nil }
+            // Adjust section attributes
+            (sectionHeaderAttributes.frame, sectionHeaderAttributes.zIndex) =
+                adjustLayoutAttributes(forSectionAttributes: sectionHeaderAttributes)
+            return sectionHeaderAttributes
     }
-
+    
     // MARK: - 🎳Invalidation
     /// - returns: `true`, unless running on iOS9 with `sectionHeadersPinToVisibleBounds` set to `true`
     override public func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
@@ -104,10 +104,10 @@ public final class AKPFlowLayout: UICollectionViewFlowLayout {
     /// Custom invalidation
     override public func invalidationContext(forBoundsChange newBounds: CGRect) -> UICollectionViewLayoutInvalidationContext {
         guard shouldDoCustomLayout,
-              let invalidationContext = super.invalidationContext(forBoundsChange: newBounds)
-                                                as? UICollectionViewFlowLayoutInvalidationContext,
-              let oldBounds = collectionView?.bounds
-                                                else { return super.invalidationContext(forBoundsChange: newBounds) }
+            let invalidationContext = super.invalidationContext(forBoundsChange: newBounds)
+                as? UICollectionViewFlowLayoutInvalidationContext,
+            let oldBounds = collectionView?.bounds
+            else { return super.invalidationContext(forBoundsChange: newBounds) }
         // Size changes?
         if oldBounds.size != newBounds.size {
             // re-query the collection view delegate for metrics such as size information etc.
@@ -142,22 +142,22 @@ extension AKPFlowLayout {
         }
         return requestForCustomLayout
     }
-
+    
     fileprivate func zIndex(for section: Int) -> Int {
         return section > 0 ? 128 : 256
     }
-
+    
     // Given a rect, calculates indexes of all confined section headers
     // _including_ the custom headers
     fileprivate func sectionsHeadersIDxs(forRect rect: CGRect) -> Set<Int>? {
         guard let layoutAttributes = super.layoutAttributesForElements(in: rect)
-                                                    as? [AKPFlowLayoutAttributes] else {return nil}
+            as? [AKPFlowLayoutAttributes] else {return nil}
         let sectionsShouldPin = layoutOptions.contains(.sectionsPinToGlobalHeaderOrVisibleBounds)
         
         var headersIdxs = Set<Int>()
         for attributes in layoutAttributes
-                where attributes.visibleSectionHeader(sectionsShouldPin) {
-            headersIdxs.insert(attributes.indexPath.section)
+            where attributes.visibleSectionHeader(sectionsShouldPin) {
+                headersIdxs.insert(attributes.indexPath.section)
         }
         if layoutOptions.contains(.firstSectionIsGlobalHeader) {
             headersIdxs.insert(0)
@@ -169,7 +169,7 @@ extension AKPFlowLayout {
     // _excluding_ the regular headers handled by UICollectionViewFlowLayout
     fileprivate func customSectionHeadersIdxs(_ rect: CGRect) -> Set<Int>? {
         guard let layoutAttributes = super.layoutAttributesForElements(in: rect),
-              var sectionIdxs = sectionsHeadersIDxs(forRect: rect)  else {return nil}
+            var sectionIdxs = sectionsHeadersIDxs(forRect: rect)  else {return nil}
         
         // remove the sections that should already be taken care of by UICollectionViewFlowLayout
         for attributes in layoutAttributes
@@ -181,84 +181,81 @@ extension AKPFlowLayout {
     
     // Adjusts layout attributes of section headers
     fileprivate func adjustLayoutAttributes(forSectionAttributes
-                                            sectionHeadersLayoutAttributes: AKPFlowLayoutAttributes)
-                                                                                             -> (CGRect, Int) {
-        guard let collectionView = collectionView else { return (.zero, 0) }
-        let section = sectionHeadersLayoutAttributes.indexPath.section
-        var sectionFrame = sectionHeadersLayoutAttributes.frame
-
-        // 1. Establish the section boundaries:
-        let (minY, maxY) = boundaryMetrics(forSectionAttributes: sectionHeadersLayoutAttributes)
-        
-        // 2. Determine the height and insets of the first section,
-        //    in case it's stretchable or serves as a global header
-        let (firstSectionHeight, firstSectionInsets) = firstSectionMetrics()
-                                                                                                
-        // 3. If within the above boundaries, the section should follow content offset
-        //   (adjusting a few more things along the way)
-                                                                                                
-                                                                                                
-        var offset = collectionView.contentOffset.y + collectionView.contentInset.top
-                                                                                                if #available(iOS 11, *) {
-                                                                                                    offset += collectionView.adjustedContentInset.top
-                                                                                                }
-        if (section > 0) {
-            // The global section
-            if layoutOptions.contains(.sectionsPinToGlobalHeaderOrVisibleBounds) {
-                if layoutOptions.contains(.firstSectionIsGlobalHeader) {
-                    // A global header adjustment
-                    offset += firstSectionHeight + firstSectionInsets.top
-                }
-                sectionFrame.origin.y = min(max(offset, minY), maxY)
-            }
-        } else {
+        sectionHeadersLayoutAttributes: AKPFlowLayoutAttributes)
+        -> (CGRect, Int) {
+            guard let collectionView = collectionView else { return (.zero, 0) }
+            let section = sectionHeadersLayoutAttributes.indexPath.section
+            var sectionFrame = sectionHeadersLayoutAttributes.frame
             
-            if layoutOptions.contains(.firstSectionStretchable) && offset < 0 {
-                // Stretchy header
-                if firstSectionHeight - offset < firsSectionMaximumStretchHeight {
-                    sectionFrame.size.height = firstSectionHeight - offset
-                    sectionHeadersLayoutAttributes.stretchFactor = abs(offset)
-                    previousStretchFactor = sectionHeadersLayoutAttributes.stretchFactor
-                } else {
-                    // need to limit the stretch
-                    sectionFrame.size.height = firsSectionMaximumStretchHeight
-                    sectionHeadersLayoutAttributes.stretchFactor = previousStretchFactor
+            // 1. Establish the section boundaries:
+            let (minY, maxY) = boundaryMetrics(forSectionAttributes: sectionHeadersLayoutAttributes)
+            
+            // 2. Determine the height and insets of the first section,
+            //    in case it's stretchable or serves as a global header
+            let (firstSectionHeight, firstSectionInsets) = firstSectionMetrics()
+            
+            // 3. If within the above boundaries, the section should follow content offset
+            //   (adjusting a few more things along the way)
+            
+            
+            var offset = collectionView.contentOffset.y + collectionView.realContentInset.top
+            if (section > 0) {
+                // The global section
+                if layoutOptions.contains(.sectionsPinToGlobalHeaderOrVisibleBounds) {
+                    if layoutOptions.contains(.firstSectionIsGlobalHeader) {
+                        // A global header adjustment
+                        offset += firstSectionHeight + firstSectionInsets.top
+                    }
+                    sectionFrame.origin.y = min(max(offset, minY), maxY)
                 }
-                sectionFrame.origin.y += offset + firstSectionInsets.top
-            } else if layoutOptions.contains(.firstSectionIsGlobalHeader) {
-                // Sticky header position needs to be relative to the global header
-                sectionFrame.origin.y += offset + firstSectionInsets.top
             } else {
-                sectionFrame.origin.y = min(max(offset, minY), maxY)
+                
+                if layoutOptions.contains(.firstSectionStretchable) && offset < 0 {
+                    // Stretchy header
+                    if firstSectionHeight - offset < firsSectionMaximumStretchHeight {
+                        sectionFrame.size.height = firstSectionHeight - offset
+                        sectionHeadersLayoutAttributes.stretchFactor = abs(offset)
+                        previousStretchFactor = sectionHeadersLayoutAttributes.stretchFactor
+                    } else {
+                        // need to limit the stretch
+                        sectionFrame.size.height = firsSectionMaximumStretchHeight
+                        sectionHeadersLayoutAttributes.stretchFactor = previousStretchFactor
+                    }
+                    sectionFrame.origin.y += offset + firstSectionInsets.top
+                } else if layoutOptions.contains(.firstSectionIsGlobalHeader) {
+                    // Sticky header position needs to be relative to the global header
+                    sectionFrame.origin.y += offset + firstSectionInsets.top
+                } else {
+                    sectionFrame.origin.y = min(max(offset, minY), maxY)
+                }
             }
-        }
-
-        return (sectionFrame, zIndex(for: section))
+            
+            return (sectionFrame, zIndex(for: section))
     }
     
     fileprivate func boundaryMetrics( forSectionAttributes sectionHeadersLayoutAttributes: UICollectionViewLayoutAttributes) -> (CGFloat, CGFloat) {
-            // get attributes for first and last items in section
-            guard let collectionView = collectionView  else { return (0, 0) }
-            let section = sectionHeadersLayoutAttributes.indexPath.section
-            
-            // Trying to use layoutAttributesForItemAtIndexPath for empty section would
-            // cause EXC_ARITHMETIC in simulator (division by zero items)
-            let lastInSectionIdx = collectionView.numberOfItems(inSection: section) - 1
-            if lastInSectionIdx < 0 { return (0, 0) }
-                                                                                            
-            guard let attributesForFirstItemInSection = layoutAttributesForItem(
-                                            at: IndexPath(item: 0, section: section)),
-                let attributesForLastItemInSection = layoutAttributesForItem(
-                                            at: IndexPath(item: lastInSectionIdx, section: section))
-                else {return (0, 0)}
-            let sectionFrame = sectionHeadersLayoutAttributes.frame
-            
-            // Section Boundaries:
-            //   The section should not be higher than the top of its first cell
-            let minY = attributesForFirstItemInSection.frame.minY - sectionFrame.height
-            //   The section should not be lower than the bottom of its last cell
-            let maxY = attributesForLastItemInSection.frame.maxY - sectionFrame.height
-            return (minY, maxY)
+        // get attributes for first and last items in section
+        guard let collectionView = collectionView  else { return (0, 0) }
+        let section = sectionHeadersLayoutAttributes.indexPath.section
+        
+        // Trying to use layoutAttributesForItemAtIndexPath for empty section would
+        // cause EXC_ARITHMETIC in simulator (division by zero items)
+        let lastInSectionIdx = collectionView.numberOfItems(inSection: section) - 1
+        if lastInSectionIdx < 0 { return (0, 0) }
+        
+        guard let attributesForFirstItemInSection = layoutAttributesForItem(
+            at: IndexPath(item: 0, section: section)),
+            let attributesForLastItemInSection = layoutAttributesForItem(
+                at: IndexPath(item: lastInSectionIdx, section: section))
+            else {return (0, 0)}
+        let sectionFrame = sectionHeadersLayoutAttributes.frame
+        
+        // Section Boundaries:
+        //   The section should not be higher than the top of its first cell
+        let minY = attributesForFirstItemInSection.frame.minY - sectionFrame.height
+        //   The section should not be lower than the bottom of its last cell
+        let maxY = attributesForLastItemInSection.frame.maxY - sectionFrame.height
+        return (minY, maxY)
     }
     
     fileprivate func firstSectionMetrics() -> (height: CGFloat, insets: UIEdgeInsets) {
@@ -266,7 +263,7 @@ extension AKPFlowLayout {
         // height of the first section
         var firstSectionHeight = headerReferenceSize.height
         if let delegate = collectionView.delegate as? UICollectionViewDelegateFlowLayout
-                                                            , firstSectionHeight == 0 {
+            , firstSectionHeight == 0 {
             firstSectionHeight = delegate.collectionView!(collectionView,
                                                           layout: self,
                                                           referenceSizeForHeaderInSection: 0).height
@@ -274,7 +271,7 @@ extension AKPFlowLayout {
         // insets of the first section
         var theSectionInset = sectionInset
         if let delegate = collectionView.delegate as? UICollectionViewDelegateFlowLayout
-                                                            , theSectionInset == .zero {
+            , theSectionInset == .zero {
             theSectionInset = delegate.collectionView!(collectionView,
                                                        layout: self,
                                                        insetForSectionAt: 0)
@@ -285,10 +282,10 @@ extension AKPFlowLayout {
 
 // MARK: - KVO check for `sectionHeadersPinToVisibleBounds`
 extension AKPFlowLayout {
-     /// KVO check for `sectionHeadersPinToVisibleBounds`.
-     /// For iOS9, needs to ensure the impl does not interfere with `sectionHeadersPinToVisibleBounds`
-     override public func observeValue(forKeyPath keyPath: String?, of object: Any?,
-                                                change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    /// KVO check for `sectionHeadersPinToVisibleBounds`.
+    /// For iOS9, needs to ensure the impl does not interfere with `sectionHeadersPinToVisibleBounds`
+    override public func observeValue(forKeyPath keyPath: String?, of object: Any?,
+                                      change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if context == &AKPFlowLayoutKVOContext {
             if let newValue = change?[NSKeyValueChangeKey.newKey],
                 let boolValue = newValue as? Bool , boolValue {
@@ -313,3 +310,4 @@ private extension AKPFlowLayoutAttributes {
 }
 
 private var AKPFlowLayoutKVOContext = 0
+

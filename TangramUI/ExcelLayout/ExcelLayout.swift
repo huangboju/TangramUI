@@ -38,10 +38,7 @@ class ExcelLayout: UICollectionViewLayout {
                 
                 let attributes = layoutAttributesForItem(at: IndexPath(item: item, section: section))!
                 if section == 0 {
-                    var top = collectionView.contentInset.top
-                    if #available(iOS 11.0, *) {
-                        top = collectionView.adjustedContentInset.top
-                    }
+                    let top = collectionView.realContentInset.top
                     attributes.frame.origin.y = collectionView.contentOffset.y + top
                 }
                 
@@ -110,10 +107,7 @@ extension ExcelLayout {
                 }
                 
                 if section == 0 {
-                    var top = collectionView.contentInset.top
-                    if #available(iOS 11.0, *) {
-                        top = collectionView.adjustedContentInset.top
-                    }
+                    let top = collectionView.realContentInset.top
                     attributes.frame.origin.y = collectionView.contentOffset.y + top
                 }
                 if index == 0 {

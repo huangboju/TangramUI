@@ -58,10 +58,7 @@ class StickyHeadersCollectionViewFlowLayout: UICollectionViewFlowLayout {
         guard let collectionView = collectionView else { return layoutAttributes }
         
         // Helpers
-        var top = collectionView.contentInset.top
-        if #available(iOS 11, *) {
-            top = collectionView.adjustedContentInset.top
-        }
+        let top = collectionView.realContentInset.top
         let contentOffsetY = collectionView.contentOffset.y + top
         var frameForSupplementaryView = layoutAttributes.frame
         

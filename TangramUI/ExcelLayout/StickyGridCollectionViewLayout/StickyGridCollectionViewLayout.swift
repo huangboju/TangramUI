@@ -92,10 +92,7 @@ class StickyGridCollectionViewLayout: UICollectionViewFlowLayout {
                 let attributes = allAttributes[row][col]
                 
                 if row < stickyRowsCount {
-                    var top = collectionView.contentInset.top
-                    if #available(iOS 11.0, *) {
-                        top = collectionView.adjustedContentInset.top
-                    }
+                    let top = collectionView.realContentInset.top
                     attributes.frame.origin.y = collectionView.contentOffset.y + top
                 }
                 

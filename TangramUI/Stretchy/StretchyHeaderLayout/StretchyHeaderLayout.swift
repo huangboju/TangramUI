@@ -10,10 +10,7 @@ class StretchyHeaderLayout: UICollectionViewFlowLayout {
 
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
-        var top = collectionView?.contentInset.top ?? 0
-        if #available(iOS 11, *) {
-            top = collectionView?.adjustedContentInset.top ?? 0
-        }
+        let top = collectionView?.realContentInset.top ?? 0
         let offset = collectionView?.contentOffset ?? .zero
         let minY = -top
 
