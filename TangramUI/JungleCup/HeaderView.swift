@@ -29,7 +29,7 @@ class HeaderView: UICollectionReusableView {
         imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-
+        
         addSubview(overlayView)
         overlayView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         overlayView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true

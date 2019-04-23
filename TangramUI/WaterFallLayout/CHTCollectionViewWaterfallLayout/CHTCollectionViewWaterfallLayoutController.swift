@@ -8,6 +8,12 @@
 
 class CHTCollectionViewWaterfallLayoutController: BaseController {
     
+    private lazy var stickyView: UIView = {
+        let stickyView = UIView(frame: CGRect(x: 10, y: 0, width: self.view.frame.width - 20, height: 50))
+        stickyView.backgroundColor = .red
+        return stickyView
+    }()
+    
     lazy var cellSizes: [CGSize] = {
         var _cellSizes = [CGSize]()
         
@@ -38,6 +44,7 @@ class CHTCollectionViewWaterfallLayoutController: BaseController {
     
     override func initSubviews() {
         view.addSubview(collectionView)
+        view.addSubview(stickyView)
     }
 }
 
@@ -48,7 +55,7 @@ extension CHTCollectionViewWaterfallLayoutController: UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cellSizes.count
+        return section == 0 ? 2 : cellSizes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -67,6 +74,23 @@ extension CHTCollectionViewWaterfallLayoutController: UICollectionViewDataSource
 
 extension CHTCollectionViewWaterfallLayoutController: CHTCollectionViewDelegateWaterfallLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 0 {
+            return CGSize(width: view.frame.width, height: 50)
+        }
         return cellSizes[indexPath.row]
+    }
+    
+    func collectionView (_ collectionView: UICollectionView,
+                         layout collectionViewLayout: UICollectionViewLayout,
+                         columnCountForSection section: Int) -> Int {
+        return section == 0 ? 1 : 2
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let attr = collectionView.layoutAttributesForItem(at: IndexPath(item: 1, section: 0)) else {
+            return
+        }
+        
+        stickyView.frame.origin.y = max(attr.frame.minY - collectionView.contentOffset.y, collectionView.realContentInset.top)
     }
 }
