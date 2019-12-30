@@ -173,6 +173,8 @@
 		F7408FF221FAF66C001214AE /* VegaScrollFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7408FF121FAF66C001214AE /* VegaScrollFlowLayout.swift */; };
 		F7408FF421FAF68C001214AE /* VegaScrollFlowLayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7408FF321FAF68C001214AE /* VegaScrollFlowLayoutVC.swift */; };
 		F7408FF621FAF897001214AE /* VegaScrollFlowLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7408FF521FAF897001214AE /* VegaScrollFlowLayoutCell.swift */; };
+		F74B92EA23BA005C007121DE /* CardsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B92E923BA005C007121DE /* CardsCollectionViewLayout.swift */; };
+		F74B92EC23BA0086007121DE /* CardsCollectionViewLayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B92EB23BA0086007121DE /* CardsCollectionViewLayoutVC.swift */; };
 		F754780921DDB93F004D3D32 /* StickyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754780821DDB93F004D3D32 /* StickyLayout.swift */; };
 		F754780B21DDB986004D3D32 /* StickyLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754780A21DDB986004D3D32 /* StickyLayoutController.swift */; };
 		F754784A21DF67C1004D3D32 /* TableFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754784521DF67C1004D3D32 /* TableFlowLayout.swift */; };
@@ -380,6 +382,8 @@
 		F7408FF121FAF66C001214AE /* VegaScrollFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayout.swift; sourceTree = "<group>"; };
 		F7408FF321FAF68C001214AE /* VegaScrollFlowLayoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayoutVC.swift; sourceTree = "<group>"; };
 		F7408FF521FAF897001214AE /* VegaScrollFlowLayoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayoutCell.swift; sourceTree = "<group>"; };
+		F74B92E923BA005C007121DE /* CardsCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewLayout.swift; sourceTree = "<group>"; };
+		F74B92EB23BA0086007121DE /* CardsCollectionViewLayoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewLayoutVC.swift; sourceTree = "<group>"; };
 		F754780821DDB93F004D3D32 /* StickyLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyLayout.swift; sourceTree = "<group>"; };
 		F754780A21DDB986004D3D32 /* StickyLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyLayoutController.swift; sourceTree = "<group>"; };
 		F754784521DF67C1004D3D32 /* TableFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableFlowLayout.swift; sourceTree = "<group>"; };
@@ -443,6 +447,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				F74B92E823BA0042007121DE /* CardsCollectionViewLayout */,
 				BE56D999224F70320048BF13 /* Stretchy */,
 				F7408FF021FAF647001214AE /* VegaScrollFlowLayout */,
 				F724F30421FAA98E0035CCB2 /* Sticky */,
@@ -978,6 +983,15 @@
 			path = VegaScrollFlowLayout;
 			sourceTree = "<group>";
 		};
+		F74B92E823BA0042007121DE /* CardsCollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F74B92E923BA005C007121DE /* CardsCollectionViewLayout.swift */,
+				F74B92EB23BA0086007121DE /* CardsCollectionViewLayoutVC.swift */,
+			);
+			path = CardsCollectionViewLayout;
+			sourceTree = "<group>";
+		};
 		F754780721DDB926004D3D32 /* StickyLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -1314,6 +1328,7 @@
 				BEB8E1A520C17E1500B79A53 /* CenterLayout.swift in Sources */,
 				BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */,
 				BE720BAD20C3BD9A00E86818 /* PinterestLayout1.swift in Sources */,
+				F74B92EA23BA005C007121DE /* CardsCollectionViewLayout.swift in Sources */,
 				F7387C1A20D24C2C0044B6DF /* AKPFlowLayoutAttributes.swift in Sources */,
 				F754780921DDB93F004D3D32 /* StickyLayout.swift in Sources */,
 				F728B73B21F9D865008E6FEE /* PlaceActionsSection.swift in Sources */,
@@ -1378,6 +1393,7 @@
 				BE7D4A421FE67DA8005AD328 /* Inspiration.swift in Sources */,
 				BE406CFB20A7EB5F009A4D6E /* ColorCell.swift in Sources */,
 				BE720BA920C29FF500E86818 /* CHTCollectionViewWaterfallLayoutController.swift in Sources */,
+				F74B92EC23BA0086007121DE /* CardsCollectionViewLayoutVC.swift in Sources */,
 				BE56D9A5224F73320048BF13 /* StretchyViewController.swift in Sources */,
 				BE720BB820C3DB6500E86818 /* TRMosaicColumn.swift in Sources */,
 				BE720BB620C3DB4A00E86818 /* TRMosaicLayout.swift in Sources */,

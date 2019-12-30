@@ -36,7 +36,8 @@ class ViewController: UIViewController {
             WalletMenu.self,
             StickyLayoutMenu.self,
             TableFlowLayoutVC.self,
-            VegaScrollFlowLayoutVC.self
+            VegaScrollFlowLayoutVC.self,
+            CardsCollectionViewLayoutVC.self
         ]
     ]
     
