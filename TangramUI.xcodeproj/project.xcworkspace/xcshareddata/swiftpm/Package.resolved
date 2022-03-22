@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "FLAnimatedImage",
+        "repositoryURL": "https://github.com/Flipboard/FLAnimatedImage.git",
+        "state": {
+          "branch": null,
+          "revision": "e7f9fd4681ae41bf6f3056db08af4f401d61da52",
+          "version": "1.0.16"
+        }
+      },
+      {
+        "package": "Nuke",
+        "repositoryURL": "https://github.com/kean/Nuke",
+        "state": {
+          "branch": null,
+          "revision": "7f73ceaeacd5df75a7994cd82e165ad9ff1815db",
+          "version": "9.6.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
