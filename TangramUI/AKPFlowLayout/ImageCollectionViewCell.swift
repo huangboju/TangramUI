@@ -6,7 +6,7 @@
 //  Copyright © 2018 黄伯驹. All rights reserved.
 //
 
-import SDWebImage
+import Nuke
 
 class ImageCollectionViewCell: UICollectionViewCell {
     private lazy var imageView: UIImageView = {
@@ -31,8 +31,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
     var url: String? {
         didSet {
-            imageView.sd_imageTransition = .fade
-            imageView.sd_setImage(with: URL(string: url ?? ""))
+            imageView.loadImage(with: URL(string: url ?? "")!)
         }
     }
 

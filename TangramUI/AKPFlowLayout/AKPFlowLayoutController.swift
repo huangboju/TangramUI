@@ -6,7 +6,7 @@
 //  Copyright © 2018 黄伯驹. All rights reserved.
 //
 
-import SDWebImage
+import Nuke
 
 extension UIAlertAction {
     /// 设置文字颜色
@@ -16,6 +16,9 @@ extension UIAlertAction {
 }
 
 class AKPFlowLayoutController: BaseController {
+    
+    private lazy var prefetcher = ImagePrefetcher()
+    
     var layoutOptions: AKPLayoutConfigOptions = [
         .firstSectionIsGlobalHeader,
         .firstSectionStretchable,
@@ -152,10 +155,11 @@ extension AKPFlowLayoutController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
 
         let urls = indexPaths.compactMap { URL(string: imageList[$0.row]) }
-        SDWebImagePrefetcher.shared().prefetchURLs(urls)
+        prefetcher.startPrefetching(with: urls)
     }
 
     func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
-        
+        let urls = indexPaths.compactMap { URL(string: imageList[$0.row]) }
+        prefetcher.stopPrefetching(with: urls)
     }
 }

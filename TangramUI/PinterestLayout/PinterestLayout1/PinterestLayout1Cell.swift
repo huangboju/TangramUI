@@ -7,7 +7,7 @@
 //
 
 import FLAnimatedImage
-import SDWebImage
+import Nuke
 
 class PinterestLayout1Cell: UICollectionViewCell {
     
@@ -31,9 +31,9 @@ class PinterestLayout1Cell: UICollectionViewCell {
 
     var url: String? {
         didSet {
-
-            imageView.sd_imageTransition = .fade
-            imageView.sd_setImage(with: URL(string: url ?? ""), placeholderImage: nil, options: .cacheMemoryOnly, completed: nil)
+            
+            let options = ImageLoadingOptions(transition: .fadeIn(duration: 0.25))
+            imageView.loadImage(with: URL(string: url ?? "")!, options: options)
         }
     }
 

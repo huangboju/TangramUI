@@ -6,7 +6,7 @@
 //  Copyright © 2017年 黄伯驹. All rights reserved.
 //
 
-protocol ServiceLayoutDelegate: class {
+protocol ServiceLayoutDelegate: AnyObject {
 
     func heightOfSectionHeader(for indexPath: IndexPath) -> CGFloat
 
