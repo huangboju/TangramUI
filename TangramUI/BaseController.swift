@@ -6,9 +6,13 @@
 //  Copyright © 2017年 黄伯驹. All rights reserved.
 //
 
+import SafariServices
+
 class BaseController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "github", style: .plain, target: self, action: #selector(barButtonClicked))
 
         view.backgroundColor = UIColor.white
         
@@ -16,4 +20,15 @@ class BaseController: UIViewController {
     }
     
     func initSubviews() {}
+    
+    
+    var githubUrl: String {
+        fatalError()
+    }
+    
+    @objc
+    func barButtonClicked() {
+        guard let url = URL(string: githubUrl) else { return }
+        present(SFSafariViewController(url: url), animated: true, completion: nil)
+    }
 }

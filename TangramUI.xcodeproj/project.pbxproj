@@ -114,6 +114,25 @@
 		EE8AE10D27E9CBE800B2FEF0 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = EE8AE10C27E9CBE800B2FEF0 /* Nuke */; };
 		EE8AE11027E9CE8D00B2FEF0 /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = EE8AE10F27E9CE8D00B2FEF0 /* FLAnimatedImage */; };
 		EE8AE11227E9D07600B2FEF0 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AE11127E9D07600B2FEF0 /* UIImageView+Extension.swift */; };
+		EE8AE11927E9D9F500B2FEF0 /* UICollectionViewSplitLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AE11527E9D9F500B2FEF0 /* UICollectionViewSplitLayout.swift */; };
+		EE8AE11A27E9D9F500B2FEF0 /* UICollectionViewSplitLayout+LayoutAttributesInSectionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AE11627E9D9F500B2FEF0 /* UICollectionViewSplitLayout+LayoutAttributesInSectionFactory.swift */; };
+		EE8AE11C27E9D9F500B2FEF0 /* UICollectionViewSplitLayout+PinnedPositionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AE11827E9D9F500B2FEF0 /* UICollectionViewSplitLayout+PinnedPositionCalculator.swift */; };
+		EE8AE11E27E9DA5200B2FEF0 /* SplitLayoutMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AE11D27E9DA5200B2FEF0 /* SplitLayoutMenu.swift */; };
+		EE8AE13727E9DAAE00B2FEF0 /* OtherEmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AE12627E9DAAD00B2FEF0 /* OtherEmojiCollectionViewCell.swift */; };
+		EE8AE13827E9DAAE00B2FEF0 /* SummaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE8AE12727E9DAAD00B2FEF0 /* SummaryCollectionViewCell.xib */; };
+		EE8AE13927E9DAAE00B2FEF0 /* SummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AE12827E9DAAD00B2FEF0 /* SummaryCollectionViewCell.swift */; };
+		EE8AE13A27E9DAAE00B2FEF0 /* SimpleCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE8AE12927E9DAAD00B2FEF0 /* SimpleCollectionReusableView.xib */; };
+		EE8AE13B27E9DAAE00B2FEF0 /* CodePointCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE8AE12A27E9DAAD00B2FEF0 /* CodePointCollectionViewCell.xib */; };
+		EE8AE13C27E9DAAE00B2FEF0 /* CodePointCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AE12B27E9DAAD00B2FEF0 /* CodePointCollectionViewCell.swift */; };
+		EE8AE13D27E9DAAE00B2FEF0 /* SimpleCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AE12C27E9DAAD00B2FEF0 /* SimpleCollectionReusableView.swift */; };
+		EE8AE13E27E9DAAE00B2FEF0 /* OtherEmojiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE8AE12D27E9DAAD00B2FEF0 /* OtherEmojiCollectionViewCell.xib */; };
+		EE8AE13F27E9DAAE00B2FEF0 /* EmojiCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AE12E27E9DAAD00B2FEF0 /* EmojiCollectionViewController.swift */; };
+		EE8AE14027E9DAAE00B2FEF0 /* BasicCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AE13027E9DAAD00B2FEF0 /* BasicCollectionViewController.swift */; };
+		EE8AE14127E9DAAE00B2FEF0 /* SectionDividedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AE13227E9DAAE00B2FEF0 /* SectionDividedCollectionViewCell.swift */; };
+		EE8AE14227E9DAAE00B2FEF0 /* SectionDividedSupplymentaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AE13327E9DAAE00B2FEF0 /* SectionDividedSupplymentaryView.swift */; };
+		EE8AE14327E9DAAE00B2FEF0 /* SectionDividedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AE13427E9DAAE00B2FEF0 /* SectionDividedCollectionViewController.swift */; };
+		EE8AE14427E9DAAE00B2FEF0 /* SectionDividedSupplymentaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE8AE13527E9DAAE00B2FEF0 /* SectionDividedSupplymentaryView.xib */; };
+		EE8AE14527E9DAAE00B2FEF0 /* SectionDividedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE8AE13627E9DAAE00B2FEF0 /* SectionDividedCollectionViewCell.xib */; };
 		F7070B7D20D391EC004195FB /* AKPFlowLayoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7070B7C20D391EC004195FB /* AKPFlowLayoutData.swift */; };
 		F719D1B7225B24E300275E4E /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F719D1B6225B24E300275E4E /* UIScrollView+Extension.swift */; };
 		F719D1B9225B27DE00275E4E /* CHTCollectionViewWaterfallLayoutHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F719D1B8225B27DE00275E4E /* CHTCollectionViewWaterfallLayoutHeader.swift */; };
@@ -316,6 +335,26 @@
 		C090468F06F23F8A5B48EBC3 /* Pods_TangramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TangramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D77E2C3D6FECFC0B35BD2F9B /* Pods_TangramUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TangramUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE8AE11127E9D07600B2FEF0 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		EE8AE11427E9D9F500B2FEF0 /* UICollectionViewSplitLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewSplitLayout.h; sourceTree = "<group>"; };
+		EE8AE11527E9D9F500B2FEF0 /* UICollectionViewSplitLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewSplitLayout.swift; sourceTree = "<group>"; };
+		EE8AE11627E9D9F500B2FEF0 /* UICollectionViewSplitLayout+LayoutAttributesInSectionFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewSplitLayout+LayoutAttributesInSectionFactory.swift"; sourceTree = "<group>"; };
+		EE8AE11827E9D9F500B2FEF0 /* UICollectionViewSplitLayout+PinnedPositionCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewSplitLayout+PinnedPositionCalculator.swift"; sourceTree = "<group>"; };
+		EE8AE11D27E9DA5200B2FEF0 /* SplitLayoutMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitLayoutMenu.swift; sourceTree = "<group>"; };
+		EE8AE12627E9DAAD00B2FEF0 /* OtherEmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherEmojiCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE8AE12727E9DAAD00B2FEF0 /* SummaryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SummaryCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE8AE12827E9DAAD00B2FEF0 /* SummaryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE8AE12927E9DAAD00B2FEF0 /* SimpleCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleCollectionReusableView.xib; sourceTree = "<group>"; };
+		EE8AE12A27E9DAAD00B2FEF0 /* CodePointCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CodePointCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE8AE12B27E9DAAD00B2FEF0 /* CodePointCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodePointCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE8AE12C27E9DAAD00B2FEF0 /* SimpleCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCollectionReusableView.swift; sourceTree = "<group>"; };
+		EE8AE12D27E9DAAD00B2FEF0 /* OtherEmojiCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherEmojiCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE8AE12E27E9DAAD00B2FEF0 /* EmojiCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewController.swift; sourceTree = "<group>"; };
+		EE8AE13027E9DAAD00B2FEF0 /* BasicCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCollectionViewController.swift; sourceTree = "<group>"; };
+		EE8AE13227E9DAAE00B2FEF0 /* SectionDividedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDividedCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE8AE13327E9DAAE00B2FEF0 /* SectionDividedSupplymentaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDividedSupplymentaryView.swift; sourceTree = "<group>"; };
+		EE8AE13427E9DAAE00B2FEF0 /* SectionDividedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDividedCollectionViewController.swift; sourceTree = "<group>"; };
+		EE8AE13527E9DAAE00B2FEF0 /* SectionDividedSupplymentaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionDividedSupplymentaryView.xib; sourceTree = "<group>"; };
+		EE8AE13627E9DAAE00B2FEF0 /* SectionDividedCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionDividedCollectionViewCell.xib; sourceTree = "<group>"; };
 		F7070B7320D391C7004195FB /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		F7070B7420D391C7004195FB /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		F7070B7C20D391EC004195FB /* AKPFlowLayoutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutData.swift; sourceTree = "<group>"; };
@@ -444,6 +483,7 @@
 		BE0D89F81FBED81800CA8114 /* TangramUI */ = {
 			isa = PBXGroup;
 			children = (
+				EE8AE11327E9D9B700B2FEF0 /* UICollectionViewSplitLayout */,
 				F74B92E823BA0042007121DE /* CardsCollectionViewLayout */,
 				BE56D999224F70320048BF13 /* Stretchy */,
 				F7408FF021FAF647001214AE /* VegaScrollFlowLayout */,
@@ -784,6 +824,57 @@
 				BEF73ADC1FCAE24700A37524 /* HeaderView.swift */,
 			);
 			path = JungleCup;
+			sourceTree = "<group>";
+		};
+		EE8AE11327E9D9B700B2FEF0 /* UICollectionViewSplitLayout */ = {
+			isa = PBXGroup;
+			children = (
+				EE8AE12F27E9DAAD00B2FEF0 /* BasicCollectionViewController */,
+				EE8AE12527E9DAAD00B2FEF0 /* EmojiPhotosCollectionViewController */,
+				EE8AE13127E9DAAD00B2FEF0 /* SectionDividedCollectionViewController */,
+				EE8AE11427E9D9F500B2FEF0 /* UICollectionViewSplitLayout.h */,
+				EE8AE11527E9D9F500B2FEF0 /* UICollectionViewSplitLayout.swift */,
+				EE8AE11627E9D9F500B2FEF0 /* UICollectionViewSplitLayout+LayoutAttributesInSectionFactory.swift */,
+				EE8AE11827E9D9F500B2FEF0 /* UICollectionViewSplitLayout+PinnedPositionCalculator.swift */,
+				EE8AE11D27E9DA5200B2FEF0 /* SplitLayoutMenu.swift */,
+			);
+			path = UICollectionViewSplitLayout;
+			sourceTree = "<group>";
+		};
+		EE8AE12527E9DAAD00B2FEF0 /* EmojiPhotosCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EE8AE12627E9DAAD00B2FEF0 /* OtherEmojiCollectionViewCell.swift */,
+				EE8AE12727E9DAAD00B2FEF0 /* SummaryCollectionViewCell.xib */,
+				EE8AE12827E9DAAD00B2FEF0 /* SummaryCollectionViewCell.swift */,
+				EE8AE12927E9DAAD00B2FEF0 /* SimpleCollectionReusableView.xib */,
+				EE8AE12A27E9DAAD00B2FEF0 /* CodePointCollectionViewCell.xib */,
+				EE8AE12B27E9DAAD00B2FEF0 /* CodePointCollectionViewCell.swift */,
+				EE8AE12C27E9DAAD00B2FEF0 /* SimpleCollectionReusableView.swift */,
+				EE8AE12D27E9DAAD00B2FEF0 /* OtherEmojiCollectionViewCell.xib */,
+				EE8AE12E27E9DAAD00B2FEF0 /* EmojiCollectionViewController.swift */,
+			);
+			path = EmojiPhotosCollectionViewController;
+			sourceTree = "<group>";
+		};
+		EE8AE12F27E9DAAD00B2FEF0 /* BasicCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EE8AE13027E9DAAD00B2FEF0 /* BasicCollectionViewController.swift */,
+			);
+			path = BasicCollectionViewController;
+			sourceTree = "<group>";
+		};
+		EE8AE13127E9DAAD00B2FEF0 /* SectionDividedCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EE8AE13227E9DAAE00B2FEF0 /* SectionDividedCollectionViewCell.swift */,
+				EE8AE13327E9DAAE00B2FEF0 /* SectionDividedSupplymentaryView.swift */,
+				EE8AE13427E9DAAE00B2FEF0 /* SectionDividedCollectionViewController.swift */,
+				EE8AE13527E9DAAE00B2FEF0 /* SectionDividedSupplymentaryView.xib */,
+				EE8AE13627E9DAAE00B2FEF0 /* SectionDividedCollectionViewCell.xib */,
+			);
+			path = SectionDividedCollectionViewController;
 			sourceTree = "<group>";
 		};
 		F7070B7220D391C3004195FB /* Frameworks */ = {
@@ -1134,25 +1225,31 @@
 				BE95F5231FC66CB70033D83B /* 15.jpg in Resources */,
 				BE95F52E1FC66CB70033D83B /* 5.jpg in Resources */,
 				BE7D4A4E1FE69078005AD328 /* Inspirations.xcassets in Resources */,
+				EE8AE13827E9DAAE00B2FEF0 /* SummaryCollectionViewCell.xib in Resources */,
 				BE95F5221FC66CB70033D83B /* 14.jpg in Resources */,
 				BE95F5281FC66CB70033D83B /* 11.jpg in Resources */,
 				BE95F52B1FC66CB70033D83B /* 18.jpg in Resources */,
 				BE95F5201FC66CB70033D83B /* 8.jpg in Resources */,
 				BE95F52D1FC66CB70033D83B /* 4.jpg in Resources */,
 				BE95F5311FC66CB70033D83B /* 2.jpg in Resources */,
+				EE8AE13A27E9DAAE00B2FEF0 /* SimpleCollectionReusableView.xib in Resources */,
 				BE0D8A041FBED81800CA8114 /* LaunchScreen.storyboard in Resources */,
 				BE511D6C1FCE654E00BD9489 /* Photos.plist in Resources */,
 				BE95F5321FC66CB70033D83B /* 3.jpg in Resources */,
 				BE95F52A1FC66CB70033D83B /* 20.jpg in Resources */,
 				BE95F52F1FC66CB70033D83B /* 7.jpg in Resources */,
+				EE8AE13B27E9DAAE00B2FEF0 /* CodePointCollectionViewCell.xib in Resources */,
 				BE95F5331FC66CB70033D83B /* 1.jpg in Resources */,
+				EE8AE14427E9DAAE00B2FEF0 /* SectionDividedSupplymentaryView.xib in Resources */,
 				BE95F5271FC66CB70033D83B /* 13.jpg in Resources */,
 				BE0D8A011FBED81800CA8114 /* Assets.xcassets in Resources */,
 				BE511D6D1FCE654E00BD9489 /* Photos.xcassets in Resources */,
 				BE95F5301FC66CB70033D83B /* 6.jpg in Resources */,
 				BE95F5241FC66CB70033D83B /* 17.jpg in Resources */,
 				BE95F5211FC66CB70033D83B /* 9.jpg in Resources */,
+				EE8AE14527E9DAAE00B2FEF0 /* SectionDividedCollectionViewCell.xib in Resources */,
 				BE7D4A4D1FE69078005AD328 /* Inspirations.plist in Resources */,
+				EE8AE13E27E9DAAE00B2FEF0 /* OtherEmojiCollectionViewCell.xib in Resources */,
 				BE95F5251FC66CB70033D83B /* 16.jpg in Resources */,
 				BE0D89FF1FBED81800CA8114 /* Main.storyboard in Resources */,
 				BE95F52C1FC66CB70033D83B /* 19.jpg in Resources */,
@@ -1194,6 +1291,7 @@
 				F724F2F721F9DE880035CCB2 /* TableFlowLayoutVC.swift in Sources */,
 				BE22B6AF20E21BC50032490A /* PinterestLayout1Cell.swift in Sources */,
 				BEF73AD11FCAB64E00A37524 /* CustomLayoutSettings.swift in Sources */,
+				EE8AE11A27E9D9F500B2FEF0 /* UICollectionViewSplitLayout+LayoutAttributesInSectionFactory.swift in Sources */,
 				F7316D2E21DC5EDF0051B559 /* StickyGridCollectionViewLayoutController.swift in Sources */,
 				F728B75921F9D93E008E6FEE /* MapViewModel.swift in Sources */,
 				F7070B7D20D391EC004195FB /* AKPFlowLayoutData.swift in Sources */,
@@ -1209,12 +1307,14 @@
 				F754784A21DF67C1004D3D32 /* TableFlowLayout.swift in Sources */,
 				F7316D2121D759F30051B559 /* SCCornerViewController.swift in Sources */,
 				F7387C1620D24C2C0044B6DF /* AKPFlowLayout.swift in Sources */,
+				EE8AE13727E9DAAE00B2FEF0 /* OtherEmojiCollectionViewCell.swift in Sources */,
 				BEEACC8620CCC17300C1D180 /* MosaicLayout.swift in Sources */,
 				BE1C7A0021057EE2009C3CBA /* CSSearchBarHeader.swift in Sources */,
 				BE56D9A2224F711A0048BF13 /* StretchyCollectionViewLayoutVC.swift in Sources */,
 				F728B76621F9DA3D008E6FEE /* Action.swift in Sources */,
 				BEF73AD71FCADA9900A37524 /* PlayerCell.swift in Sources */,
 				F728B76321F9DA3D008E6FEE /* Place.swift in Sources */,
+				EE8AE13D27E9DAAE00B2FEF0 /* SimpleCollectionReusableView.swift in Sources */,
 				BEF73AD51FCAB79000A37524 /* MockDataManager.swift in Sources */,
 				F7408FF221FAF66C001214AE /* VegaScrollFlowLayout.swift in Sources */,
 				F728B73F21F9D865008E6FEE /* GallerySectionManager.swift in Sources */,
@@ -1229,6 +1329,7 @@
 				F728B75B21F9D93E008E6FEE /* GalleryViewModel.swift in Sources */,
 				F754784B21DF67C1004D3D32 /* TableCollectionViewController.swift in Sources */,
 				F728B73C21F9D865008E6FEE /* ReviewSectionManager.swift in Sources */,
+				EE8AE13927E9DAAE00B2FEF0 /* SummaryCollectionViewCell.swift in Sources */,
 				BEB8E1A520C17E1500B79A53 /* CenterLayout.swift in Sources */,
 				BEDE1E651FBF155B0051F702 /* ServiceLayoutController.swift in Sources */,
 				BE720BAD20C3BD9A00E86818 /* PinterestLayout1.swift in Sources */,
@@ -1250,6 +1351,7 @@
 				BE406CF920A7EA54009A4D6E /* SearchBarCell.swift in Sources */,
 				BE1C79FD21048A66009C3CBA /* CSLockedHeaderViewController.swift in Sources */,
 				F754784E21DF67C1004D3D32 /* UICollectionViewCell.swift in Sources */,
+				EE8AE14227E9DAAE00B2FEF0 /* SectionDividedSupplymentaryView.swift in Sources */,
 				F7387C1720D24C2C0044B6DF /* ImageCollectionViewHeader.swift in Sources */,
 				F7387C1B20D24C2C0044B6DF /* AKPLayoutConfigOptions.swift in Sources */,
 				F724F30621FAA9EF0035CCB2 /* StickyLayoutMenu.swift in Sources */,
@@ -1271,7 +1373,9 @@
 				F728B74A21F9D89C008E6FEE /* GalleryCell.swift in Sources */,
 				F7316D1F21D757B70051B559 /* StickCollectionViewFlowLayout.swift in Sources */,
 				BEF73ACD1FCAB5B000A37524 /* CustomLayoutAttributes.swift in Sources */,
+				EE8AE13C27E9DAAE00B2FEF0 /* CodePointCollectionViewCell.swift in Sources */,
 				BEDA5DA61FCD059D00777CBC /* StretchyHeaderLayout.swift in Sources */,
+				EE8AE14127E9DAAE00B2FEF0 /* SectionDividedCollectionViewCell.swift in Sources */,
 				F754784D21DF67C1004D3D32 /* TableCollectionViewSection.swift in Sources */,
 				BE720BA120C2816700E86818 /* CollectionViewWaterfallLayout.swift in Sources */,
 				BEF73AD91FCAE0D700A37524 /* SectionFooterView.swift in Sources */,
@@ -1286,11 +1390,14 @@
 				F7316D2621D762300051B559 /* SCPrimerViewController.swift in Sources */,
 				F728B74921F9D89C008E6FEE /* ReviewCell.swift in Sources */,
 				F7408FF421FAF68C001214AE /* VegaScrollFlowLayoutVC.swift in Sources */,
+				EE8AE14327E9DAAE00B2FEF0 /* SectionDividedCollectionViewController.swift in Sources */,
 				F728B73E21F9D865008E6FEE /* TopActionsSectionManager.swift in Sources */,
+				EE8AE11927E9D9F500B2FEF0 /* UICollectionViewSplitLayout.swift in Sources */,
 				F7316D3521DC6CB40051B559 /* WaterFallLayoutMenu.swift in Sources */,
 				BE720BBA20C3DD4A00E86818 /* MosaicLayoutController.swift in Sources */,
 				F7387C1D20D24C2C0044B6DF /* ImageCollectionViewCell.swift in Sources */,
 				BE511D671FCE638500BD9489 /* PinterestLayoutController.swift in Sources */,
+				EE8AE14027E9DAAE00B2FEF0 /* BasicCollectionViewController.swift in Sources */,
 				BE54ADAB20A5806D00B8A473 /* AdsorptionLayout.swift in Sources */,
 				BEDE1E561FBEEF160051F702 /* FooterReusableView.swift in Sources */,
 				F728B74C21F9D89C008E6FEE /* IconActionCell.swift in Sources */,
@@ -1302,9 +1409,11 @@
 				BE720BB820C3DB6500E86818 /* TRMosaicColumn.swift in Sources */,
 				BE720BB620C3DB4A00E86818 /* TRMosaicLayout.swift in Sources */,
 				F728B73321F9D827008E6FEE /* CellRepresentable.swift in Sources */,
+				EE8AE13F27E9DAAE00B2FEF0 /* EmojiCollectionViewController.swift in Sources */,
 				F719D1B7225B24E300275E4E /* UIScrollView+Extension.swift in Sources */,
 				BE7FAF951FC2796700788A5A /* TripletLayout.swift in Sources */,
 				F724F30221F9DF080035CCB2 /* SimpleSectionHeaderView.swift in Sources */,
+				EE8AE11E27E9DA5200B2FEF0 /* SplitLayoutMenu.swift in Sources */,
 				F7316D2921DC5CAF0051B559 /* ExcelMenu.swift in Sources */,
 				BEF73ADD1FCAE24700A37524 /* HeaderView.swift in Sources */,
 				F754784C21DF67C1004D3D32 /* TableCollectionViewLayoutAttributes.swift in Sources */,
@@ -1315,6 +1424,7 @@
 				F728B74E21F9D89C008E6FEE /* IconTableCell.swift in Sources */,
 				BEDA5DAD1FCD4CE300777CBC /* GridLayoutController.swift in Sources */,
 				BE406CF720A7E9DE009A4D6E /* AdsorptionController.swift in Sources */,
+				EE8AE11C27E9D9F500B2FEF0 /* UICollectionViewSplitLayout+PinnedPositionCalculator.swift in Sources */,
 				BE1C79F221036F67009C3CBA /* StickyHeadersLayoutController.swift in Sources */,
 				BE1C79F421037001009C3CBA /* SectionHeader.swift in Sources */,
 				F7316D3221DC66590051B559 /* PinterestLayoutMenu.swift in Sources */,

@@ -30,6 +30,10 @@ class CSLockedHeaderViewController: BaseController {
     override func initSubviews() {
         view.addSubview(collectionView)
     }
+    
+    override var githubUrl: String {
+        "https://github.com/CSStickyHeaderFlowLayout/CSStickyHeaderFlowLayout"
+    }
 }
 
 extension CSLockedHeaderViewController: UICollectionViewDataSource {

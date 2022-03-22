@@ -33,6 +33,10 @@ class VegaScrollFlowLayoutVC: BaseController {
     override func initSubviews() {
         view.addSubview(collectionView)
     }
+    
+    override var githubUrl: String {
+        "https://github.com/ApplikeySolutions/VegaScroll"
+    }
 }
 
 extension VegaScrollFlowLayoutVC: UICollectionViewDataSource {

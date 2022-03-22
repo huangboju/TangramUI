@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  SplitLayoutMenu.swift
 //  TangramUI
 //
-//  Created by 黄伯驹 on 2017/11/17.
-//  Copyright © 2017年 黄伯驹. All rights reserved.
+//  Created by 黄伯驹 on 2022/3/22.
+//  Copyright © 2022 黄伯驹. All rights reserved.
 //
 
-// http://martiancraft.com/blog/2017/05/collection-view-layouts/
+import UIKit
 
-class ViewController: UIViewController {
+class SplitLayoutMenu: BaseController {
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
         tableView.dataSource = self
@@ -19,38 +19,24 @@ class ViewController: UIViewController {
     
     lazy var data: [[UIViewController.Type]] = [
         [
-            ServiceLayoutController.self,
-            ReverseLayoutController.self,
-            ReorderableTripletLayoutController.self,
-            JungleCupCollectionViewController.self,
-            ExcelMenu.self,
-            StretchyLayoutMenu.self,
-            GridLayoutController.self,
-            PinterestLayoutMenu.self,
-            ExpandingLayoutController.self,
-            AdsorptionController.self,
-            CenterLayoutController.self,
-            WaterFallLayoutMenu.self,
-            MosaicLayoutController.self,
-            AKPFlowLayoutController.self,
-            WalletMenu.self,
-            StickyLayoutMenu.self,
-            TableFlowLayoutVC.self,
-            VegaScrollFlowLayoutVC.self,
-            CardsCollectionViewLayoutVC.self,
-            SplitLayoutMenu.self
+            SectionDividedCollectionViewController.self,
+            EmojiCollectionViewController.self,
+            BasicCollectionViewController.self
         ]
     ]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "UICollectionView"
-
+    override func initSubviews() {
+        title = "UICollectionViewSplitLayout"
+        
         view.addSubview(tableView)
+    }
+    
+    override var githubUrl: String {
+        "https://github.com/yahoojapan/UICollectionViewSplitLayout"
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension SplitLayoutMenu: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return data.count
     }
@@ -64,7 +50,7 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension SplitLayoutMenu: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.accessoryType = .disclosureIndicator
@@ -72,12 +58,12 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         defer { tableView.deselectRow(at: indexPath, animated: false) }
+        
         let controller = data[indexPath.section][indexPath.row].init()
         controller.title = "\(controller.classForCoder)"
         controller.hidesBottomBarWhenPushed = true
         show(controller, sender: nil)
     }
 }
-
