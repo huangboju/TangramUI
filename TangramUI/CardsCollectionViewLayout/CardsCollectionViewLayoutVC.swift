@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class CardsCollectionViewLayoutVC: BaseController {
     
@@ -32,7 +33,15 @@ class CardsCollectionViewLayoutVC: BaseController {
     
     override func initSubviews() {
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "github", style: .plain, target: self, action: #selector(barButtonClicked))
+        
         view.addSubview(collectionView)
+    }
+    
+    @objc
+    func barButtonClicked() {
+        guard let url = URL(string: "https://github.com/filletofish/CardsLayout") else { return }
+        present(SFSafariViewController(url: url), animated: true, completion: nil)
     }
 }
 
